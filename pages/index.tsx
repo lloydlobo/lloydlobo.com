@@ -61,16 +61,11 @@ const SQLBackground = () => {
   );
 };
 
-export const MyComponent = ({ isVisible }) => (
-  <motion.div animate={{ opacity: isVisible ? 1 : 0 }} />
-);
-
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
     <main className={` space-y-[10rem]`}>
       <Section>
         <section>
-          <MyComponent />
           <div className="grid place-items-center space-y-8">
             <h1 className={`${inter.className} text-5xl font-bold`}>
               <div className="flex place-items-center">
