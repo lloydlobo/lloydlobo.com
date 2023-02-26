@@ -10,6 +10,10 @@ import RepoStats from "../components/github/RepoStats";
 
 const inter = Inter({ subsets: ["latin"] });
 
+type Props = {
+  children?: ReactNode;
+  // title?: string;
+};
 // In this example, the useInView hook returns a ref that you can attach to the motion.section element and a boolean value inView that indicates whether the section is currently in view based on the threshold parameter. The animate prop of the motion.section element uses a ternary operator to set the opacity and y properties based on the inView value, which creates a fade-in and slide-up animation effect when the section enters the viewport. The transition prop sets the duration of the animation.
 const Section = ({ children }: Props) => {
   const [ref, inView] = useInView({
