@@ -70,9 +70,12 @@ export const SearchBar = () => {
             key={result.id}
             className={`w-full px-2 space-y-1 bg-white/30 glass divide-y-2 shadow backdrop-blur-sm grid`}
           >
-            <Link href="/">
+            <a
+              target="none"
+              href={`https://github.com/${result.username}/${result.repo}`}
+            >
               <h2 className={`px-4`}>{result.repo}</h2>
-            </Link>
+            </a>
             <p>{result.description}</p>
           </div>
         ))}
