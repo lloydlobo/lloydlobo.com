@@ -65,7 +65,7 @@ const IndexPage = () => (
       <Section>
         <section>
           <MyComponent />
-          <div className="grid pt-6 place-items-center space-y-8">
+          <div className="grid place-items-center space-y-8">
             <h1 className={`${inter.className} text-5xl font-bold`}>
               <div className="flex place-items-center">
                 <Link href="/about">Lloyd Lobo</Link>

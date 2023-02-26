@@ -21,11 +21,46 @@ export const SearchBar = () => {
 
   return (
     <div className={`relative`}>
-      <input
-        type="text"
-        className={`py-2 px-4 bg-white glass border backdrop-blur-sm rounded-full relative`}
-        onChange={handleSearch}
-      />
+      <div className={`relative`}>
+        <input
+          type="text"
+          className={`py-3 px-12 bg-white glass border backdrop-blur-sm rounded-full relative`}
+          onChange={handleSearch}
+        />
+        <div className={`absolute top-0 py-3 px-3`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+            />
+          </svg>
+        </div>
+
+        <div className={`absolute right-0 top-0 py-3 px-3`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+      </div>
       <div
         style={{ position: "absolute", top: "100%", left: 0 }}
         className={`w-full`}

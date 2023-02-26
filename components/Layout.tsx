@@ -27,15 +27,17 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <div className={`${styles.description} space-y-4`}>
-        <nav className={``}>
-          <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
-          <Link href="/users">Users List</Link> |{" "}
-          <a href="/api/users">Users API</a>
-        </nav>
-      </div>
-      <div className="grid pt-8 place-items-center">
-        <SearchBar />
+      <div className={`grid place-items-center`}>
+        <div className={`${styles.description} space-y-4`}>
+          <nav className={``}>
+            <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
+            <Link href="/users">Users List</Link> |{" "}
+            <a href="/api/users">Users API</a>
+          </nav>
+        </div>
+        <div className="grid pt-8 place-items-center">
+          <SearchBar />
+        </div>
       </div>
     </header>
     <div className={styles.main}>{children}</div>
