@@ -97,6 +97,9 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+
+  /* Padding for block. Space above header, below footer */
+  @apply py-12;
 }
 
 footer {
