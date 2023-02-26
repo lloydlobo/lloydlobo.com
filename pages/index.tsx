@@ -2,40 +2,65 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import { Inter } from "next/font/google";
 
+import Image from "next/image";
+
 import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <main className={styles.main}>
-      <h1 className={inter.className}>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <span>Hello, I am Lloyd</span>
+    <main className={`${styles.main} space-y-[5rem]`}>
+      <h1 className={`${inter.className} text-5xl font-bold`}>
+        <div className="flex place-items-center">
+          <Link href="/about">Lloyd Lobo</Link>
           <span className={styles.thirteen}>👋</span>
         </div>
       </h1>
 
       <section>
-        <p>
-          <Link href="/about">GitHub</Link>
-        </p>
-        <picture>
-          <source
-            srcset="https://github-readme-stats.vercel.app/api?username=lloydlobo&show_icons=true&theme=dark"
-            media="(prefers-color-scheme: dark)"
-          />
-          <source
-            srcset="https://github-readme-stats.vercel.app/api?username=lloydlobo&show_icons=true"
-            media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-          />
-          <img src="https://github-readme-stats.vercel.app/api?username=lloydlobo&show_icons=true" />
-        </picture>
+        <div className="grid place-items-center space-y-8">
+          <p className="text-start w-2/3">
+            Hey, I'm Lloyd. Full-Time software developer. Focuses on Rust,
+            Python & JavaScript/TypeScript. Makes apps, CLI tools, Discord bots,
+            and novel websites. Likes dogs and cats.
+          </p>
+          <div className="flex place-items-center">
+            <div>
+              <a
+                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/vercel.svg"
+                  alt="Vercel Logo"
+                  className={styles.vercelLogo}
+                  width={100}
+                  height={24}
+                  priority
+                />
+              </a>
+            </div>
+            <picture>
+              <source
+                srcSet="https://github-readme-stats.vercel.app/api?username=lloydlobo&show_icons=false&theme=dark&bg_color=00000000&hide_border=true&hide_title=true"
+                media="(prefers-color-scheme: dark)"
+              />
+              <source
+                srcSet="https://github-readme-stats.vercel.app/api?username=lloydlobo&show_icons=false&hide_border=true&hide_title=true"
+                media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
+              />
+              <img src="https://github-readme-stats.vercel.app/api?username=lloydlobo&show_icons=false&hide_border=true&hide_title=true" />
+            </picture>
+          </div>
+        </div>
       </section>
     </main>
   </Layout>
 );
 
+// https://github.com/anuraghazra/github-readme-stats
 export default IndexPage;
 
 /*
