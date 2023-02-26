@@ -11,16 +11,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <main className={`${styles.main} space-y-[5rem]`}>
-      <h1 className={`${inter.className} text-5xl font-bold`}>
-        <div className="flex place-items-center">
-          <Link href="/about">Lloyd Lobo</Link>
-          <span className={styles.thirteen}>👋</span>
-        </div>
-      </h1>
-
+    <main className={`${styles.main} space-y-[10rem]`}>
       <section>
         <div className="grid place-items-center space-y-8">
+          <h1 className={`${inter.className} text-5xl font-bold`}>
+            <div className="flex place-items-center">
+              <Link href="/about">Lloyd Lobo</Link>
+              <span className={styles.thirteen}>👋</span>
+            </div>
+          </h1>
           <p className="text-start w-2/3">
             Hey, I'm Lloyd. Full-Time software developer.
           </p>
@@ -55,6 +54,7 @@ const IndexPage = () => (
           </div>
         </div>
       </section>
+
       <section>
         <div className="grid place-items-center space-y-8">
           <p className="w-2/3">
