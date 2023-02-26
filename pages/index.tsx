@@ -48,7 +48,7 @@ const SQLBackground = () => {
   let numberOfLists = 32;
   return (
     <>
-      <div class="flex space-x-8">
+      <div className="flex space-x-8">
         {Array.from({ length: numberOfLists }).map((_, index) => (
           <ul className="space-y-8">
             {repos.map(({ username, repo }, index) => (
