@@ -37,7 +37,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     <div className={styles.main}>{children}</div>
     <footer>
       <div>
-        {COPYRIGHT_SYMBOL} {currentYear}
+        {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
       </div>
     </footer>
   </div>

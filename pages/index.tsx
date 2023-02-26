@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Layout from "../components/Layout";
 import { Inter } from "next/font/google";
+import RepoStats from "../components/github/RepoStats";
 
 import Image from "next/image";
 
@@ -21,9 +22,7 @@ const IndexPage = () => (
       <section>
         <div className="grid place-items-center space-y-8">
           <p className="text-start w-2/3">
-            Hey, I'm Lloyd. Full-Time software developer. Focuses on Rust,
-            Python & JavaScript/TypeScript. Makes apps, CLI tools, Discord bots,
-            and novel websites. Likes dogs and cats.
+            Hey, I'm Lloyd. Full-Time software developer.
           </p>
           <div className="flex place-items-center">
             <div>
@@ -56,12 +55,37 @@ const IndexPage = () => (
           </div>
         </div>
       </section>
+      <section>
+        <div className="grid place-items-center space-y-8">
+          <p className="w-2/3">
+            Focuses on Rust, Python & JavaScript/TypeScript.
+            <br />
+            Makes apps, CLI tools, Discord bots, and novel websites. Likes dogs
+            and cats.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div className="grid place-items-center space-y-8">
+          <h2 className="text-center text-4xl font-bold">Projects</h2>
+          <div className="grid grid-cols-2 grid-rows-3">
+            <RepoStats />
+          </div>
+        </div>
+      </section>
     </main>
   </Layout>
 );
 
 // https://github.com/anuraghazra/github-readme-stats
 export default IndexPage;
+
+/*
+        <div className="grid grid-cols-2 grid-rows-3">
+          <StatRepo />
+        </div>
+ * */
 
 /*
     <>
