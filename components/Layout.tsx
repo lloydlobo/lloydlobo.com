@@ -1,13 +1,24 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React, { ReactNode } from "react";
+import Link from "next/link";
+import Head from "next/head";
+import styles from "@/styles/Home.module.css";
 
 type Props = {
-  children?: ReactNode
-  title?: string
-}
+  children?: ReactNode;
+  title?: string;
+};
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+// let websiteUrl = "";
+// let websiteName = "";
+// if (typeof window !== "undefined") {
+//   websiteName = window.location.hostname; // Get the current website name
+//   websiteUrl = window.location.href; // Get the current website URL
+// }
+
+const COPYRIGHT_SYMBOL = "\u00A9"; // Copyright symbol
+const currentYear = new Date().getFullYear(); // Function to get current year
+
+const Layout = ({ children, title = "This is the default title" }: Props) => (
   <div>
     <Head>
       <title>{title}</title>
@@ -15,18 +26,22 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <nav>
-        <Link href="/">Home</Link> | <Link href="/about">About</Link> |{' '}
-        <Link href="/users">Users List</Link> |{' '}
-        <a href="/api/users">Users API</a>
-      </nav>
+      <div className={styles.description}>
+        <nav>
+          <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
+          <Link href="/users">Users List</Link> |{" "}
+          <a href="/api/users">Users API</a>
+        </nav>
+      </div>
     </header>
-    {children}
+    <div className={styles.main}>{children}</div>
     <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
+      <div>
+        {COPYRIGHT_SYMBOL} {currentYear}
+      </div>
     </footer>
   </div>
-)
+);
 
-export default Layout
+// {COPYRIGHT_SYMBOL} {currentYear} {websiteName}
+export default Layout;
