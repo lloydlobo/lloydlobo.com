@@ -38,16 +38,16 @@ const SQLBackground = () => {
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
-    <main className={`${styles.main} space-y-[10rem]`}>
+    <main className={` space-y-[10rem]`}>
       <section>
-        <div className="grid place-items-center space-y-8">
+        <div className="grid pt-6 place-items-center space-y-8">
           <h1 className={`${inter.className} text-5xl font-bold`}>
             <div className="flex place-items-center">
               <Link href="/about">Lloyd Lobo</Link>
               <span className={styles.thirteen}>👋</span>
             </div>
           </h1>
-          <p className="text-start w-2/3">
+          <p className="text-center w-2/3">
             Hey, I'm Lloyd. Full-Time software developer.
           </p>
           <div className="flex place-items-center">
@@ -86,7 +86,7 @@ const IndexPage = () => (
         <div className="grid place-items-center space-y-8">
           <p className={`${inter.className} w-2/3 text-2xl`}>
             Focuses on Rust, Python & JavaScript/TypeScript. Makes apps, CLI
-            tools, Discord bots, and novel websites. Likes ☀, dogs, and cats.
+            tools, bots, and novel websites. Likes dogs, and cats.
           </p>
         </div>
       </section>
