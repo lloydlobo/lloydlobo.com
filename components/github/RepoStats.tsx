@@ -2,7 +2,12 @@ import React from "react";
 
 const repos = [
   { username: "lloydlobo", repo: "mausam" },
+  { username: "lloydlobo", repo: "neura-driver" },
+  { username: "lloydlobo", repo: "geomeasure" },
+  { username: "lloydlobo", repo: "proxymate-bot" },
+  { username: "lloydlobo", repo: "penny" },
   { username: "lloydlobo", repo: "okejoke" },
+  { username: "lloydlobo", repo: "rssh" },
 ];
 
 // In this implementation, we define an array of repo objects with the username and repo properties for each repo. We then map over this array and render a picture element for each repo. Inside the picture element, we define two source elements with the appropriate srcSet values for the dark and light themes, and an img element with the fallback image source. We also add an alt attribute to the img element to provide alternative text for screen readers.
