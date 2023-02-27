@@ -3,6 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import { SearchBar } from "@/components/search/SearchBar";
+import { NavbarDark } from "@/components/layout/NavbarDark";
 
 type Props = {
   children?: ReactNode;
@@ -27,7 +28,8 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
     <header>
-      <div className={`grid place-items-center`}>
+      <NavbarDark />
+      <div className={`hidden grid place-items-center`}>
         <div className={`${styles.description} space-y-4`}>
           <nav className={``}>
             <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
@@ -41,9 +43,26 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       </div>
     </header>
     <div className={styles.main}>{children}</div>
-    <footer>
-      <div>
-        {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
+    <footer className={`space-y-4 py-4`}>
+      <h3 className={`text-amber-200 text-xl text-start place-self-start`}>
+        Connect
+      </h3>
+      <hr className={`text-amber-200 w-full h-[1px]`} />
+      <div className={`grid grid-cols-2 w-full py-4`}>
+        <div className={`grid w-full text-amber-200 text-xl `}>
+          <ul>
+            <li>
+              <a href="https://github.com/lloydlobo">Github</a>
+            </li>
+            <li>
+              <a href="https://github.com/lloydlobo">Email</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className={`place-self-end`}>
+          {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
+        </div>
       </div>
     </footer>
   </div>
