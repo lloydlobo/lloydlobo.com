@@ -97,7 +97,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-
+  @apply bg-gradient-to-b from-on-primary to-on-primary/90 bg-local;
   /* Padding for block. Space above header, below footer */
   /* @apply py-12; */
 }
