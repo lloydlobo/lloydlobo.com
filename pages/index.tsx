@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Inter } from "next/font/google";
+import { GochiHand } from "next/font/google";
 import Image from "next/image";
 
 import styles from "@/styles/Home.module.css";
@@ -11,36 +12,11 @@ import Layout from "@/components/Layout";
 import RepoStats from "@/components/github/RepoStats";
 
 const inter = Inter({ subsets: ["latin"] });
-
-// const GRADIENT = {
-//   violet: "h-full bg-gradient-to-b from-violet-500 to-fuchsia-500",
-//   cyan: "h-full bg-gradient-to-b from-cyan-500 to-blue-500",
-//   sky: "h-full bg-gradient-to-b from-sky-500 to-indigo-500",
-//   green: "h-full bg-gradient-to-b from-emerald-500 to-green-500",
-//   orange: "h-full bg-gradient-to-b from-rose-500 to-orange-500",
-//   purple: "h-full bg-gradient-to-b from-purple-500 to-pink-500",
-// };
-//
-// function GitLine({ gradientCss }: { gradientCss: String }) {
-//   return (
-//     <motion.div
-//       className={`rounded absolute left-10 h-screen w-[1.5px] ${gradientCss}  `}
-//       transition={{ duration: 2.5, delay: 1 }}
-//       initial="hidden"
-//       animate="visible"
-//       style={{
-//         transitionDelay: "500ms",
-//       }}
-//       data-build-delay="500"
-//     ></motion.div>
-//   );
-// }
-
 // https://github.com/anuraghazra/github-readme-stats
 
 function Underline() {
   return (
-    <div data-as-attach="underline" className="underlines-container">
+    <div className="underlines-container">
       <div className="svg-lines w-embed">
         <svg
           data-as-style="lines"
@@ -55,7 +31,7 @@ function Underline() {
           <path
             d="M9.06055 13.428C9.06055 13.428 90.1028 13.4314 172.433 10.4525C223.539 8.60328 268.459 3.48823 315.061 2.92782C379.21 2.15641 469.06 5.1297 539.561 8.10689C607.765 10.9871 658.016 10.4525 658.016 10.4525"
             stroke="currentColor"
-            stroke-width="4"
+            strokeWidth="4"
             style={{
               strokeDasharray: "649.32px, 649.32px",
               strokeDashoffset: "0px",
@@ -64,7 +40,7 @@ function Underline() {
           <path
             d="M0.0605469 25.9277C0.0605469 25.9277 78.2413 25.2307 161.271 22.3581C227.405 20.0701 293.614 15.5764 347.561 14.9277C450.283 13.6924 554.767 19.9762 657.061 29.4277"
             stroke="currentColor"
-            stroke-width="4"
+            strokeWidth="4"
             style={{
               strokeDasharray: "657.678px, 657.678px",
               strokeDashoffset: "0px",
@@ -114,7 +90,7 @@ const HandwritingAnimation = ({ children, path }: PropsHandwriting) => {
       <motion.path
         d={`${path}`}
         stroke="currentColor"
-        stroke-width="4"
+        strokeWidth="4"
         className={``}
         variants={pathVariants}
         initial="hidden"
@@ -289,7 +265,7 @@ function GitLineVar({
       ref={ref}
       animate={{ opacity: inView ? 1.0 : 0.0 }}
       transition={{ duration: 2, delay: 0.0 }}
-      className={`rounded absolute left-10 h-full w-[3px] blur-[1px] brightness-90 `}
+      className={`hidden rounded absolute left-10 h-full w-[3px] blur-[1px] brightness-90 `}
       style={{
         backgroundImage: `${gradientCss}, linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1))`,
         backgroundSize: "100% 100%, 100% calc(100% - 20px)",
@@ -328,14 +304,14 @@ const Section = ({ children }: PropsSection) => {
 export default function IndexPage() {
   return (
     <Layout title="Home | ">
-      <div className={`space-y-[12rem] place-items-center grid`}>
+      <div className={`space-y-[12rem] font-sans place-items-center grid`}>
         <div className={`min-h-screen w-screen`}>
           <GitLineVar gradientCss={GRADIENT_VAR.violet} />
           <Section>
             <div
               className={`space-y-1 justify-between md:space-y-12 place-items-center grid pt-40 pb-16`}
             >
-              <h1 className={`${inter.className} font-normal`}>
+              <h1 className={`${inter.className}`}>
                 <div className="w-[10ch] md:w-full text-5xl md:text-[7rem] flex flex-wrap place-items-center text-center leading-[1.5ch] md:leading-[1.6ch] tracking-wide">
                   <div className={``}>
                     {styleHeading("We want to build great stuff", "stuff")}
@@ -368,11 +344,11 @@ export default function IndexPage() {
         <div className={`min-h-screen w-screen`}>
           <GitLineVar gradientCss={GRADIENT_VAR.cyan} />
           <Section>
-            <p
-              className={`uppercase text-5xl md:text-[7rem] italic text-amber-200 `}
+            <h2
+              className={`uppercase font-cursive text-5xl md:text-[7rem] italic text-amber-200 `}
             >
               And yet ...
-            </p>
+            </h2>
           </Section>
         </div>
 
@@ -487,20 +463,18 @@ export default function IndexPage() {
         </div>
 
         <div className={`min-h-screen w-screen`}>
-          <GitLineVar gradientCss={GRADIENT_VAR.cyan} />
+          <GitLineVar gradientCss={GRADIENT_VAR.orange} />
           <Section>
-            <div className={`min-h-screen grid place-items-center w-screen`}>
-              <h2
-                className={`uppercase text-5xl md:text-[7rem]  italic text-amber-200 `}
-              >
-                And so ...
-              </h2>
-            </div>
+            <h2
+              className={`uppercase font-cursive text-5xl md:text-[7rem] italic text-amber-200 `}
+            >
+              And so ...
+            </h2>
           </Section>
         </div>
 
         <div className={`h-screen w-screen`}>
-          <GitLineVar gradientCss={GRADIENT_VAR.green} />
+          <GitLineVar gradientCss={GRADIENT_VAR.purple} />
           <Section>
             <div className="text-5xl md:text-[5rem] flex flex-wrap place-items-center text-start leading-[1.5ch] md:leading-[1.6ch] tracking-wide">
               It gets easier and
@@ -570,7 +544,7 @@ export default function IndexPage() {
                   </motion.div>
                 </div>
               </div>
-              <button class="rounded-full text-[#fbe094] text-xl text-end w-full">
+              <button className="rounded-full text-[#fbe094] text-xl text-end w-full">
                 hello@lloydlobo.com
               </button>
             </div>
