@@ -16,7 +16,7 @@ const RepoStats = () => {
     <>
       {repos.map(({ username, repo }, index) => (
         <a href={`https://github.com/${username}/${repo}`}>
-          <picture key={index}>
+          <picture key={repo + index}>
             <source
               srcSet={`https://github-readme-stats.vercel.app/api/pin/?username=${username}&repo=${repo}&show_icons=false&theme=dark&bg_color=00000000&hide_border=true&hide_title=true`}
               media="(prefers-color-scheme: dark)"

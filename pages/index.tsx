@@ -4,7 +4,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Inter } from "next/font/google";
-import { GochiHand } from "next/font/google";
 import Image from "next/image";
 
 import styles from "@/styles/Home.module.css";
@@ -218,7 +217,7 @@ function styleHeading(heroTitle: String, wordToStyle: String) {
       return (
         <>
           <span
-            key={index}
+            key={word+index}
             className={`overflow-x-auto relative`}
             style={{ fontWeight: "normal" }}
           >
@@ -234,7 +233,7 @@ function styleHeading(heroTitle: String, wordToStyle: String) {
       );
     } else {
       return (
-        <span key={index} className={`z-10`}>
+        <span key={word+index} className={`z-10`}>
           {word}{" "}
         </span>
       );
@@ -254,7 +253,8 @@ const GRADIENT_VAR = {
 function GitLineVar({
   gradientCss,
 }: {
-  gradientCss: keyof typeof GRADIENT_VAR;
+  gradientCss: string ;
+  // gradientCss: keyof typeof GRADIENT_VAR;
 }) {
   const [ref, inView] = useInView({
     threshold: 0.3, // when section is 50% visible

@@ -9,7 +9,7 @@ export default function Document() {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="true"
+          crossOrigin=""
         />
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"

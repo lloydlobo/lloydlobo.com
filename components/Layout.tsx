@@ -42,7 +42,9 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
         </div>
       </div>
     </header>
+
     <div className={styles.main}>{children}</div>
+
     <footer className={`space-y-4 py-4`}>
       <h3 className={`text-amber-200 text-xl text-start place-self-start`}>
         Connect
