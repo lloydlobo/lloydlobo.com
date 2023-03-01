@@ -558,41 +558,19 @@ export default function IndexPage() {
               </Section>
             </div>
           </Section>
+        </div>
 
-          <Section>
-            <div className="grid min-h-full w-screen place-items-center place-self-center py-24 text-secondary sm:pb-32">
-              <div className="relative grid w-full">
-                <h2
-                  className="mb-60 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal
+        <div className={`min-h-screen w-screen`}>
+          <div className="relative grid w-full">
+            <h2
+              className="mb-60 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal
                 before:text-sm before:content-['01']
                 "
-                >
-                  Work
-                </h2>
-              </div>
-              <div className="grid grid-cols-3 place-items-center gap-12 text-xl">
-                <div className="col-start-2 col-end-3 place-self-center text-center">
-                  <div className="grid justify-between space-y-20">
-                    <div className="flex flex-col">
-                      <h2 className="mb-6 text-7xl font-bold">Mausam</h2>
-                      <h3 className="text-xl font-thin uppercase">
-                        Development
-                      </h3>
-                    </div>
-                    <a
-                      href="#"
-                      className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
-                    >
-                      View Project{" "}
-                      <span className="hidden" aria-hidden="true">
-                        &rarr;
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Section>
+            >
+              Work
+            </h2>
+          </div>
+          <WorkProjects />
         </div>
 
         <div id="work" className={`min-h-screen w-screen`}>
@@ -863,3 +841,41 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+const WorkProjects = () => {
+  const repos = [
+    { username: "lloydlobo", tag: "development", repo: "mausam" },
+    { username: "lloydlobo", tag: "development", repo: "neura-driver" },
+    { username: "lloydlobo", tag: "development", repo: "geomeasure" },
+    { username: "lloydlobo", tag: "development", repo: "proxymate-bot" },
+    { username: "lloydlobo", tag: "development", repo: "penny" },
+    { username: "lloydlobo", tag: "development", repo: "okejoke" },
+    { username: "lloydlobo", tag: "development", repo: "rssh" },
+  ];
+
+  let numberOfLists = 1;
+  return (
+    <>
+      <div className="col-start-2 col-end-3 min-h-[300vh] w-screen space-y-60 place-self-center text-center">
+        {repos.map(({ username, repo, tag }, index) => (
+          <div key={index + repo} className="project grid space-y-20">
+            <div>
+              <h2 className="mb-6 text-7xl font-bold">{repo}</h2>
+              <h3 className="text-xl font-thin uppercase">{tag}</h3>
+            </div>
+
+            <a
+              href="#"
+              className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
+            >
+              View Project{" "}
+              <span className="hidden" aria-hidden="true">
+                &rarr;
+              </span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};
