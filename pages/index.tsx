@@ -56,7 +56,7 @@ const WorkProjects = () => {
     {
       username: "lloydlobo",
       tags: ["development", "python", "discord"],
-      repo: "proxymate-bot",
+      repo: "proxymate",
       description:
         "Generates phrases in the style of the author using Markov model",
       img: "/proxymate-bot.jpg",
@@ -90,7 +90,7 @@ const WorkProjects = () => {
   let isCardLike = false;
   return (
     <>
-      <section className="mx-auto my-12 grid w-full grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2">
+      <section className="mx-auto my-12 grid w-fit grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2">
         {repos.map(({ username, repo, tags, description, img }, index) => (
           <a
             href="/"
@@ -102,10 +102,10 @@ const WorkProjects = () => {
                 ? "bg-white shadow-md  hover:shadow-xl dark:bg-black/20 dark:shadow-lg dark:sm:border "
                 : ""
             }
-            flex p-4 py-6 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20
+            flex py-6 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20
          `}
           >
-            <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.70] justify-center grayscale-[03%] sm:mr-3">
+            <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
               <img
                 // src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 src={img}
@@ -115,14 +115,14 @@ const WorkProjects = () => {
                 className="aspect-square rounded-[2.2rem] object-cover brightness-[80%] saturate-150 sepia-[30%]"
               />
             </div>
-            <div className="my-3 mr-2 flex-col justify-center sm:mt-[-1px] xl:flex">
+            <div className="my-3 ml-4 flex-col justify-center sm:mt-[-1px] xl:flex">
               <h3
                 className={`text-5xl font-extrabold uppercase tracking-tighter text-primary ${inter.className}`}
               >
                 {repo}
               </h3>
               {/* <h2 className="mb-6 text-7xl font-bold">{repo}</h2> */}
-              <h3 className="text-lg font-thin">{description}</h3>
+              <h3 className="max-w-[50vw] text-lg font-thin">{description}</h3>
               <div className="mt-2 flex gap-2 text-[12px]">
                 {tags.map((tag, index) => (
                   <div className="rounded-full bg-on-primary/0 px-2 underline decoration-accent/40 underline-offset-8 ">
