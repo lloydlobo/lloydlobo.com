@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -9,6 +10,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import Layout from "@/components/Layout";
 import RepoStats from "@/components/github/RepoStats";
+import RandomizedText from "@/components/effects/RandomizedText";
 
 const inter = Inter({ subsets: ["latin"] });
 // https://github.com/anuraghazra/github-readme-stats
@@ -362,10 +364,140 @@ const Section = ({ children }: PropsSection) => {
   );
 };
 
+export const EmailCopy = () => {
+  const [isCopied, setIsCopied] = useState(false);
+  const email = "ivanjbdesign@gmail.com";
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(email);
+    setIsCopied(true);
+  };
+
+  return (
+    <div>
+      <div>Email</div>
+      <div>
+        <div>{email}</div>
+        <div onClick={copyToClipboard}>
+          {isCopied ? "Copied!" : "Copy to clipboard"}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// function Hero() {
+//   const [isPositiveText, setIsPositiveText] = useState(false);
+//
+//   async function isPositive(text) {
+//     const response = await fetch("http://text-processing.com/api/sentiment/", {
+//       method: "POST",
+//       body: `text=${text}`,
+//       headers: {
+//         "Content-Type": "application/x-www-form-urlencoded",
+//       },
+//     });
+//     alert!(response);
+//     const json = await response.json();
+//     setIsPositiveText(json.label === "pos");
+//   }
+//
+//   useEffect(() => {
+//     isPositive("Some text to check sentiment");
+//   }, []);
+//
+//   return (
+//     <div>
+//       <h1>Hero section</h1>
+//       <p>{isPositiveText ? "Positive sentiment" : "Negative sentiment"}</p>
+//     </div>
+//   );
+// }
+
+/*
+
+              <code>
+                {`
+                // Determine whether the sentiment of text is positive
+async function isPositive(text) {
+  const response = await fetch("http://text-processing.com/api/sentiment/", {
+    method: "POST",
+    body: \`text=\${text}\`,
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  });
+  const json = await response.json();
+  return json.label === "pos";
+}`}
+              </code>
+*/
+
+// function HeroCopilot() {
+//   return <div className={`min-h-screen w-screen`}>
+//     <div className="my-8 grid h-screen place-content-center space-y-6">
+//       <h1
+//         className={`text-center text-7xl font-extrabold leading-tight tracking-tighter text-primary shadow ${inter.className}`}
+//       >
+//         Your AI pair programmer
+//       </h1>
+//       {/* <p className="w-fit max-w-[66ch] place-self-center text-center text-lg text-accent/70">
+//           GitHub Copilot uses the OpenAI Codex to suggest code and entire
+//           functions in real-time, right from your editor.
+//         </p> */}
+//       <p className="w-fit max-w-[66ch] place-self-center text-center text-lg text-accent/70">
+//         As a software developer, I take advantage of open source and
+//         AI-powered tools that utilizes the power of ... to help me write
+//         code faster and with greater efficiency.{" "}
+//       </p>
+//       <p className="w-fit max-w-[66ch] place-self-center text-center text-lg text-accent/70">
+//         By suggesting code and entire functions in real-time, right from
+//         my favorite code editor,
+// I am able to focus on the big picture and
+//         tackle complex problems with ease.
+//         <br />
+//         But that does leave one factor in the open...
+//       </p>
+//     </div>
+//   </div>;
+// }
+
 export default function IndexPage() {
   return (
     <Layout title="Home | ">
+      <span className="easter_egg hidden">
+        Empowering innovators to create at the speed of inspiration is my forte.
+        As a frontend developer, I harness the power of open source and
+        AI-driven tools to write code faster and more efficiently, allowing me
+        to focus on the big picture and effortlessly tackle complex problems.
+      </span>
       <div className={`grid place-items-center space-y-[12rem] font-sans`}>
+        {/* <HeroCopilot/> */}
+        <div className={`min-h-screen w-screen`}>
+          <div className="grid w-full place-content-evenly space-y-3 ">
+            <h1
+              className={`m-0 w-[100vw] pr-4 text-center text-[43vw] font-extrabold leading-[1]
+              -tracking-[0.1ch] text-primary shadow ${inter.className}`}
+            >
+              hello
+            </h1>
+            <h2
+              className={`text-center text-5xl  font-extrabold tracking-tighter text-primary ${inter.className}`}
+            >
+              Design. Develop. Ship.
+            </h2>
+            <p
+              className={`max-w-[75vw] place-self-center text-center text-lg text-primary brightness-[70%]`}
+            >
+              Empowering innovators to create at the speed of inspiration.{" "}
+              <br />
+              As a software developer, I use open source and AI tools to
+              architect efficient code and tackle complex problems with ease.
+            </p>
+            <button>Start Deploying</button>
+            <button>Works</button>
+          </div>
+        </div>
         <div className={`min-h-screen w-screen`}>
           <div className="absolute left-1/2">
             <GitLineVar gradientCss={GRADIENT_VAR.violet} />
@@ -626,6 +758,7 @@ export default function IndexPage() {
               <button className="w-full rounded-full text-end text-xl text-primary">
                 hello@lloydlobo.com
               </button>
+              <EmailCopy />
             </div>
           </Section>
         </div>
