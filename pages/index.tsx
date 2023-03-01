@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 
+import { useRef } from "react";
 import { Fragment } from "react";
 import {
   BriefcaseIcon,
@@ -26,6 +27,201 @@ import RandomizedText from "@/components/effects/RandomizedText";
 
 const inter = Inter({ subsets: ["latin"] });
 // https://github.com/anuraghazra/github-readme-stats
+
+const WorkProjects = () => {
+  const repos = [
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "mausam",
+      description: "A weather update desktop notifier made with Rust",
+    },
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "neura-driver",
+      description:
+        "A simple self-driving car application with a neural network",
+    },
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "geomeasure",
+      description:
+        "Geomeasure measures distance using GPS and that too without",
+    },
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "proxymate-bot",
+      description: "",
+    },
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "penny",
+      description: "",
+    },
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "okejoke",
+      description: "",
+    },
+    {
+      username: "lloydlobo",
+      tag: "development",
+      repo: "rssh",
+      description: "",
+    },
+  ];
+
+  let numberOfLists = 1;
+  return (
+    <>
+      <section className="mx-auto my-12 grid grid-cols-1 dark:text-secondary sm:gap-12 sm:p-1 lg:grid-cols-2">
+        {repos.map(({ username, repo, tag, description }, index) => (
+          <a
+            key={`project-${index}`}
+            className="flex bg-white p-4 py-6 px-2 shadow-md transition duration-500 hover:shadow-xl dark:border-accent dark:bg-black/20 dark:shadow-lg sm:rounded-xl sm:p-6 dark:sm:border dark:hover:sm:shadow-indigo-500/20
+          "
+          >
+            <div className="mr-2 flex-initial flex-shrink-0 scale-90 justify-center sm:mr-3">
+              <img
+                src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="128"
+                height="128"
+                alt=""
+                className="aspect-square rounded-xl object-cover"
+              />
+            </div>
+            <div className="my-3 mr-2 flex flex-col justify-center sm:mt-[-1px]">
+              <h3
+                className={`text-5xl  font-extrabold tracking-tighter  ${inter.className}`}
+              >
+                {repo}
+              </h3>
+              {/* <h2 className="mb-6 text-7xl font-bold">{repo}</h2> */}
+              <h3 className="text-lg font-thin">{description}</h3>
+              {/* <a
+                href="#"
+                className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
+              >
+                View Project{" "}
+                <span className="hidden" aria-hidden="true">
+                  &rarr;
+                </span>
+              </a> */}
+            </div>
+          </a>
+        ))}
+      </section>
+
+      {/* <div className="mx-auto h-[50vw] w-[50vw] transition-all duration-700 ease-in hover:bg-accent/10">
+              <img
+                src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+                className={`absolute top-0 left-0 h-full w-full object-cover sepia-[40%] transition-all duration-700 ease-in-out`}
+              />
+            </div> */}
+      {/* {repos.map(({ username, repo, tag }, index) => (
+        <div key={index + repo} className="project grid space-y-20 ">
+          <div className="project-titles">
+            <h2 className="mb-6 text-7xl font-bold">{repo}</h2>
+            <h3 className="text-xl font-thin uppercase">{tag}</h3>
+          </div>
+          <a
+            href="#"
+            className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
+          >
+            View Project{" "}
+            <span className="hidden" aria-hidden="true">
+              &rarr;
+            </span>
+          </a>
+
+          <div className="mx-auto grid w-fit place-items-center transition-all duration-700 ease-in hover:bg-accent/10">
+            <img
+              // src="/vercel.svg"
+              src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt=""
+              className={`-z-10 w-[50vw] object-cover sepia-[40%] transition-all duration-700 ease-in-out`}
+            />
+          </div>
+        </div>
+      ))} */}
+    </>
+  );
+};
+
+function StickyProjectTitle({ title }) {
+  return (
+    <>
+      <h3 className="sticky">{title}</h3>
+    </>
+  );
+}
+
+const FixedImage = ({ imageUrl, scrollPosition }) => {
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset >= scrollPosition) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollPosition]);
+
+  const fixedClasses = isFixed ? "fixed top-0 left-0 w-full" : "";
+
+  return (
+    <img
+      src={imageUrl}
+      alt="Fixed Image"
+      className={`${fixedClasses} transition-all duration-300 ease-in-out`}
+    />
+  );
+};
+
+function ImageGallery() {
+  return (
+    <>
+      <div className="grid grid-flow-col grid-cols-3 grid-rows-2 gap-8">
+        <div className="-rotate-6 scale-110 transform blur ">
+          <img src="/vercel.svg" alt="" loading="lazy" />
+        </div>
+        <div className="translate-y-15 col-start-3 translate-x-2 rotate-6 scale-75 transform">
+          <img src="/vercel.svg" alt="" loading="lazy" />
+        </div>
+        <div className="translate-y-11 scale-150 transform">
+          <img src="/vercel.svg" alt="" loading="lazy" />
+        </div>
+        <div className="translate-y-24 transform">
+          <img src="/vercel.svg" alt="" loading="lazy" />
+        </div>
+        <div className="col-span-2 col-start-2 row-start-1 translate-x-20 translate-y-4 transform">
+          <img src="/vercel.svg" alt="" loading="lazy" />
+        </div>
+      </div>
+    </>
+  );
+}
+// https://d3-graph-gallery.com/graph/treemap_basic.html
+// name,parent,value
+// Origin,,
+// grp1,Origin,12
+// grp2,Origin,23
+// grp3,Origin,11
+// grp4,Origin,40
+// grp5,Origin,30
+// grp6,Origin,25
+const TREEMAP_DATA_URL =
+  "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_hierarchy_1level.csv";
 
 function AsteriskDecor() {
   return (
@@ -619,40 +815,39 @@ export default function IndexPage() {
   );
 }
 
-const WorkProjects = () => {
-  const repos = [
-    { username: "lloydlobo", tag: "development", repo: "mausam" },
-    { username: "lloydlobo", tag: "development", repo: "neura-driver" },
-    { username: "lloydlobo", tag: "development", repo: "geomeasure" },
-    { username: "lloydlobo", tag: "development", repo: "proxymate-bot" },
-    { username: "lloydlobo", tag: "development", repo: "penny" },
-    { username: "lloydlobo", tag: "development", repo: "okejoke" },
-    { username: "lloydlobo", tag: "development", repo: "rssh" },
-  ];
+const StickyTitle = ({ title, ctaText, ctaUrl }) => {
+  const [isSticky, setIsSticky] = useState(false);
+  const ref = useRef(null);
 
-  let numberOfLists = 1;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset >= ref.current.offsetTop) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const stickyClasses = isSticky ? "sticky top-0 z-10 bg-white py-4" : "";
+
   return (
-    <>
-      <div className="col-start-2 col-end-3 min-h-[300vh] w-screen space-y-60 place-self-center text-center">
-        {repos.map(({ username, repo, tag }, index) => (
-          <div key={index + repo} className="project grid space-y-20">
-            <div>
-              <h2 className="mb-6 text-7xl font-bold">{repo}</h2>
-              <h3 className="text-xl font-thin uppercase">{tag}</h3>
-            </div>
-
-            <a
-              href="#"
-              className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
-            >
-              View Project{" "}
-              <span className="hidden" aria-hidden="true">
-                &rarr;
-              </span>
-            </a>
-          </div>
-        ))}
-      </div>
-    </>
+    <div ref={ref} className="relative">
+      <h2
+        className={`${stickyClasses} transition-all duration-300 ease-in-out`}
+      >
+        {title}
+      </h2>
+      <a
+        href={ctaUrl}
+        className={`${
+          isSticky ? "opacity-100" : "opacity-0"
+        } absolute top-0 right-0 mt-4 mr-4 rounded bg-blue-500 py-2 px-4 font-bold text-white transition-all duration-300 ease-in-out hover:bg-blue-600`}
+      >
+        {ctaText}
+      </a>
+    </div>
   );
 };
