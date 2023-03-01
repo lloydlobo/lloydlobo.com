@@ -737,63 +737,111 @@ export default function IndexPage() {
         </div>
 
         <div className={`min-h-screen w-screen`}>
-          <div className="relative grid w-full">
-            <h2
-              className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal
+          <Section>
+            <div className="relative grid w-full">
+              <h2
+                className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
                 before:text-sm before:content-['01']
                 "
-            >
-              Work
-            </h2>
-          </div>
-          <div className="text-secondary">
-            <WorkProjects />
-          </div>
+              >
+                Work
+              </h2>
+            </div>
+            <div className="text-secondary">
+              <WorkProjects />
+            </div>
+          </Section>
         </div>
 
         <div className={`min-h-screen w-screen`}>
-          <div className="relative grid w-full">
-            <h2
-              className="mb-40 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal
+          <Section>
+            <div className="relative grid w-full">
+              <h2
+                className="mb-40 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary
                 after:text-sm after:content-['02']
                 "
-            >
-              About
-            </h2>
-          </div>
-          <div className="grid text-secondary lg:place-items-center">
-            <h2
-              className={`text-left text-5xl font-semibold tracking-tighter text-primary ${inter.className}`}
-            >
-              Developer by trade,
-              <br />
-              curator by heart
-            </h2>
-            <div className="grid grid-cols-2 space-y-12 text-xl lg:grid-cols-3">
-              <ul className={`hidden`}>
-                <li className="">
-                  <Link href={`#work`}>Work</Link>
-                </li>
-                <li className="">
-                  <Link href={`#work`}>About</Link>
-                </li>
-                <li className="">
-                  <Link href={`#work`}>Contact</Link>
-                </li>
-              </ul>
-              <p className="col-start-1 pr-12 lg:col-start-2">
-                I'm a software developer who's passionate about building great
-                stuff. My focus is on creating innovative solutions that exceed
-                client expectations.
-              </p>
-              <p className="pr-12">
-                My goal is to help businesses and individuals achieve their
-                goals by adopting new ideas and approaches that they may have
-                previously avoided. By working together, we can build trust and
-                create a positive and productive work environment.
-              </p>
+              >
+                About
+              </h2>
             </div>
-          </div>
+            <div className="grid text-secondary lg:place-items-center">
+              <h2
+                className={`text-left text-5xl font-semibold tracking-tighter text-primary ${inter.className}`}
+              >
+                Developer by trade,
+                <br />
+                curator by heart
+              </h2>
+              <div className="grid grid-cols-2 space-y-12 text-xl lg:grid-cols-3">
+                <ul className={`hidden`}>
+                  <li className="">
+                    <Link href={`#work`}>Work</Link>
+                  </li>
+                  <li className="">
+                    <Link href={`#work`}>About</Link>
+                  </li>
+                  <li className="">
+                    <Link href={`#work`}>Contact</Link>
+                  </li>
+                </ul>
+                <p className="col-start-1 pr-12 lg:col-start-2">
+                  I'm a software developer who's passionate about building great
+                  stuff. My focus is on creating innovative solutions that
+                  exceed client expectations.
+                </p>
+                <p className="pr-12">
+                  My goal is to help businesses and individuals achieve their
+                  goals by adopting new ideas and approaches that they may have
+                  previously avoided. By working together, we can build trust
+                  and create a positive and productive work environment.
+                </p>
+              </div>
+
+              <div className="relative grid w-[61vw] space-y-20 tracking-widest ">
+                <div className="">
+                  <h3
+                    className="mb-8 flex w-screen items-baseline justify-between place-self-end
+                  border-b-[2px] border-primary py-3 text-start text-base font-bold uppercase text-primary "
+                  >
+                    Expertise
+                  </h3>
+                  <ul className={`uppercase text-primary`}>
+                    <li className="">
+                      <Link href={`#work`}>Front-end development</Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>CLI Apps</Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className=" ">
+                  <h3
+                    className="mb-10 flex w-screen items-baseline justify-between place-self-end
+                  border-b-[2px] border-primary py-3 text-start text-base font-bold uppercase text-primary "
+                  >
+                    Stacks
+                  </h3>
+                  <ul className={`uppercase text-primary`}>
+                    <li className="">
+                      <Link href={`#work`}>NextJS React JamStack</Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>
+                        Rust, Go, Python, JavaScript, TypeScript
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>Neovim, VS Code, bash</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Section>
         </div>
 
         <div className={`min-h-screen w-screen`}>
@@ -801,7 +849,16 @@ export default function IndexPage() {
             <div
               className={`grid h-[100vh] w-screen place-items-center md:h-screen`}
             >
-              <h2
+              <div className="relative grid w-full">
+                <h2
+                  className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
+                before:text-sm before:content-['03']
+                "
+                >
+                  Contact
+                </h2>
+              </div>
+              <h3
                 className={`text-5xl font-bold tracking-tight text-primary hover:text-accent md:text-[5.3rem]`}
               >
                 Let's
@@ -809,7 +866,7 @@ export default function IndexPage() {
                 work
                 <br />
                 together
-              </h2>
+              </h3>
               <div className="relative ml-auto">
                 <div className={`relative w-full -rotate-[55deg] text-primary`}>
                   <div
