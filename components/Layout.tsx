@@ -29,37 +29,23 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </Head>
     <header>
       <NavbarDark />
-      <div className={`hidden grid place-items-center`}>
-        <div className={`${styles.description} space-y-4`}>
-          <nav className={``}>
-            <Link href="/">Home</Link> | <Link href="/about">About</Link> |{" "}
-            <Link href="/users">Users List</Link> |{" "}
-            <a href="/api/users">Users API</a>
-          </nav>
-        </div>
-        <div className="grid pt-8 place-items-center">
-          <SearchBar />
-        </div>
-      </div>
     </header>
 
     <div className={styles.main}>{children}</div>
 
     <footer className={`space-y-4 py-4`}>
-      <h3 className={`text-amber-200 text-xl text-start place-self-start`}>
+      <h3 className={`place-self-start text-start text-xl text-amber-200`}>
         Connect
       </h3>
-      <hr className={`text-amber-200 w-full h-[1px]`} />
-      <div className={`grid grid-cols-2 w-full py-4`}>
-        <div className={`grid w-full text-amber-200 text-xl `}>
-          <ul>
-            <li>
-              <a href="https://github.com/lloydlobo">Github</a>
-            </li>
-            <li>
-              <a href="https://github.com/lloydlobo">Email</a>
-            </li>
-          </ul>
+      <hr className={`h-[1px] w-full text-amber-200`} />
+      <div className={`grid w-full grid-cols-2 py-4`}>
+        <div className={`grid w-full text-xl text-amber-200 `}>
+          <div>
+            <a href="https://github.com/lloydlobo">Github</a>
+          </div>
+          <div>
+            <a href="https://github.com/lloydlobo">Email</a>
+          </div>
         </div>
 
         <div className={`place-self-end`}>

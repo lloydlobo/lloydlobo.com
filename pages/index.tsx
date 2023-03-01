@@ -86,7 +86,7 @@ const WorkProjects = () => {
       <section className="mx-auto my-12 grid grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 sm:p-1 lg:grid-cols-2">
         {repos.map(({ username, repo, tags, description }, index) => (
           <a
-            key={`project-${index}`}
+            key={`project-${index}${repo}`}
             className={`
             ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""}
             ${
@@ -125,40 +125,6 @@ const WorkProjects = () => {
           </a>
         ))}
       </section>
-
-      {/* <div className="mx-auto h-[50vw] w-[50vw] transition-all duration-700 ease-in hover:bg-accent/10">
-              <img
-                src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt=""
-                className={`absolute top-0 left-0 h-full w-full object-cover sepia-[40%] transition-all duration-700 ease-in-out`}
-              />
-            </div> */}
-      {/* {repos.map(({ username, repo, tag }, index) => (
-        <div key={index + repo} className="project grid space-y-20 ">
-          <div className="project-titles">
-            <h2 className="mb-6 text-7xl font-bold">{repo}</h2>
-            <h3 className="text-xl font-thin uppercase">{tag}</h3>
-          </div>
-          <a
-            href="#"
-            className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
-          >
-            View Project{" "}
-            <span className="hidden" aria-hidden="true">
-              &rarr;
-            </span>
-          </a>
-
-          <div className="mx-auto grid w-fit place-items-center transition-all duration-700 ease-in hover:bg-accent/10">
-            <img
-              // src="/vercel.svg"
-              src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-              alt=""
-              className={`-z-10 w-[50vw] object-cover sepia-[40%] transition-all duration-700 ease-in-out`}
-            />
-          </div>
-        </div>
-      ))} */}
     </>
   );
 };
