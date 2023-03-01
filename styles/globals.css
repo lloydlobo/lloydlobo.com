@@ -88,6 +88,9 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+
+  /*  update for 404 page tailwind template  */
+  @apply h-full;
 }
 
 body {
