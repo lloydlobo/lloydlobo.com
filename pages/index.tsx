@@ -739,7 +739,7 @@ export default function IndexPage() {
         <div className={`min-h-screen w-screen`}>
           <div className="relative grid w-full">
             <h2
-              className="mb-60 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal
+              className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal
                 before:text-sm before:content-['01']
                 "
             >
@@ -748,6 +748,51 @@ export default function IndexPage() {
           </div>
           <div className="text-secondary">
             <WorkProjects />
+          </div>
+        </div>
+
+        <div className={`min-h-screen w-screen`}>
+          <div className="relative grid w-full">
+            <h2
+              className="mb-40 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal
+                after:text-sm after:content-['02']
+                "
+            >
+              About
+            </h2>
+          </div>
+          <div className="grid text-secondary lg:place-items-center">
+            <h2
+              className={`text-left text-5xl font-semibold tracking-tighter text-primary ${inter.className}`}
+            >
+              Developer by trade,
+              <br />
+              curator by heart
+            </h2>
+            <div className="grid grid-cols-2 space-y-12 text-xl lg:grid-cols-3">
+              <ul className={`hidden`}>
+                <li className="">
+                  <Link href={`#work`}>Work</Link>
+                </li>
+                <li className="">
+                  <Link href={`#work`}>About</Link>
+                </li>
+                <li className="">
+                  <Link href={`#work`}>Contact</Link>
+                </li>
+              </ul>
+              <p className="col-start-1 pr-12 lg:col-start-2">
+                I'm a software developer who's passionate about building great
+                stuff. My focus is on creating innovative solutions that exceed
+                client expectations.
+              </p>
+              <p className="pr-12">
+                My goal is to help businesses and individuals achieve their
+                goals by adopting new ideas and approaches that they may have
+                previously avoided. By working together, we can build trust and
+                create a positive and productive work environment.
+              </p>
+            </div>
           </div>
         </div>
 
