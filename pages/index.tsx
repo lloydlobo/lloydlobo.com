@@ -1,5 +1,17 @@
 import React, { ReactNode } from "react";
 
+import { Fragment } from "react";
+import {
+  BriefcaseIcon,
+  CalendarIcon,
+  CheckIcon,
+  ChevronDownIcon,
+  CurrencyDollarIcon,
+  LinkIcon,
+  MapPinIcon,
+  PencilIcon,
+} from "@heroicons/react/20/solid";
+import { Menu, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -462,43 +474,93 @@ async function isPositive(text) {
 //   </div>;
 // }
 
+// <span className="easter_egg hidden">
+//   Empowering innovators to create at the speed of inspiration is my forte.
+//   As a frontend developer, I harness the power of open source and
+//   AI-driven tools to write code faster and more efficiently, allowing me
+//   to focus on the big picture and effortlessly tackle complex problems.
+// </span>
 export default function IndexPage() {
   return (
     <Layout title="Home | ">
-      <span className="easter_egg hidden">
-        Empowering innovators to create at the speed of inspiration is my forte.
-        As a frontend developer, I harness the power of open source and
-        AI-driven tools to write code faster and more efficiently, allowing me
-        to focus on the big picture and effortlessly tackle complex problems.
-      </span>
       <div className={`grid place-items-center space-y-[12rem] font-sans`}>
         {/* <HeroCopilot/> */}
         <div className={`min-h-screen w-screen`}>
-          <div className="grid w-full place-content-evenly space-y-3 ">
-            <h1
-              className={`m-0 w-[100vw] pr-4 text-center text-[43vw] font-extrabold leading-[1]
+          <Section>
+            <div className="grid w-full place-content-evenly space-y-3 ">
+              <h1
+                className={`m-0 w-[100vw] pr-4 text-center text-[43vw] font-extrabold leading-[1]
               -tracking-[0.1ch] text-primary shadow ${inter.className}`}
-            >
-              hello
-            </h1>
-            <h2
-              className={`text-center text-5xl  font-extrabold tracking-tighter text-primary ${inter.className}`}
-            >
-              Design. Develop. Ship.
-            </h2>
-            <p
-              className={`max-w-[75vw] place-self-center text-center text-lg text-primary brightness-[70%]`}
-            >
-              Empowering innovators to create at the speed of inspiration.{" "}
-              <br />
-              As a software developer, I use open source and AI tools to
-              architect efficient code and tackle complex problems with ease.
-            </p>
-            <button>Start Deploying</button>
-            <button>Works</button>
-          </div>
+              >
+                hello
+              </h1>
+              <h2
+                className={`text-center text-5xl  font-extrabold tracking-tighter text-primary ${inter.className}`}
+              >
+                Design. Develop. Ship.
+              </h2>
+              <div className="mt-10 hidden max-w-[50vw] grid-cols-2 items-center justify-center space-x-6 place-self-center">
+                <a
+                  href="#"
+                  className="rounded-md px-3.5 py-2.5 text-sm font-semibold uppercase text-primary underline underline-offset-8 shadow-sm hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                >
+                  Start Deploying <span aria-hidden="true">&rarr;</span>
+                </a>
+                <a
+                  href="#"
+                  className="text-sm font-semibold uppercase text-primary underline underline-offset-8 hover:text-accent"
+                >
+                  Works <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+              <p
+                className={`max-w-[66vw] place-self-center text-center text-lg text-secondary `}
+              >
+                Empowering innovators to create at the speed of inspiration.{" "}
+                <br />
+                As a software developer, I use open source and AI tools to
+                architect efficient code and tackle complex problems with ease.
+              </p>
+
+              <Section>
+                <div className="grid min-h-full place-items-center place-self-center px-12 py-24 text-secondary sm:py-32">
+                  <div className="relative grid w-full">
+                    <p className="mb-20 w-[25vw] border-b-[6px] border-secondary py-4 text-start text-xl font-normal">
+                      Lloyd Lobo
+                    </p>
+                    <div className="grid grid-cols-3 gap-12 text-xl">
+                      <ul className={`space-y-1`}>
+                        <li className="">
+                          <Link href={`#work`}>Work</Link>
+                        </li>
+                        <li className="">
+                          <Link href={`#work`}>About</Link>
+                        </li>
+                        <li className="">
+                          <Link href={`#work`}>Contact</Link>
+                        </li>
+                      </ul>
+                      <p>
+                        I'm a software developer who's passionate about building
+                        great stuff. My focus is on creating innovative
+                        solutions that exceed client expectations.
+                      </p>
+                      <p>
+                        My goal is to help businesses and individuals achieve
+                        their goals by adopting new ideas and approaches that
+                        they may have previously avoided. By working together,
+                        we can build trust and create a positive and productive
+                        work environment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </Section>
+            </div>
+          </Section>
         </div>
-        <div className={`min-h-screen w-screen`}>
+
+        <div id="work" className={`min-h-screen w-screen`}>
           <div className="absolute left-1/2">
             <GitLineVar gradientCss={GRADIENT_VAR.violet} />
           </div>
