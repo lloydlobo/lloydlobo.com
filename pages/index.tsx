@@ -560,6 +560,39 @@ export default function IndexPage() {
           </Section>
         </div>
 
+        <Section>
+          <div className="grid min-h-full w-screen place-items-center place-self-center px-12 py-24 text-secondary sm:py-32">
+            <div className="relative grid w-full">
+              <h2
+                className="mb-60 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal
+                before:text-sm before:content-['01']
+                "
+              >
+                Work
+              </h2>
+            </div>
+            <div className="grid grid-cols-3 place-items-center gap-12 text-xl">
+              <div className="col-start-2 col-end-3 place-self-center text-center">
+                <div className="grid justify-between space-y-20">
+                  <div className="flex flex-col">
+                    <h2 className="mb-6 text-7xl font-bold">Mausam</h2>
+                    <h3 className="text-xl font-thin uppercase">Development</h3>
+                  </div>
+                  <a
+                    href="#"
+                    className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
+                  >
+                    View Project{" "}
+                    <span className="hidden" aria-hidden="true">
+                      &rarr;
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
         <div id="work" className={`min-h-screen w-screen`}>
           <div className="absolute left-1/2">
             <GitLineVar gradientCss={GRADIENT_VAR.violet} />
