@@ -549,9 +549,7 @@ const Section = ({ children }: PropsSection) => {
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.5 }}
     >
-      <div className={`grid place-items-center border border-red-400/0`}>
-        {children}
-      </div>
+      <div className={`mx-auto border border-red-400/0 px-8`}>{children}</div>
     </motion.div>
   );
 };
@@ -890,18 +888,16 @@ export default function IndexPage() {
 
         <div className={`min-h-screen w-screen`}>
           <Section>
-            <div
-              className={`grid h-[100vh] w-screen place-items-center md:h-screen`}
-            >
-              <div className="relative grid w-full">
-                <h2
-                  className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
+            <div className="relative grid w-full">
+              <h2
+                className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
                 before:text-sm before:content-['03']
                 "
-                >
-                  Contact
-                </h2>
-              </div>
+              >
+                Contact
+              </h2>
+            </div>
+            <div className="flex w-full flex-col items-center space-y-28 text-secondary">
               <h3
                 className={`text-5xl font-bold tracking-tight text-primary hover:text-accent md:text-[5.3rem]`}
               >
@@ -911,7 +907,7 @@ export default function IndexPage() {
                 <br />
                 together
               </h3>
-              <div className="relative ml-auto">
+              <div className=" relative ml-auto">
                 <div className={`relative w-full -rotate-[55deg] text-primary`}>
                   <div
                     className={`absolute bottom-56 left-[30%] h-1/2 -translate-x-1/2`}
@@ -932,6 +928,7 @@ export default function IndexPage() {
                 </div>
                 <EmailCopy />
               </div>
+              {/* <WorkProjects /> */}
             </div>
           </Section>
         </div>

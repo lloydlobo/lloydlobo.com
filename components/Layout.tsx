@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-import { SearchBar } from "@/components/search/SearchBar";
+// import styles from "@/styles/Home.module.css";
+// import { SearchBar } from "@/components/search/SearchBar";
 import { NavbarDark } from "@/components/layout/NavbarDark";
 
 type Props = {
@@ -31,15 +31,13 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       <NavbarDark />
     </header>
 
-    <div className={styles.main}>{children}</div>
+    {children}
 
     <footer className={`space-y-4 py-4`}>
-      <h3 className={`place-self-start text-start text-xl text-amber-200`}>
-        Connect
-      </h3>
-      <hr className={`h-[1px] w-full text-amber-200`} />
+      <h3 className={`place-self-start text-start text-xl`}>Connect</h3>
+      <hr className={`h-[1px] w-full border-none bg-primary`} />
       <div className={`grid w-full grid-cols-2 py-4`}>
-        <div className={`grid w-full text-xl text-amber-200 `}>
+        <div className={`grid w-full text-xl`}>
           <div>
             <a href="https://github.com/lloydlobo">Github</a>
           </div>

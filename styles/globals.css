@@ -91,16 +91,15 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
+  /* color: rgb(var(--foreground-rgb)); */
+  /* background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
-  @apply bg-gradient-to-b from-on-primary to-on-primary/90 bg-local;
-  /* Padding for block. Space above header, below footer */
-  /* @apply py-12; */
+    rgb(var(--background-start-rgb)); */
+  /* @apply bg-gradient-to-b from-on-primary to-on-primary/90 bg-local; */
+    @apply text-primary bg-on-primary;
 }
 
 footer {
