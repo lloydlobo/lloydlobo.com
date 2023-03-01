@@ -779,9 +779,9 @@ export default function IndexPage() {
               >
                 Developer by trade,
                 <br />
-                curator by heart
+                creator by heart
               </h2>
-              <div className="grid grid-cols-2 space-y-12 text-xl lg:grid-cols-3">
+              <div className="grid grid-cols-2 space-y-12 text-lg leading-normal tracking-wide lg:grid-cols-3">
                 <ul className={`hidden`}>
                   <li className="">
                     <Link href={`#work`}>Work</Link>
@@ -794,20 +794,24 @@ export default function IndexPage() {
                   </li>
                 </ul>
                 <p className="col-start-1 pr-12 lg:col-start-2">
-                  I'm a software developer who's passionate about building great
-                  stuff. My focus is on creating innovative solutions that
-                  exceed client expectations.
+                  As a developer, I am also a creator. This{" "}
+                  <span className="font-bold italic">
+                    term encapsulates the full spectrum{"... "}
+                  </span>
+                  of my creative endeavors — from designing software and
+                  building apps to producing digital art and music for fun.
                 </p>
                 <p className="pr-12">
-                  My goal is to help businesses and individuals achieve their
-                  goals by adopting new ideas and approaches that they may have
-                  previously avoided. By working together, we can build trust
-                  and create a positive and productive work environment.
+                  Thoroughly understanding your medium is crucial. When
+                  technology and ideas blend, products excel{" "}
+                  <span className="text-xs">(like Apple)</span>. Each project
+                  reflects my unique blend of technical expertise and artistic
+                  vision — resulting in functional and visually stunning work.
                 </p>
               </div>
 
               <div className="relative grid w-[61vw] space-y-20 tracking-widest ">
-                <div className="">
+                <div className="mt-32">
                   <h3
                     className="mb-8 flex w-screen items-baseline justify-between place-self-end
                   border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
