@@ -90,7 +90,7 @@ const WorkProjects = () => {
   let isCardLike = false;
   return (
     <>
-      <section className="mx-auto my-12 grid grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 sm:p-1 lg:grid-cols-2">
+      <section className="mx-auto my-12 grid w-full grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2">
         {repos.map(({ username, repo, tags, description, img }, index) => (
           <a
             href="/"
@@ -99,10 +99,10 @@ const WorkProjects = () => {
             ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""}
             ${
               isCardLike
-                ? "bg-white shadow-md  hover:shadow-xl   dark:bg-black/20 dark:shadow-lg dark:sm:border "
+                ? "bg-white shadow-md  hover:shadow-xl dark:bg-black/20 dark:shadow-lg dark:sm:border "
                 : ""
             }
-            flex p-4 py-6 px-2 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20
+            flex p-4 py-6 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20
          `}
           >
             <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.70] justify-center grayscale-[03%] sm:mr-3">
@@ -115,7 +115,7 @@ const WorkProjects = () => {
                 className="aspect-square rounded-[2.2rem] object-cover brightness-[80%] saturate-150 sepia-[30%]"
               />
             </div>
-            <div className="my-3 mr-2 flex flex-col justify-center sm:mt-[-1px]">
+            <div className="my-3 mr-2 flex-col justify-center sm:mt-[-1px] xl:flex">
               <h3
                 className={`text-5xl font-extrabold uppercase tracking-tighter text-primary ${inter.className}`}
               >
@@ -539,7 +539,7 @@ type PropsSection = {
 // In this example, the useInView hook returns a ref that you can attach to the motion.section element and a boolean value inView that indicates whether the section is currently in view based on the threshold parameter. The animate prop of the motion.section element uses a ternary operator to set the opacity and y properties based on the inView value, which creates a fade-in and slide-up animation effect when the section enters the viewport. The transition prop sets the duration of the animation.
 const Section = ({ children }: PropsSection) => {
   const [ref, inView] = useInView({
-    threshold: 0.45, // when section is 45% visible
+    threshold: 0.3, // when section is 45% visible
     triggerOnce: true, // only trigger once
   });
 
@@ -547,9 +547,9 @@ const Section = ({ children }: PropsSection) => {
     <motion.div
       ref={ref}
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.7 }}
     >
-      <div className={`mx-auto border border-red-400/0 px-8`}>{children}</div>
+      <div className={`mx-auto px-8`}>{children}</div>
     </motion.div>
   );
 };
@@ -697,121 +697,54 @@ async function isPositive(text) {
 export default function IndexPage() {
   return (
     <Layout title="Home | ">
-      <div className={`grid place-items-center space-y-[12rem] font-sans`}>
+      <div className={`mx-auto space-y-[12rem] font-sans`}>
         {/* <HeroCopilot/> */}
-        <div className={`min-h-screen w-screen`}>
-          <Section>
-            <div className="grid w-full place-content-evenly space-y-3 ">
-              <h1
-                className={`m-0 w-[100vw] pr-4 text-center text-[43vw] font-extrabold leading-[1]
-              -tracking-[0.1ch] text-primary shadow ${inter.className}`}
+        <Section>
+          <div className="mx-auto w-full space-y-3 ">
+            <h1
+              className={`m-0 mx-auto pr-4 text-center text-[43vw] font-extrabold leading-[1] -tracking-[0.1ch]
+              text-primary shadow ${inter.className}`}
+            >
+              hello
+            </h1>
+            <h2
+              className={`text-center text-5xl font-extrabold tracking-tighter text-primary ${inter.className}`}
+            >
+              Design. Develop. Ship.
+            </h2>
+            <div className="mt-10 hidden max-w-[50vw] grid-cols-2 items-center justify-center space-x-6 place-self-center">
+              <a
+                href="#"
+                className="rounded-md  py-2.5 text-sm font-semibold uppercase text-primary underline underline-offset-8 shadow-sm hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                hello
-              </h1>
-              <h2
-                className={`text-center text-5xl font-extrabold tracking-tighter text-primary ${inter.className}`}
+                Start Deploying <span aria-hidden="true">&rarr;</span>
+              </a>
+              <a
+                href="#"
+                className="text-sm font-semibold uppercase text-primary underline underline-offset-8 hover:text-accent"
               >
-                Design. Develop. Ship.
-              </h2>
-              <div className="mt-10 hidden max-w-[50vw] grid-cols-2 items-center justify-center space-x-6 place-self-center">
-                <a
-                  href="#"
-                  className="rounded-md  py-2.5 text-sm font-semibold uppercase text-primary underline underline-offset-8 shadow-sm hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Start Deploying <span aria-hidden="true">&rarr;</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-sm font-semibold uppercase text-primary underline underline-offset-8 hover:text-accent"
-                >
-                  Works <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-              <p
-                className={`max-w-[66vw] place-self-center text-center text-lg text-secondary `}
-              >
-                Empowering innovators to create at the speed of inspiration.{" "}
-                <br />
-                As a software developer, I use open source and AI tools to
-                architect efficient code and tackle complex problems with ease.
-              </p>
-
-              <Section>
-                <div className="grid place-items-center place-self-center py-24 text-secondary sm:pt-32">
-                  <div className="relative grid w-full">
-                    <p className="mb-20 w-[25vw] border-b-[6px] border-secondary py-4 text-start text-xl font-normal">
-                      Lloyd Lobo
-                    </p>
-                    <div className="grid grid-cols-3 gap-12 text-xl">
-                      <ul className={`space-y-1`}>
-                        <li className="">
-                          <Link href={`#work`}>Work</Link>
-                        </li>
-                        <li className="">
-                          <Link href={`#work`}>About</Link>
-                        </li>
-                        <li className="">
-                          <Link href={`#work`}>Contact</Link>
-                        </li>
-                      </ul>
-                      <p>
-                        I'm a software developer who's passionate about building
-                        great stuff. My focus is on creating innovative
-                        solutions that exceed client expectations.
-                      </p>
-                      <p>
-                        My goal is to help businesses and individuals achieve
-                        their goals by adopting new ideas and approaches that
-                        they may have previously avoided. By working together,
-                        we can build trust and create a positive and productive
-                        work environment.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </Section>
+                Works <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-          </Section>
-        </div>
+            <p
+              className={`mx-auto max-w-[66vw] text-center text-lg text-secondary `}
+            >
+              Empowering innovators to create at the speed of inspiration.{" "}
+              <br />
+              As a software developer, I use open source and AI tools to
+              architect efficient code and tackle complex problems with ease.
+            </p>
+          </div>
+        </Section>
 
-        <div className={`min-h-screen w-screen`}>
-          <Section>
-            <div className="relative grid w-full">
-              <h2
-                className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
-                before:text-sm before:content-['01']
-                "
-              >
-                Work
-              </h2>
-            </div>
-            <div className="text-secondary">
-              <WorkProjects />
-            </div>
-          </Section>
-        </div>
-
-        <div className={`max-w-screen min-h-screen`}>
-          <Section>
+        <Section>
+          <div className="mx-auto w-full text-secondary sm:pt-32">
             <div className="relative mx-auto w-full">
-              <h2
-                className="mb-40 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary
-                after:text-sm after:content-['02']
-                "
-              >
-                About
-              </h2>
-            </div>
-            <div className="grid text-secondary lg:place-items-center">
-              <h2
-                className={`text-left text-5xl font-semibold tracking-tighter text-primary ${inter.className}`}
-              >
-                Developer by trade,
-                <br />
-                creator by heart
-              </h2>
-              <div className="grid grid-cols-2 space-y-12 text-lg leading-normal tracking-wide lg:grid-cols-3">
-                <ul className={`hidden`}>
+              <p className="mb-20 w-[25vw] border-b-[6px] border-secondary py-4 text-start text-xl font-normal">
+                Lloyd Lobo
+              </p>
+              <div className="grid grid-cols-3 gap-12 text-xl">
+                <ul className={`space-y-1`}>
                   <li className="">
                     <Link href={`#work`}>Work</Link>
                   </li>
@@ -822,116 +755,172 @@ export default function IndexPage() {
                     <Link href={`#work`}>Contact</Link>
                   </li>
                 </ul>
-                <p className="col-start-1 pr-12 lg:col-start-2">
-                  As a developer, I am also a creator. This{" "}
-                  <span className="font-bold italic">
-                    term encapsulates the full spectrum{"... "}
-                  </span>
-                  of my creative endeavors — from designing software and
-                  building apps to producing digital art and music for fun.
+                <p>
+                  I'm a software developer who's passionate about building great
+                  stuff. My focus is on creating innovative solutions that
+                  exceed client expectations.
                 </p>
-                <p className="pr-12">
-                  Thoroughly understanding your medium is crucial. When
-                  technology and ideas blend, products excel{" "}
-                  <span className="text-xs">(like Apple)</span>. Each project
-                  reflects my unique blend of technical expertise and artistic
-                  vision — resulting in functional and visually stunning work.
+                <p>
+                  My goal is to help businesses and individuals achieve their
+                  goals by adopting new ideas and approaches that they may have
+                  previously avoided. By working together, we can build trust
+                  and create a positive and productive work environment.
                 </p>
-              </div>
-
-              <div className="ml-auto w-[81vw]  space-y-20 tracking-widest ">
-                <div className="mt-32">
-                  <h3
-                    className="mb-8 flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
-                  >
-                    Expertise
-                  </h3>
-                  <ul className={`uppercase text-secondary`}>
-                    <li className="">
-                      <Link href={`#work`}>Front-end development</Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>CLI Apps</Link>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className=" ">
-                  <h3
-                    className="mb-10 flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
-                  >
-                    Stacks
-                  </h3>
-                  <ul className={`uppercase text-secondary`}>
-                    <li className="">
-                      <Link href={`#work`}>NextJS React JamStack</Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>
-                        Rust, Go, Python, JavaScript, TypeScript
-                      </Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>Neovim, VS Code, bash</Link>
-                    </li>
-                  </ul>
-                </div>
               </div>
             </div>
-          </Section>
-        </div>
+          </div>
+        </Section>
 
-        <div className={`min-h-screen w-screen`}>
-          <Section>
-            <div className="relative grid w-full">
-              <h2
-                className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
+        <Section>
+          <div className="relative grid w-full">
+            <h2
+              className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
+                before:text-sm before:content-['01']
+                "
+            >
+              Work
+            </h2>
+          </div>
+          <WorkProjects />
+        </Section>
+
+        <Section>
+          <div className="relative mx-auto w-full">
+            <h2
+              className="mb-40 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary
+                after:text-sm after:content-['02']
+                "
+            >
+              About
+            </h2>
+          </div>
+          <div className="w-full  text-secondary lg:place-items-center">
+            <h2
+              className={`text-left text-5xl font-semibold tracking-tighter text-primary ${inter.className}`}
+            >
+              Developer by trade,
+              <br />
+              creator by heart
+            </h2>
+            <div className="grid grid-cols-2 space-y-12 text-lg leading-normal tracking-wide lg:grid-cols-3">
+              <ul className={`hidden`}>
+                <li className="">
+                  <Link href={`#work`}>Work</Link>
+                </li>
+                <li className="">
+                  <Link href={`#work`}>About</Link>
+                </li>
+                <li className="">
+                  <Link href={`#work`}>Contact</Link>
+                </li>
+              </ul>
+              <p className="col-start-1 pr-12 lg:col-start-2">
+                As a developer, I am also a creator. This{" "}
+                <span className="font-bold italic">
+                  term encapsulates the full spectrum{"... "}
+                </span>
+                of my creative endeavors — from designing software and building
+                apps to producing digital art and music for fun.
+              </p>
+              <p className="pr-12">
+                Thoroughly understanding your medium is crucial. When technology
+                and ideas blend, products excel{" "}
+                <span className="text-xs">(like Apple)</span>. Each project
+                reflects my unique blend of technical expertise and artistic
+                vision — resulting in functional and visually stunning work.
+              </p>
+            </div>
+
+            <div className="ml-auto w-[81vw]  space-y-20 tracking-widest ">
+              <div className="mt-32">
+                <h3
+                  className="mb-8 flex items-baseline justify-between place-self-end
+                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
+                >
+                  Expertise
+                </h3>
+                <ul className={`uppercase text-secondary`}>
+                  <li className="">
+                    <Link href={`#work`}>Front-end development</Link>
+                  </li>
+                  <li className="">
+                    <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
+                  </li>
+                  <li className="">
+                    <Link href={`#work`}>CLI Apps</Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className=" ">
+                <h3
+                  className="mb-10 flex items-baseline justify-between place-self-end
+                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
+                >
+                  Stacks
+                </h3>
+                <ul className={`uppercase text-secondary`}>
+                  <li className="">
+                    <Link href={`#work`}>NextJS React JamStack</Link>
+                  </li>
+                  <li className="">
+                    <Link href={`#work`}>
+                      Rust, Go, Python, JavaScript, TypeScript
+                    </Link>
+                  </li>
+                  <li className="">
+                    <Link href={`#work`}>Neovim, VS Code, bash</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        <Section>
+          <div className="relative grid w-full">
+            <h2
+              className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
                 before:text-sm before:content-['03']
                 "
-              >
-                Contact
-              </h2>
-            </div>
-            <div className="flex w-full flex-col items-center space-y-28 text-secondary">
-              <h3
-                className={`text-5xl font-bold tracking-tight text-primary hover:text-accent md:text-[5.3rem]`}
-              >
-                Let's
-                <br />
-                work
-                <br />
-                together
-              </h3>
-              <div className=" relative ml-auto">
-                <div className={`relative w-full -rotate-[55deg] text-primary`}>
-                  <div
-                    className={`absolute bottom-56 left-[30%] h-1/2 -translate-x-1/2`}
+            >
+              Contact
+            </h2>
+          </div>
+          <div className="flex w-full flex-col items-center space-y-28 text-secondary">
+            <h3
+              className={`text-5xl font-bold tracking-tight text-primary hover:text-accent md:text-[5.3rem]`}
+            >
+              Let's
+              <br />
+              work
+              <br />
+              together
+            </h3>
+            <div className=" relative ml-auto">
+              <div className={`relative w-full -rotate-[55deg] text-primary`}>
+                <div
+                  className={`absolute bottom-56 left-[30%] h-1/2 -translate-x-1/2`}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: 0 }}
+                    animate={{ opacity: 1, y: [0, -10, 0] }}
+                    transition={{
+                      duration: 1.5,
+                      yoyo: Infinity,
+                      ease: "easeInOut",
+                      delay: 1,
+                    }}
                   >
-                    <motion.div
-                      initial={{ opacity: 0, y: 0 }}
-                      animate={{ opacity: 1, y: [0, -10, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        yoyo: Infinity,
-                        ease: "easeInOut",
-                        delay: 1,
-                      }}
-                    >
-                      <WritingArrowDown />
-                    </motion.div>
-                  </div>
+                    <WritingArrowDown />
+                  </motion.div>
                 </div>
-                <EmailCopy />
               </div>
-              {/* <WorkProjects /> */}
+              <EmailCopy />
             </div>
-          </Section>
-        </div>
+            {/* <WorkProjects /> */}
+          </div>
+        </Section>
       </div>
     </Layout>
   );
