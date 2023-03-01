@@ -743,8 +743,8 @@ export default function IndexPage() {
               <p className="mb-20 w-[25vw] border-b-[6px] border-secondary py-4 text-start text-xl font-normal">
                 Lloyd Lobo
               </p>
-              <div className="grid grid-cols-3 gap-12 text-xl">
-                <ul className={`space-y-1`}>
+              <div className="grid grid-cols-2 gap-12 text-xl lg:grid-cols-3">
+                <ul className={`hidden space-y-1 lg:block`}>
                   <li className="">
                     <Link href={`#work`}>Work</Link>
                   </li>
