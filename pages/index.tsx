@@ -35,6 +35,7 @@ const WorkProjects = () => {
       tags: ["development", "cli", "linux"],
       repo: "mausam",
       description: "A weather update desktop notifier made with Rust",
+      img: "/mausam.jpg",
     },
     {
       username: "lloydlobo",
@@ -42,6 +43,7 @@ const WorkProjects = () => {
       repo: "neura-driver",
       description:
         "A simple self-driving car application with a neural network",
+      img: "/neura-driver.jpg",
     },
     {
       username: "lloydlobo",
@@ -49,6 +51,7 @@ const WorkProjects = () => {
       repo: "geomeasure",
       description:
         "Geomeasure measures distance using GPS and that too without",
+      img: "/geomeasure.jpg",
     },
     {
       username: "lloydlobo",
@@ -56,18 +59,21 @@ const WorkProjects = () => {
       repo: "proxymate-bot",
       description:
         "Generates phrases in the style of the author using Markov model",
+      img: "/proxymate-bot.jpg",
     },
     {
       username: "lloydlobo",
       tags: ["development", "discord", "python"],
       repo: "penny",
       description: "A no-nonsense budget tracking Discord bot",
+      img: "/penny.jpg",
     },
     {
       username: "lloydlobo",
       tags: ["development", "CLI", "go"],
       repo: "okejoke",
       description: "okejoke gathers jokes on the fly in your CLI",
+      img: "/okejoke.jpg",
     },
     {
       username: "lloydlobo",
@@ -75,6 +81,7 @@ const WorkProjects = () => {
       repo: "rssh",
       description:
         "rssh or Rust Shell allows keeping maintainable bash aliases",
+      img: "/rssh.jpg",
     },
   ];
 
@@ -84,8 +91,9 @@ const WorkProjects = () => {
   return (
     <>
       <section className="mx-auto my-12 grid grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 sm:p-1 lg:grid-cols-2">
-        {repos.map(({ username, repo, tags, description }, index) => (
+        {repos.map(({ username, repo, tags, description, img }, index) => (
           <a
+            href="/"
             key={`project-${index}${repo}`}
             className={`
             ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""}
@@ -99,11 +107,12 @@ const WorkProjects = () => {
           >
             <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.70] justify-center grayscale-[03%] sm:mr-3">
               <img
-                src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                // src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                src={img}
                 width="128"
                 height="128"
                 alt=""
-                className="aspect-square rounded-xl object-cover sepia-[50%]"
+                className="aspect-square rounded-[2.2rem] object-cover brightness-[80%] saturate-150 sepia-[30%]"
               />
             </div>
             <div className="my-3 mr-2 flex flex-col justify-center sm:mt-[-1px]">
@@ -801,11 +810,11 @@ export default function IndexPage() {
                 <div className="">
                   <h3
                     className="mb-8 flex w-screen items-baseline justify-between place-self-end
-                  border-b-[2px] border-primary py-3 text-start text-base font-bold uppercase text-primary "
+                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
                   >
                     Expertise
                   </h3>
-                  <ul className={`uppercase text-primary`}>
+                  <ul className={`uppercase text-secondary`}>
                     <li className="">
                       <Link href={`#work`}>Front-end development</Link>
                     </li>
@@ -821,11 +830,11 @@ export default function IndexPage() {
                 <div className=" ">
                   <h3
                     className="mb-10 flex w-screen items-baseline justify-between place-self-end
-                  border-b-[2px] border-primary py-3 text-start text-base font-bold uppercase text-primary "
+                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
                   >
                     Stacks
                   </h3>
-                  <ul className={`uppercase text-primary`}>
+                  <ul className={`uppercase text-secondary`}>
                     <li className="">
                       <Link href={`#work`}>NextJS React JamStack</Link>
                     </li>
