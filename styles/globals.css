@@ -81,6 +81,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  @apply outline-1 outline-dotted;
 }
 
 html,
