@@ -1,0 +1,226 @@
+function ArchivedTypography() {
+  return (
+    <>
+      <div id="work" className={`min-h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.violet} />
+        </div>
+        <Section>
+          <div
+            className={`grid place-items-center justify-between space-y-1 pt-40 pb-16 md:space-y-12`}
+          >
+            <h1 className={`${inter.className}`}>
+              <div className="flex w-[10ch] flex-wrap place-items-center text-center text-5xl leading-[1.5ch] tracking-wide md:w-full md:text-[7rem] md:leading-[1.6ch]">
+                <div className={``}>
+                  {styleHeading("We want to build great stuff", "stuff")}
+                </div>
+              </div>
+            </h1>
+          </div>
+
+          <div className={`relative`}>
+            <div
+              className={`bottom-[10%] left-[50%] h-1/2 -translate-x-1/2 text-primary first-letter:absolute`}
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 0 }}
+                animate={{ opacity: 1, y: [0, -10, 0] }}
+                transition={{
+                  duration: 1.5,
+                  yoyo: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+              >
+                <WritingArrowDown />
+              </motion.div>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      <div className={`min-h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.cyan} />
+        </div>
+        <Section>
+          <h2
+            className={`-rotate-2 font-cursive text-5xl uppercase italic text-primary md:text-[9rem] `}
+          >
+            And yet ...
+          </h2>
+        </Section>
+      </div>
+
+      <div className={`min-h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.sky} />
+        </div>
+        <Section>
+          <div className="flex flex-wrap place-items-center text-center text-5xl leading-[1.5ch] tracking-wide md:w-[12ch] md:text-[7rem] md:leading-[1.6ch]">
+            <div className={``}>
+              {styleHeading("We all find good reasons not to", "not")}
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      <div className={`h-full min-h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.green} />
+        </div>
+        <Section>
+          <div className="space-y-[12rem]">
+            <div
+              className="flex w-full flex-wrap place-items-center text-start text-5xl
+                leading-[1.5ch] tracking-wide md:text-[5rem] md:leading-[1.6ch]"
+            >
+              <div className="relative w-full">
+                {styleHeading(
+                  "... all good, logical reasons to settle.",
+                  "settle."
+                )}
+                <div
+                  className={`absolute right-20 -top-1 grid h-14 w-14 text-primary/70`}
+                >
+                  <AsteriskDecor />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid text-[1.35rem] md:grid-cols-5">
+              <div
+                className={`relative col-start-3 col-end-6 grid space-y-5 text-primary `}
+              >
+                <div
+                  className={`absolute -left-20 -top-10 grid h-14 w-14 text-primary/70`}
+                >
+                  <AsteriskDecor />
+                </div>
+                <p>
+                  Unfortunately, the tendency to settle is self-reinforcing. As
+                  time passes, we learn that avoiding excellence saves trouble
+                  ("MVP or this would do"). This behavior often persists into
+                  adulthood, where it can become a significant obstacle to
+                  achieving success.
+                </p>
+                <p>
+                  This is where we come in. We show leaders and their teams how
+                  adopting creativity with design can be a quicker path to
+                  finding solutions and achieving goals. Our approach is a
+                  shortcut to getting difficult things done, and it works
+                  quickly.
+                </p>
+                <p>
+                  Our clients quickly begin to open up to new ideas and
+                  approaches that they had previously avoided.
+                </p>
+                <p>
+                  Soon, small examples of openness, innovation, and excellence
+                  start to emerge within the group, leading to a positive and
+                  productive work environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      <div className={`min-h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.orange} />
+        </div>
+        <Section>
+          <h2
+            className={`-rotate-6 font-cursive text-5xl uppercase italic text-primary md:text-[9rem] `}
+          >
+            And so ...
+          </h2>
+        </Section>
+      </div>
+
+      <div className={`min-h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.sky} />
+        </div>
+        <Section>
+          <div className="place-items-center text-center text-5xl leading-[2.5ch] tracking-wide md:w-[12ch] md:text-[7rem] md:leading-[1.6ch]">
+            {styleHeading("Excellence spreads", "spreads")}
+          </div>
+        </Section>
+      </div>
+
+      <div className={`h-screen w-screen`}>
+        <div className="absolute left-1/2">
+          <GitLineVar gradientCss={GRADIENT_VAR.green} />
+        </div>
+        <Section>
+          <div className="relative place-items-center text-start text-5xl leading-[1.5ch] tracking-wide md:text-[5rem] md:leading-[1.6ch]">
+            <div>
+              It gets easier and
+              <br />
+              easier to ....
+              <div className={``}>
+                {styleHeading("Revelations build trust.", "trust.")}
+              </div>
+            </div>
+            <div
+              className={`absolute right-2 bottom-5 grid h-14 w-14 text-primary/70`}
+            >
+              <AsteriskDecor />
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      <div>
+        <Section>
+          <div className={`mr-auto grid space-y-4 place-self-start text-start`}>
+            <div className="hidden">
+              <p>
+                I'm a software developer who's passionate about building great
+                stuff. My focus is on creating innovative solutions that exceed
+                client expectations.{" "}
+              </p>
+
+              <p>
+                At times, we all find good reasons to settle, but I believe that
+                avoiding excellence is a self-reinforcing behavior that can
+                hinder success. That's why I take a creative approach to design,
+                using it as a shortcut to getting difficult things done.
+              </p>
+
+              <p>
+                My goal is to help businesses and individuals achieve their
+                goals by adopting new ideas and approaches that they may have
+                previously avoided. By working together, we can build trust and
+                create a positive and productive work environment.
+              </p>
+            </div>
+            <h2 className={`text-5xl font-bold text-primary `}>Highlights</h2>
+            <ul className={`list text-lg text-primary`}>
+              <li>
+                Expertise in front-end development, including HTML, CSS, and
+                JavaScript
+              </li>
+              <li>
+                Experience with popular front-end frameworks like React and
+                Svelte
+              </li>
+              <li>
+                Strong back-end development skills using languages like Rust,
+                Go, Python, and Node.js
+              </li>
+              <li>
+                Experience with cloud platforms like Docker. TODO: Azure and AWS
+              </li>
+              <li>
+                Familiarity with Agile methodologies for software development
+              </li>
+            </ul>
+          </div>
+        </Section>
+      </div>
+    </>
+  );
+}
