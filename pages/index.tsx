@@ -59,7 +59,7 @@ const WorkProjects = () => {
       repo: "proxymate",
       description:
         "Generates phrases in the style of the author using Markov model",
-      img: "/proxymate-bot.jpg",
+      img: "/proxymate.jpg",
     },
     {
       username: "lloydlobo",
@@ -93,7 +93,7 @@ const WorkProjects = () => {
       <section className="mx-auto my-12 grid w-fit grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2">
         {repos.map(({ username, repo, tags, description, img }, index) => (
           <a
-            href="/"
+            href={`https://github.com/${username}/${repo}/`}
             key={`project-${index}${repo}`}
             className={`
             ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""}
