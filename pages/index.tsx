@@ -32,86 +32,95 @@ const WorkProjects = () => {
   const repos = [
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "cli", "linux"],
       repo: "mausam",
       description: "A weather update desktop notifier made with Rust",
     },
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "Neural Network"],
       repo: "neura-driver",
       description:
         "A simple self-driving car application with a neural network",
     },
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "API"],
       repo: "geomeasure",
       description:
         "Geomeasure measures distance using GPS and that too without",
     },
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "python", "discord"],
       repo: "proxymate-bot",
-      description: "",
+      description:
+        "Generates phrases in the style of the author using Markov model",
     },
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "discord", "python"],
       repo: "penny",
-      description: "",
+      description: "A no-nonsense budget tracking Discord bot",
     },
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "CLI", "go"],
       repo: "okejoke",
-      description: "",
+      description: "okejoke gathers jokes on the fly in your CLI",
     },
     {
       username: "lloydlobo",
-      tag: "development",
+      tags: ["development", "rust", "cli"],
       repo: "rssh",
-      description: "",
+      description:
+        "rssh or Rust Shell allows keeping maintainable bash aliases",
     },
   ];
 
   let numberOfLists = 1;
+  let hasBorders = false;
+  let isCardLike = false;
   return (
     <>
-      <section className="mx-auto my-12 grid grid-cols-1 dark:text-secondary sm:gap-12 sm:p-1 lg:grid-cols-2">
-        {repos.map(({ username, repo, tag, description }, index) => (
+      <section className="mx-auto my-12 grid grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 sm:p-1 lg:grid-cols-2">
+        {repos.map(({ username, repo, tags, description }, index) => (
           <a
             key={`project-${index}`}
-            className="flex bg-white p-4 py-6 px-2 shadow-md transition duration-500 hover:shadow-xl dark:border-accent dark:bg-black/20 dark:shadow-lg sm:rounded-xl sm:p-6 dark:sm:border dark:hover:sm:shadow-indigo-500/20
-          "
+            className={`
+            ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""}
+            ${
+              isCardLike
+                ? "bg-white shadow-md  hover:shadow-xl   dark:bg-black/20 dark:shadow-lg dark:sm:border "
+                : ""
+            }
+            flex p-4 py-6 px-2 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20
+         `}
           >
-            <div className="mr-2 flex-initial flex-shrink-0 scale-90 justify-center sm:mr-3">
+            <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.70] justify-center grayscale-[03%] sm:mr-3">
               <img
                 src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 width="128"
                 height="128"
                 alt=""
-                className="aspect-square rounded-xl object-cover"
+                className="aspect-square rounded-xl object-cover sepia-[50%]"
               />
             </div>
             <div className="my-3 mr-2 flex flex-col justify-center sm:mt-[-1px]">
               <h3
-                className={`text-5xl  font-extrabold tracking-tighter  ${inter.className}`}
+                className={`text-5xl font-extrabold uppercase tracking-tighter text-primary ${inter.className}`}
               >
                 {repo}
               </h3>
               {/* <h2 className="mb-6 text-7xl font-bold">{repo}</h2> */}
               <h3 className="text-lg font-thin">{description}</h3>
-              {/* <a
-                href="#"
-                className="text-base font-semibold uppercase tracking-wide underline decoration-accent underline-offset-[10px] hover:text-accent"
-              >
-                View Project{" "}
-                <span className="hidden" aria-hidden="true">
-                  &rarr;
-                </span>
-              </a> */}
+              <div className="mt-2 flex gap-2 text-[12px]">
+                {tags.map((tag, index) => (
+                  <div className="rounded-full bg-on-primary/0 px-2 underline decoration-accent/40 underline-offset-8 ">
+                    {tag}
+                  </div>
+                ))}
+              </div>
             </div>
           </a>
         ))}
@@ -574,8 +583,11 @@ const Section = ({ children }: PropsSection) => {
 
 export const EmailCopy = () => {
   const [isCopied, setIsCopied] = useState(false);
-  const email = "ivanjbdesign@gmail.com";
+  const email = "hello@lloydlobo.com";
 
+  // <button className="w-full rounded-full text-end text-xl text-primary">
+  //   hello@lloydlobo.com
+  // </button>
   const copyToClipboard = () => {
     navigator.clipboard.writeText(email);
     setIsCopied(true);
@@ -583,12 +595,14 @@ export const EmailCopy = () => {
 
   return (
     <div>
-      <div>Email</div>
       <div>
-        <div>{email}</div>
-        <div onClick={copyToClipboard}>
+        <div className="rounded-full text-xl text-primary ">{email}</div>
+        <button
+          className=" w-full rounded-full text-end text-primary underline decoration-accent underline-offset-8 "
+          onClick={copyToClipboard}
+        >
           {isCopied ? "Copied!" : "Copy to clipboard"}
-        </div>
+        </button>
       </div>
     </div>
   );
@@ -691,7 +705,7 @@ export default function IndexPage() {
                 hello
               </h1>
               <h2
-                className={`text-center text-5xl  font-extrabold tracking-tighter text-primary ${inter.className}`}
+                className={`text-center text-5xl font-extrabold tracking-tighter text-primary ${inter.className}`}
               >
                 Design. Develop. Ship.
               </h2>
@@ -785,28 +799,30 @@ export default function IndexPage() {
                 <br />
                 together
               </h2>
-              <div className={`relative w-full -rotate-45 text-primary`}>
-                <div
-                  className={`absolute bottom-[10%] left-[50%] h-1/2 -translate-x-1/2`}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 0 }}
-                    animate={{ opacity: 1, y: [0, -10, 0] }}
-                    transition={{
-                      duration: 1.5,
-                      yoyo: Infinity,
-                      ease: "easeInOut",
-                      delay: 1,
-                    }}
+              <div className="relative ml-auto">
+                <div className={`relative w-full -rotate-[55deg] text-primary`}>
+                  <div
+                    className={`absolute bottom-56 left-[30%] h-1/2 -translate-x-1/2`}
                   >
-                    <WritingArrowDown />
-                  </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, y: 0 }}
+                      animate={{ opacity: 1, y: [0, -10, 0] }}
+                      transition={{
+                        duration: 1.5,
+                        yoyo: Infinity,
+                        ease: "easeInOut",
+                        delay: 1,
+                      }}
+                    >
+                      <WritingArrowDown />
+                    </motion.div>
+                  </div>
                 </div>
+                <EmailCopy />
               </div>
-              <button className="w-full rounded-full text-end text-xl text-primary">
+              {/* <button className="w-full rounded-full text-end text-xl text-primary">
                 hello@lloydlobo.com
-              </button>
-              <EmailCopy />
+              </button> */}
             </div>
           </Section>
         </div>
