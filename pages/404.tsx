@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Page404() {
   return (
     <>
@@ -21,18 +23,18 @@ export default function Page404() {
             Sorry, we couldn't find the page you're looking for.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="#"
+            <Link
+              href="/"
               className="rounded-md  px-3.5 py-2.5 text-sm font-semibold underline decoration-accent underline-offset-8 shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 dark:text-primary"
             >
               Go back home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              href="/contact"
               className="text-sm font-semibold text-gray-900 underline  decoration-accent underline-offset-8 dark:text-primary"
             >
               Contact support <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </div>
       </main>
