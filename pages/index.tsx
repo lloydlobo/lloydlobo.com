@@ -794,27 +794,19 @@ export default function IndexPage() {
               About
             </h2>
           </div>
-          <div className="w-full  text-secondary lg:place-items-center">
-            <h2
-              className={`text-left text-5xl font-semibold tracking-tighter text-primary ${inter.className}`}
-            >
-              Developer by trade,
-              <br />
-              creator by heart
-            </h2>
+          <div className="w-full text-secondary lg:place-items-center">
+            <div className="grid lg:grid-cols-3">
+              <h2
+                className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 ${inter.className}`}
+              >
+                Developer by trade,
+                <br />
+                creator by heart
+              </h2>
+            </div>
             <div className="grid grid-cols-2 space-y-12 text-lg leading-normal tracking-wide lg:grid-cols-3">
-              <ul className={`hidden`}>
-                <li className="">
-                  <Link href={`#work`}>Work</Link>
-                </li>
-                <li className="">
-                  <Link href={`#work`}>About</Link>
-                </li>
-                <li className="">
-                  <Link href={`#work`}>Contact</Link>
-                </li>
-              </ul>
-              <p className="col-start-1 pr-12 lg:col-start-2">
+              <div className="ghost"></div>
+              <p className="relative col-start-1 pr-12 lg:-left-10 lg:col-start-2">
                 As a developer, I am also a creator. This{" "}
                 <span className="font-bold italic">
                   term encapsulates the full spectrum{"... "}
@@ -831,7 +823,7 @@ export default function IndexPage() {
               </p>
             </div>
 
-            <div className="ml-auto w-[81vw]  space-y-20 tracking-widest ">
+            <div className="ml-auto w-[75vw]  space-y-20 tracking-widest ">
               <div className="mt-32">
                 <h3
                   className="mb-8 flex items-baseline justify-between place-self-end
