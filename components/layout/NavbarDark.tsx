@@ -46,7 +46,7 @@ export function NavbarDark() {
                         return null;
                       } else {
                         return (
-                          <a
+                          <Link
                             key={item.name + index}
                             href={item.href}
                             className={classNames(
@@ -58,7 +58,7 @@ export function NavbarDark() {
                             aria-current={item.current ? "page" : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         );
                       }
                     })}
@@ -146,22 +146,17 @@ export function NavbarDark() {
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item, index) => (
                 <Disclosure.Button
+                  as="button"
+                  aria-current={item.current ? "page" : undefined}
                   key={item.name + index}
-                  as="a"
-                  href={item.href}
                   className={classNames(
-                    // item.current
-                    //   ? "bg-gray-900 text-primary"
-                    //   : "text-primary decoration-accent underline-offset-8 hover:text-accent hover:underline",
-                    // "rounded-md px-3 py-2 text-sm font-medium"
                     item.current
                       ? "bg-on-primary font-semibold text-accent underline  underline-offset-8"
                       : "text-secondary hover:bg-on-primary hover:text-accent",
                     "block rounded-md px-3 py-2 text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
                 >
-                  {item.name}
+                  <Link href={item.href}>{item.name}</Link>
                 </Disclosure.Button>
               ))}
             </div>
