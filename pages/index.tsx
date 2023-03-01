@@ -791,9 +791,9 @@ export default function IndexPage() {
           </Section>
         </div>
 
-        <div className={`min-h-screen w-screen`}>
+        <div className={`max-w-screen min-h-screen`}>
           <Section>
-            <div className="relative grid w-full">
+            <div className="relative mx-auto w-full">
               <h2
                 className="mb-40 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary
                 after:text-sm after:content-['02']
@@ -839,10 +839,10 @@ export default function IndexPage() {
                 </p>
               </div>
 
-              <div className="relative grid w-[61vw] space-y-20 tracking-widest ">
+              <div className="ml-auto w-[81vw]  space-y-20 tracking-widest ">
                 <div className="mt-32">
                   <h3
-                    className="mb-8 flex w-screen items-baseline justify-between place-self-end
+                    className="mb-8 flex items-baseline justify-between place-self-end
                   border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
                   >
                     Expertise
@@ -862,7 +862,7 @@ export default function IndexPage() {
 
                 <div className=" ">
                   <h3
-                    className="mb-10 flex w-screen items-baseline justify-between place-self-end
+                    className="mb-10 flex items-baseline justify-between place-self-end
                   border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
                   >
                     Stacks
@@ -966,7 +966,7 @@ const StickyTitle = ({ title, ctaText, ctaUrl }) => {
         href={ctaUrl}
         className={`${
           isSticky ? "opacity-100" : "opacity-0"
-        } absolute top-0 right-0 mt-4 mr-4 rounded bg-blue-500 py-2 px-4 font-bold text-white transition-all duration-300 ease-in-out hover:bg-blue-600`}
+        } absolute top-0 right-0 mt-4 mr-4 rounded bg-blue-500 py-2 font-bold text-white transition-all duration-300 ease-in-out hover:bg-blue-600`}
       >
         {ctaText}
       </a>

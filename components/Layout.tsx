@@ -33,7 +33,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
 
     {children}
 
-    <footer className={`space-y-4 py-4`}>
+    <footer className={`space-y-4 px-8 py-4`}>
       <h3 className={`place-self-start text-start text-xl`}>Connect</h3>
       <hr className={`h-[1px] w-full border-none bg-primary`} />
       <div className={`grid w-full grid-cols-2 py-4`}>
