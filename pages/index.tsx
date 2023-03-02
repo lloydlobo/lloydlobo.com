@@ -893,7 +893,7 @@ export default function IndexPage() {
             </div>
             <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
               <div className="ghost"></div>
-              <p className="relative col-start-1 pr-12 lg:-left-10 lg:col-start-2">
+              <p className="relative col-start-1 lg:-left-10 lg:col-start-2 lg:pr-12">
                 As a developer, I am also a creator. This{" "}
                 <span className="font-bold italic">
                   term encapsulates the full spectrum{"... "}
@@ -901,7 +901,7 @@ export default function IndexPage() {
                 of my creative endeavors — from designing software and building
                 apps to producing digital art and music for fun.
               </p>
-              <p className="pr-12">
+              <p className="lg:pr-12">
                 Thoroughly understanding your medium is crucial. When technology
                 and ideas blend, products excel{" "}
                 <span className="text-xs">(like Apple)</span>. Each project
