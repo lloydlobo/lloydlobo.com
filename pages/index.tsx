@@ -959,16 +959,39 @@ export default function IndexPage() {
         <Section>
           <div className="relative grid w-full">
             <h2
-              className="mb-48 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary
-                before:text-sm before:content-['03']
+              className="mb-24 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm
+                before:content-['03'] lg:mb-48
                 "
             >
               Contact
+              <div
+                style={{
+                  opacity: 1,
+                  clipPath: "inset(11.15rem 0 0 0)",
+                  height: "clamp(28rem, 35vw, 31.3rem)",
+                  width: "clamp(18rem, 35vw, 31.3rem)",
+                }}
+                className="gif absolute right-0 -z-50 origin-top-right scale-[50%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter min-[428px]:-top-[12%] lg:-right-[9%] lg:-bottom-[45%] lg:-top-[33%] lg:scale-[86%] "
+              >
+                <img src="https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif" />
+              </div>
             </h2>
+
+            {/* <div
+              style={{
+                opacity: 1,
+                clipPath: "inset(11.15rem 0 0 0)",
+                height: "clamp(28rem, 35vw, 31.3rem)",
+                width: "clamp(18rem, 35vw, 31.3rem)",
+              }}
+              className="gif absolute -top-10 origin-bottom-right bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:right-[7%] lg:scale-[126%] "
+            >
+              <img src="https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif" />
+            </div> */}
           </div>
-          <div className="flex w-full flex-col items-center space-y-28 text-secondary">
+          <div className="relative flex w-full flex-col items-center space-y-28 text-secondary">
             <h3
-              className={`text-5xl font-bold tracking-tight text-primary hover:text-accent md:text-[5.3rem]`}
+              className={`${inter.className} text-5xl font-bold leading-[1.2ch] tracking-tight text-primary backdrop-blur-[0.5px] hover:text-accent md:text-[5.3rem]`}
             >
               Let's
               <br />
@@ -976,7 +999,8 @@ export default function IndexPage() {
               <br />
               together
             </h3>
-            <div className=" relative ml-auto">
+
+            <div className="relative ml-auto">
               <div
                 className={`relative w-full -rotate-45 scale-75 text-primary md:scale-100 lg:-rotate-[55deg]`}
               >
