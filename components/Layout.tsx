@@ -4,7 +4,6 @@ import Head from "next/head";
 // import styles from "@/styles/Home.module.css";
 // import { SearchBar } from "@/components/search/SearchBar";
 import { NavbarDark } from "@/components/layout/NavbarDark";
-
 type Props = {
   children?: ReactNode;
   title?: string;

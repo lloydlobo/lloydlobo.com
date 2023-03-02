@@ -3,6 +3,9 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "About", href: "/about", current: false },
@@ -37,7 +40,9 @@ export function NavbarDark() {
                   href="/"
                   className="flex flex-shrink-0 items-center font-semibold decoration-accent underline-offset-8 hover:text-accent hover:underline"
                 >
-                  Lloyd Lobo
+                  <span className={`text-2xl font-bold ${inter.className}`}>
+                    Lloyd Lobo
+                  </span>
                 </Link>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -53,7 +58,7 @@ export function NavbarDark() {
                               item.current
                                 ? "bg-gray-900 text-primary"
                                 : "text-primary decoration-accent underline-offset-8 hover:text-accent hover:underline",
-                              "rounded-md px-3 py-2 text-sm font-medium"
+                              "rounded-md px-3 py-2 text-lg font-bold"
                             )}
                             aria-current={item.current ? "page" : undefined}
                           >
