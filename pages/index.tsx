@@ -733,7 +733,7 @@ async function isPositive(text) {
 export default function IndexPage() {
   return (
     <Layout title="Home | ">
-      <div className={`mx-auto space-y-[12rem] font-sans`}>
+      <div className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem]`}>
         {/* <HeroCopilot/> */}
         <Section>
           <div className="mx-auto w-full space-y-3 ">
