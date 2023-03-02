@@ -107,17 +107,16 @@ const WorkProjects = () => {
           >
             <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
               <img
-                // src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 src={img}
                 width="128"
                 height="128"
-                alt=""
-                className="aspect-square rounded-[2.2rem] object-cover brightness-[80%] saturate-150 sepia-[30%]"
+                alt={`${repo} - ${description}`}
+                className="aspect-square scale-90 rounded-[2.2rem] object-cover brightness-[80%] saturate-150 sepia-[30%] sm:scale-100"
               />
             </div>
             <div className="my-3 ml-4 flex-col justify-center sm:mt-[-1px] xl:flex">
               <h3
-                className={`text-5xl font-extrabold uppercase tracking-tighter text-primary ${inter.className}`}
+                className={`text-2xl font-extrabold uppercase tracking-tighter text-primary lg:text-5xl ${inter.className}`}
               >
                 {repo}
               </h3>
@@ -135,6 +134,43 @@ const WorkProjects = () => {
         ))}
       </section>
     </>
+  );
+};
+
+const StickyTitle = ({ title, ctaText, ctaUrl }) => {
+  const [isSticky, setIsSticky] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset >= ref.current.offsetTop) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const stickyClasses = isSticky ? "sticky top-0 z-10 bg-white py-4" : "";
+
+  return (
+    <div ref={ref} className="relative">
+      <h2
+        className={`${stickyClasses} transition-all duration-300 ease-in-out`}
+      >
+        {title}
+      </h2>
+      <a
+        href={ctaUrl}
+        className={`${
+          isSticky ? "opacity-100" : "opacity-0"
+        } absolute top-0 right-0 mt-4 mr-4 rounded bg-blue-500 py-2 font-bold text-white transition-all duration-300 ease-in-out hover:bg-blue-600`}
+      >
+        {ctaText}
+      </a>
+    </div>
   );
 };
 
@@ -573,18 +609,18 @@ export const EmailCopy = () => {
   return (
     <div>
       <div>
-        <div className="grid rounded-full text-xl text-primary ">{email}</div>
+        <div className="grid rounded-full text-primary lg:text-xl ">
+          {email}
+        </div>
         <button
           className="flex flex-row-reverse justify-between gap-0 text-end align-baseline text-primary"
           onClick={copyToClipboard}
         >
           <>
-            {/* {isCopied ? "Copied!" : "Copy to clipboard"} */}
-
             {isCopied ? (
               <span className="text-accent">Copied</span>
             ) : (
-              <span className="underline decoration-accent underline-offset-8 ">
+              <span className="underline decoration-accent underline-offset-8 max-[320px]:text-xs lg:text-base ">
                 Copy to clipboard
               </span>
             )}
@@ -846,7 +882,7 @@ export default function IndexPage() {
             </h2>
           </div>
           <div className="w-full text-secondary lg:place-items-center">
-            <div className="grid lg:grid-cols-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               <h2
                 className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 ${inter.className}`}
               >
@@ -855,7 +891,7 @@ export default function IndexPage() {
                 creator by heart
               </h2>
             </div>
-            <div className="grid grid-cols-2 space-y-12 text-lg leading-normal tracking-wide lg:grid-cols-3">
+            <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
               <div className="ghost"></div>
               <p className="relative col-start-1 pr-12 lg:-left-10 lg:col-start-2">
                 As a developer, I am also a creator. This{" "}
@@ -941,9 +977,11 @@ export default function IndexPage() {
               together
             </h3>
             <div className=" relative ml-auto">
-              <div className={`relative w-full -rotate-[55deg] text-primary`}>
+              <div
+                className={`relative w-full -rotate-45 scale-75 text-primary md:scale-100 lg:-rotate-[55deg]`}
+              >
                 <div
-                  className={`absolute bottom-56 left-[30%] h-1/2 -translate-x-1/2`}
+                  className={`absolute bottom-40 left-[30%] h-1/2 -translate-x-1/2 lg:bottom-56`}
                 >
                   <motion.div
                     initial={{ opacity: 0, y: 0 }}
@@ -961,47 +999,9 @@ export default function IndexPage() {
               </div>
               <EmailCopy />
             </div>
-            {/* <WorkProjects /> */}
           </div>
         </Section>
       </div>
     </Layout>
   );
 }
-
-const StickyTitle = ({ title, ctaText, ctaUrl }) => {
-  const [isSticky, setIsSticky] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.pageYOffset >= ref.current.offsetTop) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const stickyClasses = isSticky ? "sticky top-0 z-10 bg-white py-4" : "";
-
-  return (
-    <div ref={ref} className="relative">
-      <h2
-        className={`${stickyClasses} transition-all duration-300 ease-in-out`}
-      >
-        {title}
-      </h2>
-      <a
-        href={ctaUrl}
-        className={`${
-          isSticky ? "opacity-100" : "opacity-0"
-        } absolute top-0 right-0 mt-4 mr-4 rounded bg-blue-500 py-2 font-bold text-white transition-all duration-300 ease-in-out hover:bg-blue-600`}
-      >
-        {ctaText}
-      </a>
-    </div>
-  );
-};
