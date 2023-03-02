@@ -702,17 +702,21 @@ export default function IndexPage() {
         <Section>
           <div className="mx-auto w-full space-y-3 ">
             <h1
-              className={`m-0 mx-auto pr-4 text-center text-[43vw] font-extrabold leading-[1] -tracking-[0.1ch]
-              text-primary shadow ${inter.className}`}
+              className={`m-0 mx-auto text-center text-9xl font-extrabold leading-[1] -tracking-[0.1ch] text-primary shadow
+              max-[320px]:text-5xl lg:text-[44vw] ${inter.className}`}
             >
               hello
             </h1>
             <h2
-              className={`text-center text-5xl font-extrabold tracking-tighter text-primary ${inter.className}`}
+              className={`text-2xl font-extrabold tracking-tighter text-primary lg:text-center lg:text-5xl ${inter.className}`}
             >
-              Design. Develop. Ship.
+              <div className="subtitle place-content-center text-center max-[427px]:grid md:flex md:space-x-1">
+                <span>Design.</span>
+                <span>Develop.</span>
+                <span>Ship.</span>
+              </div>
             </h2>
-            <div className="mt-10 hidden max-w-[50vw] grid-cols-2 items-center justify-center space-x-6 place-self-center">
+            <div className="mt-10 hidden grid-cols-2 items-center justify-center space-x-6 place-self-center lg:max-w-[50vw]">
               <a
                 href="#"
                 className="rounded-md  py-2.5 text-sm font-semibold uppercase text-primary underline underline-offset-8 shadow-sm hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
@@ -727,9 +731,10 @@ export default function IndexPage() {
               </a>
             </div>
             <p
-              className={`mx-auto max-w-[66vw] text-center text-lg text-secondary `}
+              className={`mx-auto text-center text-lg text-secondary lg:max-w-[66vw] `}
             >
-              Empowering innovators to create at the speed of inspiration.{" "}
+              Empowering innovators to create at the speed of inspiration.
+              <br />
               <br />
               As a software developer, I use open source and AI tools to
               architect efficient code and tackle complex problems with ease.
@@ -789,7 +794,7 @@ export default function IndexPage() {
               <p className="mb-20 w-[25vw] border-b-[6px] border-secondary py-4 text-start text-xl font-normal">
                 Lloyd Lobo
               </p>
-              <div className="grid grid-cols-2 gap-12 text-xl lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-12 text-xl sm:grid-cols-2 lg:grid-cols-3">
                 <ul className={`hidden space-y-1 lg:block`}>
                   <li className="">
                     <Link href={`#work`}>Work</Link>
