@@ -773,8 +773,12 @@ export default function IndexPage() {
               <motion.div className="drag"
                 drag={true}
                 whileHover={{ scale: 1.1 }}
+                animate={{ opacity: 1, x: [0, 0, 0], }}
                 whileTap={{ scale: 1.618 }}
-                transition={{ duration: 0.3 }}
+                transition={{
+                  duration: 0.3, delay: 0.1,
+                  ease: [0.5, 0.71, 1, 1.5],
+                }}
                 dragConstraints={{ right: 10, left: -150, top: -70, bottom: 0 }}
                 dragTransition={{ bounceStiffness: 60, bounceDamping: 8 }}
               >
