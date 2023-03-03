@@ -191,7 +191,6 @@ transform: translateX(-50%);
   }
 }
 
-
 .globe {
   background: #888;
   border: 0px solid #333;
@@ -234,7 +233,7 @@ transform: translateX(-50%);
   return (
     <>
       <style>{styles}</style>
-      <div className="bg-black">
+      <div className="">
         <Globe />
         <LineWrap />
       </div>
@@ -686,7 +685,8 @@ const Section = ({ children }: PropsSection) => {
   return (
     <motion.div
       ref={ref}
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      initial={{ opacity: 0, scale: 0.5, }}
+      animate={{ opacity: inView ? 1 : 0, scale: 1, y: inView ? 0 : 50 }}
       transition={{ duration: 0.7 }}
     >
       <div className={`mx-auto px-8`}>{children}</div>
@@ -751,82 +751,6 @@ export const EmailCopy = () => {
   );
 };
 
-// function Hero() {
-//   const [isPositiveText, setIsPositiveText] = useState(false);
-//
-//   async function isPositive(text) {
-//     const response = await fetch("http://text-processing.com/api/sentiment/", {
-//       method: "POST",
-//       body: `text=${text}`,
-//       headers: {
-//         "Content-Type": "application/x-www-form-urlencoded",
-//       },
-//     });
-//     alert!(response);
-//     const json = await response.json();
-//     setIsPositiveText(json.label === "pos");
-//   }
-//
-//   useEffect(() => {
-//     isPositive("Some text to check sentiment");
-//   }, []);
-//
-//   return (
-//     <div>
-//       <h1>Hero section</h1>
-//       <p>{isPositiveText ? "Positive sentiment" : "Negative sentiment"}</p>
-//     </div>
-//   );
-// }
-
-/*
-
-              <code>
-                {`
-                // Determine whether the sentiment of text is positive
-async function isPositive(text) {
-  const response = await fetch("http://text-processing.com/api/sentiment/", {
-    method: "POST",
-    body: \`text=\${text}\`,
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-  });
-  const json = await response.json();
-  return json.label === "pos";
-}`}
-              </code>
-*/
-
-// function HeroCopilot() {
-//   return <div className={`min-h-screen w-screen`}>
-//     <div className="my-8 grid h-screen place-content-center space-y-6">
-//       <h1
-//         className={`text-center text-7xl font-extrabold leading-tight tracking-tighter text-primary shadow ${inter.className}`}
-//       >
-//         Your AI pair programmer
-//       </h1>
-//       {/* <p className="w-fit max-w-[66ch] place-self-center text-center text-lg text-accent/70">
-//           GitHub Copilot uses the OpenAI Codex to suggest code and entire
-//           functions in real-time, right from your editor.
-//         </p> */}
-//       <p className="w-fit max-w-[66ch] place-self-center text-center text-lg text-accent/70">
-//         As a software developer, I take advantage of open source and
-//         AI-powered tools that utilizes the power of ... to help me write
-//         code faster and with greater efficiency.{" "}
-//       </p>
-//       <p className="w-fit max-w-[66ch] place-self-center text-center text-lg text-accent/70">
-//         By suggesting code and entire functions in real-time, right from
-//         my favorite code editor,
-// I am able to focus on the big picture and
-//         tackle complex problems with ease.
-//         <br />
-//         But that does leave one factor in the open...
-//       </p>
-//     </div>
-//   </div>;
-// }
-
 // <span className="easter_egg hidden">
 //   Empowering innovators to create at the speed of inspiration is my forte.
 //   As a frontend developer, I harness the power of open source and
@@ -844,21 +768,29 @@ export default function IndexPage() {
               <div>he</div>
               <div className="flex">
                 <div>llo</div>
-                <div className="text-accent opacity-5">.</div>
+                <div className="text-accent opacity-0">.</div>
               </div>
-
-              <div className="lg:absolute  filter backdrop-blur-3xl mix-blend-color-dodge opacity-70 right-[3.5%] bottom-[22%] scale-0 lg:scale-[200%] origin-bottom-right">
-                <GlobeAnimation />
-              </div>
-              <div className="filter lg:absolute backdrop-blur-3xl sepia-[70%] blur mix-blend-color-dodge/20 opacity-70 right-[3.5%] bottom-[22%] scale-0 lg:scale-[200%] origin-bottom-right">
-                <GlobeAnimation />
-              </div>
-              <div className="absolute lg:hidden filter backdrop-blur-3xl mix-blend-color-dodge opacity-70 right-[3.5%] bottom-[22%] scale-[60%] origin-bottom-right">
-                <GlobeAnimation />
-              </div>
-              <div className="absolute filter lg:hidden backdrop-blur-3xl sepia-[70%] blur mix-blend-color-dodge/20 opacity-70 right-[3.5%] bottom-[22%] scale-[60%] origin-bottom-right">
-                <GlobeAnimation />
-              </div>
+              <motion.div className="drag"
+                drag={true}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 1.618 }}
+                transition={{ duration: 0.3 }}
+                dragConstraints={{ right: 10, left: -150, top: -70, bottom: 0 }}
+                dragTransition={{ bounceStiffness: 60, bounceDamping: 8 }}
+              >
+                <div className="lg:absolute outline  filter backdrop-blur-3xl mix-blend-color-dodge opacity-70 right-[3.5%] bottom-[22%] scale-0 lg:scale-[200%] origin-bottom-right">
+                  <GlobeAnimation />
+                </div>
+                <div className="filter lg:absolute backdrop-blur-3xl sepia-[70%] blur mix-blend-color-dodge/20 opacity-70 right-[3.5%] bottom-[22%] scale-0 lg:scale-[200%] origin-bottom-right">
+                  <GlobeAnimation />
+                </div>
+                <div className="absolute lg:hidden filter backdrop-blur-3xl mix-blend-color-dodge opacity-70 right-[3.5%] bottom-[22%] scale-[60%] origin-bottom-right">
+                  <GlobeAnimation />
+                </div>
+                <div className="absolute filter lg:hidden backdrop-blur-3xl sepia-[70%] blur mix-blend-color-dodge/20 opacity-70 right-[3.5%] bottom-[22%] scale-[60%] origin-bottom-right">
+                  <GlobeAnimation />
+                </div>
+              </motion.div>
             </h1>
 
             <div className="space-y-2 ">
