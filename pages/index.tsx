@@ -1131,6 +1131,20 @@ export default function IndexPage() {
                 "
             >
               Contact
+            </h2>
+          </div>
+          <div className="relative flex w-full  lg:-left-10 flex-col lg:items-center space-y-28 text-secondary">
+            <div className="relative w-fit">
+              <h3
+                className={`${inter.className} text-5xl font-bold leading-[1.2ch] tracking-tight text-primary backdrop-blur-[1px] hover:text-accent md:text-[5.3rem]`}
+              >
+                Let's
+                <br />
+                work
+                <br />
+                together
+              </h3>
+
               <div
                 style={{
                   opacity: 1,
@@ -1138,34 +1152,11 @@ export default function IndexPage() {
                   height: "clamp(28rem, 35vw, 31.3rem)",
                   width: "clamp(18rem, 35vw, 31.3rem)",
                 }}
-                className="gif absolute right-[21%] -z-50 origin-top-right scale-[70%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter min-[428px]:-top-[28%] lg:right-[19%] lg:bottom-[0%] lg:-top-[42%] lg:origin-top-right lg:scale-[126%] "
+                className="absolute left-1 origin-bottom-left sepia-[50%] brightness-[30%] -z-10 filter grayscale-[30%] lg:scale-[121%] scale-[68%] bg-blend-overlay bottom-0"
               >
                 <img src="https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif" />
               </div>
-            </h2>
-
-            {/* <div
-              style={{
-                opacity: 1,
-                clipPath: "inset(11.15rem 0 0 0)",
-                height: "clamp(28rem, 35vw, 31.3rem)",
-                width: "clamp(18rem, 35vw, 31.3rem)",
-              }}
-              className="gif absolute -top-10 origin-bottom-right bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:right-[7%] lg:scale-[126%] "
-            >
-              <img src="https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif" />
-            </div> */}
-          </div>
-          <div className="relative flex w-full flex-col items-center space-y-28 text-secondary">
-            <h3
-              className={`${inter.className} text-5xl font-bold leading-[1.2ch] tracking-tight text-primary backdrop-blur-[0.5px] hover:text-accent md:text-[5.3rem]`}
-            >
-              Let's
-              <br />
-              work
-              <br />
-              together
-            </h3>
+            </div>
 
             <div className="relative ml-auto">
               <div
