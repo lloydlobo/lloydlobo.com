@@ -1154,7 +1154,7 @@ export default function IndexPage() {
                 }}
                 className="absolute left-1 origin-bottom-left sepia-[50%] brightness-[30%] -z-10 filter grayscale-[30%] lg:scale-[121%] scale-[68%] bg-blend-overlay bottom-0"
               >
-                <img src="https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif" />
+                <img alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif" src="/drita_arsela_coffee.webp" />
               </div>
             </div>
 
