@@ -108,7 +108,7 @@ body {
 footer {
   display: grid;
   place-items: center;
-  @apply text-amber-200;
+  @apply text-primary;
 }
 
 a {

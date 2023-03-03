@@ -4,6 +4,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 import { Inter } from "next/font/google";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 const navigation = [
@@ -19,7 +20,7 @@ function classNames(...classes) {
 
 export function NavbarDark() {
   return (
-    <Disclosure as="nav" className="bg-on-primary/90">
+    <Disclosure as="nav" className="bg-on-secondary/20">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -40,8 +41,21 @@ export function NavbarDark() {
                   href="/"
                   className="flex flex-shrink-0 items-center font-semibold decoration-accent underline-offset-8 hover:text-accent hover:underline"
                 >
-                  <span className={`text-2xl font-bold ${inter.className}`}>
-                    Lloyd Lobo
+                  <span
+                    className={`relative flex items-center gap-2 text-2xl font-bold ${inter.className}`}
+                  >
+                    <>
+                      <span className="z-10 backdrop-blur-sm">Lloyd Lobo</span>
+                      <Image
+                        width={36}
+                        height={36}
+                        alt={
+                          "Logo for Lloyd Lobo in the shape of an inverted triable with L incscripted"
+                        }
+                        src={"/logo.jpg"}
+                        className={`rounded-xs absolute -left-[10%] hidden aspect-square rounded object-contain blur-[1px] sepia-[50%]`}
+                      />
+                    </>
                   </span>
                 </Link>
                 <div className="hidden sm:ml-6 sm:block">

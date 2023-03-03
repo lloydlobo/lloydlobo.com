@@ -15,9 +15,11 @@ module.exports = {
         },
         extend: {
             colors: {
-                primary: "#fbe094",
-                'on-primary': "#0f0d0d",
+                primary: "#f3c77c",
+                'on-primary': "#151414",
                 secondary: "#e7cfb1",
+                'on-secondary': "#0f0d0d",
+                // 'on-secondary': "#151414",
                 accent: "#f6ac9f",
             },
         },
@@ -27,3 +29,8 @@ module.exports = {
       require('@tailwindcss/forms'),
     ],
 };
+
+// secondary: "#f3c77c",
+// primary: "#fbe094",
+// 'on-primary': "#0f0d0d",
+// text-[#f3c77c]
