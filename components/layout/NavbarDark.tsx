@@ -45,7 +45,9 @@ export function NavbarDark() {
                     className={`relative flex items-center gap-2 text-2xl font-bold ${inter.className}`}
                   >
                     <>
-                      <span className="z-10 backdrop-blur-sm">Lloyd Lobo</span>
+                      <span className="z-10 text-secondary backdrop-blur-sm">
+                        Lloyd Lobo
+                      </span>
                       <Image
                         width={36}
                         height={36}
@@ -66,12 +68,12 @@ export function NavbarDark() {
                       } else {
                         return (
                           <Link
-                            key={item.name + index}
+                            key={"link" + item.name}
                             href={item.href}
                             className={classNames(
                               item.current
-                                ? "bg-gray-900 text-primary"
-                                : "text-primary decoration-accent underline-offset-8 hover:text-accent hover:underline",
+                                ? "bg-gray-900 text-secondary"
+                                : "text-secondary decoration-accent underline-offset-8 hover:text-accent hover:underline",
                               "rounded-md px-3 py-2 text-lg font-bold"
                             )}
                             aria-current={item.current ? "page" : undefined}
@@ -167,7 +169,7 @@ export function NavbarDark() {
                 <Disclosure.Button
                   as="button"
                   aria-current={item.current ? "page" : undefined}
-                  key={item.name + index}
+                  key={"link-btn" + item.name}
                   className={classNames(
                     item.current
                       ? "bg-on-primary font-semibold text-accent underline  underline-offset-8"

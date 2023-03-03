@@ -12,10 +12,12 @@ export function Hero() {
         <div>he</div>
         <div className="flex">
           <div>llo</div>
-          <div className="animate-pulse text-secondary blur-2xl">.</div>
+          <div className="animate-pulse text-accent opacity-70 backdrop-blur-sm">
+            .
+          </div>
         </div>
         <motion.div
-          className="drag"
+          className="drag hidden"
           drag={true}
           whileHover={{ scale: 1.2, fill: "white" }}
           animate={{

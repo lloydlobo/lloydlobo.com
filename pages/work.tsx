@@ -22,20 +22,21 @@ export default function IndexPage() {
         <Section>
           <div className="mx-auto hidden w-full space-y-3 ">
             <h1
-              className={`max-[320px]:text-5xl m-0 mx-auto text-center text-9xl font-extrabold leading-[1] -tracking-[0.1ch] text-primary
-              shadow lg:text-[44vw] `}
+              className={`m-0 mx-auto text-center text-9xl font-extrabold leading-[1] -tracking-[0.1ch] text-primary shadow
+              max-[320px]:text-5xl lg:text-[44vw] `}
             >
               hello
             </h1>
             <h2
               className={`text-2xl font-extrabold tracking-tighter text-primary lg:text-center lg:text-5xl `}
             >
-              <div className="subtitle max-[427px]:grid place-content-center text-center md:flex md:space-x-1">
+              <div className="subtitle place-content-center text-center max-[427px]:grid md:flex md:space-x-1">
                 <span>Design.</span>
                 <span>Develop.</span>
                 <span>Ship.</span>
               </div>
             </h2>
+
             <div className="mt-10 hidden grid-cols-2 items-center justify-center space-x-6 place-self-center lg:max-w-[50vw]">
               <a
                 href="#"
