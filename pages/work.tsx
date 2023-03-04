@@ -21,6 +21,7 @@ export default function IndexPage() {
         {/* <HeroCopilot/> */}
         <Section>
           <div className="mx-auto hidden w-full space-y-3 ">
+            from
             <h1
               className={`m-0 mx-auto text-center text-9xl font-extrabold leading-[1] -tracking-[0.1ch] text-primary shadow
               max-[320px]:text-5xl lg:text-[44vw] `}
@@ -36,7 +37,6 @@ export default function IndexPage() {
                 <span>Ship.</span>
               </div>
             </h2>
-
             <div className="mt-10 hidden grid-cols-2 items-center justify-center space-x-6 place-self-center lg:max-w-[50vw]">
               <a
                 href="#"
