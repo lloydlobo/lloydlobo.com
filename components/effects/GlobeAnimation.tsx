@@ -88,7 +88,7 @@ transform: translateX(-50%);
   return (
     <>
       <style>{styles}</style>
-      <div className="rotate-6">
+      <div className="rotate-[23.5deg]">
         <Globe />
         {/* <LineWrap /> */}
       </div>
