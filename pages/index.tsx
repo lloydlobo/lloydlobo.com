@@ -1,4 +1,8 @@
 import Layout from "@/components/Layout";
+import Link from "next/link";
+
+import React, { ReactNode, useEffect, useRef, useState } from "react";
+
 import { Section } from "@/components/Section";
 import { WorkProjects } from "@/components/WorkProjects";
 import { EmailCopy } from "@/components/effects/EmailCopy";
@@ -7,22 +11,22 @@ import { WritingArrowDown } from "@/components/effects/WritingArrowDown";
 import { Hero } from "@/components/layout/Hero";
 import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
-import Link from "next/link";
-import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function IndexPage() {
   return (
     <>
       <Layout title="Home | ">
-        <div className="relative grid h-full min-h-screen place-items-center text-center">
-          <div className="grid h-fit space-y-6 ">
-            <h1 className=" text-5xl font-bold leading-none">Lloyd Lobo</h1>
-            <h2 className="text-[1.6rem] text-secondary">
-              Software developer with an eye for design and motion.
-            </h2>
-            <ActionCTA />
-          </div>
+        <div className="relative grid h-full mx-auto min-h-screen place-items-center text-center">
+          <OSWindow >
+            <div className="grid mx-10 mt-4 place-self-center h-full space-y-6 ">
+              <h1 className="font-bold text-2xl leading-none">Lloyd Lobo</h1>
+              <h2 className="text-secondary">
+                Software developer with an eye for design and motion.
+              </h2>
+              <ActionCTA />
+            </div>
+          </OSWindow >
         </div>
       </Layout>
     </>
@@ -75,6 +79,48 @@ function ActionCTA() {
         </a>
       </div>
     </div>
+  );
+}
+
+function OSWindow({ children }) {
+  const constraintsRef = useRef(null)
+  return (
+    <>
+      <motion.div ref={constraintsRef} className="relative w-screen h-screen">
+        <motion.div
+          className="drag absolute "
+          drag={true}
+          whileHover={{ cursor: "context-menu" }}
+          animate={{ opacity: 1.00, x: [0, 0, 0], y: [0, 0, 0] }}
+          whileTap={{ scale: 1.00, cursor: "grab" }}
+          transition={{
+            duration: 0.1,
+            delay: 0.1,
+            ease: [0.5, 0.71, 1, 1.5],
+          }}
+          dragConstraints={constraintsRef}
+          dragTransition={{ bounceStiffness: 0, bounceDamping: -1 }}
+        // dragConstraints={{ right: 10, left: -150, top: -70, bottom: 0 }}
+        >
+          <div className="min-w-[300px] min-h-[250px] w-full backdrop-blur-sm opacity-[90%] dark:bg-on-secondary aspect-h-9 rounded shadow-lg">
+            <div className="bg-black flex relatvie items-center px-2 min-h-4 h-fit w-full">
+              <div className="flex gap-2 absolute left-2">
+                <span className="flex">-</span>
+                <span className="flex">x</span>
+              </div>
+              <h3 className="text-center text-[2vw] lg:text-[1vw] w-full">
+                <span className=" hover:opacity-100 opacity-0">
+                  Home
+                </span>
+              </h3>
+            </div>
+            <div className="px-4 scale-[100%] py-4">
+              {children}
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
+    </>
   );
 }
 //// export const inter = Inter({ subsets: ["latin"] });
