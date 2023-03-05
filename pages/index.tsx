@@ -16,22 +16,22 @@ import { useInView } from "react-intersection-observer";
 export default function IndexPage() {
   return (
     <>
-      <Layout title="Home | ">
-        <div className="relative grid h-full mx-auto min-h-screen place-items-center text-center">
-          <OSWindow >
-            <div className="grid mx-10 mt-4 place-self-center h-full space-y-6 ">
-              <h1 className="font-bold text-2xl leading-none">Lloyd Lobo</h1>
-              <h2 className="text-secondary">
-                Software developer with an eye for design and motion.
-              </h2>
-              <ActionCTA />
-            </div>
-          </OSWindow >
-        </div>
-      </Layout>
+      <div className="absolute grid h-full mx-auto place-items-center text-center">
+        <OSWindow >
+          <div className="grid mx-10 mt-4 place-self-center h-full space-y-6 ">
+            <h1 className="font-bold text-2xl leading-none">Lloyd Lobo</h1>
+            <h2 className="text-secondary">
+              Software developer with an eye for design and motion.
+            </h2>
+            <ActionCTA />
+          </div>
+        </OSWindow >
+      </div>
     </>
   );
 }
+// <Layout title="Home | ">
+// </Layout>
 
 function ActionCTA() {
   return (
@@ -86,7 +86,7 @@ function OSWindow({ children }) {
   const constraintsRef = useRef(null)
   return (
     <>
-      <motion.div ref={constraintsRef} className="relative w-screen h-screen">
+      <motion.div ref={constraintsRef} className="relative w-screen min-h-screen">
         <motion.div
           className="drag absolute "
           drag={true}
