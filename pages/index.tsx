@@ -42,7 +42,7 @@ export default function IndexPage() {
             <div className="relative mx-2 mt-20 lg:mt-36 w-full">
               <div
                 className="
-selection:bg-accent selection:text-fuchsia-900 text-2xl px-4 container w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto text-secondary font-medium gap-1"
+selection:bg-accent selection:text-fuchsia-900 text-2xl tracking-tight leading-9 lowercase  px-4 container w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto text-secondary font-medium gap-1"
               >
                 <Link
                   href="/about"

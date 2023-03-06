@@ -49,7 +49,7 @@ export default function WorkPage() {
                   Lloyd Lobo
                 </p>
                 <div className="grid grid-cols-1 gap-10 text-base sm:grid-cols-2 lg:grid-cols-3">
-                  <ul className={`hidden space-y-1 font-bold lg:block`}>
+                  <ul className={`hidden space-y-1 font-medium lg:block`}>
                     <li className="">
                       <Link href={`#work`}>Work</Link>
                     </li>
@@ -60,7 +60,7 @@ export default function WorkPage() {
                       <Link href={`#work`}>Contact</Link>
                     </li>
                   </ul>
-                  <p>
+                  <p className="">
                     I'm a software developer who's passionate about building
                     great stuff. My focus is on creating innovative solutions
                     that exceed client expectations.
