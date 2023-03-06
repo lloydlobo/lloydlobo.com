@@ -81,6 +81,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
   /* @apply outline-1 outline-dotted; */
 }
 
@@ -102,7 +103,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   /* @apply bg-gradient-to-b from-on-primary to-on-primary/90 bg-local; */
-    @apply text-primary bg-on-primary;
+  @apply h-screen text-primary bg-on-primary;
 }
 
 footer {
