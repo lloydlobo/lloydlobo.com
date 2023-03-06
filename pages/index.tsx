@@ -30,13 +30,17 @@ export default function IndexPage() {
 
         <div className="flex h-screen w-full absolute top-0 ">
           <div className="relative mx-2 mt-20 lg:mt-36 w-full">
-            <div className="text-2xl px-4 container w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto text-secondary font-medium gap-1">
+            <div
+              className="
+selection:bg-accent selection:text-fuchsia-900 text-2xl px-4 container w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto text-secondary font-medium gap-1"
+            >
               <Link
                 href="/about"
                 className="opacity-50 hover:underline hover:opacity-100  hover:text-accent "
               >
                 lloyd lobo.
               </Link>
+
               <span className="">
                 {" "}
                 creating{" "}
@@ -59,7 +63,7 @@ export default function IndexPage() {
                 software with the focus on on creating innovative solutions that
                 exceed client expectations.{" "}
                 <span className="inline-flex">
-                  <pre>software developer</pre>
+                  <strong>software developer</strong>
                 </span>{" "}
                 with an <span id="roughblock">eye</span> for design and motion.
                 deeply curious about functional and beautiful{" "}
@@ -117,11 +121,17 @@ export default function IndexPage() {
             </div>
           </div>
         </div>
+
         <div className="dock absolute bottom-5 w-screen">
           <div className="bar flex justify-evenly bg-primary/[0.00] rounded-full min-w-[300px] lg:min-w-[460px] border border-opacity-10 border-secondary/10 mx-auto px-4 py-4 w-fit bg-opacity-40 backdrop-blur-[1.3px]">
             <Link
               href="/"
-              className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+              className="font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+              data-te-toggle="tooltip"
+              data-te-placement="top"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              title="Home"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -142,6 +152,11 @@ export default function IndexPage() {
             <Link
               href="/work"
               className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+              data-te-toggle="tooltip"
+              data-te-placement="top"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              title="Work"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -162,6 +177,11 @@ export default function IndexPage() {
             <a
               href="https://github.com/lloydlobo/"
               className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+              data-te-toggle="tooltip"
+              data-te-placement="top"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              title="Code"
             >
               <svg viewBox="0 0 24 24" className="mr-1 -ml-1.5 h-5 w-5">
                 <path
@@ -178,6 +198,11 @@ export default function IndexPage() {
             <a
               href="mailto:hello@lloydlobo.com"
               className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+              data-te-toggle="tooltip"
+              data-te-placement="top"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              title="Contact"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
