@@ -7,11 +7,12 @@ import { Hero } from "@/components/layout/Hero";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
-import { DockNav } from ".";
+import { ClockNav, DockNav } from ".";
 
 export default function WorkPage() {
   return (
     <Layout title="Work ">
+      <ClockNav />
       <DockNav />
       <div className="relative hidden">
         <Section>

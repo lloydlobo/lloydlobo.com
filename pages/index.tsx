@@ -9,6 +9,22 @@ import {
   // useInView, // import { useInView } from "react-intersection-observer";
 } from "framer-motion";
 
+export function ClockNav() {
+  const [currentTime, setCurrentTime] = useState(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <header className="flex z-50 min-h-[1.25rem] justify-center w-screen absolute px-2 top-0 bg-on-secondary/30 shadow items-center text-xs font-semibold brightness-100 backdrop-blur-[2px] gap-x-2">
+      <span className="h-full text-secondary">{currentTime}</span>
+    </header>
+  );
+}
+
 export default function IndexPage() {
   const [currentTime, setCurrentTime] = useState(null);
 
