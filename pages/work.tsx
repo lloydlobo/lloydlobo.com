@@ -16,8 +16,8 @@ export default function WorkPage() {
         <div className="">
           <Section>
             <article className="">
-              <div className="">
-                <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/20 bg-primary/70 to-primary">
+              <div className="bg-on-primary">
+                <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b bg-primary from-on-primary/80">
                   <span className="relative">
                     Design
                     <br />
