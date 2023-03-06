@@ -22,17 +22,19 @@ export default function WorkPage() {
 
       <div className="">
         <Section>
-          <div className="pt-16">
-            <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/20 bg-primary/70 to-primary">
-              <span className="relative">
-                Design
-                <br />
-                Develop
-                <br />
-                Ship
-              </span>
-            </h1>
-          </div>
+          <article className="">
+            <div className="pt-16">
+              <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/20 bg-primary/70 to-primary">
+                <span className="relative">
+                  Design
+                  <br />
+                  Develop
+                  <br />
+                  Ship
+                </span>
+              </h1>
+            </div>
+          </article>
         </Section>
       </div>
 
@@ -40,37 +42,39 @@ export default function WorkPage() {
         className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-20`}
       >
         <Section>
-          <div className="mx-auto w-full text-secondary">
-            <div className="relative mx-auto w-full">
-              <p className="mb-20 w-fit pr-44 border-b-[6px] border-secondary pb-4 text-start text-xl font-normal">
-                Lloyd Lobo
-              </p>
-              <div className="grid grid-cols-1 gap-12 text-xl sm:grid-cols-2 lg:grid-cols-3">
-                <ul className={`hidden space-y-1 lg:block`}>
-                  <li className="">
-                    <Link href={`#work`}>Work</Link>
-                  </li>
-                  <li className="">
-                    <Link href={`#work`}>About</Link>
-                  </li>
-                  <li className="">
-                    <Link href={`#work`}>Contact</Link>
-                  </li>
-                </ul>
-                <p>
-                  I'm a software developer who's passionate about building great
-                  stuff. My focus is on creating innovative solutions that
-                  exceed client expectations.
+          <article className="">
+            <div className="mx-auto w-full text-secondary">
+              <div className="relative mx-auto w-full">
+                <p className="mb-20 w-fit pr-44 border-b-[4px] border-secondary pb-4 text-start text-lg font-normal">
+                  Lloyd Lobo
                 </p>
-                <p>
-                  My goal is to help businesses and individuals achieve their
-                  goals by adopting new ideas and approaches that they may have
-                  previously avoided. By working together, we can build trust
-                  and create a positive and productive work environment.
-                </p>
+                <div className="grid grid-cols-1 gap-10 text-base sm:grid-cols-2 lg:grid-cols-3">
+                  <ul className={`hidden space-y-1 font-bold lg:block`}>
+                    <li className="">
+                      <Link href={`#work`}>Work</Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>About</Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>Contact</Link>
+                    </li>
+                  </ul>
+                  <p>
+                    I'm a software developer who's passionate about building
+                    great stuff. My focus is on creating innovative solutions
+                    that exceed client expectations.
+                  </p>
+                  <p>
+                    My goal is to help businesses and individuals achieve their
+                    goals by adopting new ideas and approaches that they may
+                    have previously avoided. By working together, we can build
+                    trust and create a positive and productive work environment.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </article>
         </Section>
 
         <Section>

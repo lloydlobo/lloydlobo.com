@@ -81,8 +81,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-
-  /* @apply outline-1 outline-dotted; */
+  /* @apply outline-1 outline-dotted bg-purple-800 bg-opacity-[0.002]; */
 }
 
 html,
@@ -95,15 +94,15 @@ body {
 }
 
 body {
-  /* color: rgb(var(--foreground-rgb)); */
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
-  /* @apply bg-gradient-to-b from-on-primary to-on-primary/90 bg-local; */
   @apply h-screen text-primary bg-on-primary;
+}
+
+main {
+  @apply px-4;
+}
+
+article {
+  @apply md:mx-44;
 }
 
 footer {
