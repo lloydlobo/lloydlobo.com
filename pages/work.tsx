@@ -20,7 +20,7 @@ export default function WorkPage() {
       <div className="">
         <Section>
           <div className="pt-16">
-            <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/30 bg-primary/70 to-primary">
+            <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/20 bg-primary/70 to-primary">
               <span className="relative">
                 Design
                 <br />
@@ -39,7 +39,7 @@ export default function WorkPage() {
         <Section>
           <div className="mx-auto w-full text-secondary">
             <div className="relative mx-auto w-full">
-              <p className="mb-20 w-[25vw] border-b-[6px] border-secondary pb-4 text-start text-xl font-normal">
+              <p className="mb-20 w-fit pr-44 border-b-[6px] border-secondary pb-4 text-start text-xl font-normal">
                 Lloyd Lobo
               </p>
               <div className="grid grid-cols-1 gap-12 text-xl sm:grid-cols-2 lg:grid-cols-3">
