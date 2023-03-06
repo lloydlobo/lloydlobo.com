@@ -381,7 +381,7 @@ export function DockNav() {
       <div className="border border-opacity-10 rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
         <div
           // className="bar flex  justify-evenly bg-primary/[0.00] rounded-full min-w-[300px] lg:min-w-[460px]  mx-auto px-4 py-4 w-fit"
-          className="grid grid-flow-col gap-24 py-4 px-4"
+          className="grid grid-flow-col w-64 place-items-center py-4 mx-6"
         >
           <Link
             href="/"
