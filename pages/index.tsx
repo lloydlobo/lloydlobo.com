@@ -377,12 +377,9 @@ const LastVisit = () => {
 
 export function DockNav() {
   return (
-    <div className="dock z-50 fixed bottom-5 left-0 right-0 gird  mx-auto">
+    <div className="z-50 fixed bottom-5 left-0 right-0 gird  mx-auto">
       <div className="border border-opacity-10 rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
-        <div
-          // className="bar flex  justify-evenly bg-primary/[0.00] rounded-full min-w-[300px] lg:min-w-[460px]  mx-auto px-4 py-4 w-fit"
-          className="grid grid-flow-col w-64 place-items-center py-4 mx-6"
-        >
+        <nav className="dock grid grid-flow-col justify-between p-2 overflow-x-scroll overflow-y-hidden gap-1 rounded-full  place-items-center">
           <Link
             href="/"
             className="font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
@@ -478,7 +475,7 @@ export function DockNav() {
               />
             </svg>
           </a>
-        </div>
+        </nav>
       </div>
     </div>
   );
