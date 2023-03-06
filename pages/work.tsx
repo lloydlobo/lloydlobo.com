@@ -11,107 +11,35 @@ import React from "react";
 export default function WorkPage() {
   return (
     <Layout title="Work ">
-      <div className="relative">
+      <div className="relative hidden">
         <Section>
           <Hero />
         </Section>
       </div>
 
-      <div className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem]`}>
-        {/* <HeroCopilot/> */}
+      <div className="">
         <Section>
-          <div className="mx-auto hidden w-full space-y-3 ">
-            <h1
-              className={`m-0 mx-auto text-center text-9xl font-extrabold leading-[1] -tracking-[0.1ch] text-primary shadow
-              max-[320px]:text-5xl lg:text-[44vw] `}
-            >
-              hello
+          <div className="pt-16">
+            <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/30 bg-primary/70 to-primary">
+              <span className="relative">
+                Design
+                <br />
+                Develop
+                <br />
+                Ship
+              </span>
             </h1>
-            <h2
-              className={`text-2xl font-extrabold tracking-tighter text-primary lg:text-center lg:text-5xl `}
-            >
-              <div className="subtitle place-content-center text-center max-[427px]:grid md:flex md:space-x-1">
-                <span>Design.</span>
-                <span>Develop.</span>
-                <span>Ship.</span>
-              </div>
-            </h2>
-            <div className="mt-10 hidden grid-cols-2 items-center justify-center space-x-6 place-self-center lg:max-w-[50vw]">
-              <a
-                href="#"
-                className="rounded-md  py-2.5 text-sm font-semibold uppercase text-primary underline underline-offset-8 shadow-sm hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Start Deploying <span aria-hidden="true">&rarr;</span>
-              </a>
-              <a
-                href="#"
-                className="text-sm font-semibold uppercase text-primary underline underline-offset-8 hover:text-accent"
-              >
-                Works <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
-            <p
-              className={`mx-auto text-center text-lg text-secondary lg:max-w-[66vw] `}
-            >
-              Empowering innovators to create at the speed of inspiration.
-              <br />
-              <br />
-              As a software developer, I use open source and AI tools to
-              architect efficient code and tackle complex problems with ease.
-            </p>
-          </div>
-
-          {/* <div className="bg-on-primary py-24 sm:py-32"> */}
-          <div className="hidden bg-on-primary pt-12 sm:pt-16">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <h2 className="text-center text-lg font-semibold leading-8 text-primary">
-                Trusted by the world's most innovative teams
-              </h2>
-              <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 blur-[0.4px] brightness-[400%] invert sepia sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
-                <img
-                  className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                  src="https://tailwindui.com/img/logos/158x48/transistor-logo-gray-900.svg"
-                  alt="Transistor"
-                  width={158}
-                  height={48}
-                />
-                <img
-                  className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                  src="https://tailwindui.com/img/logos/158x48/reform-logo-gray-900.svg"
-                  alt="Reform"
-                  width={158}
-                  height={48}
-                />
-                <img
-                  className="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-                  src="https://tailwindui.com/img/logos/158x48/tuple-logo-gray-900.svg"
-                  alt="Tuple"
-                  width={158}
-                  height={48}
-                />
-                <img
-                  className="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-                  src="https://tailwindui.com/img/logos/158x48/savvycal-logo-gray-900.svg"
-                  alt="SavvyCal"
-                  width={158}
-                  height={48}
-                />
-                <img
-                  className="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-                  src="https://tailwindui.com/img/logos/158x48/statamic-logo-gray-900.svg"
-                  alt="Statamic"
-                  width={158}
-                  height={48}
-                />
-              </div>
-            </div>
           </div>
         </Section>
+      </div>
 
+      <div
+        className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-20`}
+      >
         <Section>
           <div className="mx-auto w-full text-secondary">
             <div className="relative mx-auto w-full">
-              <p className="mb-20 w-[25vw] border-b-[6px] border-secondary py-4 text-start text-xl font-normal">
+              <p className="mb-20 w-[25vw] border-b-[6px] border-secondary pb-4 text-start text-xl font-normal">
                 Lloyd Lobo
               </p>
               <div className="grid grid-cols-1 gap-12 text-xl sm:grid-cols-2 lg:grid-cols-3">
