@@ -202,7 +202,7 @@ selection:bg-accent selection:text-fuchsia-900 text-2xl px-4 container w-full sm
               data-te-placement="top"
               data-te-ripple-init
               data-te-ripple-color="light"
-              title="Contact"
+              title="Email"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

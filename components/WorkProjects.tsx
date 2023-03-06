@@ -72,13 +72,11 @@ export const WorkProjects = () => {
           <a
             key={`url-${username}-${repo}`}
             href={`https://github.com/${username}/${repo}/`}
-            className={` ${
-              hasBorders ? "dark:border-accent  dark:sm:border  " : ""
-            } ${
-              isCardLike
+            className={` ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""
+              } ${isCardLike
                 ? "bg-white shadow-md  hover:shadow-xl dark:bg-black/20 dark:shadow-lg dark:sm:border"
                 : ""
-            } flex py-6 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20 `}
+              } flex py-6 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20 `}
           >
             <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
               <img
@@ -104,9 +102,8 @@ export const WorkProjects = () => {
               </h4>
 
               <div
-                className={` ${
-                  repo === "hackernews-clone" ? "blur" : ""
-                } mt-2 flex gap-2 text-[12px]
+                className={` ${repo === "hackernews-clone" ? "blur" : ""
+                  } mt-2 flex gap-2 text-[12px]
               `}
               >
                 {tags.map((tag, index) => (
