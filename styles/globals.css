@@ -95,7 +95,7 @@ body {
 }
 
 main {
-  @apply px-4;
+  @apply pt-8 md:pt-16 md:px-4;
 }
 
 article {

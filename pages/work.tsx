@@ -12,181 +12,176 @@ import { ClockNav, DockNav } from ".";
 export default function WorkPage() {
   return (
     <Layout title="Work ">
-      <ClockNav />
-      <DockNav />
-      <div className="relative hidden">
-        <Section>
-          <Hero />
-        </Section>
-      </div>
+      <main>
+        <div className="">
+          <Section>
+            <article className="">
+              <div className="">
+                <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/20 bg-primary/70 to-primary">
+                  <span className="relative">
+                    Design
+                    <br />
+                    Develop
+                    <br />
+                    Ship
+                  </span>
+                </h1>
+              </div>
+            </article>
+          </Section>
+        </div>
 
-      <div className="">
-        <Section>
-          <article className="">
-            <div className="pt-16">
-              <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b from-on-secondary/20 bg-primary/70 to-primary">
-                <span className="relative">
-                  Design
-                  <br />
-                  Develop
-                  <br />
-                  Ship
-                </span>
-              </h1>
+        <div
+          className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-20`}
+        >
+          <Section>
+            <article className="">
+              <div className="mx-auto w-full text-secondary">
+                <div className="relative mx-auto w-full">
+                  <p className="mb-20 w-fit pr-44 border-b-[4px] border-secondary pb-4 text-start text-lg font-normal">
+                    Lloyd Lobo
+                  </p>
+                  <div className="grid grid-cols-1 gap-10 text-base sm:grid-cols-2 lg:grid-cols-3">
+                    <ul className={`hidden space-y-1 font-medium lg:block`}>
+                      <li className="">
+                        <Link href={`#work`}>Work</Link>
+                      </li>
+                      <li className="">
+                        <Link href={`#work`}>About</Link>
+                      </li>
+                      <li className="">
+                        <Link href={`#work`}>Contact</Link>
+                      </li>
+                    </ul>
+                    <p className="">
+                      I'm a software developer who's passionate about building
+                      great stuff. My focus is on creating innovative solutions
+                      that exceed client expectations.
+                    </p>
+                    <p>
+                      My goal is to help businesses and individuals achieve
+                      their goals by adopting new ideas and approaches that they
+                      may have previously avoided. By working together, we can
+                      build trust and create a positive and productive work
+                      environment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </Section>
+
+          <Section>
+            <div className="relative grid w-full">
+              <h2
+                className="mb-20 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm
+                before:content-['01'] lg:mb-48
+                "
+              >
+                Work
+              </h2>
             </div>
-          </article>
-        </Section>
-      </div>
+            <WorkProjects />
+          </Section>
 
-      <div
-        className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-20`}
-      >
-        <Section>
-          <article className="">
-            <div className="mx-auto w-full text-secondary">
-              <div className="relative mx-auto w-full">
-                <p className="mb-20 w-fit pr-44 border-b-[4px] border-secondary pb-4 text-start text-lg font-normal">
-                  Lloyd Lobo
+          <Section>
+            <div className="relative mx-auto w-full">
+              <h2
+                className="mb-24 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary after:text-sm
+                after:content-['02'] lg:mb-40
+                "
+              >
+                About
+              </h2>
+            </div>
+            <div className="w-full text-secondary lg:place-items-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                <h2
+                  className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 `}
+                >
+                  Developer by trade,
+                  <br />
+                  creator by heart
+                </h2>
+              </div>
+              <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
+                <div className="ghost"></div>
+                <p className="relative col-start-1 lg:-left-10 lg:col-start-2 lg:pr-12">
+                  As a developer, I am also a creator. This{" "}
+                  <span className="font-bold font-serif italic">
+                    term encapsulates the full spectrum{"... "}
+                  </span>
+                  of my creative endeavors — from designing software and
+                  building apps to producing digital art and music for fun.
                 </p>
-                <div className="grid grid-cols-1 gap-10 text-base sm:grid-cols-2 lg:grid-cols-3">
-                  <ul className={`hidden space-y-1 font-medium lg:block`}>
+                <p className="lg:pr-12">
+                  Thoroughly understanding your medium is crucial. When
+                  technology and ideas blend, products excel{" "}
+                  <span className="text-xs">(like Apple)</span>. Each project
+                  reflects my unique blend of technical expertise and artistic
+                  vision — resulting in functional and visually stunning work.
+                </p>
+              </div>
+
+              <div className="ml-auto w-[75vw]  space-y-20 tracking-widest ">
+                <div className="mt-32">
+                  <h3
+                    className="mb-8 flex items-baseline justify-between place-self-end
+                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
+                  >
+                    Expertise
+                  </h3>
+                  <ul className={`uppercase text-secondary`}>
                     <li className="">
-                      <Link href={`#work`}>Work</Link>
+                      <Link href={`#work`}>Front-end development</Link>
                     </li>
                     <li className="">
-                      <Link href={`#work`}>About</Link>
+                      <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
                     </li>
                     <li className="">
-                      <Link href={`#work`}>Contact</Link>
+                      <Link href={`#work`}>CLI Apps</Link>
                     </li>
                   </ul>
-                  <p className="">
-                    I'm a software developer who's passionate about building
-                    great stuff. My focus is on creating innovative solutions
-                    that exceed client expectations.
-                  </p>
-                  <p>
-                    My goal is to help businesses and individuals achieve their
-                    goals by adopting new ideas and approaches that they may
-                    have previously avoided. By working together, we can build
-                    trust and create a positive and productive work environment.
-                  </p>
+                </div>
+
+                <div className=" ">
+                  <h3
+                    className="mb-10 flex items-baseline justify-between place-self-end
+                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
+                  >
+                    Stacks
+                  </h3>
+                  <ul className={`uppercase text-secondary`}>
+                    <li className="">
+                      <Link href={`#work`}>NextJS React JamStack</Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>
+                        Rust, Go, Python, JavaScript, TypeScript
+                      </Link>
+                    </li>
+                    <li className="">
+                      <Link href={`#work`}>Neovim, VS Code, bash</Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-          </article>
-        </Section>
+          </Section>
 
-        <Section>
-          <div className="relative grid w-full">
-            <h2
-              className="mb-20 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm
-                before:content-['01'] lg:mb-48
-                "
-            >
-              Work
-            </h2>
-          </div>
-          <WorkProjects />
-        </Section>
-
-        <Section>
-          <div className="relative mx-auto w-full">
-            <h2
-              className="mb-24 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary after:text-sm
-                after:content-['02'] lg:mb-40
-                "
-            >
-              About
-            </h2>
-          </div>
-          <div className="w-full text-secondary lg:place-items-center">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              <h2
-                className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 `}
-              >
-                Developer by trade,
-                <br />
-                creator by heart
+          <Section>
+            <div className="relative grid w-full">
+              <h2 className="mb-24 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm before:content-['03'] lg:mb-48">
+                Contact
               </h2>
             </div>
-            <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
-              <div className="ghost"></div>
-              <p className="relative col-start-1 lg:-left-10 lg:col-start-2 lg:pr-12">
-                As a developer, I am also a creator. This{" "}
-                <span className="font-bold italic">
-                  term encapsulates the full spectrum{"... "}
-                </span>
-                of my creative endeavors — from designing software and building
-                apps to producing digital art and music for fun.
-              </p>
-              <p className="lg:pr-12">
-                Thoroughly understanding your medium is crucial. When technology
-                and ideas blend, products excel{" "}
-                <span className="text-xs">(like Apple)</span>. Each project
-                reflects my unique blend of technical expertise and artistic
-                vision — resulting in functional and visually stunning work.
-              </p>
+            <div className="relative flex w-full  flex-col space-y-28 text-secondary lg:-left-10 lg:items-center">
+              <FooterCTAHero />
+              <FooterCTABody />
             </div>
-
-            <div className="ml-auto w-[75vw]  space-y-20 tracking-widest ">
-              <div className="mt-32">
-                <h3
-                  className="mb-8 flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
-                >
-                  Expertise
-                </h3>
-                <ul className={`uppercase text-secondary`}>
-                  <li className="">
-                    <Link href={`#work`}>Front-end development</Link>
-                  </li>
-                  <li className="">
-                    <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
-                  </li>
-                  <li className="">
-                    <Link href={`#work`}>CLI Apps</Link>
-                  </li>
-                </ul>
-              </div>
-
-              <div className=" ">
-                <h3
-                  className="mb-10 flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
-                >
-                  Stacks
-                </h3>
-                <ul className={`uppercase text-secondary`}>
-                  <li className="">
-                    <Link href={`#work`}>NextJS React JamStack</Link>
-                  </li>
-                  <li className="">
-                    <Link href={`#work`}>
-                      Rust, Go, Python, JavaScript, TypeScript
-                    </Link>
-                  </li>
-                  <li className="">
-                    <Link href={`#work`}>Neovim, VS Code, bash</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </Section>
-
-        <Section>
-          <div className="relative grid w-full">
-            <h2 className="mb-24 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm before:content-['03'] lg:mb-48">
-              Contact
-            </h2>
-          </div>
-          <div className="relative flex w-full  flex-col space-y-28 text-secondary lg:-left-10 lg:items-center">
-            <FooterCTAHero />
-            <FooterCTABody />
-          </div>
-        </Section>
-      </div>
+          </Section>
+        </div>
+      </main>
     </Layout>
   );
 }

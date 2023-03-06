@@ -12,6 +12,7 @@ module.exports = {
       display: ["cubano", "sans-serif"],
       body: ["sofia-pro", "sans-serif"],
       code: ["attribute-mono", "sans-serif"],
+      serif: ['"Newsreader"', "serif"],
       cursive: ['"Gochi Hand"', "cursive"],
     },
     colors: {

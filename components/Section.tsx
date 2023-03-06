@@ -19,7 +19,7 @@ export const Section = ({ children }: PropsSection) => {
       animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
       transition={{ duration: 0.7 }}
     >
-      <div className={`mx-auto px-8`}>{children}</div>
+      <div className={`mx-auto px-6`}>{children}</div>
     </motion.div>
   );
 };
