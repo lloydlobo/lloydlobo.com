@@ -17,7 +17,16 @@ export default function WorkPage() {
           <Section>
             <article className="">
               <div className="bg-on-primary">
-                <h1 className="grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b bg-primary from-on-primary/80">
+                <h1 className="grid md:hidden text-6xl lg:text-7xl font-semibold lg:font-bold text-primary ">
+                  <span className="relative">
+                    Design
+                    <br />
+                    Develop
+                    <br />
+                    Ship
+                  </span>
+                </h1>
+                <h1 className="hidden md:grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b bg-primary from-on-primary/70">
                   <span className="relative">
                     Design
                     <br />
