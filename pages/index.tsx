@@ -20,29 +20,18 @@ export function ClockNav() {
   }, []);
   return (
     <header className="flex z-50 min-h-[1.25rem] justify-center w-screen absolute px-2 top-0 bg-on-secondary/30 shadow items-center text-xs font-semibold brightness-100 backdrop-blur-[2px] gap-x-2">
-      <span className="h-full text-secondary">{currentTime}</span>
+      <span className="h-full text-secondary text-opacity-70">
+        {currentTime}
+      </span>
     </header>
   );
 }
 
 export default function IndexPage() {
-  const [currentTime, setCurrentTime] = useState(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       <main className="">
-        <div className="">
-          <header className="flex min-h-[1.25rem] justify-center w-screen absolute px-2 top-0 bg-on-secondary/20 shadow items-center text-xs font-semibold brightness-75 gap-x-2">
-            <span className="h-full text-secondary">{currentTime}</span>
-          </header>
-        </div>
+        <ClockNav />
 
         <div className="flex h-screen w-full absolute top-0 ">
           <div className="relative mx-2 mt-20 lg:mt-36 w-full">
