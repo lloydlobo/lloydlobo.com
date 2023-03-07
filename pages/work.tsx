@@ -227,8 +227,8 @@ export default function WorkPage() {
                     </span>
                   </h1>
                 </div>
-                <div className="w-full space-y-6 text-secondary lg:place-items-center">
-                  <div className="gap-12 hidden grid-cols-2">
+                <div className="w-full hidden space-y-6 text-secondary lg:place-items-center">
+                  <div className="gap-12 grid-cols-2">
                     <p className="relative col-start-1">
                       As a developer, I am also a creator. This{" "}
                       <span className="font-bold font-serif italic">
@@ -248,10 +248,10 @@ export default function WorkPage() {
                   </div>
                 </div>
 
-                <div className="ml-auto text-sm 4xl:w-[75vw] space-y-20 tracking-widest ">
+                <div className="ml-auto text-base 4xl:w-[75vw] space-y-12 tracking-widest ">
                   <div className="lg:mt-12">
                     <h3
-                      className="mb-4 flex items-baseline justify-between place-self-end
+                      className="mb-4 text-sm flex items-baseline justify-between place-self-end
                   border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase text-secondary "
                     >
                       Expertise
@@ -270,7 +270,7 @@ export default function WorkPage() {
                   </div>
 
                   <div className=" ">
-                    <h3 className="mb-4 flex items-baseline justify-between place-self-end border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase">
+                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase">
                       Stacks
                     </h3>
                     <ul className={`uppercase text-secondary`}>
@@ -293,15 +293,17 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <div className="relative space-y-6 grid w-full text-secondary  ">
-              <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-normal before:text-sm before:content-['03'] mb-12 lg:mb-48">
-                Connect
-              </h2>
-            </div>
-            <div className="relative flex w-full  flex-col space-y-28 text-secondary lg:-left-10 lg:items-center">
-              <FooterCTAHero />
-              <FooterCTABody />
-            </div>
+            <article className="mb-24">
+              <div className="relative mb-20 md:mb-36 space-y-6 grid w-full text-secondary  ">
+                <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-normal before:text-sm before:content-['03'] mb-8 lg:mb-12">
+                  Connect
+                </h2>
+              </div>
+              <div className="relative flex w-full flex-col space-y-28 text-secondary">
+                <FooterCTAHero />
+                <FooterCTABody />
+              </div>
+            </article>
           </Section>
         </div>
       </main>
@@ -313,7 +315,7 @@ function FooterCTABody() {
   return (
     <div className="relative ml-auto">
       <div
-        className={`relative w-full -rotate-45 scale-75 text-primary md:scale-100 lg:-rotate-[55deg]`}
+        className={`relative w-full -rotate-45 scale-75 md:scale-100 lg:-rotate-[55deg]`}
       >
         <div
           className={`absolute bottom-40 left-[30%] h-1/2 -translate-x-1/2 lg:bottom-56`}
@@ -341,9 +343,9 @@ function FooterCTAHero() {
   return (
     <div className="relative w-fit">
       <h3
-        className={` text-5xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-6xl`}
+        className={`text-4xl font-bold text-primary backdrop-blur-[0px] md:text-5xl`}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary backdrop-blur-[1px]">
           <span className="relative brightness-90">
             Let's
             <br />
@@ -361,11 +363,12 @@ function FooterCTAHero() {
           height: "clamp(28rem, 35vw, 31.3rem)",
           width: "clamp(18rem, 35vw, 31.3rem)",
         }}
-        className="absolute left-0 bottom-1 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:scale-[121%]"
+        className="absolute left-0 bottom-1 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:scale-[100%]"
       >
         <img
           alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif"
           src="/drita_arsela_coffee.webp"
+          className="left-1 relative"
         />
       </div>
     </div>
