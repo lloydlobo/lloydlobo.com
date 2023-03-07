@@ -18,14 +18,14 @@ export const EmailCopy = () => {
       <div>
         <div className="grid font-medium rounded-full">{email}</div>
         <button
-          className="flex flex-row-reverse justify-between text-sm gap-0 text-end align-baseline "
+          className="flex flex-row-reverse brightness-75 justify-between text-sm gap-0 text-end align-baseline "
           onClick={copyToClipboard}
         >
           <>
             {isCopied ? (
               <span className="text-accent">Copied</span>
             ) : (
-              <span className="underline decoration-accent underline-offset-8 max-[320px]:text-xs lg:text-base ">
+              <span className="underline decoration-accent underline-offset-8 max-[320px]:text-xs">
                 Copy to clipboard
               </span>
             )}

@@ -172,7 +172,7 @@ export default function WorkPage() {
             <article>
               <div className="relative  space-y-9 grid w-full text-secondary">
                 <h2
-                  className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-normal before:text-sm
+                  className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm
                 before:content-['01'] brightness-50
                 "
                 >
@@ -206,9 +206,9 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative text-secondary space-y-6 mx-auto w-full">
+              <div className="relative text-secondary space-y-12 mx-auto w-full">
                 <h2
-                  className="w-48 flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start font-normal after:text-sm
+                  className="w-48 font-medium  flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
                 after:content-['02']"
                 >
                   About
@@ -218,7 +218,7 @@ export default function WorkPage() {
                   <h1
                     className={`text-4xl font-bold text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
                   >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[0px]">
                       <span className="relative brightness-90">
                         Developer by trade
                         <br />
@@ -227,36 +227,62 @@ export default function WorkPage() {
                     </span>
                   </h1>
                 </div>
-                <div className="w-full hidden space-y-6 text-secondary lg:place-items-center">
-                  <div className="gap-12 grid-cols-2">
-                    <p className="relative col-start-1">
-                      As a developer, I am also a creator. This{" "}
-                      <span className="font-bold font-serif italic">
-                        term encapsulates the full spectrum{"... "}
-                      </span>
-                      of my creative endeavors — from designing software and
-                      building apps to producing digital art and music for fun.
-                    </p>
-                    <p className="lg:pr-12">
-                      Thoroughly understanding your medium is crucial. When
-                      technology and ideas blend, products excel{" "}
-                      <span className="text-xs">(like Apple)</span>. Each
-                      project reflects my unique blend of technical expertise
-                      and artistic vision — resulting in functional and visually
-                      stunning work.
-                    </p>
+                <div className="w-full space-y-6 text-secondary lg:place-items-center">
+                  <div className="gap-12 grid md:grid-cols-2">
+                    <div className="space-y-5">
+                      <h4 className="brightness-75 text-sm font-medium">
+                        Developer as a Creator
+                      </h4>
+                      <div className="relative grid col-start-1">
+                        <p className="">
+                          As a developer, I am also a creator. This{" "}
+                          <span className="font-bold font-serif italic">
+                            term encapsulates the full spectrum{"... "}
+                          </span>
+                        </p>
+                        <p className="hidden">
+                          I design software and build apps as part of my
+                          creative endeavors.
+                        </p>
+                        <p>I also produce digital art and music for fun.</p>
+                      </div>
+                    </div>
+                    <div className="space-y-5">
+                      <h4 className="brightness-75 text-sm font-medium">
+                        Importance of Understanding Medium
+                      </h4>
+                      <p className="lg:pr-12 hidden">
+                        Thoroughly understanding your medium is crucial. When
+                        technology and ideas blend, products excel{" "}
+                        <span className="text-xs">(like Apple)</span>. Each
+                        project reflects my unique blend of technical expertise
+                        and artistic vision — resulting in functional and
+                        visually stunning work.
+                      </p>
+                      <div>
+                        <p>
+                          Technology and ideas should blend seamlessly
+                          <span className="font-serif font-bold italic">
+                            {" "}
+                            (like Apple){" "}
+                          </span>
+                          to create excellent products .
+                        </p>
+                        <p>
+                          My projects reflect a unique blend of technical
+                          expertise and artistic vision.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="ml-auto text-base 4xl:w-[75vw] space-y-12 tracking-widest ">
+                <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12 tracking-widest ">
                   <div className="lg:mt-12">
-                    <h3
-                      className="mb-4 text-sm flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase text-secondary "
-                    >
+                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal brightness-75 text-secondary ">
                       Expertise
                     </h3>
-                    <ul className={`uppercase text-secondary`}>
+                    <ul className={`text-secondary space-y-3`}>
                       <li className="">
                         <Link href={`#work`}>Front-end development</Link>
                       </li>
@@ -270,10 +296,10 @@ export default function WorkPage() {
                   </div>
 
                   <div className=" ">
-                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase">
+                    <h3 className="mb-4 text-sm brightness-75 flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
                       Stacks
                     </h3>
-                    <ul className={`uppercase text-secondary`}>
+                    <ul className={`text-secondary space-y-3`}>
                       <li className="">
                         <Link href={`#work`}>NextJS React JamStack</Link>
                       </li>
@@ -295,7 +321,7 @@ export default function WorkPage() {
           <Section>
             <article className="mb-24">
               <div className="relative mb-20 md:mb-36 space-y-6 grid w-full text-secondary  ">
-                <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-normal before:text-sm before:content-['03'] mb-8 lg:mb-12">
+                <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-medium before:text-sm before:content-['03'] mb-8 lg:mb-12">
                   Connect
                 </h2>
               </div>
@@ -318,14 +344,13 @@ function FooterCTABody() {
         className={`relative w-full -rotate-45 scale-75 md:scale-100 lg:-rotate-[55deg]`}
       >
         <div
-          className={`absolute bottom-40 left-[30%] h-1/2 -translate-x-1/2 lg:bottom-56`}
+          className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 -translate-x-1/2 lg:bottom-56`}
         >
           <motion.div
             initial={{ opacity: 0, y: 0 }}
             animate={{ opacity: 1, y: [0, -10, 0] }}
             transition={{
               duration: 1.5,
-              // yoyo: Infinity,
               ease: "easeInOut",
               delay: 1,
             }}
@@ -368,7 +393,7 @@ function FooterCTAHero() {
         <img
           alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif"
           src="/drita_arsela_coffee.webp"
-          className="left-1 relative"
+          className="left-1 brightness-75 opacity-90 relative"
         />
       </div>
     </div>

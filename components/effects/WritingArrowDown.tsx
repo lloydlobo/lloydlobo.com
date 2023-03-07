@@ -19,7 +19,7 @@ export const WritingArrowDown = () => {
             <path
               d="M11.5442 1C14.0746 11.7544 14.4653 86.4839 14.4656 91.5637"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1"
               style={{
                 strokeDasharray: "90.6602px, 90.6602px",
                 strokeDashoffset: "0px",
@@ -28,7 +28,7 @@ export const WritingArrowDown = () => {
             <path
               d="M26.6594 61.4839C24.1594 67.4839 18.6594 84.4839 14.1594 93.4839C10.6594 83.9839 9.65942 75 1.99998 61.4839"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1"
               style={{
                 strokeDasharray: "68.6899px, 68.6899px",
                 strokeDashoffset: "0px",
