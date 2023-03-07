@@ -76,8 +76,8 @@ export default function WorkPage() {
           <Section>
             <article className="">
               <div className="bg-on-primary">
-                <h3
-                  className={` text-6xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-7xl`}
+                <h1
+                  className={`text-6xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-7xl`}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
                     <span className="relative brightness-90">
@@ -88,15 +88,13 @@ export default function WorkPage() {
                       Ship
                     </span>
                   </span>
-                </h3>
+                </h1>
               </div>
             </article>
           </Section>
         </div>
 
-        <div
-          className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-16`}
-        >
+        <div className={`mx-auto space-y-12 font-sans lg:space-y-24 mt-16`}>
           <Section>
             <article className="">
               <div className="mx-auto w-full text-secondary">
@@ -171,122 +169,127 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <div className="relative  space-y-6 grid w-full text-secondary">
-              <h2
-                className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-normal before:text-sm
+            <article>
+              <div className="relative  space-y-9 grid w-full text-secondary">
+                <h2
+                  className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-normal before:text-sm
                 before:content-['01'] brightness-50
                 "
-              >
-                Projects
-              </h2>
+                >
+                  Projects
+                </h2>
 
-              <div className="text-sm mx-auto grid gap-2">
-                {PROJECTS.map(
-                  ({ username, repo, tags, description, img }, index) => (
-                    <a
-                      key={`$project-{repo}`}
-                      href="/"
-                      // className="flex flex-nowrap items-center rounded-xl px-4 py-2 hover:bg-gray4/10 gap-2 w-full max-w-[60vw] mx-auto"
-                      className="rounded-xl px-4 py-2 hover:bg-gray4/10 gap-2 w-full max-w-[60vw] mx-auto"
-                    >
-                      <div className="grid grid-flow-col items-center w-full justify-between gap-x-2">
-                        <span className="font-medium">{repo}</span>
-                        <span className="hidden text-clip brightness-75 truncate  md:block">
-                          {description}
-                        </span>
-                        <div className="h-[0.1px] border-secondary/30 brightness-50 before:h-[1px] before:bg-white before:text-opacity-70 min-w-[20vw] before:content-[''] border-t "></div>
-                        <span className="brightness-75">2023</span>
-                      </div>
-                    </a>
-                  )
-                )}
+                <div className="text-sm mx-auto grid space-y-2 w-full">
+                  {PROJECTS.map(
+                    ({ username, repo, tags, description, img }, index) => (
+                      <a
+                        key={`$project-{repo}`}
+                        href="/"
+                        className="rounded-xl px-4 py-2 hover:bg-gray4/10  w-full 4xl:max-w-[60vw] mx-auto"
+                      >
+                        <div className="grid grid-flow-col items-center w-full justify-between gap-x-2">
+                          <span className="font-medium">{repo}</span>
+                          <span className="hidden text-clip brightness-75 truncate md:block">
+                            {description}
+                          </span>
+                          <div className="line h-[0.1px] border-secondary/30 brightness-50 before:h-[1px] before:bg-white before:text-opacity-70 min-w-[20vw] before:content-[' '] border-t "></div>
+                          <span className="brightness-75">2023</span>
+                        </div>
+                      </a>
+                    )
+                  )}
+                </div>
+                {/* <WorkProjects /> */}
               </div>
-              {/* <WorkProjects /> */}
-            </div>
+            </article>
           </Section>
 
           <Section>
-            <div className="relative text-secondary space-y-6 mx-auto w-full">
-              <h2
-                className="w-48 flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start font-normal after:text-sm
+            <article>
+              <div className="relative text-secondary space-y-6 mx-auto w-full">
+                <h2
+                  className="w-48 flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start font-normal after:text-sm
                 after:content-['02']"
-              >
-                About
-              </h2>
-              <div className="w-full text-secondary lg:place-items-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                  <h2
-                    className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 `}
+                >
+                  About
+                </h2>
+
+                <div className="">
+                  <h1
+                    className={`text-4xl font-bold text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
                   >
-                    Developer by trade,
-                    <br />
-                    creator by heart
-                  </h2>
-                </div>
-                <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
-                  <div className="ghost"></div>
-                  <p className="relative col-start-1 lg:-left-10 lg:col-start-2 lg:pr-12">
-                    As a developer, I am also a creator. This{" "}
-                    <span className="font-bold font-serif italic">
-                      term encapsulates the full spectrum{"... "}
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
+                      <span className="relative brightness-90">
+                        Developer by trade
+                        <br />
+                        Creator by heart
+                      </span>
                     </span>
-                    of my creative endeavors — from designing software and
-                    building apps to producing digital art and music for fun.
-                  </p>
-                  <p className="lg:pr-12">
-                    Thoroughly understanding your medium is crucial. When
-                    technology and ideas blend, products excel{" "}
-                    <span className="text-xs">(like Apple)</span>. Each project
-                    reflects my unique blend of technical expertise and artistic
-                    vision — resulting in functional and visually stunning work.
-                  </p>
+                  </h1>
                 </div>
-              </div>
-
-              <div className="ml-auto w-[75vw]  space-y-20 tracking-widest ">
-                <div className="mt-32">
-                  <h3
-                    className="mb-8 flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
-                  >
-                    Expertise
-                  </h3>
-                  <ul className={`uppercase text-secondary`}>
-                    <li className="">
-                      <Link href={`#work`}>Front-end development</Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>CLI Apps</Link>
-                    </li>
-                  </ul>
+                <div className="w-full space-y-6 text-secondary lg:place-items-center">
+                  <div className="gap-12 hidden grid-cols-2">
+                    <p className="relative col-start-1">
+                      As a developer, I am also a creator. This{" "}
+                      <span className="font-bold font-serif italic">
+                        term encapsulates the full spectrum{"... "}
+                      </span>
+                      of my creative endeavors — from designing software and
+                      building apps to producing digital art and music for fun.
+                    </p>
+                    <p className="lg:pr-12">
+                      Thoroughly understanding your medium is crucial. When
+                      technology and ideas blend, products excel{" "}
+                      <span className="text-xs">(like Apple)</span>. Each
+                      project reflects my unique blend of technical expertise
+                      and artistic vision — resulting in functional and visually
+                      stunning work.
+                    </p>
+                  </div>
                 </div>
 
-                <div className=" ">
-                  <h3
-                    className="mb-10 flex items-baseline justify-between place-self-end
-                  border-b-[2px] border-secondary py-3 text-start text-base font-bold uppercase text-secondary "
-                  >
-                    Stacks
-                  </h3>
-                  <ul className={`uppercase text-secondary`}>
-                    <li className="">
-                      <Link href={`#work`}>NextJS React JamStack</Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>
-                        Rust, Go, Python, JavaScript, TypeScript
-                      </Link>
-                    </li>
-                    <li className="">
-                      <Link href={`#work`}>Neovim, VS Code, bash</Link>
-                    </li>
-                  </ul>
+                <div className="ml-auto text-sm 4xl:w-[75vw] space-y-20 tracking-widest ">
+                  <div className="lg:mt-12">
+                    <h3
+                      className="mb-4 flex items-baseline justify-between place-self-end
+                  border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase text-secondary "
+                    >
+                      Expertise
+                    </h3>
+                    <ul className={`uppercase text-secondary`}>
+                      <li className="">
+                        <Link href={`#work`}>Front-end development</Link>
+                      </li>
+                      <li className="">
+                        <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
+                      </li>
+                      <li className="">
+                        <Link href={`#work`}>CLI Apps</Link>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className=" ">
+                    <h3 className="mb-4 flex items-baseline justify-between place-self-end border-b-[2px] border-secondary/50 py-3 text-start font-medium uppercase">
+                      Stacks
+                    </h3>
+                    <ul className={`uppercase text-secondary`}>
+                      <li className="">
+                        <Link href={`#work`}>NextJS React JamStack</Link>
+                      </li>
+                      <li className="">
+                        <Link href={`#work`}>
+                          Rust, Go, Python, JavaScript, TypeScript
+                        </Link>
+                      </li>
+                      <li className="">
+                        <Link href={`#work`}>Neovim, VS Code, bash</Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
+            </article>
           </Section>
 
           <Section>
@@ -338,7 +341,7 @@ function FooterCTAHero() {
   return (
     <div className="relative w-fit">
       <h3
-        className={` text-6xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-7xl`}
+        className={` text-5xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-6xl`}
       >
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
           <span className="relative brightness-90">
