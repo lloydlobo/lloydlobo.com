@@ -76,24 +76,19 @@ export default function WorkPage() {
           <Section>
             <article className="">
               <div className="bg-on-primary">
-                <h1 className="grid md:hidden text-6xl lg:text-7xl font-semibold lg:font-bold text-primary ">
-                  <span className="relative">
-                    Design
-                    <br />
-                    Develop
-                    <br />
-                    Ship
+                <h3
+                  className={` text-6xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-7xl`}
+                >
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
+                    <span className="relative brightness-90">
+                      Design
+                      <br />
+                      Develop
+                      <br />
+                      Ship
+                    </span>
                   </span>
-                </h1>
-                <h1 className="hidden md:grid text-6xl lg:text-7xl font-semibold lg:font-bold text-transparent bg-clip-text bg-gradient-to-b bg-primary from-on-primary/70">
-                  <span className="relative">
-                    Design
-                    <br />
-                    Develop
-                    <br />
-                    Ship
-                  </span>
-                </h1>
+                </h3>
               </div>
             </article>
           </Section>
@@ -194,13 +189,13 @@ export default function WorkPage() {
                       // className="flex flex-nowrap items-center rounded-xl px-4 py-2 hover:bg-gray4/10 gap-2 w-full max-w-[60vw] mx-auto"
                       className="rounded-xl px-4 py-2 hover:bg-gray4/10 gap-2 w-full max-w-[60vw] mx-auto"
                     >
-                      <div className="grid grid-flow-col-dense items-center gap-x-2">
-                        <span className="w-fit">{repo}</span>
-                        <span className="hidden text-clip truncate  md:block">
+                      <div className="grid grid-flow-col items-center w-full justify-between gap-x-2">
+                        <span className="font-medium">{repo}</span>
+                        <span className="hidden text-clip brightness-75 truncate  md:block">
                           {description}
                         </span>
-                        <div className="relative h-[0.1px] border-secondary/40 before:h-[1px] before:bg-white before:text-opacity-70 z-30 w-full min-w-[20vw] before:content-[''] border "></div>
-                        <span className="flex-1">2023</span>
+                        <div className="h-[0.1px] border-secondary/30 brightness-50 before:h-[1px] before:bg-white before:text-opacity-70 min-w-[20vw] before:content-[''] border-t "></div>
+                        <span className="brightness-75">2023</span>
                       </div>
                     </a>
                   )
