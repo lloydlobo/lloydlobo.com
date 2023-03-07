@@ -70,8 +70,8 @@ selection:bg-accent selection:text-fuchsia-900 text-2xl tracking-tight leading-9
                         />
                       </svg>
                     </span>{" "}
-                    software with the focus on on creating innovative solutions
-                    that exceed client expectations.{" "}
+                    software with the focus on innovative experiences that
+                    exceed client expectations.{" "}
                     <span className="inline-flex">
                       <strong>software developer</strong>
                     </span>{" "}

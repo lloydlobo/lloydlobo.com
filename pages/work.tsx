@@ -9,6 +9,65 @@ import Link from "next/link";
 import React from "react";
 import { ClockNav, DockNav } from ".";
 
+const PROJECTS = [
+  {
+    username: "lloydlobo",
+    tags: ["development", "cli", "linux"],
+    repo: "mausam",
+    description: "A weather update desktop notifier made with Rust",
+    img: "/mausam.jpg",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["development", "Neural Network"],
+    repo: "neura-driver",
+    description: "A simple self-driving car application with a neural network",
+    img: "/neura-driver.jpg",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["development", "API"],
+    repo: "geomeasure",
+    description: "Geomeasure measures distance using GPS and that too without",
+    img: "/geomeasure.jpg",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["development", "python", "discord"],
+    repo: "proxymate",
+    description:
+      "Generates phrases in the style of the author using Markov model",
+    img: "/proxymate.jpg",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["development", "discord", "python"],
+    repo: "penny",
+    description: "A no-nonsense budget tracking Discord bot",
+    img: "/penny.jpg",
+  },
+  // {
+  //   username: "lloydlobo",
+  //   tags: ["development", "CLI", "go"],
+  //   repo: "okejoke",
+  //   description: "okejoke gathers jokes on the fly in your CLI",
+  //   img: "/okejoke.jpg",
+  // },
+  {
+    username: "lloydlobo",
+    tags: ["development", "rust", "cli"],
+    repo: "rssh",
+    description: "rssh or Rust Shell allows keeping maintainable bash aliases",
+    img: "/rssh.jpg",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["development", "rust", "cli"],
+    repo: "hackernews-clone",
+    description: "Coming soon...",
+    img: "/mausam-fibo.jpg",
+  },
+];
 export default function WorkPage() {
   return (
     <Layout title="Work ">
@@ -71,7 +130,7 @@ export default function WorkPage() {
                     </span>
                     <span>
                       {" "}
-                      Tinkering with functional and asthetically pleasing user
+                      Tinkering with functional and aesthetically pleasing
                       interfaces.
                     </span>
                   </p>
@@ -125,7 +184,29 @@ export default function WorkPage() {
               >
                 Projects
               </h2>
-              <WorkProjects />
+
+              <div className="text-sm mx-auto grid gap-2">
+                {PROJECTS.map(
+                  ({ username, repo, tags, description, img }, index) => (
+                    <a
+                      key={`$project-{repo}`}
+                      href="/"
+                      // className="flex flex-nowrap items-center rounded-xl px-4 py-2 hover:bg-gray4/10 gap-2 w-full max-w-[60vw] mx-auto"
+                      className="rounded-xl px-4 py-2 hover:bg-gray4/10 gap-2 w-full max-w-[60vw] mx-auto"
+                    >
+                      <div className="grid grid-flow-col-dense items-center gap-x-2">
+                        <span className="w-fit">{repo}</span>
+                        <span className="hidden text-clip truncate  md:block">
+                          {description}
+                        </span>
+                        <div className="relative h-[0.1px] border-secondary/40 before:h-[1px] before:bg-white before:text-opacity-70 z-30 w-full min-w-[20vw] before:content-[''] border "></div>
+                        <span className="flex-1">2023</span>
+                      </div>
+                    </a>
+                  )
+                )}
+              </div>
+              {/* <WorkProjects /> */}
             </div>
           </Section>
 
