@@ -11,7 +11,7 @@ export default function Page404() {
         <body class="h-full">
         ```
       */}
-      <main className="grid h-screen min-h-full place-items-center bg-white py-24 px-6 dark:bg-on-primary sm:py-32 lg:px-8">
+      <main className="grid min-h-screen place-items-center bg-white py-24 px-6 dark:bg-on-primary sm:py-32 lg:px-8">
         <div className="text-center">
           <p className="text-base font-semibold text-indigo-600 dark:text-primary">
             404

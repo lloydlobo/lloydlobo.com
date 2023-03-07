@@ -46,34 +46,65 @@ export default function WorkPage() {
           <Section>
             <article className="">
               <div className="mx-auto w-full text-secondary">
-                <div className="relative mx-auto w-full">
-                  <p className="mb-20 w-fit pr-44 border-b-[4px] border-secondary pb-4 text-start text-lg font-normal">
-                    Lloyd Lobo
+                <div className="relative space-y-6 mx-auto w-full">
+                  <div className="w-48 border-b-[2px] border-secondary/90 pb-2">
+                    <p className="font-medium text-start">Work</p>
+                  </div>
+                  {/* Better to put this in the about page */}
+                  <p className="hidden">
+                    If you're browsing this page it means you probably wish to
+                    know more about me. Wish granted.
                   </p>
-                  <div className="grid grid-cols-1 gap-10 text-base sm:grid-cols-2 lg:grid-cols-3">
-                    <ul className={`hidden space-y-1 font-medium lg:block`}>
-                      <li className="">
-                        <Link href={`#work`}>Work</Link>
-                      </li>
-                      <li className="">
-                        <Link href={`#work`}>About</Link>
-                      </li>
-                      <li className="">
-                        <Link href={`#work`}>Contact</Link>
-                      </li>
-                    </ul>
-                    <p className="">
-                      I'm a software developer who's passionate about building
-                      great stuff. My focus is on creating innovative solutions
-                      that exceed client expectations.
-                    </p>
-                    <p>
-                      My goal is to help businesses and individuals achieve
-                      their goals by adopting new ideas and approaches that they
-                      may have previously avoided. By working together, we can
-                      build trust and create a positive and productive work
-                      environment.
-                    </p>
+                  <span className="md:absolute hover:opacity-100 opacity-0 text-sm w-full pt-[3px] origin-left -right-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] dim">
+                    TLDR for the impatient people...
+                  </span>
+                  <p>
+                    I'm Lloyd, a software developer who's passionate about{" "}
+                    <em className="font-serif text-lg">
+                      building polished software and web experiences
+                    </em>
+                    .
+                    <span className="hidden">
+                      I focus on creating functional and innovative solutions
+                      that exceed client's expectations.
+                    </span>
+                    <span>
+                      {" "}
+                      Tinkering with functional and asthetically pleasing user
+                      interfaces.
+                    </span>
+                  </p>
+
+                  <p>
+                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] dim">
+                      Currently...
+                    </span>
+                    Developing open-source design systems, websites, and
+                    dashboards.
+                  </p>
+                  <div className="relative w-[100%] overflow-x-auto mx-auto hidden">
+                    <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
+                      <ul className={`space-y-1 font-medium`}>
+                        <li className="">
+                          <Link href={`#work`}>Work</Link>
+                        </li>
+                        <li className="">
+                          <Link href={`#work`}>About</Link>
+                        </li>
+                        <li className="">
+                          <Link href={`#work`}>Contact</Link>
+                        </li>
+                      </ul>
+                      <p className="">
+                        I'm a software developer who's passionate about building
+                        great stuff. My focus is on creating innovative
+                        solutions that exceed client expectations.
+                      </p>
+                      <p className="">
+                        My goal: Help businesses and individuals achieve goals
+                        by adopting new ideas and approaches.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,7 +118,7 @@ export default function WorkPage() {
                 before:content-['01'] lg:mb-48
                 "
               >
-                Work
+                Projects
               </h2>
             </div>
             <WorkProjects />

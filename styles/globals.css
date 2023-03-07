@@ -99,7 +99,7 @@ main {
 }
 
 article {
-  @apply md:mx-44;
+  @apply md:mx-48;
 }
 
 footer {
@@ -113,6 +113,11 @@ a {
   text-decoration: none;
 }
 
+p {
+  @apply brightness-[100%] leading-7 tracking-normal;
+  font-feature-settings: "kern", "frac", "kern", "ss02";
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -121,12 +126,8 @@ a {
 
 nav.dock > * {
   @apply scale-90 hover:bg-gradient-to-tl from-on-secondary/90 via-on-secondary/60 to-secondary/[0.005] p-[0.7rem]  backdrop-blur-[0px] rounded-full;
+}
 
-  /* background-image: linear-gradient( */
-  /*   45deg, */
-  /*   var(--gradient-color-1), */
-  /*   var(--gradient-color-2), */
-  /*   var(--gradient-color-1), */
-  /*   var(--gradient-color-2) */
-  /* ); */
+.dim {
+  @apply brightness-50;
 }
