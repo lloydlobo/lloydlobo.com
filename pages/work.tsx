@@ -41,7 +41,7 @@ export default function WorkPage() {
         </div>
 
         <div
-          className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-20`}
+          className={`mx-auto space-y-[6rem] font-sans lg:space-y-[12rem] mt-16`}
         >
           <Section>
             <article className="">
@@ -55,12 +55,13 @@ export default function WorkPage() {
                     If you're browsing this page it means you probably wish to
                     know more about me. Wish granted.
                   </p>
-                  <span className="md:absolute hover:opacity-100 opacity-0 text-sm w-full pt-[3px] origin-left -right-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] dim">
+                  <span className="md:absolute hover:opacity-100 opacity-0 text-sm w-full pt-[3px] origin-left -right-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
                     TLDR for the impatient people...
                   </span>
                   <p>
-                    I'm Lloyd, a software developer who's passionate about{" "}
-                    <em className="font-serif text-lg">
+                    I'm <span className="brightness-50 font-medium">Lloyd</span>
+                    , a software developer who's passionate about{" "}
+                    <em className="font-serif font-bold">
                       building polished software and web experiences
                     </em>
                     .
@@ -76,11 +77,15 @@ export default function WorkPage() {
                   </p>
 
                   <p>
-                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] dim">
-                      Currently...
+                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
+                      Now...{" "}
                     </span>
-                    Developing open-source design systems, websites, and
-                    dashboards.
+                    Fearlessly exploring passions and interests with a drive to
+                    hone my skills and deliver quality work. I assume{" "}
+                    <em className="font-serif font-bold">
+                      everything we encounter matters to someone
+                    </em>
+                    .
                   </p>
                   <div className="relative w-[100%] overflow-x-auto mx-auto hidden">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
@@ -92,7 +97,7 @@ export default function WorkPage() {
                           <Link href={`#work`}>About</Link>
                         </li>
                         <li className="">
-                          <Link href={`#work`}>Contact</Link>
+                          <Link href={`#work`}>Connect</Link>
                         </li>
                       </ul>
                       <p className="">
@@ -112,55 +117,54 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <div className="relative grid w-full">
+            <div className="relative  space-y-6 grid w-full text-secondary">
               <h2
-                className="mb-20 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm
-                before:content-['01'] lg:mb-48
+                className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-normal before:text-sm
+                before:content-['01']
                 "
               >
                 Projects
               </h2>
+              <WorkProjects />
             </div>
-            <WorkProjects />
           </Section>
 
           <Section>
-            <div className="relative mx-auto w-full">
+            <div className="relative space-y-6 mx-auto w-full">
               <h2
-                className="mb-24 flex w-[25vw] items-baseline justify-between place-self-start border-b-[6px] border-secondary py-3 text-start text-xl font-normal text-secondary after:text-sm
-                after:content-['02'] lg:mb-40
-                "
+                className="w-48 flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start font-normal after:text-sm
+                after:content-['02']"
               >
                 About
               </h2>
-            </div>
-            <div className="w-full text-secondary lg:place-items-center">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                <h2
-                  className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 `}
-                >
-                  Developer by trade,
-                  <br />
-                  creator by heart
-                </h2>
-              </div>
-              <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
-                <div className="ghost"></div>
-                <p className="relative col-start-1 lg:-left-10 lg:col-start-2 lg:pr-12">
-                  As a developer, I am also a creator. This{" "}
-                  <span className="font-bold font-serif italic">
-                    term encapsulates the full spectrum{"... "}
-                  </span>
-                  of my creative endeavors — from designing software and
-                  building apps to producing digital art and music for fun.
-                </p>
-                <p className="lg:pr-12">
-                  Thoroughly understanding your medium is crucial. When
-                  technology and ideas blend, products excel{" "}
-                  <span className="text-xs">(like Apple)</span>. Each project
-                  reflects my unique blend of technical expertise and artistic
-                  vision — resulting in functional and visually stunning work.
-                </p>
+              <div className="w-full text-secondary lg:place-items-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                  <h2
+                    className={`relative text-left text-5xl font-semibold tracking-tighter text-primary lg:-left-10 lg:col-start-2 lg:col-end-4 `}
+                  >
+                    Developer by trade,
+                    <br />
+                    creator by heart
+                  </h2>
+                </div>
+                <div className="grid space-y-12 text-lg leading-normal tracking-wide md:grid-cols-2 lg:grid-cols-3">
+                  <div className="ghost"></div>
+                  <p className="relative col-start-1 lg:-left-10 lg:col-start-2 lg:pr-12">
+                    As a developer, I am also a creator. This{" "}
+                    <span className="font-bold font-serif italic">
+                      term encapsulates the full spectrum{"... "}
+                    </span>
+                    of my creative endeavors — from designing software and
+                    building apps to producing digital art and music for fun.
+                  </p>
+                  <p className="lg:pr-12">
+                    Thoroughly understanding your medium is crucial. When
+                    technology and ideas blend, products excel{" "}
+                    <span className="text-xs">(like Apple)</span>. Each project
+                    reflects my unique blend of technical expertise and artistic
+                    vision — resulting in functional and visually stunning work.
+                  </p>
+                </div>
               </div>
 
               <div className="ml-auto w-[75vw]  space-y-20 tracking-widest ">
@@ -210,9 +214,9 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <div className="relative grid w-full">
-              <h2 className="mb-24 flex w-[25vw] items-baseline justify-between place-self-end border-b-[6px] border-secondary py-3 text-end text-xl font-normal text-secondary before:text-sm before:content-['03'] lg:mb-48">
-                Contact
+            <div className="relative space-y-6 grid w-full text-secondary  ">
+              <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end text-xl font-normal before:text-sm before:content-['03'] mb-12 lg:mb-48">
+                Connnect
               </h2>
             </div>
             <div className="relative flex w-full  flex-col space-y-28 text-secondary lg:-left-10 lg:items-center">
@@ -240,7 +244,7 @@ function FooterCTABody() {
             animate={{ opacity: 1, y: [0, -10, 0] }}
             transition={{
               duration: 1.5,
-              yoyo: Infinity,
+              // yoyo: Infinity,
               ease: "easeInOut",
               delay: 1,
             }}
@@ -258,13 +262,17 @@ function FooterCTAHero() {
   return (
     <div className="relative w-fit">
       <h3
-        className={` text-5xl font-bold leading-[1.2ch] tracking-tight text-primary backdrop-blur-[1px] hover:text-accent md:text-[5.3rem]`}
+        className={` text-6xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-7xl`}
       >
-        Let's
-        <br />
-        work
-        <br />
-        together
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
+          <span className="relative brightness-90">
+            Let's
+            <br />
+            work
+            <br />
+            together
+          </span>
+        </span>
       </h3>
 
       <div
@@ -274,7 +282,7 @@ function FooterCTAHero() {
           height: "clamp(28rem, 35vw, 31.3rem)",
           width: "clamp(18rem, 35vw, 31.3rem)",
         }}
-        className="absolute left-1 bottom-0 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:scale-[121%]"
+        className="absolute left-0 bottom-1 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:scale-[121%]"
       >
         <img
           alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif"
