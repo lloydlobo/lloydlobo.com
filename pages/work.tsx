@@ -75,9 +75,9 @@ export default function WorkPage() {
         <div className="">
           <Section>
             <article className="">
-              <div className="bg-on-primary">
+              <div className="">
                 <h1
-                  className={`text-6xl font-bold text-primary backdrop-blur-[1px] hover:text-accent md:text-7xl`}
+                  className={`text-6xl font-bold text-primary backdrop-blur-[0px] hover:text-accent md:text-7xl`}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
                     <span className="relative brightness-90">
