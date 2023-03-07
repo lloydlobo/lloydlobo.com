@@ -120,7 +120,7 @@ export default function WorkPage() {
             <div className="relative  space-y-6 grid w-full text-secondary">
               <h2
                 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-normal before:text-sm
-                before:content-['01']
+                before:content-['01'] brightness-50
                 "
               >
                 Projects
@@ -130,9 +130,9 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <div className="relative space-y-6 mx-auto w-full">
+            <div className="relative text-secondary space-y-6 mx-auto w-full">
               <h2
-                className="w-48 flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start font-normal after:text-sm
+                className="w-48 flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start font-normal after:text-sm
                 after:content-['02']"
               >
                 About
@@ -215,8 +215,8 @@ export default function WorkPage() {
 
           <Section>
             <div className="relative space-y-6 grid w-full text-secondary  ">
-              <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end text-xl font-normal before:text-sm before:content-['03'] mb-12 lg:mb-48">
-                Connnect
+              <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-normal before:text-sm before:content-['03'] mb-12 lg:mb-48">
+                Connect
               </h2>
             </div>
             <div className="relative flex w-full  flex-col space-y-28 text-secondary lg:-left-10 lg:items-center">
