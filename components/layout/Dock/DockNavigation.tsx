@@ -18,17 +18,19 @@ export function DockNavigation() {
 
 function DockNav() {
   return (
-    <div className="z-50 fixed bottom-5 left-0 right-0 gird  mx-auto">
-      <div className="border border-opacity-10 rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
-        <nav className="dock grid grid-flow-col justify-between p-2 overflow-x-scroll overflow-y-hidden gap-1 rounded-full  place-items-center">
+    <nav className="z-50 fixed bottom-5 left-0 right-0 gird  mx-auto">
+      <div className="border divider-gray6/40 divide-gray4/30 py-2 divide-x gap-1 border-opacity-10  flex rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
+        <div className="dock px-2 grid grid-flow-col justify-between overflow-x-scroll overflow-y-hidden gap-2 place-items-center">
           <HomeIcon />
           <WorkIcon />
           <GithubIcon />
           <MailIcon />
+        </div>
+        <div className="dock px-2 grid grid-flow-col justify-between overflow-x-scroll overflow-y-hidden gap-2  place-items-center">
           <ThemeIcon />
-        </nav>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
@@ -37,14 +39,10 @@ const ThemeIcon = () => {
   const handleMode = () => setDarkTheme!(!darkTheme);
   return (
     <>
-      <span onClick={handleMode}>
-        {
-          darkTheme ?
-            (
-              <FaSun size='24' />
-            ) : (
-              <FaMoon size='24' />
-            )}
+      <span onClick={handleMode}
+        className="flex brightness-75 cursor-pointer items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+      >
+        {darkTheme ? (<FaSun />) : (<FaMoon />)}
       </span>
 
     </>
