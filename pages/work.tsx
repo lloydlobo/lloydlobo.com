@@ -79,7 +79,7 @@ export default function WorkPage() {
                 <h1
                   className={`text-6xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-7xl`}
                 >
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/70 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
                     <span className="relative brightness-90">
                       Design
                       <br />
@@ -218,7 +218,7 @@ export default function WorkPage() {
                   <h1
                     className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
                   >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[0px]">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/70 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
                       <span className="relative brightness-90">
                         Developer by trade
                         <br />
@@ -366,11 +366,11 @@ function FooterCTABody() {
 
 function FooterCTAHero() {
   return (
-    <div className="relative w-fit">
+    <div className="relative w-fit ">
       <h3
         className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] md:text-5xl`}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary backdrop-blur-[1px]">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r invert dark:from-primary/50 from-on-primary/70 dark:invert-0 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
           <span className="relative brightness-90">
             Let's
             <br />
@@ -388,7 +388,7 @@ function FooterCTAHero() {
           height: "clamp(28rem, 35vw, 31.3rem)",
           width: "clamp(18rem, 35vw, 31.3rem)",
         }}
-        className="absolute left-0 bottom-1 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[30%] grayscale-[30%] sepia-[50%] filter lg:scale-[100%]"
+        className="absolute left-0 bottom-1 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[70%] grayscale-[30%] sepia-[50%] filter lg:scale-[100%]"
       >
         <img
           alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif"
