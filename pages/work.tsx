@@ -77,7 +77,7 @@ export default function WorkPage() {
             <article className="">
               <div className="">
                 <h1
-                  className={`text-6xl font-bold text-primary backdrop-blur-[0px] hover:text-accent md:text-7xl`}
+                  className={`text-6xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-7xl`}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[1px]">
                     <span className="relative brightness-90">
@@ -97,7 +97,7 @@ export default function WorkPage() {
         <div className={`mx-auto space-y-12 font-sans lg:space-y-24 mt-16`}>
           <Section>
             <article className="">
-              <div className="mx-auto w-full text-secondary">
+              <div className="mx-auto w-full dark:text-secondary">
                 <div className="relative space-y-6 mx-auto w-full">
                   <div className="w-48 border-b-[2px] border-secondary/90 pb-2">
                     <p className="font-medium text-start">Work</p>
@@ -170,7 +170,7 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative  space-y-9 grid w-full text-secondary">
+              <div className="relative  space-y-9 grid w-full dark:text-secondary">
                 <h2
                   className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm
                 before:content-['01'] brightness-50
@@ -206,7 +206,7 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative text-secondary space-y-12 mx-auto w-full">
+              <div className="relative dark:text-secondary space-y-12 mx-auto w-full">
                 <h2
                   className="w-48 font-medium  flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
                 after:content-['02']"
@@ -216,7 +216,7 @@ export default function WorkPage() {
 
                 <div className="">
                   <h1
-                    className={`text-4xl font-bold text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
+                    className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
                   >
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 backdrop-filter to-primary backdrop-blur-[0px]">
                       <span className="relative brightness-90">
@@ -227,7 +227,7 @@ export default function WorkPage() {
                     </span>
                   </h1>
                 </div>
-                <div className="w-full space-y-6 text-secondary lg:place-items-center">
+                <div className="w-full space-y-6 dark:text-secondary lg:place-items-center">
                   <div className="gap-12 grid md:grid-cols-2">
                     <div className="space-y-5">
                       <h4 className="brightness-75 text-sm font-medium">
@@ -279,10 +279,10 @@ export default function WorkPage() {
 
                 <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12 tracking-widest ">
                   <div className="lg:mt-12">
-                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal brightness-75 text-secondary ">
+                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal brightness-75 dark:text-secondary ">
                       Expertise
                     </h3>
-                    <ul className={`text-secondary space-y-3`}>
+                    <ul className={`dark:text-secondary space-y-3`}>
                       <li className="">
                         <Link href={`#work`}>Front-end development</Link>
                       </li>
@@ -299,7 +299,7 @@ export default function WorkPage() {
                     <h3 className="mb-4 text-sm brightness-75 flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
                       Stacks
                     </h3>
-                    <ul className={`text-secondary space-y-3`}>
+                    <ul className={`dark:text-secondary space-y-3`}>
                       <li className="">
                         <Link href={`#work`}>NextJS React JamStack</Link>
                       </li>
@@ -320,12 +320,12 @@ export default function WorkPage() {
 
           <Section>
             <article className="mb-24">
-              <div className="relative mb-20 md:mb-36 space-y-6 grid w-full text-secondary  ">
+              <div className="relative mb-20 md:mb-36 space-y-6 grid w-full dark:text-secondary  ">
                 <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-medium before:text-sm before:content-['03'] mb-8 lg:mb-12">
                   Connect
                 </h2>
               </div>
-              <div className="relative flex w-full flex-col space-y-28 text-secondary">
+              <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
                 <FooterCTAHero />
                 <FooterCTABody />
               </div>
@@ -368,7 +368,7 @@ function FooterCTAHero() {
   return (
     <div className="relative w-fit">
       <h3
-        className={`text-4xl font-bold text-primary backdrop-blur-[0px] md:text-5xl`}
+        className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] md:text-5xl`}
       >
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary/50 to-primary backdrop-blur-[1px]">
           <span className="relative brightness-90">

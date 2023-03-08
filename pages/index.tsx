@@ -21,7 +21,7 @@ export function ClockNav() {
   }, []);
   return (
     <header className="flex z-50 min-h-[1.25rem] justify-center fixed left-0 right-0 px-2 top-0 bg-on-secondary/30 shadow items-center text-xs font-semibold brightness-100 backdrop-blur-[2px] gap-x-2">
-      <span className="h-full text-secondary text-opacity-70">
+      <span className="h-full dark:text-secondary text-opacity-70">
         {currentTime ? (
           <span>{currentTime}</span>
         ) : (
@@ -39,11 +39,9 @@ export default function IndexPage() {
         <main className="">
           <article>
             <div className="flex relative top-0 ">
-              <div className="relative mx-2  w-full">
+              <div className="relative mx-2 w-full">
                 <div
-                  className="
-selection:bg-accent selection:text-fuchsia-900 text-2xl tracking-tight leading-9 lowercase  px-4 container w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto text-secondary font-medium gap-1"
-                >
+                  className="selection:bg-accent selection:text-fuchsia-900 text-2xl tracking-tight leading-9 lowercase  px-4 container w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto dark:text-secondary font-medium gap-1">
                   <Link
                     href="/about"
                     className="opacity-50 hover:underline hover:opacity-100  hover:text-accent "

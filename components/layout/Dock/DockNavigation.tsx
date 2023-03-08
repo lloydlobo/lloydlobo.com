@@ -1,5 +1,8 @@
 import { useDarkMode } from "@/hooks/useDarkMode";
 import Link from "next/link";
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import {
   FaSearch,
@@ -8,7 +11,9 @@ import {
   FaUserCircle,
   FaMoon,
   FaSun,
+  FaDesktop,
 } from 'react-icons/fa';
+import { useTheme, } from "next-themes";
 
 export function DockNavigation() {
   return (
@@ -18,21 +23,129 @@ export function DockNavigation() {
 
 function DockNav() {
   return (
-    <nav className="z-50 fixed bottom-5 left-0 right-0 gird  mx-auto">
-      <div className="border divider-gray6/40 divide-gray4/30 py-2 divide-x gap-1 border-opacity-10  flex rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
-        <div className="dock px-2 grid grid-flow-col justify-between overflow-x-scroll overflow-y-hidden gap-2 place-items-center">
+    <nav className="z-50 fixed bottom-5 left-0 right-0 gird mx-auto">
+
+      <div className="border divider-gray6/40 divide-gray4/30 px-4 py-4 divide-x gap-2 border-opacity-10  flex rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
+        <div className="dock grid grid-flow-col justify-between gap-4 place-items-center">
           <HomeIcon />
           <WorkIcon />
           <GithubIcon />
           <MailIcon />
         </div>
-        <div className="dock px-2 grid grid-flow-col justify-between overflow-x-scroll overflow-y-hidden gap-2  place-items-center">
+        <div className="dock px-2 grid grid-flow-col relative justify-between gap-4  place-items-center">
+          <ThemeDropdown />
+          {/*
+          <ThemeSwitch />
           <ThemeIcon />
+          */}
         </div>
       </div>
     </nav>
   );
 }
+
+export const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  if (!mounted) {
+    return null
+  }
+
+  const handleMode = (e) => {
+    console.log(e.target.id);
+    setTheme!(e.target.id);
+  }
+
+  // <div  onChange={e => setTheme(e.target.value)}> <option className="text-gray4 relative w-6 h-6" value="system"> <span className="absolute"><FaDesktop /></span> </option> <option className="text-gray4 relative w-6 h-6" value="dark">   <span className="absolute"><FaMoon /></span> </option> <option className="text-gray4 relative w-6 h-6" value="light">  <span className="absolute"><FaSun /></span> </option> </div>
+  return (
+    <>
+      <div onClick={handleMode}
+        className="flex brightness-75 cursor-pointer items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+      >
+        {mounted ? (<button className="w-6 z-10 flex items-center justify-center h-6 rounded bg-primary" id="dark"><FaSun /></button>) : (<div id="light"><FaMoon /></div>)}
+      </div>
+    </>
+  )
+}
+
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export function ThemeDropdown() {
+  const [mounted, setMounted] = useState(false)
+  const [dropdown, setDropdown] = useState(false)
+  const { theme, setTheme } = useTheme()
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  if (!mounted) {
+    return null
+  }
+
+  // e.target may select the svg or span too.
+  // e.currentTarget selects the parent button.
+  const switchTheme = (e) => {
+    setTheme(e.currentTarget.id);
+    setDropdown(!dropdown);
+  }
+  const themeModes = [
+    { name: "system", icon: <FaDesktop />, },
+    { name: "light", icon: <FaSun />, },
+    { name: "dark", icon: <FaMoon />, }
+  ];
+
+  return (
+    <>
+      <div className="grid">
+        {/* Dropdown */}
+        <div className={`${dropdown ? 'opacity-100 left-0' : 'opacity-0 left-[200vw]'} absolute bottom-8 z-10`}>
+          <div className="py-0.5 divide-gray4/30 rounded-md grid h-fit divide-y text-start">
+            {themeModes.map(({ name, icon }, index) => (
+              <button
+                onClick={(e) => switchTheme(e)}
+                id={name}
+                key={`theme-${name}-${index}`} className="flex cursor-pointer hover:backdrop-brightness-150 px-2 text-center  py-1 divide-white gap-x-2 w-full">
+                <>
+                  <div className="text-lg brightness-75">{icon}</div>
+                  <span className="text-xs brightness-90">{name}</span>
+                </>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Current theme dock icon */}
+        <div className="">
+          {themeModes.map(({ name, icon }, index) => {
+            if (theme !== name) {
+              return null;
+            }
+            return (
+              <button
+                key={`theme-${name}-${index}-curr-${theme}`}
+                onClick={() => { setDropdown(!dropdown) }}
+                className="text-lg flex items-center cursor-pointer brightness-75"
+              >
+                {icon}
+              </button>
+            )
+          }
+          )}
+        </div>
+      </div>
+    </>
+  )
+}
+
 
 const ThemeIcon = () => {
   const [darkTheme, setDarkTheme] = useDarkMode();
@@ -44,11 +157,9 @@ const ThemeIcon = () => {
       >
         {darkTheme ? (<FaSun />) : (<FaMoon />)}
       </span>
-
     </>
   )
 }
-
 
 const HomeIcon = () => {
   return (
