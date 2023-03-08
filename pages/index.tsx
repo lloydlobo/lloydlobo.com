@@ -19,8 +19,9 @@ export function ClockNav() {
     }, 1000);
     return () => clearInterval(interval);
   }, []);
+
   return (
-    <header className="flex z-50 min-h-[1.25rem] justify-center fixed left-0 right-0 px-2 top-0 bg-on-secondary/30 shadow items-center text-xs font-semibold brightness-100 backdrop-blur-[2px] gap-x-2">
+    <header className="flex z-50 min-h-[1.25rem] justify-center fixed left-0 right-0 px-2 top-0 items-center text-xs font-semibold brightness-80 bg-opacity-50 backdrop-blur-[2px] gap-x-2">
       <span className="h-full dark:text-secondary text-opacity-70">
         {currentTime ? (
           <span>{currentTime}</span>
