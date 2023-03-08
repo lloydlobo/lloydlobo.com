@@ -36,7 +36,7 @@ export default function IndexPage() {
   return (
     <>
       <Layout>
-        <main className="">
+        <main className="m-auto pt-20">
           <article>
             <div className="flex relative top-0 ">
               <div className="relative mx-2 w-full">

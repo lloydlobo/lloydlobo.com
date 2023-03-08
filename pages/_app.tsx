@@ -6,7 +6,7 @@ import "../styles/globals.css";
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <ThemeProvider>
+      <ThemeProvider attribute={"class"}>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -8,15 +8,10 @@
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
-  --foreground: #212121;
-  --background: #f6f6f6;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* --foreground: white; */
-    /* --background: black; */
   }
 }
 
@@ -39,15 +34,7 @@ body {
 
 body {
   min-height: 100vh;
-  /* @apply text-on-primary bg-gray1 dark:text-primary dark:bg-on-primary; */
-  /* @apply text-primary bg-on-primary; */
-  color: var(--foreground);
-  background: var(--background);
-}
-
-[data-theme="dark"] {
-  --foreground: #f6f6f6;
-  --background: #121212;
+  @apply text-on-primary bg-gray1 dark:text-primary dark:bg-on-primary;
 }
 
 main {
@@ -74,6 +61,9 @@ p {
   font-feature-settings: "kern", "frac", "kern", "ss02";
 }
 
+[data-theme="dark"] {
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -82,8 +72,4 @@ p {
 
 nav.dock > * {
   @apply scale-90 hover:bg-gradient-to-tl from-on-secondary/90 via-on-secondary/60 to-secondary/[0.005] p-[0.7rem]  backdrop-blur-[0px] rounded-full;
-}
-
-.dim {
-  @apply brightness-50;
 }
