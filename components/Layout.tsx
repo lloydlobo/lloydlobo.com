@@ -3,6 +3,8 @@ import Link from "next/link";
 import Head from "next/head";
 import { NavbarDark } from "@/components/layout/NavbarDark";
 import { ClockNav, DockNav } from "@/pages";
+import { DockNavigation } from "@/components/layout/Dock/DockNavigation";
+
 type Props = {
   children?: ReactNode;
   title?: string;
@@ -20,7 +22,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </Head>
     <header className="">
       <ClockNav />
-      <DockNav />
+      <DockNavigation />
     </header>
 
     {children}
