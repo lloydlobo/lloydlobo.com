@@ -21,6 +21,8 @@ export function DockNavigation() {
   )
 }
 
+const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
+
 function DockNav() {
   return (
     <nav className="z-50 fixed bottom-5 left-0 right-0 gird mx-auto">
@@ -113,7 +115,7 @@ export function ThemeDropdown() {
               <button
                 onClick={(e) => switchTheme(e)}
                 id={name}
-                key={`theme-${name}-${index}`} className="flex cursor-pointer hover:backdrop-brightness-150 px-2 text-center  py-1 divide-white gap-x-2 w-full">
+                key={`theme-${name}-${index}`} className="flex cursor-pointer hover:backdrop-brightness-150 dark:bg-transparent hover:bg-green-400 dark:hover:backdrop-brightness-150 px-2 text-center py-2 divide-white gap-x-2 w-full">
                 <>
                   <div className="text-lg brightness-75">{icon}</div>
                   <span className="text-xs brightness-90">{name}</span>
@@ -124,7 +126,10 @@ export function ThemeDropdown() {
         </div>
 
         {/* Current theme dock icon */}
-        <div className="">
+        <div
+
+          // className="hover:text-green-400"
+          className={`${onHoverStyles} font-semibold underline underline-offset-8`}>
           {themeModes.map(({ name, icon }, index) => {
             if (theme !== name) {
               return null;
@@ -165,7 +170,7 @@ const HomeIcon = () => {
   return (
     <Link
       href="/"
-      className="font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+      className={`${onHoverStyles} font-semibold underline underline-offset-8`}
       data-te-toggle="tooltip"
       data-te-placement="top"
       data-te-ripple-init
@@ -193,7 +198,7 @@ const WorkIcon = () => {
   return (
     <Link
       href="/work"
-      className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+      className={`${onHoverStyles} font-semibold underline underline-offset-8`}
       data-te-toggle="tooltip"
       data-te-placement="top"
       data-te-ripple-init
@@ -221,7 +226,7 @@ const GithubIcon = () => {
   return (
     <a
       href="https://github.com/lloydlobo/"
-      className="font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+      className={`${onHoverStyles} font-semibold underline underline-offset-8`}
       data-te-toggle="tooltip"
       data-te-placement="top"
       data-te-ripple-init
@@ -246,7 +251,7 @@ const MailIcon = () => {
   return (
     <a
       href="mailto:hello@lloydlobo.com"
-      className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+      className={`${onHoverStyles} font-semibold underline underline-offset-8`}
       data-te-toggle="tooltip"
       data-te-placement="top"
       data-te-ripple-init
