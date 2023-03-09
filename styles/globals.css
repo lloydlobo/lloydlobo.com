@@ -28,13 +28,13 @@ html {
 
 html,
 body {
-  max-width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
-  @apply text-on-primary bg-gray1 dark:text-primary dark:bg-on-primary;
+  @apply text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
 }
 
 main {
@@ -46,14 +46,13 @@ article {
 }
 
 footer {
-  display: grid;
-  place-items: center;
-  @apply text-primary;
+  @apply w-full;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  @apply decoration-green-500 hover:decoration-green-500 dark:decoration-accent hover:text-green-500 dark:hover:decoration-accent dark:hover:text-accent;
 }
 
 p {
@@ -68,6 +67,10 @@ p {
   html {
     color-scheme: dark;
   }
+}
+
+.layout-wrapper {
+  @apply selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current flex flex-col min-h-screen;
 }
 
 nav.dock > * {

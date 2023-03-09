@@ -14,38 +14,49 @@ const COPYRIGHT_SYMBOL = "\u00A9"; // Copyright symbol
 const currentYear = new Date().getFullYear(); // Function to get current year
 
 const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header className="">
-      <ClockNav />
-      <DockNavigation />
-    </header>
+  <>
+    <div className="layout-wrapper">
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <header className="">
+        <ClockNav />
+        <DockNavigation />
+      </header>
 
-    {children}
+      {children}
 
-    <footer className={`hidden space-y-4 px-8 py-4`}>
-      <h3 className={`place-self-start text-start text-xl`}>Connect</h3>
-      <hr className={`h-[1px] w-full border-none bg-secondary`} />
-      <div className={`grid w-full grid-cols-2 py-4`}>
-        <div className={`grid w-full text-xl`}>
-          <div>
-            <a href="https://github.com/lloydlobo">Github</a>
+      <footer className="text-sm border-t place-self-end mb-0 mt-auto border-gray6/30">
+        <article className="grid grid-cols-2 py-2 px-6">
+          <div>Find flow</div>
+          <div className={`place-self-end`}>
+            {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
           </div>
-          <div>
-            <a href="https://github.com/lloydlobo">Email</a>
+        </article>
+      </footer>
+
+      <footer className={`hidden space-y-4 px-8 py-4`}>
+        <h3 className={`place-self-start text-start text-xl`}>Connect</h3>
+        <hr className={`h-[1px] w-full border-none bg-secondary`} />
+        <div className={`grid w-full grid-cols-2 py-4`}>
+          <div className={`grid w-full text-xl`}>
+            <div>
+              <a href="https://github.com/lloydlobo">Github</a>
+            </div>
+            <div>
+              <a href="https://github.com/lloydlobo">Email</a>
+            </div>
+          </div>
+
+          <div className={`place-self-end`}>
+            {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
           </div>
         </div>
-
-        <div className={`place-self-end`}>
-          {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
-        </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
+  </>
 );
 
 export default Layout;

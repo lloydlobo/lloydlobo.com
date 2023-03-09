@@ -16,9 +16,7 @@ import {
 import { useTheme, } from "next-themes";
 
 export function DockNavigation() {
-  return (
-    <DockNav />
-  )
+  return (<DockNav />)
 }
 
 const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
@@ -26,7 +24,6 @@ const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
 function DockNav() {
   return (
     <nav className="z-50 fixed bottom-5 left-0 right-0 gird mx-auto">
-
       <div className="border divider-gray6/40 divide-gray4/30 px-4 py-4 divide-x gap-2 border-opacity-10  flex rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
         <div className="dock grid grid-flow-col justify-between gap-4 place-items-center">
           <HomeIcon />
@@ -36,10 +33,6 @@ function DockNav() {
         </div>
         <div className="dock px-2 grid grid-flow-col relative justify-between gap-4  place-items-center">
           <ThemeDropdown />
-          {/*
-          <ThemeSwitch />
-          <ThemeIcon />
-          */}
         </div>
       </div>
     </nav>
