@@ -7,7 +7,7 @@ export function DockNavigation() {
   return <DockNav />;
 }
 
-const onHoverStyles = `hover:text-green-500 dark:hover:text-gray1`;
+const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
 
 function DockNav() {
   return (
