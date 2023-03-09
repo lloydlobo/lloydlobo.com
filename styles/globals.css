@@ -38,7 +38,11 @@ body {
 }
 
 main {
-  @apply pt-8 md:pt-16 md:px-4;
+  @apply mx-auto pt-8 md:pt-16 md:px-4;
+}
+
+.layout-wrapper {
+  @apply selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current flex flex-col min-h-screen;
 }
 
 article {
@@ -72,10 +76,6 @@ p {
   html {
     color-scheme: dark;
   }
-}
-
-.layout-wrapper {
-  @apply selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current flex flex-col min-h-screen;
 }
 
 nav.dock > * {
