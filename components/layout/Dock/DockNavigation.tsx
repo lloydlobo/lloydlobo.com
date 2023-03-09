@@ -23,16 +23,13 @@ const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
 
 function DockNav() {
   return (
-    <nav className="z-50 fixed bottom-5 left-0 right-0 grid mx-auto">
-      <div className="border divider-gray6/40 divide-gray4/30 px-4 py-4 divide-x gap-2 border-opacity-10  flex rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
-        <div className="dock grid grid-flow-col justify-between gap-4 place-items-center">
+    <nav className="z-50 fixed bottom-5 left-0 right-0">
+      <div className="border divider-gray6/40 divide-gray4/30 px-4 py-4 divide-x gap-2 border-opacity-10 rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
+        <div className="dock relative grid grid-flow-col w-[200px] justify-between gap-4 place-items-center">
           <HomeIcon />
           <WorkIcon />
           <GithubIcon />
           <MailIcon />
-        </div>
-        <div className="dock px-2 grid grid-flow-col relative justify-between gap-4  place-items-center">
-          <ThemeDropdown />
         </div>
       </div>
     </nav>
@@ -52,7 +49,6 @@ export const ThemeSwitch = () => {
   }
 
   const handleMode = (e) => {
-    console.log(e.target.id);
     setTheme!(e.target.id);
   };
 
@@ -114,8 +110,8 @@ export function ThemeDropdown() {
       <div className="grid">
         {/* Dropdown */}
         <div
-          className={`${dropdown ? "opacity-100 left-0" : "opacity-0 left-[200vw]"
-            } absolute bottom-8 z-10`}
+          className={`${dropdown ? "opacity-100" : "opacity-0 left-[200vw]"
+            } absolute top-8 z-10`}
         >
           <div className="py-0.5 divide-gray4/30 rounded-md grid h-fit divide-y text-start">
             {themeModes.map(({ name, icon }, index) => (
@@ -136,24 +132,22 @@ export function ThemeDropdown() {
 
         {/* Current theme dock icon */}
         <div
-          // className="hover:text-green-400"
           className={`${onHoverStyles} font-semibold underline underline-offset-8`}
         >
           {themeModes.map(({ name, icon }, index) => {
-            if (theme !== name) {
-              return null;
+            if (theme === name) {
+              return (
+                <button
+                  key={`theme-${name}-${index}-curr-${theme}`}
+                  onClick={() => {
+                    setDropdown(!dropdown);
+                  }}
+                  className="text-lg flex items-center cursor-pointer brightness-75"
+                >
+                  {icon}
+                </button>
+              );
             }
-            return (
-              <button
-                key={`theme-${name}-${index}-curr-${theme}`}
-                onClick={() => {
-                  setDropdown(!dropdown);
-                }}
-                className="text-lg flex items-center cursor-pointer brightness-75"
-              >
-                {icon}
-              </button>
-            );
           })}
         </div>
       </div>

@@ -69,6 +69,7 @@ const PROJECTS = [
   },
 ];
 export default function WorkPage() {
+  // let uuid = crypto.randomUUID();
   return (
     <Layout title="Work ">
       <main>

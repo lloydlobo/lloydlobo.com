@@ -10,6 +10,7 @@ import {
   // useInView, // import { useInView } from "react-intersection-observer";
 } from "framer-motion";
 import Layout from "@/components/Layout";
+import { ThemeDropdown } from "@/components/layout/Dock/DockNavigation";
 
 export function ClockNav() {
   const [currentTime, setCurrentTime] = useState(null);
@@ -22,15 +23,15 @@ export function ClockNav() {
   }, []);
 
   return (
-    <header className="text-xs text-center font-semibold bg-opacity-50 backdrop-blur-[2px] ">
-      <span className="h-full dark:text-secondary brightness-75 text-opacity-70">
+    <div className="text-xs text-center font-semibold bg-opacity-50 backdrop-blur-[2px] ">
+      <span className="h-full relative dark:text-secondary brightness-75 text-opacity-70">
         {currentTime ? (
           <span>{currentTime}</span>
         ) : (
           <span className="blur-[0.5px]"> 0:00:00 AM</span>
         )}
       </span>
-    </header>
+    </div>
   );
 }
 
