@@ -291,7 +291,7 @@ export default function WorkPage() {
 
                   <div className=" ">
                     <h3 className="mb-4 text-sm brightness-75 flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
-                      Stacks
+                      Tech Stacks
                     </h3>
                     <ul className={`dark:text-secondary space-y-3`}>
                       <li className="">NextJS React JamStack</li>
