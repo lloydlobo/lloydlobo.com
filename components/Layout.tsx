@@ -65,13 +65,15 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <header className="md:px-48  md:mx-6">
+        <header className="md:px-52 z-50 md:mx-4">
           <div
             className="relative
-  w-full flex items-center justify-between px-4 disabled:justify-center border-[0px] p-2 rounded-full my-4 gap-4"
+  w-full flex items-center px-4 disabled:justify-center border-[0px] rounded-full my-4 gap-4"
           >
-            <ClockNav />
-            <div className="scale-100">
+            <div className="scale-100 hover:opacity-100 opacity-0 absolute px-4 md:px-0  mx-auto">
+              <ClockNav />
+            </div>
+            <div className="scale-100 mx-auto opacity-50">
               <ThemeDropdown />
             </div>
           </div>

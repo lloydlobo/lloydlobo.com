@@ -19,7 +19,7 @@ export function DockNavigation() {
   return <DockNav />;
 }
 
-const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
+const onHoverStyles = `hover:text-green-500 dark:hover:text-gray1`;
 
 function DockNav() {
   return (
@@ -90,7 +90,7 @@ const Sun = () => {
       className="sc-a794b73f-1 cfurEx"
     >
       <mask id="moon-mask-main-nav">
-        <rect x="0" y="0" width="18" height="18" fill="white"></rect>
+        <rect x="0" y="0" width="18" height="18" fill="#FFF"></rect>
         <circle cx="25" cy="0" r="8" fill="currentColor"></circle>
       </mask>
       <circle
@@ -148,6 +148,92 @@ const Sun = () => {
   );
 };
 
+const Moon = () => {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      style={{ transform: "rotate(40deg)" }}
+      className=""
+    >
+      <mask id="moon-mask-main-nav">
+        <rect x="0" y="0" width="18" height="18" fill="#FFF"></rect>
+        <circle cx="10" cy="2" r="8" fill="currentColor"></circle>
+      </mask>
+      <circle
+        cx="9"
+        cy="9"
+        fill="currentColor"
+        mask="url(#moon-mask-main-nav)"
+        r="8"
+      ></circle>
+      <g>
+        <circle
+          cx="17"
+          cy="9"
+          r="1.5"
+          fill="currentColor"
+          style={{
+            transformOrigin: "center center 0px",
+            transform: "scale(0)",
+          }}
+        ></circle>
+        <circle
+          cx="13"
+          cy="15.928203"
+          r="1.5"
+          fill="currentColor"
+          style={{
+            transformOrigin: "center center 0px",
+            transform: "scale(0)",
+          }}
+        ></circle>
+        <circle
+          cx="5"
+          cy="15.928203"
+          r="1.5"
+          fill="currentColor"
+          style={{
+            transformOrigin: "center center 0px",
+            transform: "scale(0)",
+          }}
+        ></circle>
+        <circle
+          cx="1"
+          cy="9"
+          r="1.5"
+          fill="currentColor"
+          style={{
+            transformOrigin: "center center 0px",
+            transform: "scale(0)",
+          }}
+        ></circle>
+        <circle
+          cx="5"
+          cy="2.071797"
+          r="1.5"
+          fill="currentColor"
+          style={{
+            transformOrigin: "center center 0px",
+            transform: "scale(0)",
+          }}
+        ></circle>
+        <circle
+          cx="13"
+          cy="2.071797"
+          r="1.5"
+          fill="currentColor"
+          style={{
+            transformOrigin: "center center 0px",
+            transform: "scale(0)",
+          }}
+        ></circle>
+      </g>
+    </svg>
+  );
+};
+
 export function ThemeDropdown() {
   const [mounted, setMounted] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -161,17 +247,22 @@ export function ThemeDropdown() {
     return null;
   }
 
-  // e.target may select the svg or span too.
-  // e.currentTarget selects the parent button.
-  const switchTheme = (e) => {
+  // e.target may select the svg or span too. e.currentTarget selects the parent button.
+  const switchTheme = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setTheme(e.currentTarget.id);
     setDropdown(!dropdown);
   };
   const themeModes = [
     { name: "system", icon: <FaDesktop /> },
-    // { name: "light", icon: <FaSun /> },
     { name: "light", icon: <Sun /> },
-    { name: "dark", icon: <FaMoon /> },
+    {
+      name: "dark",
+      icon: (
+        <span className="-rotate-[25deg]">
+          <Moon />
+        </span>
+      ),
+    },
   ];
 
   return (
@@ -187,11 +278,12 @@ export function ThemeDropdown() {
               <button
                 onClick={(e) => switchTheme(e)}
                 id={name}
+                aria-label={`Activate ${name} mode`}
                 key={`theme-${name}-${index}`}
-                className="flex cursor-pointer hover:backdrop-brightness-150 dark:bg-transparent hover:bg-green-400 dark:hover:backdrop-brightness-150 px-2 text-center py-2 divide-white gap-x-2 w-full"
+                className="flex cursor-pointer hover:backdrop-brightness-150 dark:bg-transparent hover:bg-green-400 dark:hover:backdrop-brightness-200 dark:hover:bg-gray1/10 px-2 text-center py-2 divide-white gap-x-2 w-full"
               >
                 <>
-                  <div className="text-lg brightness-75">{icon}</div>
+                  <div className="scale-100 brightness-75">{icon}</div>
                   <span className="text-xs brightness-90">{name}</span>
                 </>
               </button>
@@ -211,7 +303,7 @@ export function ThemeDropdown() {
                   onClick={() => {
                     setDropdown(!dropdown);
                   }}
-                  className="text-lg flex items-center cursor-pointer brightness-75"
+                  className="text-base flex items-center cursor-pointer brightness-75"
                 >
                   {icon}
                 </button>
