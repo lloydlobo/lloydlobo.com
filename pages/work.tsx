@@ -2,7 +2,6 @@ import Layout from "@/components/Layout";
 import { Section } from "@/components/Section";
 import { EmailCopy } from "@/components/effects/EmailCopy";
 import { WritingArrowDown } from "@/components/effects/WritingArrowDown";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 
@@ -344,17 +343,7 @@ function FooterCTABody() {
         <div
           className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 saturate-50 dark:saturate-100 text-green-400 dark:text-accent -translate-x-1/2 lg:bottom-56`}
         >
-          <motion.div
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: [0, -10, 0] }}
-            transition={{
-              duration: 1.5,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          >
-            <WritingArrowDown />
-          </motion.div>
+          <WritingArrowDown />
         </div>
       </div>
       <EmailCopy />
