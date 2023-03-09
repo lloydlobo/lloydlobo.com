@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import { NavbarDark } from "@/components/layout/NavbarDark";
 import { ClockNav, DockNav } from "@/pages";
 import { DockNavigation } from "@/components/layout/Dock/DockNavigation";
 
@@ -32,7 +31,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
         <article className="grid grid-cols-2 py-2 px-6">
           <div>Find flow</div>
           <div className={`place-self-end`}>
-            {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
+            {COPYRIGHT_SYMBOL} {currentYear} <Link href={"/"}>Lloyd Lobo</Link>
           </div>
         </article>
       </footer>
