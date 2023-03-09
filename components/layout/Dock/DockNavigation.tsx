@@ -3,6 +3,7 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { FaMoon, FaSun, FaDesktop } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
+
 export function DockNavigation() {
   return <DockNav />;
 }
@@ -226,6 +227,9 @@ export function ThemeDropdown() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
   const [dropdown, setDropdown] = useState(false);
+  const { forcedTheme } = useTheme()
+  // Theme is forced, we shouldn't allow user to change the theme
+  const disabled = !!forcedTheme
 
   useEffect(() => {
     // useEffect only runs on the client, so now we can safely show the UI
@@ -269,6 +273,7 @@ export function ThemeDropdown() {
                 id={name}
                 aria-label={`Activate ${name} mode`}
                 key={`theme-${name}-${index}`}
+                disabled={disabled}
                 className="flex cursor-pointer hover:backdrop-brightness-150 dark:bg-transparent hover:bg-green-400 dark:hover:backdrop-brightness-200 dark:hover:bg-gray1/10 px-2 text-center py-2 divide-white gap-x-2 w-full"
               >
                 <>
@@ -289,10 +294,11 @@ export function ThemeDropdown() {
               return (
                 <button
                   key={`theme-${name}-${index}-curr-${theme}`}
+                  disabled={disabled}
                   onClick={() => {
                     setDropdown(!dropdown);
                   }}
-                  className="text-base flex items-center cursor-pointer brightness-75"
+                  className="text-base disabled:opacity-25 disabled:hidden disabled:cursor-not-allowed flex items-center cursor-pointer brightness-75"
                 >
                   {icon}
                 </button>
