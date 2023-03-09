@@ -58,7 +58,7 @@ a {
 
 p {
   @apply brightness-[100%] leading-7 tracking-normal;
-  font-feature-settings: "kern", "frac", "kern", "ss02";
+  /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
 }
 
 [data-theme="dark"] {
