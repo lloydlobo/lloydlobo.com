@@ -1,18 +1,6 @@
-import { useDarkMode } from "@/hooks/useDarkMode";
 import Link from "next/link";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import {
-  FaSearch,
-  FaHashtag,
-  FaRegBell,
-  FaUserCircle,
-  FaMoon,
-  FaSun,
-  FaDesktop,
-} from "react-icons/fa";
+import { FaMoon, FaSun, FaDesktop } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
 export function DockNavigation() {
@@ -315,21 +303,6 @@ export function ThemeDropdown() {
     </>
   );
 }
-
-const ThemeIcon = () => {
-  const [darkTheme, setDarkTheme] = useDarkMode();
-  const handleMode = () => setDarkTheme!(!darkTheme);
-  return (
-    <>
-      <span
-        onClick={handleMode}
-        className="flex brightness-75 cursor-pointer items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
-      >
-        {darkTheme ? <FaSun /> : <FaMoon />}
-      </span>
-    </>
-  );
-};
 
 const HomeIcon = () => {
   return (

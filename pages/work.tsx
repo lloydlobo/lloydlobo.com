@@ -1,13 +1,10 @@
 import Layout from "@/components/Layout";
 import { Section } from "@/components/Section";
-import { WorkProjects } from "@/components/WorkProjects";
 import { EmailCopy } from "@/components/effects/EmailCopy";
 import { WritingArrowDown } from "@/components/effects/WritingArrowDown";
-import { Hero } from "@/components/layout/Hero";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
-import { ClockNav, DockNav } from ".";
 
 const PROJECTS = [
   {

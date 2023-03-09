@@ -1,5 +1,3 @@
-import { GlobeAnimation } from "@/components/effects/GlobeAnimation";
-import { motion } from "framer-motion";
 import React from "react";
 
 //// {/* <motion.div className="drag" drag={true} whileHover={{ scale: 1.2, fill: "white" }} animate={{ opacity: 0.7 }} whileTap={{ scale: 1.618 }} transition={{ duration: 3, delay: 0.1, ease: [0.5, 0.71, 1, 1.5] }} dragConstraints={{ right: 10, left: -10, top: -10, bottom: 0 }} dragTransition={{ bounceStiffness: 61.8, bounceDamping: 80 }} >
@@ -16,9 +14,7 @@ export function Hero() {
           <span className={`text-accent opacity-100`}>
             .
             <div className="absolute bottom-[21.5%] right-[3.60%] scale-[17%] lg:scale-[54%]">
-              <div className="opacity-60 mix-blend-color-dodge blur-[1.1px] brightness-150 backdrop-blur-sm">
-                <GlobeAnimation />
-              </div>
+              <div className="opacity-60 mix-blend-color-dodge blur-[1.1px] brightness-150 backdrop-blur-sm"></div>
             </div>
           </span>
         </h1>
