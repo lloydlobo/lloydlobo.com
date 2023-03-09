@@ -4,21 +4,20 @@ import React, { Suspense } from "react";
 import styles from "@/styles/Resume.module.css";
 import Loading from "./loading";
 
-// https://www.section.io/engineering-education/skeleton-loading-in-nextjs-with-tailwindcss/
 const ResumePage = () => {
   return (
     <>
       <Layout>
         <main
           className={`my-6 ${styles.resume} 
-shadow-2xl shadow-dim dark:shadow-on-tertiary dark:[&_ul]:text-dim 
+shadow-2xl shadow-dim dark:shadow-on-tertiary [&_ul]:text-gray7 dark:[&_ul]:text-dim 
 dark:text-tertiary disabled:dark:bg-on-tertiary 
 `} >
           <Suspense fallback={<Loading />}>
             <div className="space-y-6 origin-top lg:px-36 scale-[75%] lg:scale-100  ">
               {/* Lobo résumé — page 1 of 2 */}
               <div
-                className={`font-serif [&>*]:text-sm lg:px-6  mx-auto divide-y space-y-6 dark:divide-[var(--dim)]`}
+                className={`font-serif [&>*]:text-sm lg:px-6  mx-auto divide-y-2 space-y-6 divide-dim`}
               >
                 <section className="font-sans uppercase text-center grid w-fit mx-auto">
                   <h1 className="text-2xl font-medium tracking-[0.2em]">
@@ -66,7 +65,7 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                           SRM University
                         </span>
                       </h3>
-                      <ul className="list-inside list-disc">
+                      <ul className={`${styles.ul} list-inside list-disc`}>
                         <li className="before:content-[''] before:pl-4">
                           BTech, Mechanical Engineering
                         </li>
@@ -89,13 +88,15 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                   </h2>
                   <div className="space-y-6 mt-2">
                     <div>
-                      <h3 className="text-xl font-medium after:content-['2014–2018'] after:right-0 relative after:absolute">
-                        Heat Master
+                      <h3 className={`${styles.h3} text-xl relative`}>
+                        <span className="after:content-['2014-2018'] after:right-0 after:absolute">
+                          Heat Master
+                        </span>
                       </h3>
                       <h4 className="italic text-[0.9rem] mb-1">
                         Front-end Engineer & Accounts Manager
                       </h4>
-                      <ul className="list-inside list-disc">
+                      <ul className={`${styles.ul} list-inside list-disc`}>
                         <li className="before:content-[''] before:pl-4">
                           Performed independent research on numerous industries,
                           created new line of products
@@ -119,13 +120,15 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                   </h2>
                   <div className="space-y-6 mt-2">
                     <div>
-                      <h3 className="text-xl font-medium after:content-['2019–2020'] after:right-0 relative after:absolute">
-                        Noisy Gates Studios
+                      <h3 className={`${styles.h3} text-xl relative`}>
+                        <span className="after:content-['2019-2020'] after:right-0 after:absolute">
+                          Noisy Gates Studios
+                        </span>
                       </h3>
                       <h4 className="italic text-[0.9rem] mb-1">
                         Assistant Audio Engineer
                       </h4>
-                      <ul className="list-inside list-disc">
+                      <ul className={`${styles.ul} list-inside list-disc`}>
                         <li className="before:content-[''] before:pl-4">
                           Setup brand design and created website to reach clients
                         </li>
@@ -160,11 +163,12 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                   </h2>
                   <div className="space-y-6 mt-2">
                     <div>
+
                       <h3 className="text-xl font-medium after:content-[''] after:right-0 relative after:absolute">
                         {" "}
                       </h3>
                       <h4 className="italic text-[0.9rem] mb-1"> </h4>
-                      <ul className="list-inside list-disc">
+                      <ul className={`${styles.ul} list-inside list-disc`}>
                         <li className="before:content-[''] before:pl-4">
                           Front-end development
                         </li>
@@ -186,11 +190,13 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                   </h2>
                   <div className="space-y-6 mt-2">
                     <div>
-                      <h3 className="text-xl font-medium after:content-[''] after:right-0 relative after:absolute">
-                        {" "}
+                      <h3 className={`${styles.h3} text-xl relative`}>
+                        <span className="after:content-[''] after:right-0 after:absolute">
+                          {" "}
+                        </span>
                       </h3>
                       <h4 className="italic text-[0.9rem] mb-1"> </h4>
-                      <ul className="list-inside list-disc">
+                      <ul className={`${styles.ul} list-inside list-disc`}>
                         <li className="before:content-[''] before:pl-4">
                           NextJS React JamStack
                         </li>

@@ -7,16 +7,32 @@
   }
 }
 
+::marker .ul {
+  color: red;
+  font-size: 2rem;
+}
+
+.ul > li::marker {
+  /* color: blue; */
+  font-size: 0.7rem;
+}
+
+/* ol > li::marker { */
+/*   font-size: 1rem; */
+/* } */
 .h2 {
-  padding: 2px 0 0;
+  padding: 6px 0 0 0;
   font-family: sans-serif;
-  font-size: 0.77rem;
+  line-height: 1;
+  font-size: 0.65rem;
   font-weight: 900 !important;
+  color: black;
 }
 
 .h3 {
-  font-weight: 600 !important;
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 1.125rem;
+  opacity: 0.90;
 }
 
 .h3::after .resume {
