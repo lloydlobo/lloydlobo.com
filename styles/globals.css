@@ -34,7 +34,7 @@ body {
 
 body {
   min-height: 100vh;
-  @apply text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
+  @apply leading-7 tracking-normal text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
 }
 
 main {
@@ -46,7 +46,8 @@ article {
 }
 
 footer {
-  @apply w-full;
+  /* px-10 is a hack to line up with px used in `Section` component */
+  @apply w-full px-6 md:px-10 brightness-75;
 }
 
 a {

@@ -23,11 +23,11 @@ export const EmailCopy = () => {
         >
           <>
             {isCopied ? (
-              <span className="text-accent">Copied</span>
+              <span className="text-green-400 dark:text-accent">Copied</span>
             ) : (
-              <span className="underline decoration-accent underline-offset-8 max-[320px]:text-xs">
+              <button className="underline decoration-green-400 dark:decoration-accent underline-offset-8 max-[320px]:text-xs">
                 Copy to clipboard
-              </span>
+              </button>
             )}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,9 @@ export const EmailCopy = () => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={`${isCopied ? "animate-pulse text-accent" : "brightness-75"
+              className={`${isCopied
+                  ? "animate-pulse text-green-400 dark:text-accent"
+                  : "brightness-75"
                 }
               h-6 w-6 origin-center scale-[.66]`}
             >

@@ -22,8 +22,8 @@ export function ClockNav() {
   }, []);
 
   return (
-    <header className="text-xs text-center font-semibold brightness-80 bg-opacity-50 backdrop-blur-[2px] ">
-      <span className="h-full dark:text-secondary text-opacity-70">
+    <header className="text-xs text-center font-semibold bg-opacity-50 backdrop-blur-[2px] ">
+      <span className="h-full dark:text-secondary brightness-75 text-opacity-70">
         {currentTime ? (
           <span>{currentTime}</span>
         ) : (

@@ -3,6 +3,8 @@ import Link from "next/link";
 import Head from "next/head";
 import { ClockNav, DockNav } from "@/pages";
 import { DockNavigation } from "@/components/layout/Dock/DockNavigation";
+import { fortunerData } from "@/utils/fortune";
+import { Fortune } from "@/interfaces";
 
 type Props = {
   children?: ReactNode;
@@ -11,6 +13,12 @@ type Props = {
 
 const COPYRIGHT_SYMBOL = "\u00A9"; // Copyright symbol
 const currentYear = new Date().getFullYear(); // Function to get current year
+
+function getRandomFortune(): Fortune {
+  const len = fortunerData.length;
+  const rand = Math.floor(Math.random() * len);
+  return fortunerData[rand];
+}
 
 const Layout = ({ children, title = "This is the default title" }: Props) => (
   <>
@@ -28,31 +36,13 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
       {children}
 
       <footer className="text-sm border-t place-self-end mb-0 mt-auto border-gray6/30">
-        <article className="grid grid-cols-2 py-2 px-6">
-          <div>Find flow</div>
+        <article className="grid grid-cols-2 py-2">
+          {/* <div>{getRandomFortune().title}</div> */}
+          <div>Shine, constantly and steadily.</div>
           <div className={`place-self-end`}>
             {COPYRIGHT_SYMBOL} {currentYear} <Link href={"/"}>Lloyd Lobo</Link>
           </div>
         </article>
-      </footer>
-
-      <footer className={`hidden space-y-4 px-8 py-4`}>
-        <h3 className={`place-self-start text-start text-xl`}>Connect</h3>
-        <hr className={`h-[1px] w-full border-none bg-secondary`} />
-        <div className={`grid w-full grid-cols-2 py-4`}>
-          <div className={`grid w-full text-xl`}>
-            <div>
-              <a href="https://github.com/lloydlobo">Github</a>
-            </div>
-            <div>
-              <a href="https://github.com/lloydlobo">Email</a>
-            </div>
-          </div>
-
-          <div className={`place-self-end`}>
-            {COPYRIGHT_SYMBOL} {currentYear} Lloyd Lobo
-          </div>
-        </div>
       </footer>
     </div>
   </>

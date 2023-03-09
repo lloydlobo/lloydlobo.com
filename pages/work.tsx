@@ -344,7 +344,7 @@ function FooterCTABody() {
         className={`relative w-full -rotate-45 scale-75 md:scale-100 lg:-rotate-[55deg]`}
       >
         <div
-          className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 -translate-x-1/2 lg:bottom-56`}
+          className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 saturate-50 dark:saturate-100 text-green-400 dark:text-accent -translate-x-1/2 lg:bottom-56`}
         >
           <motion.div
             initial={{ opacity: 0, y: 0 }}
@@ -366,12 +366,15 @@ function FooterCTABody() {
 
 function FooterCTAHero() {
   return (
-    <div className="relative w-fit ">
+    <div className="relative w-fit">
       <h3
         className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] md:text-5xl`}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-r invert dark:from-primary/50 from-on-primary/70 dark:invert-0 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
-          <span className="relative brightness-90">
+        <span
+          className="bg-clip-text text-transparent bg-gradient-to-r hue-rotate-0
+        dark:from-primary/50 from-gray2 to-gray1 dark:invert-0  dark:to-primary backdrop-blur-[0px]"
+        >
+          <span className="relative brightness-105">
             Let's
             <br />
             work
@@ -388,7 +391,7 @@ function FooterCTAHero() {
           height: "clamp(28rem, 35vw, 31.3rem)",
           width: "clamp(18rem, 35vw, 31.3rem)",
         }}
-        className="absolute left-0 bottom-1 -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[70%] grayscale-[30%] sepia-[50%] filter lg:scale-[100%]"
+        className="absolute rounded-md left-0 bottom-[5px] -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[70%] grayscale-[30%] sepia-[50%] filter md:scale-[100%]"
       >
         <img
           alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif"
