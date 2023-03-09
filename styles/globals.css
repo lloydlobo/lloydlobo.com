@@ -50,10 +50,14 @@ footer {
   @apply w-full px-6 md:px-10 brightness-[50%] py-2;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  @apply decoration-green-500 hover:decoration-green-500 dark:decoration-accent hover:text-green-500 dark:hover:decoration-accent dark:hover:text-accent;
+a,
+Link {
+  @apply underline decoration-2 font-medium underline-offset-4 decoration-green-500 hover:decoration-green-500 dark:decoration-accent hover:text-green-500 dark:hover:decoration-accent dark:hover:text-accent;
+}
+
+/* mailto:user@email.com */
+a:link {
+  @apply hover:text-orange-700 dark:hover:text-orange-400;
 }
 
 p {

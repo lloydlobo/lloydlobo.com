@@ -38,9 +38,9 @@ const ResumePage = () => {
             <p className=" tracking-[0.11em] text-xs">
               1234 Penny Lane, Earth City 1111111
             </p>
-            <div className="flex text-[0.7rem] mx-auto items-center gap-4">
+            <div className="md:flex text-[0.7rem] mx-auto items-center gap-x-4">
               <p className=" tracking-[0.10em]">(091) 111-1111</p>
-              <p className=" tracking-[0.16em] flex flex-nowrap gap-[4px]">
+              <p className=" tracking-[0.16em] flex flex-nowrap gap-x-[4px]">
                 <span>hello</span>@<span>lloydlobo.com</span>
               </p>
             </div>
@@ -135,7 +135,10 @@ const ResumePage = () => {
                 </h4>
                 <ul className="list-inside list-disc">
                   <li className="before:content-[''] before:pl-4">
-                    Helped devise setting up for this innovative music studio
+                    Setup brand design and created website to reach clients
+                  </li>
+                  <li className="before:content-[''] before:pl-4">
+                    Helped devise setting up for this music studio
                   </li>
                   <li className="before:content-[''] before:pl-4">
                     Handled general errands

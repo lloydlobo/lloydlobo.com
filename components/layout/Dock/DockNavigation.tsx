@@ -224,13 +224,14 @@ const Moon = () => {
 
 export function ThemeDropdown() {
   const [mounted, setMounted] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
   const { theme, setTheme } = useTheme();
+  const [dropdown, setDropdown] = useState(false);
 
-  // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
+    // useEffect only runs on the client, so now we can safely show the UI
     setMounted(true);
   }, []);
+
   if (!mounted) {
     return null;
   }
@@ -261,7 +262,7 @@ export function ThemeDropdown() {
           className={`${dropdown ? "opacity-100" : "opacity-0 left-[200vw]"
             } absolute top-8 z-10`}
         >
-          <div className="py-0.5 divide-gray4/30 rounded-md grid h-fit divide-y text-start">
+          <div className="py-0.5 backdrop-blur-sm divide-gray4/30 rounded-md grid h-fit divide-y text-start">
             {themeModes.map(({ name, icon }, index) => (
               <button
                 onClick={(e) => switchTheme(e)}
@@ -281,7 +282,7 @@ export function ThemeDropdown() {
 
         {/* Current theme dock icon */}
         <div
-          className={`${onHoverStyles} font-semibold underline underline-offset-8`}
+          className={`${onHoverStyles} opacity-70 absolute font-semibold underline underline-offset-8`}
         >
           {themeModes.map(({ name, icon }, index) => {
             if (theme === name) {
@@ -296,6 +297,8 @@ export function ThemeDropdown() {
                   {icon}
                 </button>
               );
+            } else {
+              return null;
             }
           })}
         </div>

@@ -182,7 +182,7 @@ export default function WorkPage() {
                       <a
                         key={`$project-{repo}`}
                         href="/"
-                        className="rounded-xl px-4 py-2 hover:bg-gray4/10  w-full 4xl:max-w-[60vw] mx-auto"
+                        className="rounded-xl no-underline px-4 py-2 hover:bg-gray2/40  w-full 4xl:max-w-[60vw] mx-auto"
                       >
                         <div className="grid grid-flow-col items-center w-full justify-between gap-x-2">
                           <span className="font-medium">{repo}</span>
@@ -269,6 +269,9 @@ export default function WorkPage() {
                           My projects reflect a unique blend of technical
                           expertise and artistic vision.
                         </p>
+                        <Link href={"/resume"} className="w-fit mt-4">
+                          Request résumé
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -280,15 +283,9 @@ export default function WorkPage() {
                       Expertise
                     </h3>
                     <ul className={`dark:text-secondary space-y-3`}>
-                      <li className="">
-                        <Link href={`#work`}>Front-end development</Link>
-                      </li>
-                      <li className="">
-                        <Link href={`#work`}>Web APIs - NodeJS, Actix Web</Link>
-                      </li>
-                      <li className="">
-                        <Link href={`#work`}>CLI Apps</Link>
-                      </li>
+                      <li className="">Front-end development</li>
+                      <li className="">Web APIs - NodeJS, Actix Web</li>
+                      <li className="">CLI Apps</li>
                     </ul>
                   </div>
 
@@ -297,17 +294,11 @@ export default function WorkPage() {
                       Stacks
                     </h3>
                     <ul className={`dark:text-secondary space-y-3`}>
+                      <li className="">NextJS React JamStack</li>
                       <li className="">
-                        <Link href={`#work`}>NextJS React JamStack</Link>
+                        Rust, Go, Python, JavaScript, TypeScript
                       </li>
-                      <li className="">
-                        <Link href={`#work`}>
-                          Rust, Go, Python, JavaScript, TypeScript
-                        </Link>
-                      </li>
-                      <li className="">
-                        <Link href={`#work`}>Neovim, VS Code, bash</Link>
-                      </li>
+                      <li className="">Neovim, VS Code, bash</li>
                     </ul>
                   </div>
                 </div>
@@ -346,6 +337,7 @@ function FooterCTABody() {
           <WritingArrowDown />
         </div>
       </div>
+
       <EmailCopy />
     </div>
   );
