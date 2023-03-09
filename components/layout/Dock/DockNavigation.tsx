@@ -80,6 +80,74 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+const Sun = () => {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      style={{ transform: "rotate(90deg)" }}
+      className="sc-a794b73f-1 cfurEx"
+    >
+      <mask id="moon-mask-main-nav">
+        <rect x="0" y="0" width="18" height="18" fill="white"></rect>
+        <circle cx="25" cy="0" r="8" fill="currentColor"></circle>
+      </mask>
+      <circle
+        cx="9"
+        cy="9"
+        fill="currentColor"
+        mask="url(#moon-mask-main-nav)"
+        r="5"
+      ></circle>
+      <g>
+        <circle
+          cx="17"
+          cy="9"
+          r="1.5"
+          fill="currentColor"
+          style={{ transformOrigin: "center center", transform: "scale(1)" }}
+        ></circle>
+        <circle
+          cx="13"
+          cy="15.928203"
+          r="1.5"
+          fill="currentColor"
+          style={{ transformOrigin: "center center", transform: "scale(1)" }}
+        ></circle>
+        <circle
+          cx="5"
+          cy="15.928203"
+          r="1.5"
+          fill="currentColor"
+          style={{ transformOrigin: "center center", transform: "scale(1)" }}
+        ></circle>
+        <circle
+          cx="1"
+          cy="9"
+          r="1.5"
+          fill="currentColor"
+          style={{ transformOrigin: "center center", transform: "scale(1)" }}
+        ></circle>
+        <circle
+          cx="5"
+          cy="2.071797"
+          r="1.5"
+          fill="currentColor"
+          style={{ transformOrigin: "center center", transform: "scale(1)" }}
+        ></circle>
+        <circle
+          cx="13"
+          cy="2.071797"
+          r="1.5"
+          fill="currentColor"
+          style={{ transformOrigin: "center center", transform: "scale(1)" }}
+        ></circle>
+      </g>
+    </svg>
+  );
+};
+
 export function ThemeDropdown() {
   const [mounted, setMounted] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -101,7 +169,8 @@ export function ThemeDropdown() {
   };
   const themeModes = [
     { name: "system", icon: <FaDesktop /> },
-    { name: "light", icon: <FaSun /> },
+    // { name: "light", icon: <FaSun /> },
+    { name: "light", icon: <Sun /> },
     { name: "dark", icon: <FaMoon /> },
   ];
 
