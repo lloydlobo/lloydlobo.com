@@ -1,39 +1,20 @@
 import Layout from "@/components/Layout";
 import { Section } from "@/components/Section";
 import React from "react";
-
-const styles = `
-h2 {
-  padding: 2px 0 0;
-  font-family: sans-serif;
-  font-size: 0.77rem;
-  font-weight: 900 !important;
-}
-
-h3 {
-  font-weight: 600 !important;
-}
-
-h3::after{
-font-size: 1.0rem;
-}
-`;
+import styles from "@/styles/Resume.module.css";
 
 const ResumePage = () => {
   return (
     <>
-      <style jsx>
-        {`
-          ${styles}
-        `}
-      </style>
       <Layout>
-        <main>
+        <main
+          className={`resume ${styles.resume} my-6 dark:text-tertiary [&>section>ul]:text-dim dark:bg-on-tertiary `}
+        >
           <div className="space-y-6">
             {/* Lobo résumé — page 1 of 2 */}
 
             <div
-              className={`font-serif [&>*]:text-sm px-6 divide mx-auto divide-y space-y-6`}
+              className={`font-serif [&>*]:text-sm px-6  mx-auto divide-y space-y-6 dark:divide-[var(--dim)]`}
             >
               <section className="font-sans uppercase text-center grid w-fit mx-auto">
                 <h1 className="text-2xl font-medium tracking-[0.2em]">
@@ -50,15 +31,19 @@ const ResumePage = () => {
                 </div>
               </section>
               <section>
-                <h2 className="uppercase font-bold tracking-widest">
+                <h2
+                  className={`${styles.h2} uppercase font-bold tracking-widest`}
+                >
                   Education
                 </h2>
                 <div className="space-y-6 mt-2">
                   <div>
-                    <h3 className="text-xl font-medium after:content-['2018–2019'] after:right-0 relative after:absolute">
-                      Sri Aurobindo Centre for Communication and Arts
+                    <h3 className={`${styles.h3} text-xl relative`}>
+                      <span className="after:content-['2018–2019'] after:right-0 after:absolute ">
+                        Sri Aurobindo Centre for Communication and Arts
+                      </span>
                     </h3>
-                    <ul className="list-inside list-disc">
+                    <ul className={`${styles.ul} list-inside list-disc`}>
                       <li className="before:content-[''] before:pl-4">
                         Cumulative GPA: 4.0
                       </li>
@@ -72,8 +57,10 @@ const ResumePage = () => {
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-xl font-medium after:content-['2010–2014'] after:right-0 relative after:absolute">
-                      SRM University
+                    <h3 className={`${styles.h3} text-xl relative`}>
+                      <span className="after:content-['2010–2014'] after:right-0 after:absolute">
+                        SRM University
+                      </span>
                     </h3>
                     <ul className="list-inside list-disc">
                       <li className="before:content-[''] before:pl-4">
@@ -91,7 +78,9 @@ const ResumePage = () => {
                 </div>
               </section>
               <section>
-                <h2 className="uppercase font-bold tracking-widest">
+                <h2
+                  className={`${styles.h2} uppercase font-bold tracking-widest`}
+                >
                   Business Experience
                 </h2>
                 <div className="space-y-6 mt-2">
@@ -119,7 +108,9 @@ const ResumePage = () => {
                 </div>
               </section>
               <section>
-                <h2 className="uppercase font-bold tracking-widest">
+                <h2
+                  className={`${styles.h2} uppercase font-bold tracking-widest`}
+                >
                   Other Work Experience
                 </h2>
                 <div className="space-y-6 mt-2">
@@ -145,7 +136,7 @@ const ResumePage = () => {
                 </div>
               </section>
               <section>
-                <p className="text-center pt-6 font-sans tracking-widest uppercase">
+                <p className="text-center pt-6 brightness-75 font-sans tracking-widest uppercase">
                   Lobo résumé — page 1 of 2
                 </p>
               </section>
@@ -158,7 +149,9 @@ const ResumePage = () => {
             >
               <div></div>
               <section>
-                <h2 className="uppercase font-bold tracking-widest">
+                <h2
+                  className={`${styles.h2} uppercase font-bold tracking-widest`}
+                >
                   Expertise
                 </h2>
                 <div className="space-y-6 mt-2">
@@ -182,7 +175,9 @@ const ResumePage = () => {
                 </div>
               </section>
               <section>
-                <h2 className="uppercase font-bold tracking-widest">
+                <h2
+                  className={`${styles.h2} uppercase font-bold tracking-widest`}
+                >
                   Tech stacks
                 </h2>
                 <div className="space-y-6 mt-2">
@@ -206,7 +201,7 @@ const ResumePage = () => {
                 </div>
               </section>
               <section>
-                <p className="text-center py-6 font-sans tracking-widest uppercase">
+                <p className="text-center brightness-75 py-6 font-sans tracking-widest uppercase">
                   Lobo résumé — page 2 of 2
                 </p>
               </section>

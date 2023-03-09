@@ -1,0 +1,24 @@
+:root .resume {
+  color-scheme: dark light;
+}
+
+@media (prefers-color-scheme: dark) {
+  .resume {
+  }
+}
+
+.h2 {
+  padding: 2px 0 0;
+  font-family: sans-serif;
+  font-size: 0.77rem;
+  font-weight: 900 !important;
+}
+
+.h3 {
+  font-weight: 600 !important;
+  font-weight: 500;
+}
+
+.h3::after .resume {
+  font-size: 1rem;
+}
