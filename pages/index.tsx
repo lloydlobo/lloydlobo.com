@@ -36,7 +36,7 @@ export default function IndexPage() {
               <div className="text-2xl tracking-tight leading-9 lowercase w-full sm:max-w-[75vw] decoration-accent underline-offset-8 lg:max-w-[63vw] mx-auto font-medium gap-1">
                 <Link
                   href="/about"
-                  className="opacity-50 hover:underline hover:opacity-100"
+                  className="opacity-50 hover:underline no-underline hover:opacity-100"
                 >
                   lloyd lobo.
                 </Link>

@@ -5,9 +5,6 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -30,11 +27,12 @@ html,
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  @apply font-sans;
 }
 
 body {
   min-height: 100vh;
-  @apply leading-7 tracking-normal text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
+  @apply font-sans leading-7 tracking-normal text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
 }
 
 main {
@@ -46,7 +44,7 @@ main {
 }
 
 article {
-  @apply md:mx-48;
+  @apply font-sans  md:mx-48;
 }
 
 footer {

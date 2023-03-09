@@ -1,6 +1,7 @@
-/** @type {import('tailwindcss').Config} */
 const colors = require("tailwindcss/colors");
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
@@ -10,12 +11,12 @@ module.exports = {
   darkMode: "class", // class, 'media' or boolean.
   theme: {
     fontFamily: {
-      sans: ['"Inter"', "sans-serif"],
-      display: ["cubano", "sans-serif"],
-      body: ["sofia-pro", "sans-serif"],
-      code: ["attribute-mono", "sans-serif"],
-      serif: ['"Newsreader"', "serif"],
-      cursive: ['"Gochi Hand"', "cursive"],
+      // sans: ['"IBM Plex Sans","Inter"', "sans-serif"],
+      // display: ["cubano", "sans-serif"],
+      // body: ["sofia-pro", "sans-serif"],
+      // code: ["attribute-mono", "sans-serif"],
+      // serif: ['"Newsreader"', "serif"],
+      // cursive: ['"Gochi Hand"', "cursive"],
     },
     colors: {
       transparent: "transparent",
@@ -23,7 +24,6 @@ module.exports = {
       white: "#ffffff",
       black: "#000000",
       gray1: "#f8f8f8",
-      // gray1: "#f2f2f2",
       gray2: "#dbe1e8",
       gray3: "#b2becd",
       gray4: "#6c7983",
@@ -41,15 +41,18 @@ module.exports = {
       yellow: colors.yellow,
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-ibm)", ...fontFamily.sans],
+        serif: ["var(--font-charter)", ...fontFamily.serif],
+      },
       colors: {
         primary: "#f3c77c",
-        "on-primary": "#151414",
         secondary: "#e7cfb1",
-        "on-secondary": "#0f0d0d",
-        // 'on-secondary': "#151414",
         tertiary: "#f2f2f2",
-        "on-tertiary": "#1c1c1c",
         accent: "#f6ac9f",
+        "on-secondary": "#0f0d0d",
+        "on-primary": "#151414",
+        "on-tertiary": "#1c1c1c",
       },
       boxShadow: {
         "3xl": "0 5px 20px rgb(0 0 0 / 30%)",
