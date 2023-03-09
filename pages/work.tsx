@@ -209,7 +209,7 @@ export default function WorkPage() {
             <article>
               <div className="relative dark:text-secondary space-y-12 mx-auto w-full">
                 <h2
-                  className="w-48 font-medium  flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
+                  className="w-48 font-medium flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
                 after:content-['02']"
                 >
                   About
@@ -217,7 +217,7 @@ export default function WorkPage() {
 
                 <div className="">
                   <h1
-                    className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
+                    className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl pt-4`}
                   >
                     <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/70 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
                       <span className="relative brightness-90">

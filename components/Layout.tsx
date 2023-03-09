@@ -79,8 +79,9 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
           </div>
         </header>
 
-        <DockNavigation />
         {children}
+
+        <DockNavigation />
 
         {/*
         <footer className="text-sm border-t place-self-end mb-0 mt-auto border-secondary/30">
