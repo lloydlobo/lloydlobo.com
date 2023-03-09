@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Newsreader
+- Font Author: Copyright 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)
+- Font Source: http://fonts.gstatic.com/s/newsreader/v19/cY9qfjOCX1hbuyalUrK49dLac06G1ZGsZBtoBCzBDXXD9JVF438wSo_ADOxEPjCggA.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

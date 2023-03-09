@@ -9,9 +9,10 @@ const ResumePage = () => {
       <Layout>
         <main
           className={`my-6  ${styles.resume} 
-shadow-2xl shadow-dim 
+disabled:shadow-2xl shadow-dim 
 dark:shadow-on-tertiary dark:[&_ul]:text-dim 
-dark:text-tertiary [&>section>ul]:text-dim dark:bg-on-tertiary `}
+dark:text-tertiary disabled:dark:bg-on-tertiary 
+`}
         >
           <div className="space-y-6">
             {/* Lobo résumé — page 1 of 2 */}
