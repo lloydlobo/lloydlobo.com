@@ -47,9 +47,11 @@ module.exports = {
       },
       colors: {
         // primary: "#f3c77c",
-        primary: "#fff",
+        // primary: "#fff",
+        primary: "#d4d4d4",
+        secondary: "#a3a3a3",
         // secondary: "#e7cfb1",
-        secondary: "#d4d4d4",
+        // secondary: "#d4d4d4",
         tertiary: "#f2f2f2",
         accent: "#f6ac9f",
         "on-primary": "#111011",

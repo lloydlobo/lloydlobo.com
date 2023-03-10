@@ -84,7 +84,7 @@ Link {
 }
 
 a {
-  @apply [&]:font-bold tracking-widest backdrop-blur-sm;
+  @apply [&]:font-bold tracking-normal backdrop-blur-sm dark:text-primary;
   /* @apply text-green-400 dark:bg-gradient-to-r dark:from-accent/50 dark:to-red-500/50 dark:bg-clip-text dark:text-primary/60; */
 }
 
