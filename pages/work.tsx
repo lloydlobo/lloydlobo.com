@@ -89,7 +89,8 @@ export default function WorkPage() {
           <Section>
             <article className="">
               <div className="mx-auto w-full dark:text-secondary">
-                <div className="relative space-y-6 mx-auto w-full">
+                <div className="relative
+                space-y-6 mx-auto w-full">
                   <div className="w-48 border-b-[2px] dark:border-secondary/90 pb-2">
                     <p className="font-medium text-start">Work</p>
                   </div>
@@ -101,9 +102,12 @@ export default function WorkPage() {
                   <span className="md:absolute hover:opacity-100 opacity-0 text-sm w-full pt-[3px] origin-left -right-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
                     TLDR for the impatient people...
                   </span>
-                  <p>
-                    I'm <span className="brightness-50 font-medium">Lloyd</span>
-                    , a software developer who's passionate about{" "}
+                  <p className="relative w-fit">
+
+                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
+                      (tldr){" "}
+                    </span>
+                    I'm Lloyd, a software developer who's passionate about{" "}
                     <em className="font-serif font-bold">
                       building polished software and web experiences
                     </em>
