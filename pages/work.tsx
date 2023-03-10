@@ -96,7 +96,7 @@ export default function WorkPage() {
             <article className="">
               <div className="mx-auto w-full dark:text-secondary">
                 <div className="relative space-y-6 mx-auto w-full">
-                  <div className="w-48 border-b-[2px] border-secondary/90 pb-2">
+                  <div className="w-48 border-b-[2px] dark:border-secondary/90 pb-2">
                     <p className="font-medium text-start">Work</p>
                   </div>
                   {/* Better to put this in the about page */}
@@ -182,7 +182,7 @@ export default function WorkPage() {
                       <a
                         key={`$project-{repo}`}
                         href="/"
-                        className="rounded-xl no-underline px-4 py-2 hover:bg-gray2/40  w-full 4xl:max-w-[60vw] mx-auto"
+                        className="rounded-xl after:hidden px-4 py-2 w-full 4xl:max-w-[60vw] mx-auto"
                       >
                         <div className="grid grid-flow-col items-center w-full justify-between gap-x-2">
                           <span className="font-medium">{repo}</span>

@@ -25,8 +25,11 @@ export const EmailCopy = () => {
             {isCopied ? (
               <span className="text-green-400 dark:text-accent">Copied</span>
             ) : (
-              <button className="underline decoration-green-400 dark:decoration-accent underline-offset-8 max-[320px]:text-xs">
-                Copy to clipboard
+              <button className="uppercase font-bold tracking-wider decoration-green-400 dark:decoration-accent underline-offset-8 max-[320px]:text-xs">
+                Copy{" "}
+                <span className="opacity-0 hidden hover:opacity-100">
+                  to clipboard
+                </span>
               </button>
             )}
             <svg

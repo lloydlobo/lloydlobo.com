@@ -21,6 +21,20 @@
 
 html {
   @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
+  /* font-size: 2.4vw; */
+  /* font-size: 1.8vw; */
+}
+@media all and (min-width: 1000px) {
+  html {
+    /* font-size: 24px; */
+    /* font-size: 21px; */
+  }
+}
+@media all and (max-width: 520px) {
+  html {
+    /* font-size: 18px; */
+    /* font-size: 16px; */
+  }
 }
 
 html,
@@ -32,7 +46,13 @@ body {
 
 body {
   min-height: 100vh;
-  @apply font-sans leading-7 tracking-normal text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
+  font-feature-settings: "kern";
+  /* font-size: 1rem; */
+
+  /* Line spacing should be 120–145% of the point size. */
+  line-height: 1.45; /* 1.2 - 1.45 */
+
+  @apply font-sans tracking-normal text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
 }
 
 main {
@@ -54,21 +74,43 @@ footer {
 
 a,
 Link {
-  @apply tracking-wider hover:bg-green-100 dark:hover:bg-transparent dark:hover:backdrop-brightness-105 rounded underline decoration-2 font-medium underline-offset-4 decoration-green-500 hover:decoration-green-500 dark:decoration-accent hover:text-green-500 dark:hover:decoration-accent dark:hover:text-accent;
+  /* @apply tracking-normal hover:bg-green-100 dark:hover:bg-transparent dark:hover:backdrop-brightness-105 rounded no-underline decoration-2 font-medium decoration-green-500 hover:decoration-green-500 dark:decoration-accent hover:text-green-500 dark:hover:decoration-accent dark:hover:text-accent; */
+  text-decoration: none;
+  text-decoration-color: currentcolor;
+  color: inherit;
+  transition-property: background;
+  transition-duration: 0.2s;
+  @apply no-underline decoration-transparent;
 }
 
 /* mailto:user@email.com */
 a:link {
-  @apply hover:text-orange-700 dark:hover:text-orange-400;
+  /* @apply hover:text-orange-700 dark:hover:text-orange-400; */
 }
 
-/* a:visited { */
-/* @apply text-green-700 dark:text-orange-700; */
-/* } */
+a:hover {
+  @apply bg-green-100 dark:bg-transparent dark:backdrop-brightness-110 decoration-transparent rounded-lg;
+  background-image: none;
+}
 
+a::after {
+  position: relative;
+  content: "\FEFF°";
+  top: -0.1em;
+  margin-left: 0.1em;
+  font-size: 90%;
+  @apply text-red-600 dark:text-red-400;
+
+  /* font-feature-settings: "caps"; */
+  /* font-variant-numeric: normal; */
+}
+
+/* font-feature-settings: "kern", "frac", "kern", "ss02"; */
 p {
-  @apply brightness-[100%] leading-7 tracking-normal;
-  /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
+  margin-bottom: 0.5rem;
+  hyphens: auto;
+  line-height: 1.35;
+  font-size: 1rem;
 }
 
 [data-theme="dark"] {
@@ -78,6 +120,14 @@ p {
   html {
     color-scheme: dark;
   }
+}
+
+button {
+  @apply p-1 shadow-none;
+}
+
+button:hover {
+  @apply shadow animate-pulse;
 }
 
 nav.dock > * {

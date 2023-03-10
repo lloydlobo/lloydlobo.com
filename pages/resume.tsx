@@ -12,7 +12,8 @@ const ResumePage = () => {
           className={`my-6 ${styles.resume} 
 shadow-2xl shadow-dim dark:shadow-on-tertiary [&_ul]:text-gray7 dark:[&_ul]:text-dim 
 dark:text-tertiary disabled:dark:bg-on-tertiary 
-`} >
+`}
+        >
           <Suspense fallback={<Loading />}>
             <div className="space-y-6 origin-top lg:px-36 scale-[75%] lg:scale-100  ">
               {/* Lobo résumé — page 1 of 2 */}
@@ -130,7 +131,8 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                       </h4>
                       <ul className={`${styles.ul} list-inside list-disc`}>
                         <li className="before:content-[''] before:pl-4">
-                          Setup brand design and created website to reach clients
+                          Setup brand design and created website to reach
+                          clients
                         </li>
                         <li className="before:content-[''] before:pl-4">
                           Helped devise setting up for this music studio
@@ -163,7 +165,6 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
                   </h2>
                   <div className="space-y-6 mt-2">
                     <div>
-
                       <h3 className="text-xl font-medium after:content-[''] after:right-0 relative after:absolute">
                         {" "}
                       </h3>
@@ -224,6 +225,5 @@ dark:text-tertiary disabled:dark:bg-on-tertiary
   );
 };
 
-ResumePage.theme = 'light';
+ResumePage.theme = "light";
 export default ResumePage;
-

@@ -29,7 +29,8 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
             <div className="hover:opacity-100 opacity-0 absolute px-4 md:px-0 mx-auto">
               <ClockNav />
             </div>
-            <div className="mx-auto">
+
+            <div className="absolute mx-auto left-0 right-0 items-center justify-center flex">
               <ThemeDropdown />
             </div>
           </div>
