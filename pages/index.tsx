@@ -41,7 +41,7 @@ export default function IndexPage() {
                   lloyd lobo.
                 </Link>
 
-                <span className="">
+                <span className="dark:text-secondary">
                   {" "}
                   creating{" "}
                   <span className="inline-flex">
@@ -63,7 +63,9 @@ export default function IndexPage() {
                   software with the focus on innovative experiences that exceed
                   client expectations.{" "}
                   <span className="inline-flex">
-                    <strong>software developer</strong>
+                    <strong className="dark:text-secondary">
+                      software developer
+                    </strong>
                   </span>{" "}
                   with an <span id="roughblock">eye</span> for design and
                   motion. deeply curious about functional and beautiful{" "}

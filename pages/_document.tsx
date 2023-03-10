@@ -5,13 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="shortcut icon" href="/favicon.ico" />
-        {/*
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet" /> 
-        */}
       </Head>
       <body>
         <Main />

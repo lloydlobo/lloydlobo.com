@@ -47,9 +47,9 @@ module.exports = {
         serif: ["var(--font-charter)", ...fontFamily.serif],
       },
       colors: {
-        primary: "#d4d4d4",
-        secondary: "#a3a3a3",
-        tertiary: "#f2f2f2",
+        primary: "#ffffff",
+        secondary: "#d4d4d4",
+        tertiary: "#a3a3a3",
         accent: "#f6ac9f",
         "on-primary": "#111011",
         "on-secondary": "#151414",
@@ -62,6 +62,7 @@ module.exports = {
       typography: {
         DEFAULT: {
           css: {
+            // These can be used as `.h1` className for divs etc..
             h1: {
               "font-weight": "normal",
               "font-size": "2.5rem",
@@ -78,10 +79,10 @@ module.exports = {
               "font-weight": "normal",
               "font-size": "1.5rem",
             },
-            h5: {
-              "font-weight": "normal",
-              "font-size": "1.25rem",
-            },
+            // h5: {
+            //   "font-weight": "normal",
+            //   "font-size": "1.25rem",
+            // },
           },
         },
       },
@@ -95,6 +96,7 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
     require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/typography"),
   ],
 };
 

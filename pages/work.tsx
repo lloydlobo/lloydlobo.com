@@ -72,27 +72,27 @@ export default function WorkPage() {
         <div className="">
           <Section>
             <article className="">
-              <div className="">
-                <h1
-                  className={`text-[7vw] font-bold dark:text-primary max-w-screen-md md:max-w-screen-xl backdrop-blur-[0px] hover:text-accent md:text-[4vw] lg:max-w-screen-sm leading-none lg:text-5xl`}
-                >
-                  <span className="relative bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/[70%] from-on-primary/[83%] to-on-primary/[99%] dark:to-primary backdrop-blur-[0px]">
-                    ⥇ a <span className="relative after:text-[8px] after:content-['capable_full-stack_dev'] after:bottom-1 after:hidden after:-right-4 after:absolute after:text-gray6 after:font-serif after:italic">front-end developer,</span><br />creating minimal and functional software *◞
-                  </span>
-                </h1>
-              </div>
+              <h1 className={`dark:text-primary`}>
+                a <span className="">front-end developer,</span>
+                <br />
+                creating minimal and functional software
+              </h1>
             </article>
           </Section>
         </div>
 
-        <div className={`mx-auto space-y-12 font-sans lg:space-y-24 mt-16`}>
+        <div className={`mx-auto space-y-12 lg:space-y-24 mt-16`}>
           <Section>
-            <article className="">
+            <article>
               <div className="mx-auto w-full dark:text-secondary">
-                <div className="relative
-                space-y-6 mx-auto w-full">
+                <div
+                  className="relative
+                space-y-6 mx-auto w-full"
+                >
                   <div className="w-48 border-b-[2px] dark:border-secondary/90 pb-2">
-                    <p className="font-medium text-start">Work</p>
+                    <h2 className="font-medium dark:text-secondary text-start">
+                      Work
+                    </h2>
                   </div>
                   {/* Better to put this in the about page */}
                   <p className="hidden">
@@ -103,11 +103,11 @@ export default function WorkPage() {
                     TLDR for the impatient people...
                   </span>
                   <p className="relative w-fit">
-
                     <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50 hidden">
                       (tldr){" "}
                     </span>
-                    I'm Lloyd, a software developer who's passionate about{" "}
+                    I'm <span className="dark:text-dim">Lloyd</span>, a software
+                    developer who's passionate about{" "}
                     <em className="font-serif font-bold">
                       building polished software and web experiences
                     </em>
@@ -124,7 +124,7 @@ export default function WorkPage() {
                   </p>
 
                   <p>
-                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
+                    <span className="md:absolute text-sm w-full pt-[3px] dark:text-dim origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)]">
                       Now...{" "}
                     </span>
                     Fearlessly exploring passions and interests with a drive to
@@ -165,9 +165,9 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative  space-y-9 grid w-full dark:text-secondary">
+              <div className="relative  space-y-9 grid w-full ">
                 <h2
-                  className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm
+                  className="flex w-48 dark:text-secondary items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm
                 before:content-['01'] brightness-50
                 "
                 >
@@ -201,45 +201,51 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative dark:text-secondary space-y-6 mx-auto w-full">
+              <div className="relative space-y-6 mx-auto w-full">
                 <h2
-                  className="w-48 font-medium flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
+                  className="w-48 font-medium dark:text-secondary flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
                 after:content-['02']"
                 >
                   About
                 </h2>
 
                 <div className="">
-                  <h1 className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl pt-4`} >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/70 from-on-primary/[80%] to-on-primary/[95%] dark:to-primary backdrop-blur-[0px]">
-                      <span className="relative brightness-90">
-                        Developer by trade
+                  <h3
+                    className="dark:text-secondary"
+                  // className={`text-xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-2xl lowercase pt-4 mb-2`}
+                  >
+                    <span
+                    // className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/70 from-on-primary/[80%] to-on-primary/[95%] dark:to-primary backdrop-blur-[0px]"
+                    >
+                      <span className="">
+                        developer by trade
                         <br />
-                        Creator by heart
+                        creator by heart
                       </span>
                     </span>
-                  </h1>
+                  </h3>
                 </div>
                 <div className="w-full dark:text-secondary lg:place-items-center">
                   <p>
                     Technology and ideas should blend seamlessly
-                    <span className="font-serif font-bold italic"> (like Apple){" "} </span>
-                    to create excellent products.
-                    My projects reflect a unique blend of technical
-                    expertise and artistic vision.
-                    {" "}
-                    <Link href={"/resume"} className="w-fit">
-                      Request résumé
-                    </Link>
+                    <span className="font-serif font-bold italic">
+                      {" "}
+                      (like Apple){" "}
+                    </span>
+                    to create excellent products. My projects reflect a unique
+                    blend of technical expertise and artistic vision.{" "}
                   </p>
+                  <Link href={"/resume"} className="w-fit">
+                    Request résumé
+                  </Link>
                 </div>
 
                 <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12">
                   <div className="lg:mt-12">
-                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal brightness-75">
+                    <h3 className="text-sm brightness-75 text-secondary flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
                       Expertise
                     </h3>
-                    <ul className={`space-y-3`}>
+                    <ul className={`space-y-3 dark:text-secondary`}>
                       <li className="">Front-end development</li>
                       <li className="">Web APIs - NodeJS, Actix Web</li>
                       <li className="">CLI Apps</li>
@@ -247,10 +253,10 @@ export default function WorkPage() {
                   </div>
 
                   <div className=" ">
-                    <h3 className="mb-4 text-sm brightness-75 flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
+                    <h3 className="text-sm brightness-75 text-secondary flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
                       Tech Stacks
                     </h3>
-                    <ul className={`space-y-3`}>
+                    <ul className={`space-y-3 dark:text-secondary`}>
                       <li className="">NextJS React JamStack</li>
                       <li className="">
                         Rust, Go, Python, JavaScript, TypeScript
@@ -264,9 +270,9 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <article className="mb-24">
-              <div className="relative mb-20 md:mb-36 space-y-6 grid w-full dark:text-secondary  ">
-                <h2 className="flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-medium before:text-sm before:content-['03'] mb-8 lg:mb-12">
+            <article>
+              <div className="relative space-y-6 grid w-full">
+                <h2 className="flex w-48 items-baseline dark:text-secondary justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-medium before:text-sm before:content-['03'] mb-8 lg:mb-12">
                   Connect
                 </h2>
               </div>
@@ -302,39 +308,14 @@ function FooterCTABody() {
 
 function FooterCTAHero() {
   return (
-    <div className="relative w-fit">
-      <h3
-        className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] md:text-5xl`}
-      >
-        <span
-          className="bg-clip-text text-transparent bg-gradient-to-r hue-rotate-0
-        dark:from-primary/50 from-gray2 to-gray1 dark:invert-0  dark:to-primary backdrop-blur-[0px]"
-        >
-          <span className="relative brightness-105">
-            Let's
-            <br />
-            work
-            <br />
-            together
-          </span>
-        </span>
+    <div className="flex justify-center w-full">
+      <h3 className="text-4xl leading-9 dark:text-secondary">
+        Let's
+        <br />
+        work
+        <br />
+        together
       </h3>
-
-      <div
-        style={{
-          opacity: 1,
-          clipPath: "inset(11.15rem 0 0 0)",
-          height: "clamp(28rem, 35vw, 31.3rem)",
-          width: "clamp(18rem, 35vw, 31.3rem)",
-        }}
-        className="absolute rounded-md left-0 bottom-[5px] -z-10 origin-bottom-left scale-[68%] bg-blend-overlay brightness-[70%] grayscale-[30%] sepia-[50%] filter md:scale-[100%]"
-      >
-        <img
-          alt="Person drinking lots of coffee. Source: https://media.giphy.com/media/Mk1wQ8cH5TtsqafLiX/giphy.gif"
-          src="/drita_arsela_coffee.webp"
-          className="left-1 brightness-75 opacity-90 relative"
-        />
-      </div>
     </div>
   );
 }

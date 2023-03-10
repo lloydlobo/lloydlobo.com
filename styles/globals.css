@@ -41,7 +41,7 @@ html,
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  @apply font-sans;
+  @apply font-serif;
 }
 
 body {
@@ -52,11 +52,12 @@ body {
   /* Line spacing should be 120–145% of the point size. */
   line-height: 1.45; /* 1.2 - 1.45 */
 
-  @apply font-sans tracking-normal text-on-primary bg-gray0 dark:text-secondary dark:bg-on-primary;
+  @apply tracking-normal text-on-primary bg-gray0 dark:text-secondary dark:bg-on-primary;
 }
 
 main {
-  @apply mx-auto pt-8 md:pt-16 md:px-4;
+  @apply py-8 md:py-16;
+  /* @apply mx-auto pt-8 md:pt-16 md:px-4; */
 }
 
 .layout-wrapper {
@@ -64,7 +65,7 @@ main {
 }
 
 article {
-  @apply font-sans  md:mx-48;
+  @apply prose lg:prose-xl md:mx-48;
 }
 
 footer {
@@ -74,7 +75,6 @@ footer {
 
 a,
 Link {
-  /* @apply tracking-normal hover:bg-green-100 dark:hover:bg-transparent dark:hover:backdrop-brightness-105 rounded no-underline decoration-2 font-medium decoration-green-500 hover:decoration-green-500 dark:decoration-accent hover:text-green-500 dark:hover:decoration-accent dark:hover:text-accent; */
   text-decoration: none;
   text-decoration-color: currentcolor;
   color: inherit;
@@ -85,7 +85,6 @@ Link {
 
 a {
   @apply [&]:font-bold tracking-normal backdrop-blur-sm dark:text-primary;
-  /* @apply text-green-400 dark:bg-gradient-to-r dark:from-accent/50 dark:to-red-500/50 dark:bg-clip-text dark:text-primary/60; */
 }
 
 /* mailto:user@email.com */
@@ -116,6 +115,7 @@ p {
   hyphens: auto;
   line-height: 1.35;
   font-size: 1rem;
+  @apply dark:text-secondary;
 }
 
 [data-theme="dark"] {

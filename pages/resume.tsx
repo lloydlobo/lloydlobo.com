@@ -9,8 +9,8 @@ const ResumePage = () => {
     <>
       <Layout>
         <main
-          className={`my-6 ${styles.resume} 
-shadow-2xl shadow-dim dark:shadow-on-tertiary [&_ul]:text-gray7 dark:[&_ul]:text-dim 
+          className={`isolate ${styles.resume}  mx-auto pt-8 md:pt-16 md:px-4 my-6 
+         shadow-2xl shadow-dim dark:shadow-on-tertiary [&_ul]:text-gray7 dark:[&_ul]:text-dim 
 dark:text-tertiary disabled:dark:bg-on-tertiary 
 `}
         >
