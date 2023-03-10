@@ -52,7 +52,7 @@ body {
   /* Line spacing should be 120–145% of the point size. */
   line-height: 1.45; /* 1.2 - 1.45 */
 
-  @apply font-sans tracking-normal text-on-primary bg-gray1 dark:text-secondary dark:bg-on-primary;
+  @apply font-sans tracking-normal text-on-primary bg-gray0 dark:text-secondary dark:bg-on-primary;
 }
 
 main {

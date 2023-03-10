@@ -74,7 +74,7 @@ export default function WorkPage() {
             <article className="">
               <div className="">
                 <h1
-                  className={`text-3xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
+                  className={`text-[7vw] font-bold dark:text-primary max-w-screen-md md:max-w-screen-xl backdrop-blur-[0px] hover:text-accent md:text-[4vw] lg:max-w-screen-sm leading-none lg:text-5xl`}
                 >
                   <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/[70%] from-on-primary/[83%] to-on-primary/[99%] dark:to-primary backdrop-blur-[0px]">
                     a front-end developer,<br />creating minimal and functional software
@@ -178,7 +178,7 @@ export default function WorkPage() {
                   {PROJECTS.map(
                     ({ username, repo, tags, description, img }, index) => (
                       <a
-                        key={`$project-{repo}`}
+                        key={`project-${repo}-${index}`}
                         href="/"
                         className="rounded-xl after:hidden px-4 py-2 w-full 4xl:max-w-[60vw] mx-auto"
                       >
@@ -234,12 +234,12 @@ export default function WorkPage() {
                   </p>
                 </div>
 
-                <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12 tracking-widest ">
+                <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12">
                   <div className="lg:mt-12">
-                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal brightness-75 dark:text-secondary ">
+                    <h3 className="mb-4 text-sm flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal brightness-75">
                       Expertise
                     </h3>
-                    <ul className={`dark:text-secondary space-y-3`}>
+                    <ul className={`space-y-3`}>
                       <li className="">Front-end development</li>
                       <li className="">Web APIs - NodeJS, Actix Web</li>
                       <li className="">CLI Apps</li>
@@ -250,7 +250,7 @@ export default function WorkPage() {
                     <h3 className="mb-4 text-sm brightness-75 flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
                       Tech Stacks
                     </h3>
-                    <ul className={`dark:text-secondary space-y-3`}>
+                    <ul className={`space-y-3`}>
                       <li className="">NextJS React JamStack</li>
                       <li className="">
                         Rust, Go, Python, JavaScript, TypeScript
