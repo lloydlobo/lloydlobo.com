@@ -76,8 +76,8 @@ export default function WorkPage() {
                 <h1
                   className={`text-[7vw] font-bold dark:text-primary max-w-screen-md md:max-w-screen-xl backdrop-blur-[0px] hover:text-accent md:text-[4vw] lg:max-w-screen-sm leading-none lg:text-5xl`}
                 >
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/[70%] from-on-primary/[83%] to-on-primary/[99%] dark:to-primary backdrop-blur-[0px]">
-                    a front-end developer,<br />creating minimal and functional software
+                  <span className="relative bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/[70%] from-on-primary/[83%] to-on-primary/[99%] dark:to-primary backdrop-blur-[0px]">
+                    ⥇ a <span className="relative after:text-[8px] after:content-['capable_full-stack_dev'] after:bottom-1 after:hidden after:-right-4 after:absolute after:text-gray6 after:font-serif after:italic">front-end developer,</span><br />creating minimal and functional software *◞
                   </span>
                 </h1>
               </div>
@@ -104,7 +104,7 @@ export default function WorkPage() {
                   </span>
                   <p className="relative w-fit">
 
-                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
+                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50 hidden">
                       (tldr){" "}
                     </span>
                     I'm Lloyd, a software developer who's passionate about{" "}
@@ -211,7 +211,7 @@ export default function WorkPage() {
 
                 <div className="">
                   <h1 className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl pt-4`} >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/[80%] to-on-primary/[95%] dark:to-primary backdrop-blur-[0px]">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/70 from-on-primary/[80%] to-on-primary/[95%] dark:to-primary backdrop-blur-[0px]">
                       <span className="relative brightness-90">
                         Developer by trade
                         <br />
