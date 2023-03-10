@@ -83,13 +83,18 @@ Link {
   @apply no-underline decoration-transparent;
 }
 
+a {
+  @apply [&]:font-bold;
+  /* @apply text-green-400 dark:bg-gradient-to-r dark:from-accent/50 dark:to-red-500/50 dark:bg-clip-text dark:text-primary/60; */
+}
+
 /* mailto:user@email.com */
 a:link {
-  /* @apply hover:text-orange-700 dark:hover:text-orange-400; */
+  @apply hover:text-orange-700 dark:hover:text-orange-400;
 }
 
 a:hover {
-  @apply bg-green-100 dark:bg-transparent dark:backdrop-brightness-110 decoration-transparent rounded-lg;
+  @apply bg-green-100 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg;
   background-image: none;
 }
 

@@ -24,7 +24,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <header className="md:px-52 z-50 md:mx-4">
+        <header className="md:px-52 z-50 h-fit md:mx-4">
           <div className="relative w-full flex items-center px-4 disabled:justify-center border-[0px] rounded-full my-4 gap-4">
             <div className="hover:opacity-100 opacity-0 absolute px-4 md:px-0 mx-auto">
               <ClockNav />

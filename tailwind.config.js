@@ -50,8 +50,9 @@ module.exports = {
         secondary: "#e7cfb1",
         tertiary: "#f2f2f2",
         accent: "#f6ac9f",
-        "on-secondary": "#0f0d0d",
-        "on-primary": "#151414",
+        "on-primary": "#111011",
+        // "on-primary": "#0f0d0d",
+        "on-secondary": "#151414",
         "on-tertiary": "#1c1c1c",
       },
       boxShadow: {
