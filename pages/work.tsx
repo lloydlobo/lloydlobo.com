@@ -74,16 +74,10 @@ export default function WorkPage() {
             <article className="">
               <div className="">
                 <h1
-                  className={`text-6xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-7xl`}
+                  className={`text-3xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl`}
                 >
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/70 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
-                    <span className="relative brightness-90">
-                      Design
-                      <br />
-                      Develop
-                      <br />
-                      Ship
-                    </span>
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/[70%] from-on-primary/[83%] to-on-primary/[99%] dark:to-primary backdrop-blur-[0px]">
+                    a front-end developer,<br />creating minimal and functional software
                   </span>
                 </h1>
               </div>
@@ -203,7 +197,7 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative dark:text-secondary space-y-12 mx-auto w-full">
+              <div className="relative dark:text-secondary space-y-6 mx-auto w-full">
                 <h2
                   className="w-48 font-medium flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
                 after:content-['02']"
@@ -212,10 +206,8 @@ export default function WorkPage() {
                 </h2>
 
                 <div className="">
-                  <h1
-                    className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl pt-4`}
-                  >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/70 to-on-primary/[85%] dark:to-primary backdrop-blur-[0px]">
+                  <h1 className={`text-4xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-5xl pt-4`} >
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/50 from-on-primary/[80%] to-on-primary/[95%] dark:to-primary backdrop-blur-[0px]">
                       <span className="relative brightness-90">
                         Developer by trade
                         <br />
@@ -224,57 +216,18 @@ export default function WorkPage() {
                     </span>
                   </h1>
                 </div>
-                <div className="w-full space-y-6 dark:text-secondary lg:place-items-center">
-                  <div className="gap-12 grid md:grid-cols-2">
-                    <div className="space-y-5">
-                      <h4 className="brightness-75 text-sm font-medium">
-                        Developer as a Creator
-                      </h4>
-                      <div className="relative grid col-start-1">
-                        <p className="">
-                          As a developer, I am also a creator. This{" "}
-                          <span className="font-bold font-serif italic">
-                            term encapsulates the full spectrum{"... "}
-                          </span>
-                        </p>
-                        <p className="hidden">
-                          I design software and build apps as part of my
-                          creative endeavors.
-                        </p>
-                        <p>I also produce digital art and music for fun.</p>
-                      </div>
-                    </div>
-                    <div className="space-y-5">
-                      <h4 className="brightness-75 text-sm font-medium">
-                        Importance of Understanding Medium
-                      </h4>
-                      <p className="lg:pr-12 hidden">
-                        Thoroughly understanding your medium is crucial. When
-                        technology and ideas blend, products excel{" "}
-                        <span className="text-xs">(like Apple)</span>. Each
-                        project reflects my unique blend of technical expertise
-                        and artistic vision — resulting in functional and
-                        visually stunning work.
-                      </p>
-                      <div>
-                        <p>
-                          Technology and ideas should blend seamlessly
-                          <span className="font-serif font-bold italic">
-                            {" "}
-                            (like Apple){" "}
-                          </span>
-                          to create excellent products .
-                        </p>
-                        <p>
-                          My projects reflect a unique blend of technical
-                          expertise and artistic vision.
-                        </p>
-                        <Link href={"/resume"} className="w-fit mt-4">
-                          Request résumé
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                <div className="w-full dark:text-secondary lg:place-items-center">
+                  <p>
+                    Technology and ideas should blend seamlessly
+                    <span className="font-serif font-bold italic"> (like Apple){" "} </span>
+                    to create excellent products.
+                    My projects reflect a unique blend of technical
+                    expertise and artistic vision.
+                    {" "}
+                    <Link href={"/resume"} className="w-fit">
+                      Request résumé
+                    </Link>
+                  </p>
                 </div>
 
                 <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12 tracking-widest ">

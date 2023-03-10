@@ -46,8 +46,10 @@ module.exports = {
         serif: ["var(--font-charter)", ...fontFamily.serif],
       },
       colors: {
-        primary: "#f3c77c",
-        secondary: "#e7cfb1",
+        // primary: "#f3c77c",
+        primary: "#fff",
+        // secondary: "#e7cfb1",
+        secondary: "#d4d4d4",
         tertiary: "#f2f2f2",
         accent: "#f6ac9f",
         "on-primary": "#111011",

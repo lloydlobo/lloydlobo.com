@@ -84,7 +84,7 @@ Link {
 }
 
 a {
-  @apply [&]:font-bold;
+  @apply [&]:font-bold tracking-widest backdrop-blur-sm;
   /* @apply text-green-400 dark:bg-gradient-to-r dark:from-accent/50 dark:to-red-500/50 dark:bg-clip-text dark:text-primary/60; */
 }
 
@@ -104,7 +104,7 @@ a::after {
   top: -0.1em;
   margin-left: 0.1em;
   font-size: 90%;
-  @apply text-red-600 dark:text-red-400;
+  @apply saturate-150 text-red-500 dark:text-red-600;
 
   /* font-feature-settings: "caps"; */
   /* font-variant-numeric: normal; */

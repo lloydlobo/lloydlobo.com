@@ -87,7 +87,7 @@ export function ThemeDropdown() {
         </div>
 
         {/* Current theme dock icon */}
-        <div className={`${onHoverStyles}`}>
+        <div className={`${onHoverStyles} ${disabled ? 'hidden' : 'block'}`}>
           {themeModes.map(({ name, icon }, index) => {
             if (theme === name) {
               return (
