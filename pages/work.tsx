@@ -151,21 +151,20 @@ export default function WorkPage() {
                       <a
                         key={`project-${repo}-${index}`}
                         href="/"
-                        className="rounded-xl after:hidden px-4 py-1 w-full 4xl:max-w-[60vw] mx-auto"
+                        className="rounded-xl after:hidden px-4 py-1 lg:max-w-screen-lg w-full mx-auto"
                       >
                         <div className="prose-base flex text-start gap-x-2">
-                          <div className="flex flex-1 items-center gap-x-2 relative">
+                          <div className="flex flex-1 items-center gap-x-2">
                             <span className="pb-0 flex-shrink-0">{repo}</span>
-                            <span className="prose-sm text-clip brightness-75 flex-shrink-0 truncate">
+                            <span className="prose-sm hidden md:flex text-clip brightness-75 flex-shrink-0 truncate">
                               {description}
                             </span>
-                            <div className="after:content-[''] after:relative after:ml-auto w-full relative border-b flex"></div>
-                          </div>
-                          <div>
-                            <span className="brightness-75 flex-1 prose-sm ">
-                              2023
+                            <span className="prose-sm md:hidden text-clip overflow-clip max-w-[24ch] flex brightness-75 flex-shrink-0 truncate">
+                              {description}
                             </span>
+                            <div className="after:content-[''] after:relative after:ml-auto w-full relative border-t top-1 flex"></div>
                           </div>
+                          <span className="brightness-75 prose-sm ">2023</span>
                         </div>
                       </a>
                     )
