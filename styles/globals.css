@@ -19,21 +19,21 @@
   /* @apply outline-1 outline-dotted bg-purple-800 bg-opacity-[0.002]; */
 }
 
+/* font-size: 2.4vw; */
+/* font-size: 1.8vw; */
 html {
   @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
-  /* font-size: 2.4vw; */
-  /* font-size: 1.8vw; */
 }
 @media all and (min-width: 1000px) {
+  /* font-size: 24px; */
+  /* font-size: 21px; */
   html {
-    /* font-size: 24px; */
-    /* font-size: 21px; */
   }
 }
 @media all and (max-width: 520px) {
+  /* font-size: 18px; */
+  /* font-size: 16px; */
   html {
-    /* font-size: 18px; */
-    /* font-size: 16px; */
   }
 }
 
@@ -44,19 +44,18 @@ body {
   @apply font-serif;
 }
 
+/* font-size: 1rem; */
+/* Line spacing should be 120–145% of the point size. */
+/* 1.2 - 1.45 */
+/* line-height: 1.45; */
 body {
   min-height: 100vh;
   font-feature-settings: "kern";
-  /* font-size: 1rem; */
-
-  /* Line spacing should be 120–145% of the point size. */
-  line-height: 1.45; /* 1.2 - 1.45 */
-
   @apply tracking-normal text-on-primary bg-gray0 dark:text-secondary dark:bg-on-primary;
 }
 
+/* @apply py-8 md:py-16; */
 main {
-  /* @apply py-8 md:py-16; */
   @apply mx-auto my-16 md:px-4;
 }
 
@@ -68,23 +67,24 @@ article {
   @apply prose lg:prose-xl md:mx-48;
 }
 
+/* px-10 is a hack to line up with px used in `Section` component */
 footer {
-  /* px-10 is a hack to line up with px used in `Section` component */
   @apply w-full px-6 md:px-10 brightness-[50%] py-2;
 }
 
+/* text-decoration-color: currentcolor; */
+/* color: inherit; */
+/* @apply no-underline decoration-transparent; */
 a,
 Link {
   text-decoration: none;
-  text-decoration-color: currentcolor;
-  color: inherit;
   transition-property: background;
   transition-duration: 0.2s;
-  @apply no-underline decoration-transparent;
 }
 
+/* @apply [&]:font-medium saturate-200 dark:text-primary; */
 a {
-  @apply [&]:font-bold tracking-normal backdrop-blur-sm dark:text-primary;
+  @apply dark:text-primary;
 }
 
 /* mailto:user@email.com */
@@ -93,10 +93,12 @@ a:link {
 }
 
 a:hover {
-  @apply bg-green-100 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg;
+  @apply bg-green-50 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg;
   background-image: none;
 }
 
+/* font-feature-settings: "caps"; */
+/* font-variant-numeric: normal; */
 a::after {
   position: relative;
   content: "\FEFF°";
@@ -104,17 +106,14 @@ a::after {
   margin-left: 0.1em;
   font-size: 90%;
   @apply saturate-150 text-red-500 dark:text-red-600;
-
-  /* font-feature-settings: "caps"; */
-  /* font-variant-numeric: normal; */
 }
 
 /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
+/* margin-bottom: 0.5rem; */
+/* line-height: 1.35; */
+/* font-size: 1rem; */
 p {
-  margin-bottom: 0.5rem;
   hyphens: auto;
-  line-height: 1.35;
-  font-size: 1rem;
   @apply dark:text-secondary;
 }
 
