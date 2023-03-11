@@ -61,8 +61,8 @@ export default function WorkPage() {
   // let uuid = crypto.randomUUID();
   return (
     <Layout title="Work ">
-      <main>
-        <div className="">
+      <main className="">
+        <div className="grid">
           <Section>
             <article className="py-6">
               <h1 className={`dark:text-primary`}>
@@ -74,7 +74,7 @@ export default function WorkPage() {
           </Section>
         </div>
 
-        <div className={`mx-auto space-y-12 lg:space-y-24 mt-16`}>
+        <div className={`mx-auto space-y-12 lg:space-y-28 mt-16`}>
           <Section>
             <article>
               <div className="mx-auto w-full dark:text-secondary">
@@ -140,8 +140,8 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative space-y-9 grid w-full ">
-                <h2 className="flex w-48 dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01']">
+              <div className="relative space-y-9 w-full ">
+                <h2 className="flex w-48 ml-auto dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01']">
                   Projects
                 </h2>
 
@@ -153,20 +153,20 @@ export default function WorkPage() {
                         href="/"
                         className="rounded after:hidden lg:max-w-screen-lg w-full mx-auto"
                       >
-                        <div className="flex gap-x-1 items-center">
+                        <div className="flex gap-x-2 text-tertiary prose-base items-center ">
                           <div className="flex flex-1 items-baseline gap-x-2">
-                            <span className="flex-shrink-0 text-lg">
+                            <span className="flex-shrink-0 text-primary prose-lg ">
                               {repo}
                             </span>
-                            <span className="hidden text-sm md:flex text-clip brightness-75 flex-shrink-0 truncate">
+                            <span className="hidden md:flex  text-clip brightness-75 flex-shrink-0 truncate">
                               {description}
                             </span>
-                            <span className="md:hidden text-sm text-clip overflow-clip max-w-[24ch] flex brightness-75 flex-shrink-0 truncate">
+                            <span className="md:hidden text-clip overflow-clip max-w-[24ch] flex brightness-75 flex-shrink-0 truncate">
                               {description}
                             </span>
-                            <div className="after:content-[''] after:relative after:ml-auto w-full relative border-t -top-1 flex"></div>
+                            <div className="after:content-[''] after:relative after:ml-auto w-full relative border-t-[0.5px] blur-[0.7px]  -top-1 brightness-50 flex"></div>
                           </div>
-                          <span className="brightness-75 text-sm">2023</span>
+                          <span className="brightness-75">2023</span>
                         </div>
                       </a>
                     )
@@ -234,11 +234,9 @@ export default function WorkPage() {
 
           <Section>
             <article className="pb-12">
-              <div className="relative space-y-6 grid w-full">
-                <h2 className="flex w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-8 lg:mb-8">
-                  Connect
-                </h2>
-              </div>
+              <h2 className="flex ml-auto w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-8 lg:mb-8">
+                Connect
+              </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
                 <h3 className="text-4xl lowercase max-w-md mr-auto leading-9 dark:text-primary font-sans">
                   let's talk about a project, collaboration or an idea you may
