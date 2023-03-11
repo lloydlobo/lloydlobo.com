@@ -23,7 +23,7 @@ module.exports = {
       current: "currentColor",
       white: "#ffffff",
       black: "#000000",
-      gray0: "#f7f5f2",
+      gray0: "#fafafa",
       gray1: "#f8f8f8",
       gray2: "#dbe1e8",
       gray3: "#b2becd",
