@@ -94,7 +94,7 @@ export default function WorkPage() {
                     </span>
                     I'm <span className="dark:text-dim">Lloyd</span>, a software
                     developer who's passionate about{" "}
-                    <em className="font-serif font-bold">
+                    <em className="">
                       building polished software and web experiences
                     </em>
                     .
@@ -115,11 +115,17 @@ export default function WorkPage() {
                     </span>
                     Fearlessly exploring passions and interests with a drive to
                     hone my skills and deliver quality work. I assume{" "}
-                    <em className="font-serif font-bold">
+                    <em className="">
                       everything we encounter matters to someone
                     </em>
                     .
                   </p>
+                  <p>
+                    <Link href={"/resume"} className="">
+                      Get résumé
+                    </Link>
+                  </p>
+
                   <div className="relative w-[100%] overflow-x-auto mx-auto hidden">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
                       <p className="">
@@ -201,9 +207,6 @@ export default function WorkPage() {
                     to create excellent products. My projects reflect a unique
                     blend of technical expertise and artistic vision.{" "}
                   </p>
-                  <Link href={"/resume"} className="w-fit">
-                    Get résumé
-                  </Link>
                 </div>
 
                 <div className="grid grid-cols-2">
