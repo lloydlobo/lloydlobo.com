@@ -140,26 +140,32 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative  space-y-9 grid w-full ">
+              <div className="relative space-y-9 grid w-full ">
                 <h2 className="flex w-48 dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01']">
                   Projects
                 </h2>
 
-                <div className="text-sm mx-auto grid space-y-2 w-full">
+                <div className="mx-auto grid space-y-0 w-full">
                   {PROJECTS.map(
                     ({ username, repo, tags, description, img }, index) => (
                       <a
                         key={`project-${repo}-${index}`}
                         href="/"
-                        className="rounded-xl after:hidden px-4 py-2 w-full 4xl:max-w-[60vw] mx-auto"
+                        className="rounded-xl after:hidden px-4 py-1 w-full 4xl:max-w-[60vw] mx-auto"
                       >
-                        <div className="grid grid-flow-col items-center w-full justify-between gap-x-2">
-                          <span className="font-medium">{repo}</span>
-                          <span className="hidden text-clip brightness-75 truncate md:block">
-                            {description}
-                          </span>
-                          <div className="line h-[0.1px] border-secondary/30 brightness-50 before:h-[1px] before:bg-white before:text-opacity-70 min-w-[20vw] before:content-[' '] border-t "></div>
-                          <span className="brightness-75">2023</span>
+                        <div className="prose-base flex text-start gap-x-2">
+                          <div className="flex flex-1 items-center gap-x-2 relative">
+                            <span className="pb-0 flex-shrink-0">{repo}</span>
+                            <span className="prose-sm text-clip brightness-75 flex-shrink-0 truncate">
+                              {description}
+                            </span>
+                            <div className="after:content-[''] after:relative after:ml-auto w-full relative border-b flex"></div>
+                          </div>
+                          <div>
+                            <span className="brightness-75 flex-1 prose-sm ">
+                              2023
+                            </span>
+                          </div>
                         </div>
                       </a>
                     )
