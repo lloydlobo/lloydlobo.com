@@ -66,7 +66,7 @@ export default function WorkPage() {
           <Section>
             <article className="py-6">
               <h1 className={`dark:text-primary`}>
-                a <span className="">front-end developer,</span>
+                A <span className="">front-end developer,</span>
                 <br />
                 creating minimal and functional software
               </h1>
@@ -186,26 +186,22 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative space-y-6 mx-auto w-full">
-                <h2 className="dark:text-tertiary text-sm w-48 uppercase font-sans font-bold  flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm after:content-['02']">
+              <div className="relative mx-auto w-full">
+                <h2 className="dark:text-tertiary text-sm w-48 uppercase font-sans font-bold flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 text-start after:text-sm after:content-['02']">
                   About
                 </h2>
 
                 <h3 className="dark:text-primary text-4xl">
-                  developer by trade
+                  Developer by trade,
                   <br />
                   creator by heart
                 </h3>
 
-                <div className="w-full dark:text-secondary lg:place-items-center">
+                <div className="w-full dark:text-secondary">
                   <p>
-                    Technology and ideas should blend seamlessly
-                    <span className="font-serif font-bold italic">
-                      {" "}
-                      (like Apple){" "}
-                    </span>
-                    to create excellent products. My projects reflect a unique
-                    blend of technical expertise and artistic vision.{" "}
+                    Technology and ideas should blend seamlessly to create
+                    excellent products. My projects reflect a unique blend of
+                    technical expertise and artistic vision.{" "}
                   </p>
                 </div>
 
@@ -243,8 +239,8 @@ export default function WorkPage() {
                 Connect
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
-                <h3 className="text-4xl lowercase max-w-md mr-auto leading-9 dark:text-primary font-sans">
-                  let's talk about a project, collaboration or an idea you may
+                <h3 className="text-4xl max-w-md mr-auto leading-9 dark:text-primary font-sans">
+                  Let's talk about a project, collaboration or an idea you may
                   have
                 </h3>
                 <div className="relative ml-auto">
