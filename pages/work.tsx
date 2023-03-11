@@ -201,7 +201,7 @@ export default function WorkPage() {
                     <h3 className="text-xs uppercase font-sans dark:text-tertiary flex items-baseline justify-between place-self-end border-t-[1px] dark:border-tertiary/30 py-2 text-start font-bold">
                       Expertise
                     </h3>
-                    <ul className={`space-y-3 list-none dark:text-secondary`}>
+                    <ul className={`space-y-3 dark:text-secondary`}>
                       <li className="">Front-end development</li>
                       <li className="">Web APIs - NodeJS, Actix Web</li>
                       <li className="">CLI Apps</li>
