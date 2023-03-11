@@ -64,7 +64,7 @@ export default function WorkPage() {
       <main className="">
         <div className="grid">
           <Section>
-            <article className="py-6">
+            <article className="pt-12">
               <h1 className={`dark:text-primary`}>
                 A <span className="">front-end developer,</span>
                 <br />
@@ -74,7 +74,7 @@ export default function WorkPage() {
           </Section>
         </div>
 
-        <div className={`mx-auto space-y-20 lg:space-y-28 mt-16`}>
+        <div className={`mx-auto space-y-20 lg:space-y-28 mt-8`}>
           <Section>
             <article>
               <div className="mx-auto w-full dark:text-secondary">
@@ -235,7 +235,7 @@ export default function WorkPage() {
 
           <Section>
             <article className="pb-12">
-              <h2 className="flex ml-auto w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-8 lg:mb-8">
+              <h2 className="flex ml-auto w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-16 lg:mb-20">
                 Connect
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
