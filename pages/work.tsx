@@ -74,7 +74,7 @@ export default function WorkPage() {
           </Section>
         </div>
 
-        <div className={`mx-auto space-y-12 lg:space-y-28 mt-16`}>
+        <div className={`mx-auto space-y-20 lg:space-y-28 mt-16`}>
           <Section>
             <article>
               <div className="mx-auto w-full dark:text-secondary">
@@ -153,20 +153,22 @@ export default function WorkPage() {
                         href="/"
                         className="rounded after:hidden lg:max-w-screen-lg w-full mx-auto"
                       >
-                        <div className="flex gap-x-2 text-tertiary prose-base items-center ">
+                        <div className="flex gap-x-2  dark:text-tertiary prose-base items-center ">
                           <div className="flex flex-1 items-baseline gap-x-2">
-                            <span className="flex-shrink-0 text-primary prose-lg ">
+                            <span className="flex-shrink-0 dark:text-primary prose-lg ">
                               {repo}
                             </span>
-                            <span className="hidden md:flex  text-clip brightness-75 flex-shrink-0 truncate">
+                            <span className="hidden text-tertiary md:flex text-clip brightness-75 flex-shrink-0 truncate">
                               {description}
                             </span>
-                            <span className="md:hidden text-clip overflow-clip max-w-[24ch] flex brightness-75 flex-shrink-0 truncate">
+                            <span className="md:hidden text-secondary prose-sm max-w-[27ch] flex brightness-75 flex-shrink-0 truncate">
                               {description}
                             </span>
-                            <div className="after:content-[''] after:relative after:ml-auto w-full relative border-t-[0.5px] blur-[0.7px]  -top-1 brightness-50 flex"></div>
+                            <div className="after:content-[''] text-primary after:relative after:ml-auto w-full opacity-75 after:opacity-75 relative border-t-[0.1px] blur-[0.1px] z-10 backdrop-blur-[1px] -top-1 brightness-50 flex"></div>
                           </div>
-                          <span className="brightness-75">2023</span>
+                          <span className="brightness-75 text-secondary dark:text-current">
+                            2023
+                          </span>
                         </div>
                       </a>
                     )
@@ -188,6 +190,7 @@ export default function WorkPage() {
                   <br />
                   creator by heart
                 </h3>
+
                 <div className="w-full dark:text-secondary lg:place-items-center">
                   <p>
                     Technology and ideas should blend seamlessly
@@ -203,29 +206,28 @@ export default function WorkPage() {
                   </Link>
                 </div>
 
-                <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12">
-                  <div className="lg:mt-12">
-                    <h3 className="text-xs uppercase font-sans dark:text-tertiary flex items-baseline justify-between place-self-end border-t-[1px] dark:border-tertiary/30 py-2 text-start font-bold">
+                <div className="grid grid-cols-2">
+                  <div className="">
+                    <h3 className="prose-sm uppercase dark:text-tertiary font-medium font-sans">
                       Expertise
                     </h3>
-                    <ul className={`space-y-3 dark:text-secondary`}>
-                      <li className="">Front-end development</li>
-                      <li className="">Web APIs - NodeJS, Actix Web</li>
-                      <li className="">CLI Apps</li>
-                    </ul>
+                    <div className={`[&>li]:prose-base dark:text-secondary`}>
+                      <div className="">Front-end development</div>
+                      <div className="">Web APIs - NodeJS, Actix Web</div>
+                      <div className="">CLI Apps</div>
+                    </div>
                   </div>
-
-                  <div className=" ">
-                    <h3 className="text-xs uppercase font-sans dark:text-tertiary flex items-baseline justify-between place-self-end border-t-[1px] dark:border-tertiary/30 py-2 text-start font-bold">
+                  <div className="">
+                    <h3 className="prose-sm uppercase dark:text-tertiary/80 font-medium font-sans">
                       Tech Stacks
                     </h3>
-                    <ul className={`space-y-3 dark:text-secondary`}>
-                      <li className="">NextJS React JamStack</li>
-                      <li className="">
+                    <div className={`[&>li]:prose-base dark:text-secondary`}>
+                      <div className="">NextJS React JamStack</div>
+                      <div className="">
                         Rust, Go, Python, JavaScript, TypeScript
-                      </li>
-                      <li className="">Neovim, VS Code, bash</li>
-                    </ul>
+                      </div>
+                      <div className="">Neovim, VS Code, bash</div>
+                    </div>
                   </div>
                 </div>
               </div>
