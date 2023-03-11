@@ -79,7 +79,7 @@ export default function WorkPage() {
             <article>
               <div className="mx-auto w-full dark:text-secondary">
                 <div className="relative space-y-6 mx-auto w-full">
-                  <div className="w-48 border-b-[1px] dark:border-tertiary"></div>
+                  <div className="w-48 hidden border-b-[1px] dark:border-tertiary"></div>
                   {/* Better to put this in the about page */}
                   <p className="hidden">
                     If you're browsing this page it means you probably wish to
@@ -205,22 +205,22 @@ export default function WorkPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2">
+                <div className="grid grid-cols-1 gap-[1ch]">
                   <div className="">
-                    <h3 className="prose-sm uppercase dark:text-tertiary font-medium font-sans">
+                    <h3 className="prose-base border-t mb-0 border-tertiary uppercase dark:text-tertiary font-medium font-sans">
                       Expertise
                     </h3>
-                    <div className={`[&>li]:prose-base dark:text-secondary`}>
+                    <div className={`[&>*]:prose-base dark:text-secondary`}>
                       <div className="">Front-end development</div>
                       <div className="">Web APIs - NodeJS, Actix Web</div>
                       <div className="">CLI Apps</div>
                     </div>
                   </div>
                   <div className="">
-                    <h3 className="prose-sm uppercase dark:text-tertiary/80 font-medium font-sans">
+                    <h3 className="prose-base mb-0 uppercase border-t border-tertiary dark:text-tertiary/80 font-medium font-sans">
                       Tech Stacks
                     </h3>
-                    <div className={`[&>li]:prose-base dark:text-secondary`}>
+                    <div className={`[&>*]:prose-base dark:text-secondary`}>
                       <div className="">NextJS React JamStack</div>
                       <div className="">
                         Rust, Go, Python, JavaScript, TypeScript
