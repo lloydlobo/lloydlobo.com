@@ -48,7 +48,9 @@ module.exports = {
       },
       colors: {
         primary: "#ffffff",
-        secondary: "#d4d4d4",
+        "on-gray0": "#444",
+        secondary: "#999",
+        // secondary: "#d4d4d4",
         tertiary: "#a3a3a3",
         accent: "#f6ac9f",
         "on-primary": "#111011",

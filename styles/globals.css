@@ -105,7 +105,7 @@ a::after {
   top: -0.1em;
   margin-left: 0.1em;
   font-size: 90%;
-  @apply saturate-150 text-red-500 dark:text-red-600;
+  @apply text-red-800 saturate-150 dark:text-red-600;
 }
 
 /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
@@ -126,14 +126,10 @@ p {
   }
 }
 
-button {
-  @apply p-1 shadow-none;
-}
+/* button { */
+/*   @apply p-1 shadow-none; */
+/* } */
 
-button:hover {
-  @apply shadow animate-pulse;
-}
-
-nav.dock > * {
-  @apply scale-90 hover:bg-gradient-to-tl from-on-secondary/90 via-on-secondary/60 to-secondary/[0.005] p-[0.7rem]  backdrop-blur-[0px] rounded-full;
-}
+/* nav.dock > * { */
+/*   @apply hover:bg-gradient-to-tl from-on-secondary/90 via-on-secondary/60 to-secondary/[0.005] p-[0.7rem]  backdrop-blur-[0px] rounded-full; */
+/* } */
