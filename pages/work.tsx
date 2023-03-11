@@ -42,13 +42,6 @@ const PROJECTS = [
     description: "A no-nonsense budget tracking Discord bot",
     img: "/penny.jpg",
   },
-  // {
-  //   username: "lloydlobo",
-  //   tags: ["development", "CLI", "go"],
-  //   repo: "okejoke",
-  //   description: "okejoke gathers jokes on the fly in your CLI",
-  //   img: "/okejoke.jpg",
-  // },
   {
     username: "lloydlobo",
     tags: ["development", "rust", "cli"],
@@ -71,7 +64,7 @@ export default function WorkPage() {
       <main>
         <div className="">
           <Section>
-            <article className="">
+            <article className="py-6">
               <h1 className={`dark:text-primary`}>
                 a <span className="">front-end developer,</span>
                 <br />
@@ -85,15 +78,8 @@ export default function WorkPage() {
           <Section>
             <article>
               <div className="mx-auto w-full dark:text-secondary">
-                <div
-                  className="relative
-                space-y-6 mx-auto w-full"
-                >
-                  <div className="w-48 border-b-[2px] dark:border-secondary/90 pb-2">
-                    <h2 className="font-medium dark:text-secondary text-start">
-                      Work
-                    </h2>
-                  </div>
+                <div className="relative space-y-6 mx-auto w-full">
+                  <div className="w-48 border-b-[1px] dark:border-tertiary"></div>
                   {/* Better to put this in the about page */}
                   <p className="hidden">
                     If you're browsing this page it means you probably wish to
@@ -136,17 +122,6 @@ export default function WorkPage() {
                   </p>
                   <div className="relative w-[100%] overflow-x-auto mx-auto hidden">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
-                      <ul className={`space-y-1 font-medium`}>
-                        <li className="">
-                          <Link href={`#work`}>Work</Link>
-                        </li>
-                        <li className="">
-                          <Link href={`#work`}>About</Link>
-                        </li>
-                        <li className="">
-                          <Link href={`#work`}>Connect</Link>
-                        </li>
-                      </ul>
                       <p className="">
                         I'm a software developer who's passionate about building
                         great stuff. My focus is on creating innovative
@@ -166,11 +141,7 @@ export default function WorkPage() {
           <Section>
             <article>
               <div className="relative  space-y-9 grid w-full ">
-                <h2
-                  className="flex w-48 dark:text-secondary items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm
-                before:content-['01'] brightness-50
-                "
-                >
+                <h2 className="flex w-48 dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01']">
                   Projects
                 </h2>
 
@@ -194,7 +165,6 @@ export default function WorkPage() {
                     )
                   )}
                 </div>
-                {/* <WorkProjects /> */}
               </div>
             </article>
           </Section>
@@ -202,29 +172,15 @@ export default function WorkPage() {
           <Section>
             <article>
               <div className="relative space-y-6 mx-auto w-full">
-                <h2
-                  className="w-48 font-medium dark:text-secondary flex items-baseline brightness-50 justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm
-                after:content-['02']"
-                >
+                <h2 className="dark:text-tertiary text-sm w-48 uppercase font-sans font-bold  flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 pb-2 text-start after:text-sm after:content-['02']">
                   About
                 </h2>
 
-                <div className="">
-                  <h3
-                    className="dark:text-secondary"
-                  // className={`text-xl font-bold dark:text-primary backdrop-blur-[0px] hover:text-accent md:text-2xl lowercase pt-4 mb-2`}
-                  >
-                    <span
-                    // className="bg-clip-text text-transparent bg-gradient-to-r dark:from-primary/70 from-on-primary/[80%] to-on-primary/[95%] dark:to-primary backdrop-blur-[0px]"
-                    >
-                      <span className="">
-                        developer by trade
-                        <br />
-                        creator by heart
-                      </span>
-                    </span>
-                  </h3>
-                </div>
+                <h3 className="dark:text-primary text-4xl">
+                  developer by trade
+                  <br />
+                  creator by heart
+                </h3>
                 <div className="w-full dark:text-secondary lg:place-items-center">
                   <p>
                     Technology and ideas should blend seamlessly
@@ -236,16 +192,16 @@ export default function WorkPage() {
                     blend of technical expertise and artistic vision.{" "}
                   </p>
                   <Link href={"/resume"} className="w-fit">
-                    Request résumé
+                    Get résumé
                   </Link>
                 </div>
 
                 <div className="ml-auto text-sm 4xl:w-[75vw] space-y-12">
                   <div className="lg:mt-12">
-                    <h3 className="text-sm brightness-75 text-secondary flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
+                    <h3 className="text-xs uppercase font-sans dark:text-tertiary flex items-baseline justify-between place-self-end border-t-[1px] dark:border-tertiary/30 py-2 text-start font-bold">
                       Expertise
                     </h3>
-                    <ul className={`space-y-3 dark:text-secondary`}>
+                    <ul className={`space-y-3 list-none dark:text-secondary`}>
                       <li className="">Front-end development</li>
                       <li className="">Web APIs - NodeJS, Actix Web</li>
                       <li className="">CLI Apps</li>
@@ -253,7 +209,7 @@ export default function WorkPage() {
                   </div>
 
                   <div className=" ">
-                    <h3 className="text-sm brightness-75 text-secondary flex items-baseline justify-between place-self-end border-b-[1px] border-secondary/30 py-3 text-start font-normal">
+                    <h3 className="text-xs uppercase font-sans dark:text-tertiary flex items-baseline justify-between place-self-end border-t-[1px] dark:border-tertiary/30 py-2 text-start font-bold">
                       Tech Stacks
                     </h3>
                     <ul className={`space-y-3 dark:text-secondary`}>
@@ -270,52 +226,34 @@ export default function WorkPage() {
           </Section>
 
           <Section>
-            <article>
+            <article className="pb-12">
               <div className="relative space-y-6 grid w-full">
-                <h2 className="flex w-48 items-baseline dark:text-secondary justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end brightness-50 font-medium before:text-sm before:content-['03'] mb-8 lg:mb-12">
+                <h2 className="flex w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-8 lg:mb-8">
                   Connect
                 </h2>
               </div>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
-                <FooterCTAHero />
-                <FooterCTABody />
+                <h3 className="text-4xl lowercase max-w-md mr-auto leading-9 dark:text-primary font-sans">
+                  let's talk about a project, collaboration or an idea you may
+                  have
+                </h3>
+                <div className="relative ml-auto">
+                  <div
+                    className={`relative w-full -rotate-45 scale-75 md:scale-100 lg:-rotate-[55deg]`}
+                  >
+                    <div
+                      className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 saturate-50 dark:saturate-100 text-green-400 dark:text-secondary -translate-x-1/2 lg:bottom-56`}
+                    >
+                      <WritingArrowDown />
+                    </div>
+                  </div>
+                  <EmailCopy />
+                </div>
               </div>
             </article>
           </Section>
         </div>
       </main>
     </Layout>
-  );
-}
-
-function FooterCTABody() {
-  return (
-    <div className="relative ml-auto">
-      <div
-        className={`relative w-full -rotate-45 scale-75 md:scale-100 lg:-rotate-[55deg]`}
-      >
-        <div
-          className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 saturate-50 dark:saturate-100 text-green-400 dark:text-accent -translate-x-1/2 lg:bottom-56`}
-        >
-          <WritingArrowDown />
-        </div>
-      </div>
-
-      <EmailCopy />
-    </div>
-  );
-}
-
-function FooterCTAHero() {
-  return (
-    <div className="flex justify-center w-full">
-      <h3 className="text-4xl leading-9 dark:text-secondary">
-        Let's
-        <br />
-        work
-        <br />
-        together
-      </h3>
-    </div>
   );
 }

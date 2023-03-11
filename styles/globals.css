@@ -56,8 +56,8 @@ body {
 }
 
 main {
-  @apply py-8 md:py-16;
-  /* @apply mx-auto pt-8 md:pt-16 md:px-4; */
+  /* @apply py-8 md:py-16; */
+  @apply mx-auto my-16 md:px-4;
 }
 
 .layout-wrapper {
