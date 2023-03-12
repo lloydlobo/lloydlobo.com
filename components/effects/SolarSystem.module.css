@@ -5,7 +5,7 @@
   Mercury : ~87,5 days
   Venus : ~224,7 days
   Earth : ~365,2563 days
-    + Moon : ~27,3216 days (around earth)
+    + Moon : ~27.3216 days (around earth)
   Mars : ~687 days (~1,8 year)
   Jupiter : ~4 331 days (~12 years)
   Saturn : ~10 747 days (~30 years)
@@ -26,25 +26,112 @@
   color: #ffffff;
 }
 
+.sun {
+  background: radial-gradient(
+    ellipse at center,
+    #ffd000 1%,
+    #f9b700 39%,
+    #f9b700 39%,
+    #e06317 100%
+  );
+  width: var(--pl-sun);
+  height: var(--pl-sun);
+
+  /* this brings the center as the origin */
+  margin-top: calc(-0.5 * var(--pl-sun));
+  margin-left: calc(-0.5 * var(--pl-sun));
+
+  border: 0;
+  border-radius: 100%;
+  background-clip: padding-box;
+  background-position: -28px -103px;
+  background-size: 175%;
+  box-shadow: 0 0 11px 3px rgba(255, 106, 0, 0.4),
+    0 0 21px 10px rgba(255, 204, 0, 0.13);
+}
+
+/* EARTH */
+
+.earth {
+  --earth-days: 365.2563;
+  height: var(--orb-earth);
+  width: var(--orb-earth);
+  margin-top: calc(-0.5 * var(--orb-earth));
+  margin-left: calc(-0.5 * var(--orb-earth));
+  animation: orb
+    calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
+    linear infinite;
+}
+.earth::before {
+  height: var(--pl-earth);
+  width: var(--pl-earth);
+  background: #11ace9;
+  margin-top: calc(-0.5 * var(--pl-earth));
+  margin-left: calc(-0.5 * var(--pl-earth));
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+}
+.earth::after {
+  --earth-days: 27.3216; /* days (around earth) */
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  /* left: 0%; */
+  top: 0px;
+  margin-top: -9px;
+  margin-left: -9px;
+  /* border: 0; */
+  border-radius: 100px;
+  box-shadow: 0 -10px 0 -8px grey;
+  animation: orb
+    calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
+    linear infinite;
+}
+
+/* border: 0; */
+/* border-radius: 100%; */
+/* background-clip: padding-box; */
+/* background-position: -28px -103px; */
+/* background-size: 175%; */
+/* box-shadow: 0 0 11px 3px rgba(0, 106, 100, 0.4), */
+/*   0 0 21px 10px rgba(0, 204, 100, 0.13); */
+
+.asteroid_belt {
+}
+
+@keyframes orb {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(-360deg);
+  }
+}
+
+/* outline: 1px solid orchid; */
+/* width: 100vh; */
+/* height: 100vh; */
+/* width: auto; */
+/* height: 100vh; */
+/* width: min(90vw, 90vh); */
+/* height: min(90vw, 90vh); */
+/* inset: 0; */
+/* aspect-ratio: 1; */
 .solar {
-  /* outline: 1px solid orchid; */
   margin: 0 auto;
-  /* width: 100vh; */
-  /* height: 100vh; */
-  /* width: auto; */
-  /* height: 100vh; */
-  width: min(90vw, 90vh);
-  height: min(90vw, 90vh);
-  inset: 0;
-  /* aspect-ratio: 1; */
   position: relative;
 }
 
 div.solar {
   border-radius: 1000px;
+  display: grid;
+  place-content: center;
   /* top: 50%; */
   /* left: 50%; */
   position: absolute;
+  inset: 0;
   z-index: 999;
 }
 .solar::after {
@@ -555,80 +642,4 @@ div.solar {
     1725px 480px 0 0px rgba(255, 255, 255, 0.002),
     983px 1398px 0 0px rgba(255, 255, 255, 0.068),
     788px 1099px 0 0px rgba(255, 255, 255, 0.171);
-}
-
-.sun {
-  background: radial-gradient(
-    ellipse at center,
-    #ffd000 1%,
-    #f9b700 39%,
-    #f9b700 39%,
-    #e06317 100%
-  );
-  width: var(--pl-sun);
-  height: var(--pl-sun);
-
-  /* this brings the center as the origin */
-  margin-top: calc(-0.5 * var(--pl-sun));
-  margin-left: calc(-0.5 * var(--pl-sun));
-
-  border: 0;
-  border-radius: 100%;
-  background-clip: padding-box;
-  background-position: -28px -103px;
-  background-size: 175%;
-  box-shadow: 0 0 11px 3px rgba(255, 106, 0, 0.4),
-    0 0 21px 10px rgba(255, 204, 0, 0.13);
-}
-
-/* EARTH */
-
-.earth {
-  --earth-days: 365.2563;
-  height: var(--orb-earth);
-  width: var(--orb-earth);
-  margin-top: calc(-0.5 * var(--pl-earth));
-  margin-left: calc(-0.5 * var(--pl-earth));
-  animation: orb calc(var(--earth-days) * var(--year-in-second) / 365.2563 * 1s)
-    linear infinite;
-}
-.earth::before {
-  position: absolute;
-  content: "";
-  height: var(--pl-earth);
-  width: var(--pl-earth);
-  background: #11ace9;
-}
-.earth::after {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 50%;
-  top: 0px;
-  margin-top: -9px;
-  margin-left: -9px;
-  /* border: 0; */
-  border-radius: 100px;
-  box-shadow: 0 -10px 0 -8px grey;
-}
-
-/* border: 0; */
-/* border-radius: 100%; */
-/* background-clip: padding-box; */
-/* background-position: -28px -103px; */
-/* background-size: 175%; */
-/* box-shadow: 0 0 11px 3px rgba(0, 106, 100, 0.4), */
-/*   0 0 21px 10px rgba(0, 204, 100, 0.13); */
-
-.asteroid_belt {
-}
-
-@keyframes orb {
-  from {
-    transform: rotate(0deg);
-  }
-  from {
-    transform: rotate(-360deg);
-  }
 }
