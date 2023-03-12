@@ -20,10 +20,11 @@
 .body {
   height: 100%;
   width: 100%;
-  background: radial-gradient(ellipse at bottom, #112626 0%, #111011 100%);
+  /* background: radial-gradient(ellipse at bottom, #112626 0%, #111011 100%); */
+  /* background: radial-gradient(ellipse at bottom, #112626 0%, #11101100 100%); */
   /* outline: 1px solid rebeccapurple; */
   background-attachment: fixed;
-  color: #ffffff;
+  /* color: #ffffff; */
 }
 
 .sun {
@@ -125,7 +126,7 @@
 }
 
 div.solar {
-  border-radius: 1000px;
+  /* border-radius: 1000px; */
   top: 50%;
   left: 50%;
   position: relative;
@@ -138,5 +139,5 @@ div.solar {
   width: 2px;
   top: -2px;
   background: white;
-  border-radius: 100px;
+  /* border-radius: 100px; */
 }
