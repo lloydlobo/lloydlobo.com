@@ -26,9 +26,9 @@ export const EmailCopy = () => {
               Copied
             </span>
           ) : (
-            <button className="uppercase font-bold tracking-wider decoration-green-400 dark:decoration-accent underline-offset-8">
+            <span className="uppercase font-bold tracking-wider decoration-green-400 dark:decoration-accent underline-offset-8">
               Copy{" "}
-            </button>
+            </span>
           )}
           <svg
             xmlns="http://www.w3.org/2000/svg"

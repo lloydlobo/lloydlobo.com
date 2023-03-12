@@ -155,9 +155,8 @@ export default function WorkPage() {
                 <div className="mx-auto gap-4 grid backdrop-blur-[0px] relative">
                   {PROJECTS.map(
                     ({ username, repo, tags, description, img }, index) => (
-                      <>
+                      <div key={`project-${repo}-${index}`}>
                         <a
-                          key={`project-${repo}-${index}`}
                           href={`https://github.com/${username}/${repo}`}
                           className="rounded opacity-[61%] px-3 hover:blur-0 hover:opacity-100 [&>.tags]:hover:opacity-75 after:opacity-0 inline-flex pb-3 items-start relative transition-all duration-300 ease-in-out delay-100"
                         >
@@ -200,7 +199,7 @@ export default function WorkPage() {
                             className={`absolute opacity-0 right-[50vw] top-0 transition-none duration-700 delay-300 ease-in-out w-full brightness-50 grayscale-[90%] z-50`}
                           />
                         </div>
-                      </>
+                      </div>
                     )
                   )}
                 </div>

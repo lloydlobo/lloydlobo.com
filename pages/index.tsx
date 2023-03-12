@@ -38,7 +38,7 @@ export default function IndexPage() {
         <main className="">
           <Section>
             <article className="py-12">
-              <div className="text-xl md:text-2xl md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
+              <div className="text-xl backdrop-blur-[1px] md:text-2xl md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
                 <Link href="/about" className="tracking-wider">
                   lloyd lobo.
                 </Link>
