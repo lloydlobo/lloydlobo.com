@@ -161,9 +161,14 @@ export default function WorkPage() {
                           href={`https://github.com/${username}/${repo}`}
                           className="rounded opacity-[61%] px-3 hover:blur-0 hover:opacity-100 [&>.tags]:hover:opacity-75 after:opacity-0 inline-flex pb-3 items-start relative transition-all duration-300 ease-in-out delay-100"
                         >
-                          <p className="tags flex gap-2 absolute transition-all delay-200 duration-300 ease-in-out opacity-0 top-[1ch] prose-sm">
+                          <p className="tags flex gap-2 absolute lowercase transition-all w-full delay-200 duration-300 ease-in opacity-0 top-[1ch] brightness-90 prose-sm">
                             {tags.map((tag, idx) => (
-                              <span key={`tag-${tag}-{${idx}}`}>{tag}</span>
+                              <span
+                                key={`tag-${tag}-{${idx}}`}
+                                className="tracking-wide"
+                              >
+                                {tag}
+                              </span>
                             ))}
                           </p>
                           <div className="flex gap-x-2 dark:text-tertiary relative w-full prose-base items-center ">
