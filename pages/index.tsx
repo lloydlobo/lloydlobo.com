@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import { Section } from "@/components/Section";
 import Layout from "@/components/Layout";
+import { SolarSystem } from "@/components/effects/SolarSystem";
+
 
 export function ClockNav() {
   const [currentTime, setCurrentTime] = useState(null);
@@ -29,6 +31,9 @@ export function ClockNav() {
 export default function IndexPage() {
   return (
     <>
+      <div className="absolute -z-50 top-[32.8vh] inset-0">
+        <SolarSystem />
+      </div>
       <Layout title="Home">
         <main className="">
           <Section>

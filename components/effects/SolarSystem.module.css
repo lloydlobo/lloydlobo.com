@@ -1,0 +1,5 @@
+div.body {
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(ellipse at bottom, #112626 0%, #111011 100%);
+}
