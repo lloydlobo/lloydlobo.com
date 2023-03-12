@@ -4,57 +4,58 @@ import { EmailCopy } from "@/components/effects/EmailCopy";
 import { WritingArrowDown } from "@/components/effects/WritingArrowDown";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 
 const PROJECTS = [
   {
     username: "lloydlobo",
-    tags: ["development", "cli", "linux"],
+    tags: ["cli", "linux"],
     repo: "mausam",
     description: "A weather update desktop notifier made with Rust",
-    img: "/mausam.jpg",
+    img: "mausam.jpg",
   },
   {
     username: "lloydlobo",
-    tags: ["development", "Neural Network"],
+    tags: ["Neural Network"],
     repo: "neura-driver",
     description: "A simple self-driving car application with a neural network",
-    img: "/neura-driver.jpg",
+    img: "neura-driver.jpg",
   },
   {
     username: "lloydlobo",
-    tags: ["development", "API"],
+    tags: ["API"],
     repo: "geomeasure",
     description: "Geomeasure measures distance using GPS and that too without",
-    img: "/geomeasure.jpg",
+    img: "geomeasure.jpg",
   },
   {
     username: "lloydlobo",
-    tags: ["development", "python", "discord"],
+    tags: ["python", "discord"],
     repo: "proxymate",
     description:
       "Generates phrases in the style of the author using Markov model",
-    img: "/proxymate.jpg",
+    img: "proxymate.jpg",
   },
   {
     username: "lloydlobo",
-    tags: ["development", "discord", "python"],
+    tags: ["discord", "python"],
     repo: "penny",
     description: "A no-nonsense budget tracking Discord bot",
-    img: "/penny.jpg",
+    img: "penny.jpg",
   },
   {
     username: "lloydlobo",
-    tags: ["development", "rust", "cli"],
+    tags: ["rust", "cli"],
     repo: "rssh",
     description: "rssh or Rust Shell allows keeping maintainable bash aliases",
-    img: "/rssh.jpg",
+    img: "rssh.jpg",
   },
   {
     username: "lloydlobo",
-    tags: ["development", "rust", "cli"],
+    tags: ["rust", "cli"],
     repo: "hackernews-clone",
     description: "Coming soon...",
-    img: "/mausam-fibo.jpg",
+    img: "mausam-fibo.jpg",
   },
 ];
 export default function WorkPage() {
@@ -151,32 +152,50 @@ export default function WorkPage() {
                   Projects
                 </h2>
 
-                <div className="mx-auto gap-4 grid w-full">
+                <div className="mx-auto gap-4 grid backdrop-blur-[0px] relative">
                   {PROJECTS.map(
                     ({ username, repo, tags, description, img }, index) => (
-                      <a
-                        key={`project-${repo}-${index}`}
-                        href="/"
-                        className="rounded after:hidden lg:max-w-screen-lg w-full mx-auto"
-                      >
-                        <div className="flex gap-x-2  dark:text-tertiary prose-base items-center ">
-                          <div className="flex flex-1 items-baseline gap-x-2">
-                            <span className="flex-shrink-0 dark:text-primary prose-lg ">
-                              {repo}
+                      <>
+                        <a
+                          key={`project-${repo}-${index}`}
+                          href={`https://github.com/${username}/${repo}`}
+                          className="rounded opacity-[61%] px-3 hover:blur-0 hover:opacity-100 [&>.tags]:hover:opacity-75 after:opacity-0 inline-flex pb-3 items-start relative transition-all duration-300 ease-in-out delay-100"
+                        >
+                          <p className="tags flex gap-2 absolute transition-all delay-200 duration-300 ease-in-out opacity-0 top-[1ch] prose-sm">
+                            {tags.map((tag, idx) => (
+                              <span key={`tag-${tag}-{${idx}}`}>{tag}</span>
+                            ))}
+                          </p>
+                          <div className="flex gap-x-2 dark:text-tertiary relative w-full prose-base items-center ">
+                            {/* Make a component for this modal thingy img */}
+                            <div className="flex flex-1 items-baseline gap-x-2">
+                              <span className="flex-shrink-0 dark:text-primary prose-lg ">
+                                {repo}
+                              </span>
+                              <span className="hidden text-tertiary md:flex text-clip brightness-75 flex-shrink-0 truncate">
+                                {description}
+                              </span>
+                              <span className="md:hidden text-secondary prose-sm max-w-[27ch] flex brightness-75 flex-shrink-0 truncate">
+                                {description}
+                              </span>
+                              <div className="after:content-[''] text-primary after:relative after:ml-auto w-full opacity-75 after:opacity-75 relative border-t-[0.1px] blur-[0.1px] z-10 backdrop-blur-[1px] -top-1 brightness-50 flex"></div>
+                            </div>
+                            <span className="brightness-75 text-secondary dark:text-current">
+                              2023
                             </span>
-                            <span className="hidden text-tertiary md:flex text-clip brightness-75 flex-shrink-0 truncate">
-                              {description}
-                            </span>
-                            <span className="md:hidden text-secondary prose-sm max-w-[27ch] flex brightness-75 flex-shrink-0 truncate">
-                              {description}
-                            </span>
-                            <div className="after:content-[''] text-primary after:relative after:ml-auto w-full opacity-75 after:opacity-75 relative border-t-[0.1px] blur-[0.1px] z-10 backdrop-blur-[1px] -top-1 brightness-50 flex"></div>
                           </div>
-                          <span className="brightness-75 text-secondary dark:text-current">
-                            2023
-                          </span>
+                        </a>
+                        <div className="w-full hidden [&>img]:hover:opacity-80 h-full absolute">
+                          <Image
+                            // loader={myLoader}
+                            src={`/img/projects/${img}`}
+                            alt={`project image of ${repo}`}
+                            width={500}
+                            height={500}
+                            className={`absolute opacity-0 right-[50vw] top-0 transition-none duration-700 delay-300 ease-in-out w-full brightness-50 grayscale-[90%] z-50`}
+                          />
                         </div>
-                      </a>
+                      </>
                     )
                   )}
                 </div>
