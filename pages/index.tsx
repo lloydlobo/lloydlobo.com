@@ -34,10 +34,7 @@ export default function IndexPage() {
           <Section>
             <article className="py-12">
               <div className="text-xl md:text-2xl md:tracking-tight leading-7 md:leading-9 lowercase w-full sm:max-w-[75vw] lg:max-w-[63vw] mx-auto font-medium gap-1">
-                <Link
-                  href="/about"
-                  className="opacity-75 hover:underline no-underline hover:opacity-100"
-                >
+                <Link href="/about" className="tracking-wider">
                   lloyd lobo.
                 </Link>
 
@@ -63,9 +60,7 @@ export default function IndexPage() {
                   software with the focus on innovative experiences that exceed
                   client expectations.{" "}
                   <span className="inline-flex">
-                    <strong className="dark:text-secondary">
-                      software developer
-                    </strong>
+                    <em className="dark:text-secondary">software developer</em>
                   </span>{" "}
                   with an <span id="roughblock">eye</span> for design and
                   motion. deeply curious about functional and beautiful{" "}

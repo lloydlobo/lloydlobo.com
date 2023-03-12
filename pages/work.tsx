@@ -147,7 +147,7 @@ export default function WorkPage() {
           <Section>
             <article>
               <div className="relative space-y-9 w-full ">
-                <h2 className="flex w-48 ml-auto dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01']">
+                <h2 className="flex w-48 ml-auto dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01'] tracking-wider">
                   Projects
                 </h2>
 
@@ -187,7 +187,7 @@ export default function WorkPage() {
           <Section>
             <article>
               <div className="relative mx-auto w-full">
-                <h2 className="dark:text-tertiary text-sm w-48 uppercase font-sans font-bold flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 text-start after:text-sm after:content-['02']">
+                <h2 className="dark:text-tertiary text-sm w-48 uppercase font-sans font-bold flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 text-start after:text-sm after:content-['02']  tracking-wider">
                   About
                 </h2>
 
@@ -207,7 +207,7 @@ export default function WorkPage() {
 
                 <div className="grid grid-cols-1 gap-[1ch]">
                   <div className="">
-                    <h3 className="prose-base border-t mb-0 border-tertiary uppercase dark:text-tertiary font-medium font-sans">
+                    <h3 className="prose-base border-t tracking-wider font-bold border-tertiary uppercase dark:text-tertiary font-sans">
                       Expertise
                     </h3>
                     <div className={`[&>*]:prose-base dark:text-secondary`}>
@@ -217,7 +217,7 @@ export default function WorkPage() {
                     </div>
                   </div>
                   <div className="">
-                    <h3 className="prose-base mb-0 uppercase border-t border-tertiary dark:text-tertiary/80 font-medium font-sans">
+                    <h3 className="prose-base tracking-wider uppercase border-t border-tertiary dark:text-tertiary/80 font-bold font-sans">
                       Tech Stacks
                     </h3>
                     <div className={`[&>*]:prose-base dark:text-secondary`}>
@@ -235,11 +235,11 @@ export default function WorkPage() {
 
           <Section>
             <article className="pb-12">
-              <h2 className="flex ml-auto w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-16 lg:mb-20">
+              <h2 className="flex ml-auto w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-16 lg:mb-20 tracking-wider">
                 Connect
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
-                <h3 className="text-4xl max-w-md mr-auto leading-9 dark:text-primary font-sans">
+                <h3 className="text-4xl max-w-md mr-auto leading-9 dark:text-primary">
                   Let's talk about a project, collaboration or an idea you may
                   have
                 </h3>
