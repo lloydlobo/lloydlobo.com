@@ -25,6 +25,17 @@
 html {
   scroll-behavior: smooth;
   @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
+
+  /* Solar System variables  */
+  --pl-sun: 40px;
+  --orb-mercury: 70px;
+  --orb-venus: 100px;
+  --orb-earth: 145px;
+  --orb-mars: 190px;
+  --pl-mercury: 4px;
+  --pl-venus: 8px;
+  --pl-earth: 6px;
+  --pl-mars: 6px;
 }
 
 @media all and (min-width: 1000px) {
