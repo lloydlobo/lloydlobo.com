@@ -26,6 +26,8 @@ html {
   scroll-behavior: smooth;
   @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
 
+  /*TODO: Control this with javascript slider */
+  --year-in-second: 30;
   /* Solar System variables  */
   --pl-sun: 40px;
   --orb-mercury: 70px;
