@@ -16,12 +16,14 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* @apply outline-1 outline-dotted outline-gray4/30 bg-purple-700 bg-opacity-[0.004]; */
+  @apply outline-1 outline-dotted outline-gray4/30;
+  /* @apply bg-purple-800 bg-opacity-[0.002]; */
 }
 
 /* font-size: 2.4vw; */
 /* font-size: 1.8vw; */
 html {
+  scroll-behavior: smooth;
   @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
 }
 
@@ -49,7 +51,7 @@ body {
 body {
   min-height: 100vh;
   font-feature-settings: "kern";
-  @apply tracking-normal text-on-primary bg-gray0 container mx-auto w-full dark:text-secondary dark:bg-on-primary;
+  @apply tracking-normal text-on-primary container mx-auto bg-gray0 lg:mx-auto w-full dark:text-secondary dark:bg-on-primary;
 }
 
 main {

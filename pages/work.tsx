@@ -177,13 +177,13 @@ export default function WorkPage() {
                               <span className="flex-shrink-0 dark:text-primary prose-lg ">
                                 {repo}
                               </span>
-                              <span className="hidden text-tertiary md:flex text-clip brightness-75 flex-shrink-0 truncate">
+                              <span className="hidden text-tertiary lg:flex text-clip brightness-75 flex-shrink-0 truncate">
                                 {description}
                               </span>
-                              <span className="md:hidden text-secondary prose-sm max-w-[27ch] flex brightness-75 flex-shrink-0 truncate">
+                              <span className="lg:hidden text-secondary prose-sm max-w-[44vw] flex brightness-75 flex-shrink-0 truncate">
                                 {description}
                               </span>
-                              <div className="after:content-[''] text-primary after:relative after:ml-auto w-full opacity-75 after:opacity-75 relative border-t-[0.1px] blur-[0.1px] z-10 backdrop-blur-[1px] -top-1 brightness-50 flex"></div>
+                              <div className="after:content-[''] text-primary min-w-[2vw] after:relative after:ml-auto w-full opacity-75 after:opacity-75 relative border-t-[0.1px] blur-[0.1px] z-10 backdrop-blur-[1px] -top-1 brightness-50 flex"></div>
                             </div>
                             <span className="brightness-75 text-secondary dark:text-current">
                               2023
