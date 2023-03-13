@@ -15,7 +15,7 @@ type Props = {
 const Layout = ({ children, title = "This is the default title" }: Props) => {
   return (
     <>
-      <div className="layout-wrapper">
+      <div className="layout-wrapper overflow-hidden">
         <Head>
           <title>{title}</title>
           <meta charSet="utf-8" />
@@ -27,8 +27,8 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
         </Head>
 
         <header className="py-4 z-50 ">
-          <nav className="uppercase font-sans prose-sm font-bold tracking-wider">
-            <div className="dark:prose-a:text-green-300/80">
+          <nav className="uppercase font-sans text-xs md:prose-sm font-bold tracking-wider">
+            <div className="dark:prose-a:text-green-300/80 opacity-95">
               <Navigation />
             </div>
           </nav>
