@@ -26,9 +26,11 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
           />
         </Head>
 
-        <header className="py-4 dark:prose-a:text-green-300/80">
-          <nav className="z-50">
-            <Navigation />
+        <header className="py-4 z-50 ">
+          <nav className="uppercase font-sans prose-sm font-bold tracking-wider">
+            <div className="dark:prose-a:text-green-300/80">
+              <Navigation />
+            </div>
           </nav>
         </header>
 
@@ -47,8 +49,8 @@ export default Layout;
 
 export const Navigation = (props: {}) => {
   return (
-    <div className="">
-      <div className="grid items-center grid-flow-col-dense px-4 font-sans prose-sm  [&>*]:w-full mx-auto gap-1">
+    <div className="px-6 lg:px-0 md:max-w-screen-sm mx-auto">
+      <div className="flex justify-between items-center ">
         <Link
           href="/"
           className="after:hidden items-center  w-full h-full min-w-[1rem] place-self-center max-w-[1rem] min-h-[1rem] max-h-[1rem] rounded-full bg-green-400 "
