@@ -149,7 +149,7 @@ export default function WorkPage() {
             <article>
               <div className="relative space-y-9 w-full ">
                 <h2 className="flex w-48 ml-auto dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01'] tracking-wider">
-                  Projects
+                  Selected Projects
                 </h2>
 
                 <div className="mx-auto gap-4 grid backdrop-blur-[0px] relative">
