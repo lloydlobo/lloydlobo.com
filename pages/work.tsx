@@ -65,7 +65,7 @@ export default function WorkPage() {
       <main className="">
         <div className="grid">
           <Section>
-            <article className="md:py-10 pb-36 md:pb-0 md:min-h-fit min-h-[70vw] md:h-auto">
+            <article className="">
               <h1 className={`dark:text-primary`}>
                 A <span className="">front-end developer,</span>
                 <br />

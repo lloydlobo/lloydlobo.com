@@ -37,7 +37,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
           </div>
         </header>
 
-        <div className="z-10 absolute left-4 md:right-0 lg:-right-12 brightness-75 top-[23.5rem] sm:top-64 md:top-36">
+        <div className="py-4 z-40 dark:prose-a:text-green-300/80">
           <Navigation />
         </div>
 
@@ -56,20 +56,31 @@ export default Layout;
 
 export const Navigation = (props: {}) => {
   return (
-    <div className="relative lg:mr-44 flex justify-end">
-      <article>
-        <div className="grid px-4" >
-          <Link href="/" className="after:hidden rounded-full mb-2 bg-green-400 content-[''] w-6 h-6" />
-          <Link className="after:hidden" href="/about">About</Link>
-          <Link className="after:hidden" href="/projects">Projects</Link>
-          <Link className="after:hidden" href="/work">Work</Link>
-          <Link className="after:hidden" href="/contact">Contact</Link>
-          <Link className="after:hidden" href="/shop">Shop</Link>
-        </div>
-      </article>
+    <div className="">
+      <div className="grid grid-flow-col-dense px-4 font-sans prose-sm  [&>*]:w-full mx-auto gap-1">
+        <Link
+          href="/"
+          className="after:hidden  w-full h-full min-w-[1rem] place-self-center max-w-[1rem] min-h-[1rem] max-h-[1rem] rounded-full bg-green-400 "
+        />
+        <Link className="after:hidden" href="/about">
+          About
+        </Link>
+        <Link className="after:hidden" href="/projects">
+          Projects
+        </Link>
+        <Link className="after:hidden" href="/work">
+          Work
+        </Link>
+        <Link className="after:hidden" href="/contact">
+          Contact
+        </Link>
+        <Link className="after:hidden" href="/shop">
+          Shop
+        </Link>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 const SlidingDoors = () => {
   return (
@@ -110,24 +121,16 @@ const SlidingDoors = () => {
             width: 0vw;
           }
         }
-    
-
-    `}</style>
+      `}</style>
 
       <div className="z-50 w-screen ease-in-out delay-300 blur-xl transition-all absolute h-screen opacity-90 inset-0">
         <div className="door door-start absolute items-center bg-on-primary h-full after:content-[' '] inline-flex">
-          <span className="prose-2xl hidden w-full">
-            Lloyd
-          </span>
+          <span className="prose-2xl hidden w-full">Lloyd</span>
         </div>
         <div className="door door-end absolute items-center text-start bg-on-primary h-full after:content-[' '] inline-flex">
-          <span className="prose-2xl hidden w-full">
-            Lobo
-          </span>
+          <span className="prose-2xl hidden w-full">Lobo</span>
         </div>
       </div>
-
     </>
-
-  )
-}
+  );
+};
