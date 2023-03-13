@@ -67,18 +67,17 @@ export const WorkProjects = () => {
   let isCardLike = false;
   return (
     <>
-      <section className="mx-auto my-12 grid w-fit grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2">
+      <
+        // className="mx-auto my-12 grid w-fit grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2"
+        >
         {repos.map(({ username, repo, tags, description, img }, index) => (
           <a
             key={`url-${username}-${repo}`}
             href={`https://github.com/${username}/${repo}/`}
-            className={` ${hasBorders ? "dark:border-accent  dark:sm:border  " : ""
-              } ${isCardLike
-                ? "bg-white shadow-md  hover:shadow-xl dark:bg-black/20 dark:shadow-lg dark:sm:border"
-                : ""
-              } flex py-6 transition duration-500 sm:rounded-xl sm:p-6 dark:hover:sm:shadow-accent/20 `}
+            className="after:hidden"
+          // className={` ${hasBorders ? "dark:border-accent  dark:sm:border  " : "" } ${isCardLike ? "bg-white shadow-md  hover:shadow-xl dark:bg-black/20 dark:shadow-lg dark:sm:border" : "" } flex py-6 transition after:hidden duration-500 sm:rounded-xl  dark:hover:sm:shadow-accent/20 `}
           >
-            <div className="mr-2 flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
+            <div className="mr-2 hidden flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
               <img
                 src={img}
                 width="128"
@@ -86,30 +85,26 @@ export const WorkProjects = () => {
                 alt={`${repo} - ${description}`}
                 className={`
             ${repo === "hackernews-clone" ? "blur" : ""}
-                aspect-square scale-90 rounded-[2.2rem] object-cover brightness-[80%] saturate-150 sepia-[30%] sm:scale-100`}
+                aspect-square hidden scale-90 rounded-[2.2rem] object-cover disabled:brightness-[80%] saturate-150 sepia-[30%] sm:scale-100`}
               />
             </div>
 
-            <div className="my-3 ml-4 flex-col justify-center sm:mt-[-1px] xl:flex">
-              <h3
-                className={`text-2xl font-extrabold uppercase tracking-tighter text-primary lg:text-5xl`}
-              >
-                {repo}
-              </h3>
+            <div className="">
+              <h3 className={``}>{repo}</h3>
 
-              <h4 className="max-w-[50vw] text-lg font-thin">
+              <p className="">
                 {repo === "hackernews-clone" ? "Coming soon..." : description}
-              </h4>
+              </p>
 
               <div
-                className={` ${repo === "hackernews-clone" ? "blur" : ""
+                className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
                   } mt-2 flex gap-2 text-[12px]
               `}
               >
                 {tags.map((tag, index) => (
                   <div
                     key={`tag-${repo}-${tag}`}
-                    className="rounded-full bg-on-primary/0 px-2 underline decoration-accent/40 underline-offset-8 "
+                  // className="rounded-full bg-on-primary/0 disabled:px-2 underline decoration-accent/40 underline-offset-8 "
                   >
                     {tag}
                   </div>
@@ -118,7 +113,7 @@ export const WorkProjects = () => {
             </div>
           </a>
         ))}
-      </section>
+      </>
     </>
   );
 };
