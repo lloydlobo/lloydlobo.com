@@ -26,8 +26,8 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
           />
         </Head>
 
-        <header className="py-4 z-40 dark:prose-a:text-green-300/80">
-          <nav>
+        <header className="py-4 dark:prose-a:text-green-300/80">
+          <nav className="z-50">
             <Navigation />
           </nav>
         </header>
