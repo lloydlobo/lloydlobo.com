@@ -30,101 +30,132 @@ export function ClockNav() {
 export default function IndexPage() {
 	return (
 		<>
-			<div className="absolute lg:w-[71.8vw] mx-auto rounded-t-[1000px] overflow-clip -z-50 top-[61.80vh] lg:top-[50vh] inset-0">
-				<SolarSystem />
-			</div>
-			<Layout title="Home">
-				<main className="">
-					<Section>
-						<article className="py-0 lg:py-12 space-y-8">
-							<div className="backdrop-blur-[1px] md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
-								<Link href="/about" className="tracking-wider dark:text-primary">
-									lloyd lobo.
-								</Link>
+			<div className="relative">
+				<div className="absolute lg:w-[71.8vw] mx-auto rounded-t-[1000px] overflow-hidden -z-10 top-[61.80vh] lg:top-[50vh] inset-0">
+					<SolarSystem />
+				</div>
 
-								<span className="dark:text-secondary">
-									{" "}
-									creating{" "}
-									<span className="inline-flex">
+				<Layout title="Home">
+					<main className="">
+						<Section>
+							<article className="py-0 lg:py-12 space-y-8">
+								<div className="backdrop-blur-[1px] md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
+									<Link
+										href="/about"
+										className="tracking-wider dark:text-primary"
+									>
+										lloyd lobo.
+									</Link>
+
+									<span className="dark:text-secondary">
+										{" "}
+										creating{" "}
+										<span className="inline-flex">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+												strokeWidth={1.5}
+												stroke="currentColor"
+												className="w-6 h-6"
+											>
+												<path
+													strokeLinecap="round"
+													strokeLinejoin="round"
+													d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+												/>
+											</svg>
+										</span>{" "}
+										software with the focus on innovative experiences that
+										exceed client expectations.{" "}
+										<span className="inline-flex">
+											<em className="dark:text-secondary">
+												software developer
+											</em>
+										</span>{" "}
+										with an <span id="roughblock">eye</span> for design and
+										motion. deeply curious about functional and beautiful{" "}
+										<svg
+											// https://primer.style/design/foundations/icons/git-compare-24
+											xmlns="http://www.w3.org/2000/svg"
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											className="w-5 h-5 inline-flex"
+										>
+											<path d="M15 3.75H9v16.5h6V3.75zM16.5 20.25h3.375c1.035 0 1.875-.84 1.875-1.875V5.625c0-1.036-.84-1.875-1.875-1.875H16.5v16.5zM4.125 3.75H7.5v16.5H4.125a1.875 1.875 0 01-1.875-1.875V5.625c0-1.036.84-1.875 1.875-1.875z" />
+										</svg>{" "}
+										apps. tend to use{" "}
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+											strokeWidth={1.5}
+											className="w-5 h-5 inline-flex"
+										>
+											<path d="M16.5 19.25a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0Zm3.25-1.75a1.75 1.75 0 1 0 .001 3.501 1.75 1.75 0 0 0-.001-3.501Z"></path>
+											<path d="M13.905 1.72a.75.75 0 0 1 0 1.06L12.685 4h4.065a3.75 3.75 0 0 1 3.75 3.75v8.75a.75.75 0 0 1-1.5 0V7.75a2.25 2.25 0 0 0-2.25-2.25h-4.064l1.22 1.22a.75.75 0 0 1-1.061 1.06l-2.5-2.5a.75.75 0 0 1 0-1.06l2.5-2.5a.75.75 0 0 1 1.06 0ZM7.5 4.75a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0ZM4.25 6.5a1.75 1.75 0 1 0-.001-3.501A1.75 1.75 0 0 0 4.25 6.5Z"></path>
+											<path d="M10.095 22.28a.75.75 0 0 1 0-1.06l1.22-1.22H7.25a3.75 3.75 0 0 1-3.75-3.75V7.5a.75.75 0 0 1 1.5 0v8.75a2.25 2.25 0 0 0 2.25 2.25h4.064l-1.22-1.22a.748.748 0 0 1 .332-1.265.75.75 0 0 1 .729.205l2.5 2.5a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06 0Z"></path>
+										</svg>{" "}
+										open source and machine learning tools to architect
+										efficient{" "}
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
 											fill="none"
 											viewBox="0 0 24 24"
 											strokeWidth={1.5}
 											stroke="currentColor"
-											className="w-6 h-6"
+											className="w-6 h-6 inline-flex"
 										>
 											<path
 												strokeLinecap="round"
 												strokeLinejoin="round"
-												d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+												d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
 											/>
-										</svg>
-									</span>{" "}
-									software with the focus on innovative experiences that exceed
-									client expectations.{" "}
-									<span className="inline-flex">
-										<em className="dark:text-secondary">software developer</em>
-									</span>{" "}
-									with an <span id="roughblock">eye</span> for design and
-									motion. deeply curious about functional and beautiful{" "}
-									<svg
-										// https://primer.style/design/foundations/icons/git-compare-24
-										xmlns="http://www.w3.org/2000/svg"
-										viewBox="0 0 24 24"
-										fill="currentColor"
-										className="w-5 h-5 inline-flex"
-									>
-										<path d="M15 3.75H9v16.5h6V3.75zM16.5 20.25h3.375c1.035 0 1.875-.84 1.875-1.875V5.625c0-1.036-.84-1.875-1.875-1.875H16.5v16.5zM4.125 3.75H7.5v16.5H4.125a1.875 1.875 0 01-1.875-1.875V5.625c0-1.036.84-1.875 1.875-1.875z" />
-									</svg>{" "}
-									apps. tend to use{" "}
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth={1.5}
-										className="w-5 h-5 inline-flex"
-									>
-										<path d="M16.5 19.25a3.25 3.25 0 1 1 6.5 0 3.25 3.25 0 0 1-6.5 0Zm3.25-1.75a1.75 1.75 0 1 0 .001 3.501 1.75 1.75 0 0 0-.001-3.501Z"></path>
-										<path d="M13.905 1.72a.75.75 0 0 1 0 1.06L12.685 4h4.065a3.75 3.75 0 0 1 3.75 3.75v8.75a.75.75 0 0 1-1.5 0V7.75a2.25 2.25 0 0 0-2.25-2.25h-4.064l1.22 1.22a.75.75 0 0 1-1.061 1.06l-2.5-2.5a.75.75 0 0 1 0-1.06l2.5-2.5a.75.75 0 0 1 1.06 0ZM7.5 4.75a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0ZM4.25 6.5a1.75 1.75 0 1 0-.001-3.501A1.75 1.75 0 0 0 4.25 6.5Z"></path>
-										<path d="M10.095 22.28a.75.75 0 0 1 0-1.06l1.22-1.22H7.25a3.75 3.75 0 0 1-3.75-3.75V7.5a.75.75 0 0 1 1.5 0v8.75a2.25 2.25 0 0 0 2.25 2.25h4.064l-1.22-1.22a.748.748 0 0 1 .332-1.265.75.75 0 0 1 .729.205l2.5 2.5a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06 0Z"></path>
-									</svg>{" "}
-									open source and machine learning tools to architect efficient{" "}
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth={1.5}
-										stroke="currentColor"
-										className="w-6 h-6 inline-flex"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
-										/>
-									</svg>{" "}
-									code and tackle complex problems with{" "}
-									<svg
-										xmlns="http://www.w3.org/2000/svg"
-										fill="none"
-										viewBox="0 0 24 24"
-										strokeWidth={1.5}
-										stroke="currentColor"
-										className="w-5 h-5 inline-flex"
-									>
-										<path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"></path>
-										<path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"></path>
-									</svg>{" "}
-									ease.
-								</span>
+										</svg>{" "}
+										code and tackle complex problems with{" "}
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											fill="none"
+											viewBox="0 0 24 24"
+											strokeWidth={1.5}
+											stroke="currentColor"
+											className="w-5 h-5 inline-flex"
+										>
+											<path d="M17.28 9.28a.75.75 0 0 0-1.06-1.06l-5.97 5.97-2.47-2.47a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l6.5-6.5Z"></path>
+											<path d="M12 1c6.075 0 11 4.925 11 11s-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1ZM2.5 12a9.5 9.5 0 0 0 9.5 9.5 9.5 9.5 0 0 0 9.5-9.5A9.5 9.5 0 0 0 12 2.5 9.5 9.5 0 0 0 2.5 12Z"></path>
+										</svg>{" "}
+										ease.
+									</span>
+								</div>
+							</article>
+						</Section>
+					</main>
+				</Layout>
+			</div>
 
-							</div>
-						</article>
-					</Section>
-				</main>
-			</Layout>
+			<div className="grid brightness-50 w-screen inset-0 [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-30 absolute [&>*]:bg-black/5 h-screen grid-cols-6 grid-rows-3">
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+				<span> </span>
+			</div>
 		</>
 	);
 }
