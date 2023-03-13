@@ -134,27 +134,38 @@ export default function IndexPage() {
 				</Layout>
 			</div>
 
-			<div className="grid brightness-50 w-screen inset-0 [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-30 absolute [&>*]:bg-black/5 h-screen grid-cols-6 grid-rows-3">
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
-				<span> </span>
+			<div className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-50"></div>
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[43%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0px] w-screen inset-0  [&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-40 opacity-95 absolute [&>*]:bg-transparent h-fit">
+				<span className="hidden"> </span>
+				<span className="hidden"> </span>
+				<span className="hidden"> </span>
+				<span className="hidden"> </span>
+				<span className="hidden"> </span>
+				<span className="hidden"> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
+				<span className=""> </span>
 			</div>
 		</>
 	);

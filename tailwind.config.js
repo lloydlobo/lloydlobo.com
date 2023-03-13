@@ -91,13 +91,13 @@ module.exports = {
     },
   },
   corePlugins: {
-    aspectRatio: false,
+    // aspectRatio: false,
   },
   variants: {},
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/aspect-ratio"),
+    // require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
   ],
 };
