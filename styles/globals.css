@@ -89,20 +89,22 @@ Link {
   text-decoration: none;
   transition-property: background;
   transition-duration: 0.2s;
+  @apply transition-all ease-in-out delay-75;
 }
 
 a {
-  @apply dark:text-primary;
+  @apply dark:prose-invert;
 }
 
 /* mailto:user@email.com */
 a:link {
-  @apply hover:text-orange-700 dark:hover:text-orange-400;
+  /* @apply hover:text-orange-700 dark:hover:text-orange-400; */
 }
 
 a:hover {
-  @apply bg-green-50 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg;
+  /* @apply bg-green-50 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg; */
   background-image: none;
+  @apply dark:brightness-[200%] brightness-50 saturate-200 duration-100 delay-100 transition-all ease-in-out;
 }
 
 a::after {

@@ -20,7 +20,7 @@
 .body {
   height: 111%;
   width: 100%;
-  background: radial-gradient(ellipse at bottom, #112626 0%, #111011 100%);
+  background: radial-gradient(ellipse at bottom, #11262650 0%, #11101150 100%);
   /* background: radial-gradient(ellipse at bottom, #112626 0%, #11101100 100%); */
   /* outline: 1px solid rebeccapurple; */
   background-attachment: fixed;

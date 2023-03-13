@@ -36,9 +36,9 @@ export default function IndexPage() {
 			<Layout title="Home">
 				<main className="">
 					<Section>
-						<article className="py-12">
-							<div className="text-xl backdrop-blur-[1px] md:text-2xl md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
-								<Link href="/about" className="tracking-wider">
+						<article className="py-0 lg:py-12 space-y-8">
+							<div className="backdrop-blur-[1px] md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
+								<Link href="/about" className="tracking-wider dark:text-primary">
 									lloyd lobo.
 								</Link>
 
@@ -119,6 +119,22 @@ export default function IndexPage() {
 									</svg>{" "}
 									ease.
 								</span>
+
+								<div
+									className="navigation w-full dark:prose-a:text-green-300  lg:-top-0 lg:absolute lg:mt-0 mt-8 relative lg:-right-24">
+									<div
+										className="lg:absolute normal-case lg:top-0 
+										relative grid lg:right-0 prose-lg font-sans gap-3  brightness-95  leading-none font-bold "
+									>
+										<Link href="/" className="after:hidden rounded-full mb-2 bg-green-400 content-[''] w-6 h-6" />
+										<Link className="after:hidden" href="/about">About</Link>
+										<Link className="after:hidden" href="/projects">Projects</Link>
+										<Link className="after:hidden" href="/work">Work</Link>
+										<Link className="after:hidden" href="/contact">Contact</Link>
+										<Link className="after:hidden" href="/shop">Shop</Link>
+
+									</div>
+								</div>
 							</div>
 						</article>
 					</Section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import { ClockNav } from "@/pages";
@@ -38,10 +39,39 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
 
         {children}
 
-        <DockNavigation />
+        <div className="disabled:hidden">
+          <DockNavigation />
+        </div>
+        <div className="hidden">
+          <Navigation />
+        </div>
       </div>
     </>
   );
 };
 
 export default Layout;
+
+
+export const Navigation = (props: {}) => {
+  return (
+    <div>
+
+      <div
+        className="navigation w-full prose-a:text-green-700 dark:prose-a:text-green-300  lg:-top-0 lg:absolute lg:mt-0 mt-8 relative lg:-right-24">
+        <div
+          className="lg:absolute normal-case lg:top-0 
+										relative grid lg:right-0 prose-lg font-sans gap-3  brightness-95  leading-none font-bold "
+        >
+          <Link href="/" className="after:hidden rounded-full mb-2 bg-green-400 content-[''] w-6 h-6" />
+          <Link className="after:hidden" href="/about">About</Link>
+          <Link className="after:hidden" href="/projects">Projects</Link>
+          <Link className="after:hidden" href="/work">Work</Link>
+          <Link className="after:hidden" href="/contact">Contact</Link>
+          <Link className="after:hidden" href="/shop">Shop</Link>
+
+        </div>
+      </div>
+    </div>
+  )
+}
