@@ -6,7 +6,7 @@ export const SolarSystem = (props: {}) => {
 	return (
 		<div
 			// className={`${styles.body} disabled:rounded-t-[200px] disabled:lg:rounded-t-[1000px] opacity-90 mix-blend-color-burn blur-[0.5px] bg-on-primary saturate-[95%] `}
-			className={`${styles.body} rounded-t-[200px] lg:rounded-t-[1000px] opacity-90 mix-blend-color-burn blur-[0.5px] bg-gray2 dark:bg-on-primary saturate-[95%] grayscale-[10%] `}
+			className={`${styles.body} disabled:top-16 h-full relative opacity-100 mix-blend-color-burn bg-gray2 dark:bg-on-primary saturate-[95%] grayscale-[10%] `}
 		>
 			<div data-id="solar-system" className={`${styles.solar}`}>
 				<div className={styles.sun} />

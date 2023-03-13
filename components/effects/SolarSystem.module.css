@@ -18,13 +18,12 @@
  }
 */
 .body {
-  height: 100%;
+  height: 111%;
   width: 100%;
-  /* background: radial-gradient(ellipse at bottom, #112626 0%, #111011 100%); */
+  background: radial-gradient(ellipse at bottom, #112626 0%, #111011 100%);
   /* background: radial-gradient(ellipse at bottom, #112626 0%, #11101100 100%); */
   /* outline: 1px solid rebeccapurple; */
   background-attachment: fixed;
-  /* color: #ffffff; */
 }
 
 .sun {
@@ -67,11 +66,21 @@
   height: var(--pl-earth);
   width: var(--pl-earth);
   background: #11ace9;
+  background: radial-gradient(
+    ellipse at center,
+    #00fba0 1%,
+    #009ab3 30%,
+    #00ff43 35%,
+    #bacfa3 49%,
+    #009ab3 49%,
+    #11ace9 100%
+  );
   margin-top: calc(-0.5 * var(--pl-earth));
   margin-left: calc(-0.5 * var(--pl-earth));
   border-radius: 100%;
   position: absolute;
   content: "";
+  /* @apply scale-[700%]; */
 }
 .earth::after {
   --earth-days: 27.3216; /* days (around earth) */
@@ -79,25 +88,16 @@
   content: "";
   height: 18px;
   width: 18px;
-  /* left: 0%; */
   top: 0px;
   margin-top: -9px;
   margin-left: -9px;
-  /* border: 0; */
+  border: 0;
   border-radius: 100px;
   box-shadow: 0 -10px 0 -8px grey;
   animation: orb
     calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
     linear infinite;
 }
-
-/* border: 0; */
-/* border-radius: 100%; */
-/* background-clip: padding-box; */
-/* background-position: -28px -103px; */
-/* background-size: 175%; */
-/* box-shadow: 0 0 11px 3px rgba(0, 106, 100, 0.4), */
-/*   0 0 21px 10px rgba(0, 204, 100, 0.13); */
 
 .asteroid_belt {
 }
@@ -111,15 +111,6 @@
   }
 }
 
-/* outline: 1px solid orchid; */
-/* width: 100vh; */
-/* height: 100vh; */
-/* width: auto; */
-/* height: 100vh; */
-/* width: min(90vw, 90vh); */
-/* height: min(90vw, 90vh); */
-/* inset: 0; */
-/* aspect-ratio: 1; */
 .solar {
   margin: 0 auto;
   position: relative;
@@ -138,6 +129,7 @@ div.solar {
   height: 2px;
   width: 2px;
   top: -2px;
-  background: white;
-  /* border-radius: 100px; */
+
+  /* debug the midpoint */
+  /* background: white; */
 }

@@ -30,7 +30,7 @@ export function ClockNav() {
 export default function IndexPage() {
 	return (
 		<>
-			<div className="absolute -z-50 top-[32.8vh] inset-0">
+			<div className="absolute lg:w-[71.8vw] mx-auto rounded-t-[1000px] overflow-clip -z-50 top-[61.80vh] lg:top-[50vh] inset-0">
 				<SolarSystem />
 			</div>
 			<Layout title="Home">
