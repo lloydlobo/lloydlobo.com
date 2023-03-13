@@ -135,7 +135,7 @@ export default function IndexPage() {
 			</div>
 
 			<div className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-50"></div>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[43%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-40 opacity-95 absolute [&>*]:bg-transparent h-fit">
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-40 opacity-95 absolute [&>*]:bg-transparent h-fit">
 				<span className="hidden"> </span>
 				<span className="hidden"> </span>
 				<span className="hidden"> </span>
