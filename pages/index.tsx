@@ -120,21 +120,6 @@ export default function IndexPage() {
 									ease.
 								</span>
 
-								<div
-									className="navigation w-full dark:prose-a:text-green-300  lg:-top-0 lg:absolute lg:mt-0 mt-8 relative lg:-right-24">
-									<div
-										className="lg:absolute normal-case lg:top-0 
-										relative grid lg:right-0 prose-lg font-sans gap-3  brightness-95  leading-none font-bold "
-									>
-										<Link href="/" className="after:hidden rounded-full mb-2 bg-green-400 content-[''] w-6 h-6" />
-										<Link className="after:hidden" href="/about">About</Link>
-										<Link className="after:hidden" href="/projects">Projects</Link>
-										<Link className="after:hidden" href="/work">Work</Link>
-										<Link className="after:hidden" href="/contact">Contact</Link>
-										<Link className="after:hidden" href="/shop">Shop</Link>
-
-									</div>
-								</div>
 							</div>
 						</article>
 					</Section>

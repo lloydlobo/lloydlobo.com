@@ -37,13 +37,15 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
           </div>
         </header>
 
+        <div className="z-10 absolute left-4 md:right-0 lg:-right-12 brightness-75 top-[23.5rem] sm:top-64 md:top-36">
+          <Navigation />
+        </div>
+
         {children}
 
-        <div className="disabled:hidden">
-          <DockNavigation />
-        </div>
         <div className="hidden">
-          <Navigation />
+          <SlidingDoors />
+          <DockNavigation />
         </div>
       </div>
     </>
@@ -52,26 +54,80 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
 
 export default Layout;
 
-
 export const Navigation = (props: {}) => {
   return (
-    <div>
-
-      <div
-        className="navigation w-full prose-a:text-green-700 dark:prose-a:text-green-300  lg:-top-0 lg:absolute lg:mt-0 mt-8 relative lg:-right-24">
-        <div
-          className="lg:absolute normal-case lg:top-0 
-										relative grid lg:right-0 prose-lg font-sans gap-3  brightness-95  leading-none font-bold "
-        >
+    <div className="relative lg:mr-44 flex justify-end">
+      <article>
+        <div className="grid px-4" >
           <Link href="/" className="after:hidden rounded-full mb-2 bg-green-400 content-[''] w-6 h-6" />
           <Link className="after:hidden" href="/about">About</Link>
           <Link className="after:hidden" href="/projects">Projects</Link>
           <Link className="after:hidden" href="/work">Work</Link>
           <Link className="after:hidden" href="/contact">Contact</Link>
           <Link className="after:hidden" href="/shop">Shop</Link>
+        </div>
+      </article>
+    </div>
+  )
+}
 
+const SlidingDoors = () => {
+  return (
+    <>
+      <style jsx>{`
+        .door-start {
+          width: 0vw;
+          position: absolute;
+          animation-duration: 0.3s !important;
+          animation-name: slidestart !important;
+        }
+
+        .door-end {
+          width: 0vw;
+          right: 0vw;
+          position: absolute;
+          animation-duration: 0.3s !important;
+          animation-name: slideend !important;
+        }
+
+        @keyframes slidestart {
+          from {
+            left: 0vw !important;
+            width: 50vw;
+          }
+          to {
+            left: -50vw !important;
+            width: 0vw;
+          }
+        }
+        @keyframes slideend {
+          from {
+            right: 0vw !important;
+            width: 50vw;
+          }
+          to {
+            right: -50vw !important;
+            width: 0vw;
+          }
+        }
+    
+
+    `}</style>
+
+      <div className="z-50 w-screen ease-in-out delay-300 blur-xl transition-all absolute h-screen opacity-90 inset-0">
+        <div className="door door-start absolute items-center bg-on-primary h-full after:content-[' '] inline-flex">
+          <span className="prose-2xl hidden w-full">
+            Lloyd
+          </span>
+        </div>
+        <div className="door door-end absolute items-center text-start bg-on-primary h-full after:content-[' '] inline-flex">
+          <span className="prose-2xl hidden w-full">
+            Lobo
+          </span>
         </div>
       </div>
-    </div>
+
+    </>
+
   )
 }

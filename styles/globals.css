@@ -122,11 +122,13 @@ p {
   @apply dark:text-secondary;
 }
 
-[data-theme="dark"] {
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+
+/* [data-theme="dark"], */
+/* [data-theme="dark"] body { */
+/*   @apply blur-3xl; */
+/* } */

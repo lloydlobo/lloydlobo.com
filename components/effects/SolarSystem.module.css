@@ -17,13 +17,23 @@
    return pl-year-in-days * var(--year-in-second) / 365.2563 + s 
  }
 */
+
 .body {
   height: 111%;
   width: 100%;
-  background: radial-gradient(ellipse at bottom, #11262650 0%, #11101150 100%);
-  /* background: radial-gradient(ellipse at bottom, #112626 0%, #11101100 100%); */
-  /* outline: 1px solid rebeccapurple; */
   background-attachment: fixed;
+  border-radius: 0 10px 0 10px;
+  /* --background: radial-gradient(ellipse at bottom, #11262685 0%, #111011 100%); */
+  /* background: var(--background); */
+  /* background: black; */
+}
+
+.body[data-theme="dark"] {
+  display: none;
+}
+
+.body[data-theme="dark"] {
+  display: none;
 }
 
 .sun {
