@@ -25,21 +25,12 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
-        <header className="md:px-52 z-50 h-fit md:mx-4">
-          <div className="relative w-full flex items-center px-4 disabled:justify-center border-[0px] rounded-full my-4 gap-4">
-            <div className="hover:opacity-100 opacity-0 absolute px-4 md:px-0 mx-auto">
-              <ClockNav />
-            </div>
 
-            <div className="absolute mx-auto left-0 right-0 items-center justify-center flex">
-              <ThemeDropdown />
-            </div>
-          </div>
+        <header className="py-4 z-40 dark:prose-a:text-green-300/80">
+          <nav>
+            <Navigation />
+          </nav>
         </header>
-
-        <div className="py-4 z-40 dark:prose-a:text-green-300/80">
-          <Navigation />
-        </div>
 
         {children}
 
@@ -57,10 +48,10 @@ export default Layout;
 export const Navigation = (props: {}) => {
   return (
     <div className="">
-      <div className="grid grid-flow-col-dense px-4 font-sans prose-sm  [&>*]:w-full mx-auto gap-1">
+      <div className="grid items-center grid-flow-col-dense px-4 font-sans prose-sm  [&>*]:w-full mx-auto gap-1">
         <Link
           href="/"
-          className="after:hidden  w-full h-full min-w-[1rem] place-self-center max-w-[1rem] min-h-[1rem] max-h-[1rem] rounded-full bg-green-400 "
+          className="after:hidden items-center  w-full h-full min-w-[1rem] place-self-center max-w-[1rem] min-h-[1rem] max-h-[1rem] rounded-full bg-green-400 "
         />
         <Link className="after:hidden" href="/about">
           About
@@ -77,6 +68,7 @@ export const Navigation = (props: {}) => {
         <Link className="after:hidden" href="/shop">
           Shop
         </Link>
+        <ThemeDropdown />
       </div>
     </div>
   );

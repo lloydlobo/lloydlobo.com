@@ -53,7 +53,7 @@ export function ThemeDropdown() {
       name: "dark",
       icon: (
         <span className="-rotate-[25deg]">
-          <Moon />
+          <FaMoon />
         </span>
       ),
     },
@@ -67,7 +67,7 @@ export function ThemeDropdown() {
           // className={`${dropdown ? "opacity-100" : "opacity-0 left-[200vw]" } top-8 z-10`}
           className={`${dropdown ? "block" : "hidden"}`}
         >
-          <div className="py-0.5 absolute top-8 backdrop-blur-sm divide-gray4/30 rounded-md grid max-h-[100px] divide-y text-start">
+          <div className="py-0.5 absolute right-0 top-8 backdrop-blur-sm divide-gray4/30 rounded-md grid max-h-[100px] divide-y text-start">
             {themeModes.map(({ name, icon }, index) => (
               <button
                 onClick={(e) => switchTheme(e)}
@@ -87,7 +87,7 @@ export function ThemeDropdown() {
         </div>
 
         {/* Current theme dock icon */}
-        <div className={`${onHoverStyles} ${disabled ? 'hidden' : 'block'}`}>
+        <div className={`${onHoverStyles} ${disabled ? "hidden" : "block"}`}>
           {themeModes.map(({ name, icon }, index) => {
             if (theme === name) {
               return (
@@ -97,7 +97,7 @@ export function ThemeDropdown() {
                   onClick={() => {
                     setDropdown(!dropdown);
                   }}
-                  className="opacity-75"
+                  className="flex items-center opacity-75"
                 >
                   {icon}
                 </button>
