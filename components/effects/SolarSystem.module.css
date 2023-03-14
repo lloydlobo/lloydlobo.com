@@ -24,22 +24,8 @@
   position: relative;
   background-attachment: fixed;
   margin: 0 auto;
-  top: clamp(-40vw, -44vw + 9vh , -20vw) ;
-
-  /* inset:0; */
-  /* border-radius: 0 10px 0 10px; */
-  /* border-radius:1000px; */
-  /* --background: radial-gradient(ellipse at bottom, #11262685 0%, #111011 100%); */
-  /* background: var(--background); */
-  /* background: black; */
-}
-
-.body[data-theme="dark"] {
-  /* display: none; */
-}
-
-.body[data-theme="dark"] {
-  /* display: none; */
+  top: clamp(-20vw, -22vw + 5vh , -10vw) ;
+  /* top: clamp(-40vw, -44vw + 9vh , -20vw) ; */
 }
 
 .sun {
@@ -99,7 +85,6 @@
   position: absolute;
   content: "";
 
-  /* @apply scale-[700%]; */
 }
 .earth::after {
   --earth-days: 27.3216; /* days (around earth) */
@@ -116,10 +101,10 @@
     calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
     linear infinite;
 
-  border-radius: 89%;
-  border-width: 0em 0em 0em 0.01em;
+  border-radius: 39%;
+  border-width: 0.001em 0.11em 0em 0em;
   border-style: ridge;
-  border-color: transparent transparent transparent #ffffff20;
+  border-color: #ffffff15 #ffffff40 transparent transparent ;
 }
 
 .asteroid_belt {

@@ -132,8 +132,9 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
+
 			<div
-				className="aspect-square top-[61.8%] lg:top-[61.8%] fixed rounded-t-[1000px] overflow-hidden bottom-0 inset-0"
+				className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed rounded-t-[1000px] overflow-hidden inset-0"
 			// className="z-50 w-[100%] fixed aspect-square  lg:w-[61.8vw] inset-0 rounded-t-[1000px] top-[61.8%] mx-auto grid overflow-hidden bottom-0">
 			>
 				<SolarSystem />
@@ -142,11 +143,13 @@ export default function IndexPage() {
 			<style jsx>{`
 span.square {
   --earth-days: 365.2563;
-	// background: #111011;
-  animation: perimeter 
+  /* 
+    animation: perimeter 
   	calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
   	 linear infinite;
+   */
 } 
+
 
 
 @keyframes perimeter {
@@ -165,7 +168,7 @@ span.square {
 
 			<div
 				className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-10"></div>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-95 absolute disabled:[&>*]:bg-transparent h-fit">
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/20 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-95 absolute disabled:[&>*]:bg-transparent h-fit">
 				<span className="square" />
 				<span className="square" />
 				<span className="square" />
