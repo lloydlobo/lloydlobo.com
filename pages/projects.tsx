@@ -1,7 +1,47 @@
+import { MouseBlob } from "@/components/effects/MouseBlob";
 import Layout from "@/components/Layout";
 import { Section } from "@/components/Section";
 import { WorkProjects } from "@/components/WorkProjects";
-import React from "react";
+import React, { useEffect } from "react";
+
+export default function Projects(props: {}) {
+  return (
+    <>
+      <MouseBlob />
+      <Layout>
+        <>
+          <main className="">
+            <div className="grid">
+              <Section>
+                <article className="w-full">
+                  <h1
+                    className={`pr-[5vw]`} // className={`dark:prose-slate pr-[5vw]`}
+                  >
+                    <span className="">Passion projects</span>
+                    {" and"} fun little experiments
+                  </h1>
+                </article>
+              </Section>
+            </div>
+
+            <div className={`mx-auto space-y-20 lg:space-y-28 mt-8`}>
+              <Section>
+                <article>
+                  <div
+                    className="grid 
+                 prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3"
+                  >
+                    <WorkProjects />
+                  </div>
+                </article>
+              </Section>
+            </div>
+          </main>
+        </>
+      </Layout>
+    </>
+  );
+}
 
 // <style jsx global>
 //   {`
@@ -23,39 +63,3 @@ import React from "react";
 //     }
 //   `}
 // </style>
-export default function Projects(props: {}) {
-  return (
-    <Layout>
-      <>
-        <main className="">
-          <div className="grid">
-            <Section>
-              <article className="w-full">
-                <h1
-                  className={`pr-[5vw]`}
-                // className={`dark:prose-slate pr-[5vw]`}
-                >
-                  <span className="">Passion projects</span> and fun little
-                  experiments
-                </h1>
-              </article>
-            </Section>
-          </div>
-
-          <div className={`mx-auto space-y-20 lg:space-y-28 mt-8`}>
-            <Section>
-              <article>
-                <div
-                  className="grid 
-                 prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3"
-                >
-                  <WorkProjects />
-                </div>
-              </article>
-            </Section>
-          </div>
-        </main>
-      </>
-    </Layout>
-  );
-}
