@@ -5,7 +5,7 @@ import styles from "@/components/effects/SolarSystem.module.css";
 export const SolarSystem = (props: {}) => {
 	return (
 		<div
-			className={`${styles.body} disabled:top-16 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t backdrop-blur-sm from-black/95 saturate-100 brightness-100 dark:brightness-100 h-full to-green-400/90 dark:from-black/90 dark:to-green-400/40
+			className={`${styles.body} disabled:top-16 absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t backdrop-blur-sm from-black/95 saturate-100 brightness-100 dark:brightness-100 h-full to-green-400/90 dark:from-black/90  dark:to-green-400/50
 			`}
 		>
 			<div data-id="solar-system" className={`${styles.solar}`}>

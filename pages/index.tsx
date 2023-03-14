@@ -134,38 +134,62 @@ export default function IndexPage() {
 				</Layout>
 			</div>
 
-			<div className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-50"></div>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-40 opacity-95 absolute [&>*]:bg-transparent h-fit">
-				<span className="hidden"> </span>
-				<span className="hidden"> </span>
-				<span className="hidden"> </span>
-				<span className="hidden"> </span>
-				<span className="hidden"> </span>
-				<span className="hidden"> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
-				<span className=""> </span>
+			<style jsx>{`
+span.square {
+  --earth-days: 365.2563;
+	// background: #111011;
+  animation: perimeter 
+  	calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
+  	 linear infinite;
+} 
+
+
+@keyframes perimeter {
+  from {
+		box-shadow: 0px 0px 1px 0.00px #003300;
+    scale: 100%;
+		
+  }
+  to {
+		box-shadow: 0px 0px 1px 0.00px #006650;
+    scale: 100.5%;
+  }
+}
+
+`}</style>
+			<div
+				className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-50"></div>
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-40 opacity-95 absolute disabled:[&>*]:bg-transparent h-fit">
+				<span className="square hidden"> </span>
+				<span className="square hidden"> </span>
+				<span className="square hidden"> </span>
+				<span className="square hidden"> </span>
+				<span className="square hidden"> </span>
+				<span className="square hidden"> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
+				<span className="square "> </span>
 			</div>
 		</>
 	);
