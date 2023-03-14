@@ -37,13 +37,13 @@ const PROJECTS = [
     description: "A no-nonsense budget tracking Discord bot",
     img: "/penny.jpg",
   },
-  // {
-  //   username: "lloydlobo",
-  //   tags: ["development", "CLI", "go"],
-  //   repo: "okejoke",
-  //   description: "okejoke gathers jokes on the fly in your CLI",
-  //   img: "/okejoke.jpg",
-  // },
+  {
+    username: "lloydlobo",
+    tags: ["development", "CLI", "go"],
+    repo: "okejoke",
+    description: "okejoke gathers jokes on the fly in your CLI",
+    img: "/okejoke.jpg",
+  },
   {
     username: "lloydlobo",
     tags: ["development", "rust", "cli"],
@@ -54,9 +54,9 @@ const PROJECTS = [
   {
     username: "lloydlobo",
     tags: ["development", "rust", "cli"],
-    repo: "hackernews-clone",
-    description: "Coming soon...",
-    img: "/mausam-fibo.jpg",
+    repo: "dictionary-web-app",
+    description: "Integrate the Dictionary API to create a real-world dictionary web app.",
+    img: "/dictionary-web-app.jpg",
   },
 ];
 
