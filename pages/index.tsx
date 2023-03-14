@@ -36,7 +36,7 @@ export default function IndexPage() {
 					<main className="">
 						<Section>
 							<article className="py-0 lg:py-12 space-y-8">
-								<div className="backdrop-blur-[1px] md:tracking-tight leading-7 md:leading-9 lowercase w-full  mx-auto font-medium gap-1">
+								<p className="disabled:backdrop-blur-[1px] md:tracking-tight leading-7 md:leading-9 lowercase w-full mx-auto font-medium gap-1">
 									<Link
 										href="/about"
 										className="tracking-wider dark:text-primary"
@@ -124,7 +124,7 @@ export default function IndexPage() {
 										</svg>{" "}
 										ease.
 									</span>
-								</div>
+								</p>
 							</article>
 						</Section>
 					</main>
@@ -141,27 +141,20 @@ export default function IndexPage() {
 			<style jsx>{`
         span.square {
           --earth-days: 365.2563;
-          /* 
-    animation: perimeter 
-  	calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
-  	 linear infinite;
-   */
+    			animation: perimeter 
+    				calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
+    				linear infinite;
         }
 
         @keyframes perimeter {
           from {
-            box-shadow: 0px 0px 1px 0px #003300;
-            scale: 100%;
           }
           to {
-            box-shadow: 0px 0px 1px 0px #006650;
-            scale: 100.5%;
           }
         }
       `}</style>
 
-			<div className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-10"></div>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-95 absolute disabled:[&>*]:bg-transparent h-fit">
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-50 absolute h-fit">
 				<span className="square" />
 				<span className="square" />
 				<span className="square" />
@@ -187,6 +180,7 @@ export default function IndexPage() {
 				<span className="square" />
 				<span className="square" />
 			</div>
+
 		</>
 	);
 }
