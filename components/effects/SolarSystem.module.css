@@ -21,19 +21,25 @@
 .body {
   height: 100%;
   width: 100%;
+  position: relative;
   background-attachment: fixed;
-  border-radius: 0 10px 0 10px;
+  margin: 0 auto;
+  top: clamp(-40vw, -44vw + 9vh , -20vw) ;
+
+  /* inset:0; */
+  /* border-radius: 0 10px 0 10px; */
+  /* border-radius:1000px; */
   /* --background: radial-gradient(ellipse at bottom, #11262685 0%, #111011 100%); */
   /* background: var(--background); */
   /* background: black; */
 }
 
 .body[data-theme="dark"] {
-  display: none;
+  /* display: none; */
 }
 
 .body[data-theme="dark"] {
-  display: none;
+  /* display: none; */
 }
 
 .sun {
@@ -46,6 +52,7 @@
   );
   width: var(--pl-sun);
   height: var(--pl-sun);
+  z-index: 999;
 
   /* this brings the center as the origin */
   margin-top: calc(-0.5 * var(--pl-sun));
@@ -127,17 +134,16 @@
   }
 }
 
-.solar {
+.solar  {
   margin: 0 auto;
   position: relative;
 }
 
 div.solar {
-  /* border-radius: 1000px; */
   top: 50%;
   left: 50%;
   position: relative;
-  z-index: 999;
+  /* z-index: 999; */
 }
 .solar::after {
   content: "";

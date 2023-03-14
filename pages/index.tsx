@@ -1,8 +1,9 @@
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { Section } from "@/components/Section";
 import Layout from "@/components/Layout";
 import { SolarSystem } from "@/components/effects/SolarSystem";
+
 
 export function ClockNav() {
 	const [currentTime, setCurrentTime] = useState(null);
@@ -27,14 +28,12 @@ export function ClockNav() {
 	);
 }
 
+
 export default function IndexPage() {
 	return (
 		<>
-			<div className="w-[100%]  fixed aspect-square  lg:w-[61.8vw] inset-0 rounded-t-[1000px] top-[61.8%] mx-auto  grid overflow-hidden  -z-10 bottom-0">
-				<SolarSystem />
-			</div>
-			<div className="relative">
 
+			<div className="relative z-50">
 				<Layout title="Home">
 					<main className="">
 						<Section>
@@ -133,6 +132,12 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
+			<div
+				className="aspect-square top-[61.8%] lg:top-[61.8%] fixed rounded-t-[1000px] overflow-hidden bottom-0 inset-0"
+			// className="z-50 w-[100%] fixed aspect-square  lg:w-[61.8vw] inset-0 rounded-t-[1000px] top-[61.8%] mx-auto grid overflow-hidden bottom-0">
+			>
+				<SolarSystem />
+			</div>
 
 			<style jsx>{`
 span.square {
@@ -157,40 +162,36 @@ span.square {
 }
 
 `}</style>
+
 			<div
-				className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-50"></div>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-40 opacity-95 absolute disabled:[&>*]:bg-transparent h-fit">
-				<span className="square hidden"> </span>
-				<span className="square hidden"> </span>
-				<span className="square hidden"> </span>
-				<span className="square hidden"> </span>
-				<span className="square hidden"> </span>
-				<span className="square hidden"> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
-				<span className="square "> </span>
+				className=" bg-gradient-to-b hidden opacity-50 from-on-primary to-green-300/50 w-screen h-screen absolute inset-0 -z-10"></div>
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square transition-all duration-300 delay-75 ease-linear blur-[0.2px] w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-900/50 [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-95 absolute disabled:[&>*]:bg-transparent h-fit">
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
 			</div>
+
 		</>
 	);
 }

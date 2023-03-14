@@ -54,7 +54,7 @@ export const Navigation = (props: {}) => {
         <Link
           href="/"
           className="after:hidden items-center  w-full h-full min-w-[1rem] place-self-center max-w-[1rem] min-h-[1rem] max-h-[1rem] rounded-full bg-green-400 "
-        />
+        ></Link>
         <Link className="after:hidden" href="/about">
           About
         </Link>
