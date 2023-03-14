@@ -31,6 +31,16 @@ export function MouseBlob() {
   }, []);
   return (
     <>
+      <style jsx>
+        {`
+          html,
+          body,
+          main,
+          article {
+            overflow: hidden !important;
+          }
+        `}
+      </style>
       <div
         id="blob"
         className="absolute aspect-square h-[500px] bg-gradient-to-t from-gray1 to-green-300 dark:from-on-primary dark:to-green-400 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] blur-3xl dark:brightness-[25%]  dark:mix-blend-screen disabled:mix-blend-multiply opacity-95 -z-[9999999]"

@@ -59,6 +59,8 @@ html,
 body {
   min-height: 100vh;
   overflow-x: hidden;
+  /* Why: Due to the mouse blob effect extending the vertical viewport  */
+  overflow: hidden;
   @apply font-serif;
 }
 
