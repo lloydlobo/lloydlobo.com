@@ -3,6 +3,7 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { Section } from "@/components/Section";
 import Layout from "@/components/Layout";
 import { SolarSystem } from "@/components/effects/SolarSystem";
+import { MouseBlob } from "@/components/effects/MouseBlob";
 
 export function ClockNav() {
 	const [currentTime, setCurrentTime] = useState(null);
