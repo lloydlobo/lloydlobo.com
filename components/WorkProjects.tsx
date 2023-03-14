@@ -55,7 +55,8 @@ const PROJECTS = [
     username: "lloydlobo",
     tags: ["development", "rust", "cli"],
     repo: "dictionary-web-app",
-    description: "Integrate the Dictionary API to create a real-world dictionary web app.",
+    description:
+      "Integrate the Dictionary API to create a real-world dictionary web app.",
     img: "/dictionary-web-app.jpg",
   },
 ];
@@ -67,17 +68,14 @@ export const WorkProjects = () => {
   let isCardLike = false;
   return (
     <>
-      <
-        // className="mx-auto my-12 grid w-fit grid-cols-1 bg-on-primary dark:text-secondary sm:gap-12 lg:grid-cols-2"
-        >
+      <>
         {repos.map(({ username, repo, tags, description, img }, index) => (
           <a
             key={`url-${username}-${repo}`}
             href={`https://github.com/${username}/${repo}/`}
-            className="after:hidden"
-          // className={` ${hasBorders ? "dark:border-accent  dark:sm:border  " : "" } ${isCardLike ? "bg-white shadow-md  hover:shadow-xl dark:bg-black/20 dark:shadow-lg dark:sm:border" : "" } flex py-6 transition after:hidden duration-500 sm:rounded-xl  dark:hover:sm:shadow-accent/20 `}
+            className="after:hidden "
           >
-            <div className="mr-2 hidden flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
+            <div className="mr-2  hidden flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
               <img
                 src={img}
                 width="128"
@@ -89,27 +87,25 @@ export const WorkProjects = () => {
               />
             </div>
 
+            <h3 className={`dark:prose-slate`}>{repo}</h3>
+
             <div className="">
-              <h3 className={``}>{repo}</h3>
+              {repo === "hackernews-clone" ? "Coming soon..." : description}
+            </div>
 
-              <p className="">
-                {repo === "hackernews-clone" ? "Coming soon..." : description}
-              </p>
-
-              <div
-                className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
-                  } mt-2 flex gap-2 text-[12px]
+            <div
+              className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
+                } mt-2 flex gap-2 text-[12px]
               `}
-              >
-                {tags.map((tag, index) => (
-                  <div
-                    key={`tag-${repo}-${tag}`}
-                  // className="rounded-full bg-on-primary/0 disabled:px-2 underline decoration-accent/40 underline-offset-8 "
-                  >
-                    {tag}
-                  </div>
-                ))}
-              </div>
+            >
+              {tags.map((tag, index) => (
+                <div
+                  key={`tag-${repo}-${tag}`}
+                // className="rounded-full bg-on-primary/0 disabled:px-2 underline decoration-accent/40 underline-offset-8 "
+                >
+                  {tag}
+                </div>
+              ))}
             </div>
           </a>
         ))}
