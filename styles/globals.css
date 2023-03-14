@@ -103,8 +103,8 @@ a:link {
 
 a:hover {
   /* @apply bg-green-50 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg; */
-  background-image: none;
-  @apply dark:brightness-[200%] brightness-50 saturate-200 duration-100 delay-100 transition-all ease-in-out;
+  /* background-image: none; */
+  /* @apply duration-100 delay-100 transition-all ease-in-out; */
 }
 
 a::after {

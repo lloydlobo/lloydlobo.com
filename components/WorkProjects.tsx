@@ -73,7 +73,7 @@ export const WorkProjects = () => {
           <a
             key={`url-${username}-${repo}`}
             href={`https://github.com/${username}/${repo}/`}
-            className="after:hidden dark:bg-on-primary/30 bg-gray1 shadow-gray7/60 px-4 p-2 pb-4 shadow rounded"
+            className="after:hidden hover:backdrop-brightness-125 hover:shadow-white/10 hover:bg-opacity-10 transition-all duration-500 delay-0 ease-out   dark:bg-on-primary/30 bg-gray1/30 shadow-gray7/60 px-4 p-2 pb-4 shadow rounded"
           >
             <h3 className={`mt-0`}>{repo}</h3>
 
