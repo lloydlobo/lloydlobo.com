@@ -18,14 +18,26 @@
  }
 */
 
-.body {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  background-attachment: fixed;
+.solar {
   margin: 0 auto;
-  top: clamp(-20vw, -22vw + 5vh, -10vw);
-  /* top: clamp(-40vw, -44vw + 9vh , -20vw) ; */
+  position: relative;
+/* cursor: pointer; */
+}
+
+div.solar {
+  top: 50%;
+  left: 50%;
+  position: relative;
+/* cursor: pointer; */
+  /* z-index: 999; */
+}
+.solar::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  top: -2px;
+  background: white;
 }
 
 .sun {
@@ -38,9 +50,10 @@
   );
   width: var(--pl-sun);
   height: var(--pl-sun);
-  z-index: 999;
+  z-index: 999 !important;
+  position: relative;
 
-  /* this brings the center as the origin */
+  /* cursor:pointer !important; */
   margin-top: calc(-0.5 * var(--pl-sun));
   margin-left: calc(-0.5 * var(--pl-sun));
 
@@ -49,8 +62,7 @@
   background-clip: padding-box;
   background-position: -28px -103px;
   background-size: 175%;
-  box-shadow: 0 0 11px 3px rgba(255, 106, 0, 0.4),
-    0 0 21px 10px rgba(255, 204, 0, 0.13);
+  box-shadow: 0 0 11px 3px rgba(255, 106, 0, 0.4), 0 0 21px 10px rgba(255, 204, 0, 0.13);
 }
 
 /* EARTH */
@@ -117,26 +129,4 @@
   to {
     transform: rotate(-360deg);
   }
-}
-
-.solar {
-  margin: 0 auto;
-  position: relative;
-}
-
-div.solar {
-  top: 50%;
-  left: 50%;
-  position: relative;
-  z-index: 999;
-}
-.solar::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 2px;
-  top: -2px;
-
-  /* debug the midpoint */
-  /* background: white; */
 }

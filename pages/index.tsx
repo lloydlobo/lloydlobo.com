@@ -31,7 +31,7 @@ export function ClockNav() {
 export default function IndexPage() {
 	return (
 		<>
-			<div className="relative z-50">
+			<div className="">
 				<Layout title="Home">
 					<main className="">
 						<Section>
