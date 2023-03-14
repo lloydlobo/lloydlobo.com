@@ -73,21 +73,9 @@ export const WorkProjects = () => {
           <a
             key={`url-${username}-${repo}`}
             href={`https://github.com/${username}/${repo}/`}
-            className="after:hidden "
+            className="after:hidden shadow-gray3 p-2 pb-4 shadow rounded"
           >
-            <div className="mr-2  hidden flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
-              <img
-                src={img}
-                width="128"
-                height="128"
-                alt={`${repo} - ${description}`}
-                className={`
-            ${repo === "hackernews-clone" ? "blur" : ""}
-                aspect-square hidden scale-90 rounded-[2.2rem] object-cover disabled:brightness-[80%] saturate-150 sepia-[30%] sm:scale-100`}
-              />
-            </div>
-
-            <h3 className={`dark:prose-slate`}>{repo}</h3>
+            <h3 className={`mt-0`}>{repo}</h3>
 
             <div className="">
               {repo === "hackernews-clone" ? "Coming soon..." : description}
@@ -113,3 +101,15 @@ export const WorkProjects = () => {
     </>
   );
 };
+
+/* <div className="mr-2  hidden flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
+              <img
+                src={img}
+                width="128"
+                height="128"
+                alt={`${repo} - ${description}`}
+                className={`
+            ${repo === "hackernews-clone" ? "blur" : ""}
+                aspect-square hidden scale-90 rounded-[2.2rem] object-cover disabled:brightness-[80%] saturate-150 sepia-[30%] sm:scale-100`}
+              />
+            </div> */

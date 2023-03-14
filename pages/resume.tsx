@@ -11,11 +11,11 @@ const ResumePage = () => {
         <main
           className={`isolate ${styles.resume} mx-auto pt-8 md:pt-16 md:px-4 my-6 
          shadow-2xl shadow-dim dark:shadow-on-tertiary [&_ul]:text-gray7 dark:[&_ul]:text-dim 
-dark:text-tertiary disabled:dark:bg-on-tertiary 
+dark:text-tertiary  
 `}
         >
           <Suspense fallback={<Loading />}>
-            <div className="space-y-6 origin-top bg-white lg:px-36 scale-[75%] lg:scale-100  ">
+            <div className="space-y-6 origin-top lg:px-36 scale-[75%] lg:scale-100  ">
               {/* Lobo résumé — page 1 of 2 */}
               <div
                 className={`font-serif [&>*]:text-sm lg:px-6  mx-auto divide-y-2 space-y-6 divide-dim`}
