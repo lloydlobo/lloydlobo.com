@@ -101,7 +101,7 @@
     calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
     linear infinite;
 
-  border-radius: 39%;
+  border-radius: 100%;
   border-width: 0.001em 0.11em 0em 0em;
   border-style: ridge;
   border-color: #ffffff15 #ffffff40 transparent transparent ;
