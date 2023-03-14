@@ -24,7 +24,7 @@
   position: relative;
   background-attachment: fixed;
   margin: 0 auto;
-  top: clamp(-20vw, -22vw + 5vh , -10vw) ;
+  top: clamp(-20vw, -22vw + 5vh, -10vw);
   /* top: clamp(-40vw, -44vw + 9vh , -20vw) ; */
 }
 
@@ -84,7 +84,6 @@
   border-radius: 100%;
   position: absolute;
   content: "";
-
 }
 .earth::after {
   --earth-days: 27.3216; /* days (around earth) */
@@ -96,15 +95,16 @@
   margin-top: -9px;
   margin-left: -9px;
   /* border: 0; */
-  box-shadow: 0 -10px 0 -8px grey;
+  /* box-shadow: 0 -10px 0 -8px grey; */
+  box-shadow: -9px 0 0 -8px #aaaaaa;
   animation: orb
     calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
     linear infinite;
 
-  border-radius: 100%;
-  border-width: 0.001em 0.11em 0em 0em;
+  border-radius: 50%;
+  border-width: 0.01em 0 0 0;
   border-style: ridge;
-  border-color: #ffffff15 #ffffff40 transparent transparent ;
+  border-color: #aaaaaa55 transparent transparent #aaaaaaaa;
 }
 
 .asteroid_belt {
@@ -119,7 +119,7 @@
   }
 }
 
-.solar  {
+.solar {
   margin: 0 auto;
   position: relative;
 }
