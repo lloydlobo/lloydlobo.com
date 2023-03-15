@@ -35,8 +35,8 @@ export default function IndexPage() {
 				<Layout title="Home">
 					<main className="lg:top-0 relative -top-16">
 						<Section>
-							<article className="py-0 lg:py-12 space-y-8">
-								<p className="prose-2xl [word-spacing:0.45ch] tracking-tight leading-8 lowercase text-justify mx-auto font-medium gap-1">
+							<article className="py-0 disabled:lg:py-12 space-y-8">
+								<p className="prose-2xl disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
 									<Link
 										href="/about"
 										className="tracking-wider dark:text-secondary"
@@ -128,57 +128,53 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
-
-			<div
-				className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0"
-			// className="z-50 w-[100%] fixed aspect-square  lg:w-[61.8vw] inset-0 rounded-t-[1000px] top-[61.8%] mx-auto grid overflow-hidden bottom-0">
-			>
+			<div className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
 				<SolarSystem />
 			</div>
+			<>
+				<style jsx>{`
+        	span.square {
+          	--earth-days: 365.2563;
+    				animation: perimeter 
+    					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
+    					linear infinite;
+        	}
 
-			<style jsx>{`
-        span.square {
-          --earth-days: 365.2563;
-    			animation: perimeter 
-    				calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
-    				linear infinite;
-        }
-
-        @keyframes perimeter {
-          from {
-          }
-          to {
-          }
-        }
-      `}</style>
-
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-50 absolute h-fit">
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-			</div>
-
+        	@keyframes perimeter {
+          	from {
+          	}
+          	to {
+          	}
+        	}
+      	`}
+				</style>
+				<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-50 absolute h-fit">
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+					<span className="square" />
+				</div>
+			</>
 		</>
 	);
 }
