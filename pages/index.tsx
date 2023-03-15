@@ -130,7 +130,7 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
-			<div className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
+			<div className="overflow-visible aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
 				<SolarSystem />
 			</div>
 			<div className="-z-10">
