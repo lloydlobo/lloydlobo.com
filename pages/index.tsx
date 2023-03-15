@@ -37,7 +37,7 @@ export default function IndexPage() {
 					<main className="lg:top-0 z-10 relative -top-16">
 						<Section>
 							<article className=" py-0 disabled:lg:py-12 space-y-8">
-								<p className="prose-2xl backdrop-blur-[2px] disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
+								<p className="prose-2xl disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
 									<Link
 										href="/about"
 										className="tracking-wider dark:text-secondary"
@@ -144,81 +144,46 @@ const BackdropGridLines = () => {
 
 		<>
 			<style jsx global>{`
-				:root {
-  				--matrix-gap: 0.1628vw; /* 4px is great */
-  				--square-margin: 2px; /* automate to open the portal */
-				}
-        	span.square {
-          	--earth-days: 365.2563;
-          	// aspect-ratio: 1 !important;
-          	// background-color: #111011;
-          	// margin: 2px;
-    				animation: perimeter 
-    					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
-    					linear infinite;
-        	}
+:root {
+  --matrix-gap: 0.01628vw; /* 4px is great */
+  --square-margin: 2px; /* automate to open the portal */
+}
 
-        	#modeMatrix > .square{
-    				animation: perimeter 
-    					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) linear infinite;
-        	}
+span.square {
+  --earth-days: 365.2563;
+  scale: 1.00;
+  gap: var(--matrix-gap);
+  aspect-ratio: 1 !important;
+  animation: perimeter calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) linear infinite;
+}
 
-        	@keyframes perimeter {
-          	from,to {
-          	scale: 1;
-          	// opacity: 1;
-          	aspect-ratio: 0;
-          	border-radius: 0%;
-          	// --square-margin: 1px;
-          	// margin: var(--square-margin);
-          	}
-          	50% ,61.8%, 90%{
-          	aspect-ratio:1;
-          	scale: 1;
-          	border-radius: 0%;
-          	padding-top: 0px;
-          	}
+#modeMatrix > .square{
+  animation: perimeter 
+    calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) ease-in-out infinite;
+}
 
-          	47% {
-          	scale: 0.95;
-          	aspect-ratio: 0;
-          	border-radius: 5%;
-          	padding-top: 2px;
-          	}
-
-
-        	}
+@keyframes perimeter {
+  from, 47%, 53%, to {
+  	scale: 1.00;
+  }
+  50% {
+  	scale: 0.98;
+  }
+}
       	`}
 			</style>
-
-			<div id="modeChess"
-				className="hidden  disabled:inline-flex bg-gradient-to-r from-green-800/50 via-yellow-800/50 to-green-800/50 gap-[1px] my-auto top-8 flex-wrap  [&>*]:h-[16.43vw] md:[&>*]:h-[16.54vw] brightness-[80%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-40 absolute h-fit"
-			>
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-			</div>
 
 
 			<div id="modeMatrix"
 				className="inline-grid 
 				my-auto 
 				top-8 
-				[&>span]:m-[1px]
+				[&>span]:m-[0.2vw]
 				md:[&>span]:m-[var(--square-margin)]
 				grid-cols-4
 				grid-rows-9
 				md:grid-cols-6
-				md:grid-rows-6
+				md:grid-rows-8
 				dark:brightness-[80%] 
 				disabled:[&>*]:aspect-square 
 				max-w-screen 
@@ -227,7 +192,6 @@ const BackdropGridLines = () => {
 				dark:[&>*]:bg-on-primary
 				-z-40 absolute max-h-screen"
 			>
-
 				<>
 					<div
 						className="absolute 
@@ -252,31 +216,48 @@ const BackdropGridLines = () => {
 						-z-50"
 					></div>
 				</>
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+			</div>
 
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
-				<span className="square" />
+
+			<div id="modeChess"
+				className="hidden  disabled:inline-flex bg-gradient-to-r from-green-800/50 via-yellow-800/50 to-green-800/50 gap-[1px] my-auto top-8 flex-wrap  [&>*]:h-[16.43vw] md:[&>*]:h-[16.54vw] brightness-[80%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-40 absolute h-fit"
+			>
 				<span className="square" />
 				<span className="square" />
 				<span className="square" />
