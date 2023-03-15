@@ -29,7 +29,6 @@ export function ClockNav() {
 }
 
 
-
 export default function IndexPage() {
 	return (
 		<>
@@ -147,6 +146,8 @@ const BackdropGridLines = () => {
 			<style jsx>{`
         	span.square {
           	--earth-days: 365.2563;
+          	aspect-ratio: 1;
+          	background-color: #111011;
     				animation: perimeter 
     					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
     					linear infinite;
@@ -160,7 +161,25 @@ const BackdropGridLines = () => {
         	}
       	`}
 			</style>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[87%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-75 absolute h-fit">
+
+			<div id="modeChess" className="hidden disabled:inline-flex bg-gradient-to-r from-green-800/50 via-yellow-800/50 to-green-800/50 gap-[1px] my-auto top-8 flex-wrap  [&>*]:h-[16.43vw] md:[&>*]:h-[16.54vw] brightness-[80%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-40 absolute h-fit"
+			>
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+			</div>
+
+			<div id="modeMatrix" className="-z-50 flex bg-gradient-to-r from-green-800/50 via-yellow-900/50 to-green-800/50 gap-[1px] w-screen absolute inset-0 min-h-screen"
+			>
 				<span className="square" />
 				<span className="square" />
 				<span className="square" />
@@ -186,6 +205,7 @@ const BackdropGridLines = () => {
 				<span className="square" />
 				<span className="square" />
 			</div>
+
 		</>
 	)
 }

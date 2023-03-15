@@ -25,7 +25,7 @@ export const SolarSystem = (props: {}) => {
 			</div>
 			<>
 				<div
-					className="absolute aspect-square overflow-visible h-[500px] bg-gradient-to-t from-gray1 to-yellow-500 dark:from-on-primary dark:to-green-400 left-1/2 top-1/3 disabled:top-1/2  -translate-x-1/2 -translate-y-1/2 rounded-[50%] blur-3xl dark:brightness-[25%] opacity-90 -z-50"
+					className="absolute hidden aspect-square overflow-visible h-[500px] bg-gradient-to-t from-gray1 to-yellow-500 dark:from-on-primary dark:to-green-400 left-1/2 top-1/3 disabled:top-1/2  -translate-x-1/2 -translate-y-1/2 rounded-[50%] blur-3xl dark:brightness-[25%] opacity-90 -z-50"
 				></div>
 			</>
 		</>
