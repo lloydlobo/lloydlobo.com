@@ -145,27 +145,48 @@ const BackdropGridLines = () => {
 		<>
 			<style jsx global>{`
 				:root {
-  				--matrix-gap: 0.4vw; /* 4px is great */
+  				--matrix-gap: 0.1628vw; /* 4px is great */
+  				--square-margin: 2px; /* automate to open the portal */
 				}
         	span.square {
           	--earth-days: 365.2563;
-          	// aspect-ratio: 1;
+          	// aspect-ratio: 1 !important;
           	// background-color: #111011;
+          	// margin: 2px;
     				animation: perimeter 
     					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
     					linear infinite;
         	}
 
+        	#modeMatrix > .square{
+    				animation: perimeter 
+    					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) linear infinite;
+        	}
+
         	@keyframes perimeter {
-          	from {
+          	from,to {
+          	scale: 1;
+          	opacity: 1;
+          	aspect-ratio: 0;
+          	border-radius: 0%;
+          	// --square-margin: 1px;
+          	// margin: var(--square-margin);
           	}
-          	to {
+          	50% {
+          	scale: 0.95;
+          	opacity: 0.97;
+          	aspect-ratio: 0;
+          	border-radius: 2%;
+          	padding-top: 2px;
+          	// --square-margin: 2px;
+          	// margin: var(--square-margin);
           	}
         	}
       	`}
 			</style>
 
-			<div id="modeChess" className="hidden disabled:inline-flex bg-gradient-to-r from-green-800/50 via-yellow-800/50 to-green-800/50 gap-[1px] my-auto top-8 flex-wrap  [&>*]:h-[16.43vw] md:[&>*]:h-[16.54vw] brightness-[80%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-40 absolute h-fit"
+			<div id="modeChess"
+				className="hidden  disabled:inline-flex bg-gradient-to-r from-green-800/50 via-yellow-800/50 to-green-800/50 gap-[1px] my-auto top-8 flex-wrap  [&>*]:h-[16.43vw] md:[&>*]:h-[16.54vw] brightness-[80%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-40 absolute h-fit"
 			>
 				<span className="square" />
 				<span className="square" />
@@ -181,17 +202,63 @@ const BackdropGridLines = () => {
 				<span className="square" />
 			</div>
 
-			<div id="modeMatrix" className={`
-w-screen absolute inset-0 min-h-screen
-grid grid-flow-col-dense gap-[var(--matrix-gap)] 
--z-50 
-from-green-300/50 via-yellow-300/50 to-green-300/50 
-[&>span]:bg-gray1 
-dark:[&>span]:bg-on-primary 
-dark:from-green-700/50 dark:via-pink-700/20 dark:to-green-700/50 
-bg-gradient-to-r  
-`}
+
+			<div id="modeMatrix"
+				className="inline-grid 
+				my-auto 
+				top-8 
+				[&>span]:m-[1px]
+				md:[&>span]:m-[var(--square-margin)]
+				grid-cols-4
+				grid-rows-9
+				md:grid-cols-6
+				md:grid-rows-6
+				dark:brightness-[80%] 
+				disabled:[&>*]:aspect-square 
+				max-w-screen 
+				inset-0 
+				[&>*]:bg-white
+				dark:[&>*]:bg-on-primary
+				-z-40 absolute max-h-screen"
 			>
+
+				<>
+					<div
+						className="absolute 
+						aspect-square 
+						overflow-visible 
+						h-[500px] 
+						bg-gradient-to-t 
+						from-gray1 
+						to-yellow-500 
+						dark:from-on-primary 
+						dark:to-green-400 
+						left-1/2 
+						top-[61.8%] 
+						md:bottom-[0%] 
+						disabled:top-1/2 
+						-translate-x-1/2 
+						-translate-y-1/2 
+						rounded-[50%] 
+						blur-3xl 
+						dark:brightness-[95%] 
+						opacity-90 
+						-z-50"
+					></div>
+				</>
+
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
 				<span className="square" />
 				<span className="square" />
 				<span className="square" />
@@ -327,3 +394,14 @@ export function DockNav() {
 		</div>
 	);
 }
+
+// 			className={`
+// w-screen absolute inset-0 min-h-screen
+// grid grid-flow-col-dense gap-[var(--matrix-gap)] 
+// -z-50 
+// from-green-300/50 via-yellow-300/50 to-green-300/50 
+// [&>span]:bg-gray1 
+// dark:[&>span]:bg-on-primary 
+// dark:from-green-700/50 dark:via-pink-700/20 dark:to-green-700/50 
+// bg-gradient-to-r  
+// `}
