@@ -103,24 +103,18 @@ a:link {
   /* @apply hover:text-orange-700 dark:hover:text-orange-400; */
 }
 
-a:hover {
-  /* @apply bg-green-50 dark:bg-transparent dark:backdrop-brightness-[125%] decoration-transparent rounded-lg; */
-  /* background-image: none; */
-  /* @apply duration-100 delay-100 transition-all ease-in-out; */
-}
-
 a::after {
   position: relative;
   content: "\FEFF°";
   top: -0.1em;
-  margin-left: 0.1em;
-  font-size: 90%;
-  @apply text-red-800 saturate-150 dark:text-red-600;
+  margin-left: 0.3rem;
+  font-size: 95%;
+  @apply text-green-700 saturate-150 dark:text-green-400;
 }
 
-/* font-feature-settings: "kern", "frac", "kern", "ss02"; */
 p {
   hyphens: auto;
+  /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
   @apply dark:text-secondary;
 }
 
@@ -129,8 +123,3 @@ p {
     color-scheme: dark;
   }
 }
-
-/* [data-theme="dark"], */
-/* [data-theme="dark"] body { */
-/*   @apply blur-3xl; */
-/* } */
