@@ -14,9 +14,7 @@ export default function Projects(props: {}) {
             <div className="grid">
               <Section>
                 <article className="w-full">
-                  <h1
-                    className={`pr-[5vw]`} // className={`dark:prose-slate pr-[5vw]`}
-                  >
+                  <h1 className={`pr-[5vw]`} >
                     <span className="">Passion projects</span>
                     {" and"} fun little experiments
                   </h1>
@@ -27,10 +25,7 @@ export default function Projects(props: {}) {
             <div className={`mx-auto space-y-20 lg:space-y-28 mt-8`}>
               <Section>
                 <article>
-                  <div
-                    className="grid 
-                 prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3"
-                  >
+                  <div className="grid prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3" >
                     <WorkProjects />
                   </div>
                 </article>
