@@ -33,18 +33,18 @@ export default function IndexPage() {
 		<>
 			<div className="">
 				<Layout title="Home">
-					<main className="">
+					<main className="lg:top-0 relative -top-16">
 						<Section>
 							<article className="py-0 lg:py-12 space-y-8">
-								<p className="disabled:backdrop-blur-[1px] md:tracking-tight leading-7 md:leading-9 lowercase w-full mx-auto font-medium gap-1">
+								<p className="prose-2xl [word-spacing:0.45ch] tracking-tight leading-8 lowercase text-justify mx-auto font-medium gap-1">
 									<Link
 										href="/about"
-										className="tracking-wider dark:text-primary"
+										className="tracking-wider dark:text-secondary"
 									>
 										lloyd lobo.
 									</Link>
 
-									<span className="dark:text-secondary">
+									<span className="dark:text-primary">
 										{" "}
 										creating{" "}
 										<span className="inline-flex">
@@ -65,11 +65,9 @@ export default function IndexPage() {
 										</span>{" "}
 										software with the focus on innovative experiences that
 										exceed client expectations.{" "}
-										<span className="inline-flex">
-											<em className="dark:text-secondary">
-												software developer
-											</em>
-										</span>{" "}
+										<em className="dark:text-secondary">
+											software developer
+										</em>{" "}
 										with an <span id="roughblock">eye</span> for design and
 										motion. deeply curious about functional and beautiful{" "}
 										<svg
@@ -132,7 +130,7 @@ export default function IndexPage() {
 			</div>
 
 			<div
-				className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed rounded-t-[1000px] overflow-hidden inset-0"
+				className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0"
 			// className="z-50 w-[100%] fixed aspect-square  lg:w-[61.8vw] inset-0 rounded-t-[1000px] top-[61.8%] mx-auto grid overflow-hidden bottom-0">
 			>
 				<SolarSystem />
