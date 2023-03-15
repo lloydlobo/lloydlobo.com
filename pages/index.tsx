@@ -35,9 +35,9 @@ export default function IndexPage() {
 		<>
 			<div className="">
 				<Layout title="Home">
-					<main className="lg:top-0 relative -top-16">
+					<main className="lg:top-0 z-10 relative -top-16">
 						<Section>
-							<article className="py-0 disabled:lg:py-12 space-y-8">
+							<article className=" py-0 disabled:lg:py-12 space-y-8">
 								<p className="prose-2xl backdrop-blur-[2px] disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
 									<Link
 										href="/about"
@@ -130,10 +130,12 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
-			<div className="aspect-square -z-40 top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
+			<div className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
 				<SolarSystem />
 			</div>
-			<BackdropGridLines />
+			<div className="-z-10">
+				<BackdropGridLines />
+			</div>
 		</>
 	);
 }

@@ -115,17 +115,16 @@ div.solar {
   top: 0px;
   margin-top: -9px;
   margin-left: -9px;
-  /* border: 0; */
-  /* box-shadow: 0 -10px 0 -8px grey; */
-  box-shadow: -9px 0 0 -8px #aaaaaa;
+  border: 0;
   animation: orb
     calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
     linear infinite;
 
-  border-radius: 50%;
-  border-width: 0.01em 0 0 0;
-  border-style: ridge;
-  border-color: #aaaaaa55 transparent transparent #aaaaaaaa;
+  box-shadow: -9px 0 0 -8px #aaaaaa;
+  border-radius: 100%;
+  border-width: 0.01px 0 0 0;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
 }
 
 .asteroid_belt {
