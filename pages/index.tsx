@@ -186,11 +186,14 @@ span.square {
 				md:grid-rows-8
 				dark:brightness-[80%] 
 				disabled:[&>*]:aspect-square 
-				max-w-screen 
 				inset-0 
 				[&>*]:bg-white
 				dark:[&>*]:bg-on-primary
-				-z-40 absolute max-h-screen"
+				-z-40 
+				absolute 
+				overflow-hidden
+				max-w-screen 
+				max-h-screen"
 			>
 				<>
 					<div
