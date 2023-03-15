@@ -30,37 +30,15 @@ export function ClockNav() {
 
 
 
-// <style jsx global>
-// 	{`
-// 	:root {
-//   	 	 --bg-logo: #f9b700 !important;
-// 	}
-//
-// 	@media (prefers-color-scheme: dark) {
-// 			:root {
-//   	 	 	 --bg-logo: #f9b700 !important;
-// 			}
-// 	}
-//
-//   	 [data-theme="light"]  {
-//   	 	 --bg-logo: #f9b700 !important;
-//   	 }
-//   	 .logo {
-//   	 	 	 background: var(--bg-logo) !important;
-//   	 	 }
-// 	 	 `}
-// </style>
-
 export default function IndexPage() {
 	return (
 		<>
 			<div className="">
-
 				<Layout title="Home">
 					<main className="lg:top-0 relative -top-16">
 						<Section>
 							<article className="py-0 disabled:lg:py-12 space-y-8">
-								<p className="prose-2xl disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
+								<p className="prose-2xl backdrop-blur-[2px] disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
 									<Link
 										href="/about"
 										className="tracking-wider dark:text-secondary"
@@ -152,7 +130,7 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
-			<div className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
+			<div className="aspect-square -z-40 top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
 				<SolarSystem />
 			</div>
 			<BackdropGridLines />
@@ -180,7 +158,7 @@ const BackdropGridLines = () => {
         	}
       	`}
 			</style>
-			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-50 absolute h-fit">
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[87%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-75 absolute h-fit">
 				<span className="square" />
 				<span className="square" />
 				<span className="square" />
@@ -212,7 +190,7 @@ const BackdropGridLines = () => {
 
 export function DockNav() {
 	return (
-		<div className="z-50 fixed bottom-5 left-0 right-0 gird  mx-auto">
+		<div className="z-50 hidden fixed bottom-5 left-0 right-0 gird  mx-auto">
 			<div className="border border-opacity-10 rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
 				<nav className="dock grid grid-flow-col justify-between p-2 overflow-x-scroll overflow-y-hidden gap-1 rounded-full  place-items-center">
 					<Link
