@@ -166,21 +166,27 @@ const BackdropGridLines = () => {
         	@keyframes perimeter {
           	from,to {
           	scale: 1;
-          	opacity: 1;
+          	// opacity: 1;
           	aspect-ratio: 0;
           	border-radius: 0%;
           	// --square-margin: 1px;
           	// margin: var(--square-margin);
           	}
-          	50% {
-          	scale: 0.95;
-          	opacity: 0.97;
-          	aspect-ratio: 0;
-          	border-radius: 2%;
-          	padding-top: 2px;
-          	// --square-margin: 2px;
-          	// margin: var(--square-margin);
+          	50% ,61.8%, 90%{
+          	aspect-ratio:1;
+          	scale: 1;
+          	border-radius: 0%;
+          	padding-top: 0px;
           	}
+
+          	47% {
+          	scale: 0.95;
+          	aspect-ratio: 0;
+          	border-radius: 5%;
+          	padding-top: 2px;
+          	}
+
+
         	}
       	`}
 			</style>
