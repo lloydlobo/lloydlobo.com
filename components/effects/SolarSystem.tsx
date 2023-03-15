@@ -5,16 +5,6 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {
 
-	// <style jsx>
-	// 	{`
-	//       html,
-	//       body,
-	//       main,
-	//       article {
-	//         overflow: hidden !important;
-	//       }
-	//     `}
-	// </style>
 	return (
 		<>
 			<div className="relative top-40 inset-0 mx-auto" >
@@ -35,7 +25,7 @@ export const SolarSystem = (props: {}) => {
 			</div>
 			<>
 				<div
-					className="absolute aspect-square h-[500px] bg-gradient-to-t from-gray1 to-green-300 dark:from-on-primary dark:to-green-400 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] blur-3xl dark:brightness-[25%]  dark:mix-blend-screen disabled:mix-blend-multiply opacity-95 -z-[9999999]"
+					className="absolute aspect-square h-[500px] bg-gradient-to-t from-gray1 to-green-300 dark:from-on-primary dark:to-green-400 left-1/2 top-1/3 disabled:top-1/2 hue-rotate-[270deg] dark:hue-rotate-0 -translate-x-1/2 -translate-y-1/2 rounded-[50%] blur-3xl dark:brightness-[25%]  dark:mix-blend-screen mix-blend-multiply opacity-100 -z-[9999999]"
 				></div>
 			</>
 		</>
