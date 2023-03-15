@@ -120,11 +120,11 @@ div.solar {
     calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s)
     linear infinite;
 
-  box-shadow: -9px 0 0 -8px #aaaaaa;
+  box-shadow: -9px 0 0 -8px #888;
   border-radius: 100%;
   border-width: 0.01px 0 0 0;
   border-style: solid;
-  border-color: #333 transparent transparent transparent;
+  border-color: #cccccc50 transparent transparent transparent;
 }
 
 .asteroid_belt {
