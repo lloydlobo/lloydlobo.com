@@ -143,11 +143,14 @@ const BackdropGridLines = () => {
 	return (
 
 		<>
-			<style jsx>{`
+			<style jsx global>{`
+				:root {
+  				--matrix-gap: 0.4vw; /* 4px is great */
+				}
         	span.square {
           	--earth-days: 365.2563;
-          	aspect-ratio: 1;
-          	background-color: #111011;
+          	// aspect-ratio: 1;
+          	// background-color: #111011;
     				animation: perimeter 
     					calc(var(--earth-days) * var(--year-in-second) / var(--years-relative) * 1s) 
     					linear infinite;
@@ -178,7 +181,16 @@ const BackdropGridLines = () => {
 				<span className="square" />
 			</div>
 
-			<div id="modeMatrix" className="-z-50 flex bg-gradient-to-r from-green-800/50 via-yellow-900/50 to-green-800/50 gap-[1px] w-screen absolute inset-0 min-h-screen"
+			<div id="modeMatrix" className={`
+w-screen absolute inset-0 min-h-screen
+grid grid-flow-col-dense gap-[var(--matrix-gap)] 
+-z-50 
+from-green-300/50 via-yellow-300/50 to-green-300/50 
+[&>span]:bg-gray1 
+dark:[&>span]:bg-on-primary 
+dark:from-green-700/50 dark:via-pink-700/20 dark:to-green-700/50 
+bg-gradient-to-r  
+`}
 			>
 				<span className="square" />
 				<span className="square" />
