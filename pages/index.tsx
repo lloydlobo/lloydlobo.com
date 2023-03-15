@@ -28,10 +28,34 @@ export function ClockNav() {
 	);
 }
 
+
+
+// <style jsx global>
+// 	{`
+// 	:root {
+//   	 	 --bg-logo: #f9b700 !important;
+// 	}
+//
+// 	@media (prefers-color-scheme: dark) {
+// 			:root {
+//   	 	 	 --bg-logo: #f9b700 !important;
+// 			}
+// 	}
+//
+//   	 [data-theme="light"]  {
+//   	 	 --bg-logo: #f9b700 !important;
+//   	 }
+//   	 .logo {
+//   	 	 	 background: var(--bg-logo) !important;
+//   	 	 }
+// 	 	 `}
+// </style>
+
 export default function IndexPage() {
 	return (
 		<>
 			<div className="">
+
 				<Layout title="Home">
 					<main className="lg:top-0 relative -top-16">
 						<Section>
@@ -131,8 +155,16 @@ export default function IndexPage() {
 			<div className="aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0" >
 				<SolarSystem />
 			</div>
-			<>
-				<style jsx>{`
+			<BackdropGridLines />
+		</>
+	);
+}
+
+const BackdropGridLines = () => {
+	return (
+
+		<>
+			<style jsx>{`
         	span.square {
           	--earth-days: 365.2563;
     				animation: perimeter 
@@ -147,36 +179,35 @@ export default function IndexPage() {
           	}
         	}
       	`}
-				</style>
-				<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-50 absolute h-fit">
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-					<span className="square" />
-				</div>
-			</>
+			</style>
+			<div className="flex my-auto top-8 flex-wrap [&>*]:h-[16.6vw] brightness-[57%] [&>*]:aspect-square w-screen inset-0 [&>*]:outline-green-50/10  dark:[&>*]:outline-green-400/10 grayscale-[30%] [&>*]:outline [&>*]:outline-[0.01px] -z-50 opacity-75 dark:opacity-50 absolute h-fit">
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+				<span className="square" />
+			</div>
 		</>
-	);
+	)
 }
 
 export function DockNav() {

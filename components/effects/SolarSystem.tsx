@@ -67,7 +67,7 @@ export const ThemeToggleWrapper = (items: Props) => {
 	return (
 		<>
 			<button
-				className="rounded-full"
+				className=""
 				onClick={(e) => switchTheme(e)}
 			>
 				{items.children}

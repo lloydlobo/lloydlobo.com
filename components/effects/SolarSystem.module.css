@@ -21,14 +21,14 @@
 .solar {
   margin: 0 auto;
   position: relative;
-/* cursor: pointer; */
+  /* cursor: pointer; */
 }
 
 div.solar {
   top: 50%;
   left: 50%;
   position: relative;
-/* cursor: pointer; */
+  /* cursor: pointer; */
   /* z-index: 999; */
 }
 .solar::after {
@@ -37,7 +37,7 @@ div.solar {
   height: 2px;
   width: 2px;
   top: -2px;
-  background: white;
+  /* background: white; */
 }
 
 .sun {
@@ -62,7 +62,16 @@ div.solar {
   background-clip: padding-box;
   background-position: -28px -103px;
   background-size: 175%;
-  box-shadow: 0 0 11px 3px rgba(255, 106, 0, 0.4), 0 0 21px 10px rgba(255, 204, 0, 0.13);
+  box-shadow: 0 0 11px 3px rgba(255, 106, 0, 0.4),
+    0 0 21px 10px rgba(255, 204, 0, 0.13);
+}
+.sun:hover,
+.sun:focus-within,
+.sun:focus-visible {
+  position: relative;
+  z-index: 999;
+  cursor: pointer;
+  filter: brightness(111%);
 }
 
 /* EARTH */
