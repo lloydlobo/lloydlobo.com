@@ -6,6 +6,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "lint": "npx prettier ./pages/**/*.{js,ts,jsx,tsx} ./components/**/*.{js,ts,jsx,tsx} -c",
+    "lint-fix": "npx prettier ./pages/**/*.{js,ts,jsx,tsx} ./components/**/*.{js,ts,jsx,tsx} -w",
     "type-check": "tsc"
   },
   "homepage": "https://lloydlobo.vercel.app",
