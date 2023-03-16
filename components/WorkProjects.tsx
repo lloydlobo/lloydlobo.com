@@ -147,7 +147,7 @@ export const WorkProjects = () => {
                   ))}
                 </div>
               </div>
-              <img className="backdrop-blur-xl rounded-3xl" src={`/img/projects/${img}`} />
+              <img className="hidden" src={`/img/projects/${img}`} />
             </a>
           ))}
         </nav>
