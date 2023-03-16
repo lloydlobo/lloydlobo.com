@@ -73,7 +73,7 @@ export const WorkProjects = () => {
         const rect = link.getBoundingClientRect();
         const img = link.querySelector("img");
         img.style.left = `${event.clientX - rect.left}px`;
-        img.style.top = `${event.clientY - rect.top}px`;
+        img.style.top = `${event.clientY - (rect.top * 1.618)}px`;
       };
     }
     return () => { };
@@ -94,30 +94,32 @@ export const WorkProjects = () => {
           }
           nav > a > div {
             position: relative;
-            z-index: 2;
+            z-index: 2/* ; */
             display: block;
             border-bottom: 1px solid transparent;
             border-top: 1px solid transparent;
           }
 
           nav > a:hover {
-            background: #111111;
+            // background: #111111;
           }
 
           nav > a > img {
             position: absolute;
-            filter: brightness(0.4);
             opacity: 0;
             transform: translate(-50%, -50%) scale(0.5);
             transition: transform 250ms, opacity 250ms;
             pointer-events: none;
             width: 200px !important;
+            --tw-grayscale: grayscale(30%);
+            filter: var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
           }
 
           nav > a:hover > img {
-            opacity: 0.75;
+            opacity: 0.95;
             transform: translate(-50%, -50%) scale(1);
           }
+
         `}</style>
 
         <nav
@@ -145,7 +147,7 @@ export const WorkProjects = () => {
                   ))}
                 </div>
               </div>
-              <img src={`/img/projects/${img}`} />
+              <img className="backdrop-blur-xl rounded-3xl" src={`/img/projects/${img}`} />
             </a>
           ))}
         </nav>
