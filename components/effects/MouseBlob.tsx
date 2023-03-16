@@ -11,17 +11,20 @@ export function MouseBlob() {
       const { clientX, clientY } = event;
       // For delayed and relaxed effect use animate API.
       // `fill: "forwards"` - Avoid reset of property at duration end.
-      blob.animate({
-        left: `${clientX}px`,
-        top: `${clientY}px`,
-      }, { duration: 3000, fill: "forwards" });
+      blob.animate(
+        {
+          left: `${clientX}px`,
+          top: `${clientY}px`,
+        },
+        { duration: 3000, fill: "forwards" }
+      );
     };
 
     return () => { };
   }, []);
   return (
     <>
-      <div className="-z-50 dark:brightness-[55%] blur-[48px] w-screen min-h-screen absolute">
+      <div className="-z-50 brightness-110 dark:brightness-50 blur-[48px] w-screen min-h-screen absolute">
         <div
           id="blob"
           className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
@@ -51,10 +54,18 @@ export function MouseBlob() {
             bottom: 50%;
             position: absolute;
             height: 500px;
-            aspect-ratio:1;
+            aspect-ratio: 1;
             translate: -50% -50%;
             border-radius: 100%;
-            background: linear-gradient(to right, rgb(74 222 128), rgb(17 16 17));
+            --on-primary: rgb(17 16 17);
+            --tw-bg-opacity: 1;
+            --bg-green-300: rgb(134 239 172 / var(--tw-bg-opacity));
+            --bg-green-400: rgb(74 222 128 / var(--tw-bg-opacity));
+            background: linear-gradient(
+              to right,
+              var(--bg-green-400),
+              var(--bg-green-300)
+            );
             animation: rotate var(--timing-mouse-duration, 30s) infinite;
           }
 
@@ -63,25 +74,24 @@ export function MouseBlob() {
               rotate: 0deg;
             }
             50% {
-            --golden-ratio: 1.618;
-            --pi: 3.14;
-            /* scale: 1 calc((sin(var(--golden-ratio) / var(--pi)))); */
-            scale: 1.1 1;
+              --golden-ratio: 1.618;
+              --pi: 3.14;
+              /* scale: 1 calc((sin(var(--golden-ratio) / var(--pi)))); */
+              scale: 1.1 1;
             }
             to {
               rotate: 360deg;
             }
           }
 
-              // --angle:3deg;
-             // rotate: calc(sin(var(--angle)) * var(--radius) * -1)deg;
-              --angle:30deg;
-              /* Translation on X-axis */
-               /* Translation on Y-axis */
-            // rotate: calc(cos(var(--angle)) * var(--radius))deg;
+          // --angle:3deg;
+          // rotate: calc(sin(var(--angle)) * var(--radius) * -1)deg;
+          --angle: 30deg;
+          /* Translation on X-axis */
+          /* Translation on Y-axis */
+          // rotate: calc(cos(var(--angle)) * var(--radius))deg;
         `}
       </style>
     </>
   );
 }
-

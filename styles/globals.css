@@ -7,9 +7,11 @@
   --border-radius: 12px;
 
   --tw-bg-opacity: 1;
+  --bg-green-300: rgb(134 239 172 / var(--tw-bg-opacity));
   --bg-green-400: rgb(74 222 128 / var(--tw-bg-opacity));
 
-  --bg-logo-light: #f9b700;
+  /* --bg-logo-light: #f9b700; */
+  --bg-logo-light: var(--bg-green-300);
   --bg-logo-dark: var(--bg-green-400);
 }
 
@@ -73,7 +75,7 @@ body {
 body {
   min-height: 100vh;
   font-feature-settings: "kern";
-  @apply tracking-normal text-on-primary container mx-auto bg-gray0 lg:mx-auto w-full dark:text-secondary dark:bg-on-primary;
+  @apply tracking-normal text-on-primary container mx-auto bg-white lg:mx-auto w-full dark:text-secondary dark:bg-on-primary;
 }
 
 main {
