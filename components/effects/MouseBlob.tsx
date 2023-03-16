@@ -30,7 +30,7 @@ export function MouseBlob() {
       blob.animate({
         left: `${clientX}px`,
         top: `${clientY}px`,
-      }, { duration: 2700, fill: "forwards" });
+      }, { duration: 3000, fill: "forwards" });
     };
 
     return () => { };
@@ -39,19 +39,48 @@ export function MouseBlob() {
     <>
       <style jsx>
         {`
+          :root {
+            --timing-mouse-duration: 60s;
+            --tw-bg-opacity: 1;
+            --tw-green-400: ;
+          }
+
           html,
           body,
           main,
           article {
             overflow: hidden !important;
           }
+          #blob {
+            left: 50%;
+            top: 50%;
+            right: 50%;
+            bottom: 50%;
+            position: absolute;
+            height: 500px;
+            aspect-ratio:1;
+            translate: -50% -50%;
+            border-radius: 100%;
+            background: linear-gradient(to right, rgb(74 222 128), rgb(17 16 17));
+            animation: rotate var(--timing-mouse-duration, 20s) infinite;
+          }
+
+          @keyframes rotate {
+            from {
+              rotate: 0deg;
+            }
+            to {
+              rotate: 360deg;
+            }
+          }
         `}
       </style>
-      <div className="-z-50 dark:brightness-[55%] blur-3xl w-screen min-h-screen absolute">
+      <div className="-z-50 dark:brightness-[55%] blur-[48px] w-screen min-h-screen absolute">
         <div
           id="blob"
-          className="absolute aspect-square h-[500px] bg-gradient-to-t from-gray1 to-green-300 dark:from-on-primary dark:to-green-400 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[50%] -z-[9999999]"
-        ></div>
+          className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
+        dark:via-green-400 dark:to-purple-900/40"
+        />
       </div>
     </>
   );
