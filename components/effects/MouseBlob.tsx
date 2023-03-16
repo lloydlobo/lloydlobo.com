@@ -1,21 +1,5 @@
 import React, { useEffect } from "react";
 
-/* Disable the aspect ratio for slinky effect */
-/*
-      <style jsx global>
-        {`
-          #blob {
-            background-color: white;
-            height: 500px;
-            aspect-ratio: 1;
-            border: 1px solid red;
-            position: absolute;
-          }
-        `}
-      </style>
-*/
-
-//
 // Inspiration: https://www.youtube.com/watch?v=kySGqoU7X-s
 export function MouseBlob() {
   // blob.style.left = `${clientX}px`;
@@ -37,6 +21,14 @@ export function MouseBlob() {
   }, []);
   return (
     <>
+      <div className="-z-50 dark:brightness-[55%] blur-[48px] w-screen min-h-screen absolute">
+        <div
+          id="blob"
+          className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
+        dark:via-green-400 dark:to-purple-900/40"
+        />
+      </div>
+
       <style jsx>
         {`
           :root {
@@ -51,6 +43,7 @@ export function MouseBlob() {
           article {
             overflow: hidden !important;
           }
+
           #blob {
             left: 50%;
             top: 50%;
@@ -62,26 +55,33 @@ export function MouseBlob() {
             translate: -50% -50%;
             border-radius: 100%;
             background: linear-gradient(to right, rgb(74 222 128), rgb(17 16 17));
-            animation: rotate var(--timing-mouse-duration, 20s) infinite;
+            animation: rotate var(--timing-mouse-duration, 30s) infinite;
           }
 
           @keyframes rotate {
             from {
               rotate: 0deg;
             }
+            50% {
+            --golden-ratio: 1.618;
+            --pi: 3.14;
+            /* scale: 1 calc((sin(var(--golden-ratio) / var(--pi)))); */
+            scale: 1.1 1;
+            }
             to {
               rotate: 360deg;
             }
           }
+
+              // --angle:3deg;
+             // rotate: calc(sin(var(--angle)) * var(--radius) * -1)deg;
+              --angle:30deg;
+              /* Translation on X-axis */
+               /* Translation on Y-axis */
+            // rotate: calc(cos(var(--angle)) * var(--radius))deg;
         `}
       </style>
-      <div className="-z-50 dark:brightness-[55%] blur-[48px] w-screen min-h-screen absolute">
-        <div
-          id="blob"
-          className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
-        dark:via-green-400 dark:to-purple-900/40"
-        />
-      </div>
     </>
   );
 }
+

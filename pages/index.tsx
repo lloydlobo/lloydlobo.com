@@ -395,3 +395,261 @@ export function DockNav() {
 // dark:from-green-700/50 dark:via-pink-700/20 dark:to-green-700/50 
 // bg-gradient-to-r  
 // `}
+//
+// Rotate an element to face its origin #
+//
+// The atan2() function calculates the relative angle from one point to another. The function accepts two comma-separated values as its parameters: the y and x position of the other point, relative to the originating point which sits at origin 0,0.
+//
+// With the calculated value it’s possible to rotate elements so that they face each other, by using the Individual Transform Properties.
+//
+// In the example below, the boxes are rotated so that they face the location of the mouse. The mouse position is synced to a custom property through JavaScript.
+// https://web.dev/css-trig-functions/
+const RotateOriginTracker = () => {
+	useEffect(() => {
+		// Track mouse position over .origin
+		const origin = document.getElementById("origin");
+
+		document.body.onpointermove = (event) => {
+			// origin.addEventListener("pointermove", (event) => {
+			const { clientX, clientY } = event;
+			// let x = evt.offsetX;
+			// let y = evt.offsetY;
+
+			origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
+			origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
+		};
+		return () => { }
+	}, [])
+
+	return (
+		<>
+			<div>
+				<p><em>💡 With atan2, you can calculate the rotation for an object so that it points back to a specific point</em></p>
+
+				<div className="no-support" data-support="css-trig-fns"><p>🚨 Your browser does not support the CSS Trigonometric Functions. Therefore, this demo will not work properly. Please try Safari 15.4, Firefox 108, or Chrome 111.</p></div>
+
+				<div id="origin" className="origin">
+					<div className="box"></div>
+					<div className="box"></div>
+				</div>
+
+				<footer>
+					<p>Demo for <a href="https://web.dev/css-trig-functions/" target="_top">https://web.dev/css-trig-functions/</a></p>
+				</footer>
+			</div>
+
+			<style jsx>
+				{
+					`
+div.box {
+  --my-x: 200;
+  --my-y: 300;
+
+  /* Position the box inside its parent */
+  position: absolute;
+  width: 50px;
+  aspect-ratio: 1;
+  translate: calc((var(--my-x) * 1px)) calc(var(--my-y) * 1px);
+
+  /* Rotate so that the box faces the mouse position */
+  /* For this, take the box its own position and size (25 = half the width) into account */
+  rotate: atan2(
+            calc((var(--mouse-x) - var(--my-x) - 25) * 1),
+            calc((var(--mouse-y) - var(--my-y) - 25) * -1)
+          );
+}
+
+.origin {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	border: 1px solid #333;
+	--mouse-x: 0;
+	--mouse-y: 0;
+	overflow: hidden;
+	border-radius: 0.5em;
+	touch-action: none;
+}
+
+.origin::before {
+	content: '';
+	height: 20px;
+	width: 20px;
+	translate: calc((var(--mouse-x) * 1px) - 50%) calc((var(--mouse-y) * 1px) - 50%);
+	background: black;
+	position: absolute;
+	border-radius: 50%;
+	pointer-events: none;
+	z-index: -1;
+}
+
+div.box {
+	--my-x: 50;
+	--my-y: 300;
+
+	width: 50px;
+	height: 50px;
+
+	background: linear-gradient(orange, red);
+	border-top: 2px solid lime;
+	transform-origin: 50% 50%;
+	pointer-events: none;
+	position: absolute;
+	
+	/* Position of the box inside its parent */
+	translate: calc((var(--my-x) * 1px)) calc(var(--my-y) * 1px);
+	
+	/* Rotate so that the box faces the mouse position */
+	/* For this, take the box’s own position and size (25 = half the width) into account */
+	rotate: atan2(
+		calc((var(--mouse-x) - var(--my-x) - 25) * 1),
+		calc((var(--mouse-y) - var(--my-y) - 25) * -1)
+	);
+}
+
+div.box:nth-child(2) {
+	--my-x: 500;
+	--my-y: 50;
+}
+
+div.box::before {
+	content: '';
+	display: block;
+	width: 2px;
+	height: 1000px;
+	background: black;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 100%;
+}
+
+
+/* Non-demo styles below */
+@layer base {
+	@layer reset {
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		html, body {
+			min-height: 100%;
+		}
+	}
+	@layer layout {
+		html {
+			max-width: 84ch;
+			padding: 3rem 2rem;
+			margin: auto;
+		}
+		body {
+			display: grid;
+			place-content: safe center;
+			gap: 1em;
+		}
+		
+		html {
+			--font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+			--font-serif: ui-serif,serif;
+			--font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+		}
+		body {
+			font-family: var(--font-sans);
+		}
+		pre, code {
+			font-family: var(--font-mono);
+			font-size: 0.8rem;
+		}
+		input, button {
+			font-family: inherit;
+		}
+
+		a,
+		a:visited {
+			color: blue;
+		}
+		
+		h2 {
+			margin-top: 2em;
+		}
+
+		summary {
+			cursor: pointer;
+		}
+
+		dd + dt {
+			margin-top: 0.5em;
+		}
+		
+		footer {
+			text-align: center;
+			font-style: italic;
+		}
+	}
+	
+	@layer code {
+		pre {
+			border: 1px solid #dedede;
+			padding: 1em;
+			background: #f7f7f7;
+			font-family: "Courier 10 Pitch", Courier, monospace;
+			overflow-x: auto;
+			border-left: 0.4em solid cornflowerblue;
+			tab-size: 4;
+		}
+		
+		code:not(pre code), output:not(code:has(output) output) {
+			background: #f7f7f7;
+			border: 1px solid rgb(0 0 0 / 0.2);
+			padding: 0.1rem 0.3rem;
+			margin: 0.1rem 0;
+			border-radius: 0.2rem;
+			display: inline-block;
+		}
+	}
+
+	@layer support {
+		.no-support,
+		.has-support {
+			margin: 1em 0;
+			padding: 1em;
+			border: 1px solid #ccc;
+		}
+
+		.no-support {
+			background-color: #ff00002b;
+			display: block;
+		}
+		.no-support[data-level="warn"] {
+			background-color: #ffff002b;
+		}
+		.has-support {
+			background-color: #00ff002b;
+			display: none;
+		}
+		:is(.has-support, .no-support) > :first-child {
+			margin-top: 0;
+		}
+		:is(.has-support, .no-support) > :last-child {
+			margin-bottom: 0;
+		}
+
+		@supports (transform: scaleX(cos(360deg))) {
+			.no-support[data-support="css-trig-fns"] {
+				display: none;
+			}
+			.has-support[data-support="css-trig-fns"] {
+				display: block;
+			}
+		}
+	}
+}
+`
+				}
+			</style>
+		</>
+	)
+}
