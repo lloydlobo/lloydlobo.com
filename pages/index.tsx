@@ -126,9 +126,11 @@ export default function IndexPage() {
 					</main>
 				</Layout>
 			</div>
+
 			<div className="overflow-visible aspect-square top-[61.8%] lg:top-[61.8%] lg:w-[61.8vw] mx-auto fixed inset-0">
 				<SolarSystem />
 			</div>
+
 			<div className="-z-10">
 				<BackdropGridLines />
 			</div>
@@ -145,74 +147,6 @@ export default function IndexPage() {
 const BackdropGridLines = () => {
 	return (
 		<>
-			<style jsx global>
-				{`
-          :root {
-            --matrix-gap: 0.001628vw; /* 4px is great */
-            --square-margin: 5px; /* automate to open the portal */
-            --earth-days: 365.2563;
-          }
-
-          span.square {
-            scale: 1;
-            gap: var(--matrix-gap);
-            aspect-ratio: 1 !important;
-            animation: perimeter
-              calc(
-                var(--earth-days) * var(--year-in-second) /
-                  var(--years-relative) * 1s
-              )
-              linear infinite;
-          }
-
-          #modeMatrix {
-            --duration: 10s;
-            --earth-duration: calc(
-              var(--earth-days) * var(--year-in-second) / var(--years-relative) *
-                1s
-            );
-
-            animation: slideup var(--earth-duration) linear infinite;
-          }
-
-          #modeMatrix > .square {
-            animation: perimeter
-              calc(
-                var(--earth-days) * var(--year-in-second) /
-                  var(--years-relative) * 1s
-              )
-              ease-in-out infinite;
-          }
-
-          @keyframes slideup {
-            from,
-            to,
-            47%,
-            56% {
-              top: 0;
-              bottom: 0;
-            }
-            50% {
-              top: 10px;
-            }
-          }
-
-          @keyframes perimeter {
-            from,
-            47%,
-            53%,
-            to {
-              scale: 1;
-              border-radius: 1%;
-            }
-            50% {
-              scale: 1.08;
-              border-radius: 0%;
-            }
-          }
-        `}
-			</style>
-
 			<div
 				id="modeMatrix"
 				className="inline-grid 
@@ -225,9 +159,7 @@ const BackdropGridLines = () => {
 				md:grid-cols-6
 				md:grid-rows-8
 				dark:brightness-[80%] 
-				disabled:[&>*]:aspect-square 
 				inset-0 
-				[&>*]:bg-white
 				dark:[&>*]:bg-on-primary
 				-z-40 
 				absolute 
@@ -240,24 +172,23 @@ const BackdropGridLines = () => {
 						className="absolute 
 						aspect-square 
 						overflow-visible 
-						h-[500px] 
+						h-[600px] 
 						bg-gradient-to-t 
 						from-gray1 
 						to-yellow-500 
 						dark:from-on-primary 
-						dark:to-green-400 
+						dark:to-green-300 
 						left-1/2 
-						top-[61.8%] 
-						md:bottom-[0%] 
+						-bottom-[61.80vh]
 						disabled:top-1/2 
 						-translate-x-1/2 
 						-translate-y-1/2 
-						rounded-[50%] 
-						blur-3xl 
-						dark:brightness-[95%] 
-						opacity-90 
+						rounded-[20%] 
+						blur-2xl 
+						dark:brightness-[99%] 
+						opacity-100 
 						-z-50"
-					></div>
+					/>
 				</>
 				<span className="square" />
 				<span className="square" />
@@ -314,6 +245,48 @@ const BackdropGridLines = () => {
 				<span className="square" />
 				<span className="square" />
 			</div>
+
+			<style jsx global>
+				{`
+          :root {
+            --square-margin: clamp(
+              0.25px,
+              1vw,
+              1px
+            ); /* automate to open the portal */
+            --earth-days: 365.2563;
+          }
+
+          #modeMatrix {
+            gap: 1.125px;
+          }
+
+          #modeMatrix > .square {
+            scale: 1;
+            aspect-ratio: 1 !important;
+            animation: perimeter
+              calc(
+                var(--earth-days) * var(--year-in-second) /
+                  var(--years-relative) * 0.5s
+              )
+              ease-in-out infinite;
+          }
+
+          @keyframes perimeter {
+            from,
+            35%,
+            65%,
+            to {
+              scale: 1.1;
+              border-radius: 15%; /* 2% works */
+            }
+            50% {
+              scale: 0.97;
+              border-radius: 1%;
+            }
+          }
+        `}
+			</style>
 		</>
 	);
 };

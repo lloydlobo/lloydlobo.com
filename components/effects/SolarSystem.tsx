@@ -4,10 +4,9 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {
-
 	return (
 		<>
-			<div className="relative top-40 inset-0 mx-auto" >
+			<div className="relative top-40 inset-0 mx-auto">
 				<div data-id="solar-system" className={`${styles.solar}`}>
 					<ThemeToggleWrapper>
 						<div className={`${styles.sun}`} />
@@ -25,7 +24,17 @@ export const SolarSystem = (props: {}) => {
 			</div>
 			<>
 				<div
-					className="absolute hidden aspect-square overflow-visible h-[500px] bg-gradient-to-t from-gray1 to-yellow-500 dark:from-on-primary dark:to-green-400 left-1/2 top-1/3 disabled:top-1/2  -translate-x-1/2 -translate-y-1/2 rounded-[50%] blur-3xl dark:brightness-[25%] opacity-90 -z-50"
+					className={`
+					absolute hidden 
+					aspect-square 
+					overflow-visible 
+					h-[500px] bg-gradient-to-t from-gray1 to-yellow-500 
+					dark:from-on-primary dark:to-green-400 
+					left-1/2 top-1/3 disabled:top-1/2  
+					-translate-x-1/2 -translate-y-1/2 
+					rounded-[50%] blur-3xl 
+					dark:brightness-[25%] opacity-90 -z-50
+					`}
 				></div>
 			</>
 		</>
@@ -33,10 +42,9 @@ export const SolarSystem = (props: {}) => {
 };
 
 type Props = {
-	children: ReactNode
-}
+	children: ReactNode;
+};
 export const ThemeToggleWrapper = (items: Props) => {
-
 	const [mounted, setMounted] = useState(false);
 	const { theme, setTheme } = useTheme();
 	const [dropdown, setDropdown] = useState(false);
@@ -66,12 +74,9 @@ export const ThemeToggleWrapper = (items: Props) => {
 
 	return (
 		<>
-			<button
-				className=""
-				onClick={(e) => switchTheme(e)}
-			>
+			<button className="" onClick={(e) => switchTheme(e)}>
 				{items.children}
 			</button>
 		</>
-	)
-}
+	);
+};
