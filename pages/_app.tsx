@@ -1,5 +1,6 @@
 // pages/_app.tsx
 
+import { SessionProvider } from "next-auth/react"
 import localFont from 'next/font/local'
 import { ThemeProvider } from "next-themes";
 import "../styles/globals.css";
@@ -17,16 +18,21 @@ const ibmRegular = localFont({
   variable: '--font-ibm',
 });
 
-export default function MyApp({ Component, pageProps }) {
+
+
+// export default function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
-      <ThemeProvider attribute={"class"}
-        forcedTheme={Component.theme || null}
-      >
-        <div className={`${ibmRegular.variable} font-serif ${charterRegularFont.variable}`}>
-          <Component {...pageProps} />
-        </div>
-      </ThemeProvider>
+      <SessionProvider session={session}>
+        <ThemeProvider attribute={"class"}
+          forcedTheme={Component.theme || null}
+        >
+          <div className={`${ibmRegular.variable} font-serif ${charterRegularFont.variable}`}>
+            <Component {...pageProps} />
+          </div>
+        </ThemeProvider>
+      </SessionProvider>
     </>
 
   );

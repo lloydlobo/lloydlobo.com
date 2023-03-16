@@ -14,6 +14,7 @@ specifiers:
   next: latest
   next-auth: ^4.20.1
   next-themes: ^0.2.1
+  nodemailer: ^6.9.1
   postcss: ^8.4.21
   prettier: ^2.8.4
   prettier-plugin-tailwindcss: ^0.2.3
@@ -30,8 +31,9 @@ dependencies:
   '@heroicons/react': 2.0.16_react@18.2.0
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
-  next-auth: 4.20.1_ld2jel3hspngo3u5lti2kgl2sq
+  next-auth: 4.20.1_3tbpwx46tlrk4rci3doelizria
   next-themes: 0.2.1_ld2jel3hspngo3u5lti2kgl2sq
+  nodemailer: 6.9.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
@@ -565,7 +567,7 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /next-auth/4.20.1_ld2jel3hspngo3u5lti2kgl2sq:
+  /next-auth/4.20.1_3tbpwx46tlrk4rci3doelizria:
     resolution: {integrity: sha512-ZcTUN4qzzZ/zJYgOW0hMXccpheWtAol8QOMdMts+LYRcsPGsqf2hEityyaKyECQVw1cWInb9dF3wYwI5GZdEmQ==}
     peerDependencies:
       next: ^12.2.5 || ^13
@@ -581,6 +583,7 @@ packages:
       cookie: 0.5.0
       jose: 4.13.1
       next: 13.2.4_biqbaboplfbrettd7655fr4n2y
+      nodemailer: 6.9.1
       oauth: 0.9.15
       openid-client: 5.4.0
       preact: 10.13.1
@@ -652,6 +655,11 @@ packages:
   /node-releases/2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
     dev: true
+
+  /nodemailer/6.9.1:
+    resolution: {integrity: sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA==}
+    engines: {node: '>=6.0.0'}
+    dev: false
 
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import { ClockNav } from "@/pages";
+import { useSession, signIn, signOut } from "next-auth/react"
 import {
   DockNavigation,
   ThemeDropdown,
@@ -47,6 +48,21 @@ const Layout = ({ children, title = "This is the default title" }: Props) => {
 
 export default Layout;
 
+export function AuthComponent() {
+  const { data: session } = useSession()
+  if (session) {
+    return <>
+      Signed in as {session.user.email} <br />
+      <button onClick={() => signOut()}>Sign out</button>
+    </>
+  }
+  return <>
+    Not signed in <br />
+    <button onClick={() => signIn()}>Sign in</button>
+  </>
+}
+
+
 export const Navigation = (props: {}) => {
   return (
     <div className="px-6 lg:px-0 md:max-w-screen-sm mx-auto">
@@ -65,9 +81,11 @@ export const Navigation = (props: {}) => {
         <Link className="after:hidden" href="/work">
           Work
         </Link>
-        <Link className="after:hidden" href="/contact">
+        <Link className="after:hidden hidden" href="/contact">
           Contact
         </Link>
+        <AuthComponent />
+
         <Link className="after:hidden" href="/shop">
           Shop
         </Link>
