@@ -168,27 +168,7 @@ const BackdropGridLines = () => {
 				max-h-screen"
 			>
 				<>
-					<div
-						className="absolute 
-						aspect-square 
-						overflow-visible 
-						h-[600px] 
-						bg-gradient-to-t 
-						from-gray1 
-						to-yellow-500 
-						dark:from-on-primary 
-						dark:to-green-300 
-						left-1/2 
-						-bottom-[61.80vh]
-						disabled:top-1/2 
-						-translate-x-1/2 
-						-translate-y-1/2 
-						rounded-[20%] 
-						blur-2xl 
-						dark:brightness-[99%] 
-						opacity-100 
-						-z-50"
-					/>
+					<div id="solarGlare" className="absolute aspect-square blur-2xl -z-50" />
 				</>
 				<span className="square" />
 				<span className="square" />
@@ -250,15 +230,15 @@ const BackdropGridLines = () => {
 				{`
           :root {
             --square-margin: clamp(
-              0.25px,
+              0.328px,
               1vw,
-              1px
+              1.618px
             ); /* automate to open the portal */
             --earth-days: 365.2563;
           }
 
           #modeMatrix {
-            gap: 1.125px;
+            gap: 1.132px;
           }
 
           #modeMatrix > .square {
@@ -270,19 +250,65 @@ const BackdropGridLines = () => {
                   var(--years-relative) * 0.5s
               )
               ease-in-out infinite;
+              outline: 1px dotted #00ff0010;
           }
+
 
           @keyframes perimeter {
             from,
             35%,
             65%,
             to {
-              scale: 1.1;
-              border-radius: 15%; /* 2% works */
+              scale: 1.01;
+              border-radius: 1%; /* 2% works */
+              outline: 1px dotted #00ff0010;
+              border: var(--square-margin) dotted #11111190;
             }
             50% {
               scale: 0.97;
               border-radius: 1%;
+              outline: 0px solid #00ff0005;
+              // border: calc(var(--square-margin) * 4px) ridge #11aa1140;
+              border: calc(var(--square-margin) * 4px) ridge #11101170;
+            }
+          }
+
+          #solarGlare{
+            left: 50%;
+            top: 50%;
+            right: 50%;
+            bottom: 50%;
+            margin-top: 33vh;
+            position: absolute;
+            height: clamp(200px, 40vw, 500px);
+            aspect-ratio: 1;
+            translate: -50% -50%;
+            border-radius: 100%;
+            --on-primary: rgb(17 16 17);
+            --tw-bg-opacity: 1;
+            --bg-green-300: rgb(134 239 172 / var(--tw-bg-opacity));
+            --bg-green-400: rgb(74 222 128 / var(--tw-bg-opacity));
+            background: linear-gradient(
+              to right,
+              pink,
+              aquamarine,
+              var(--bg-green-400)
+            );
+            animation: rotate var(--timing-mouse-duration, 30s) infinite;
+          }
+
+          @keyframes rotate {
+            from {
+              rotate: 0deg;
+            }
+            50% {
+              --golden-ratio: 1.618;
+              --pi: 3.14;
+              // scale: 1 calc((sin(var(--golden-ratio) / var(--pi))));
+              scale: 1.1 1;
+            }
+            to {
+              rotate: 360deg;
             }
           }
         `}
