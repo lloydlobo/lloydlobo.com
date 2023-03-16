@@ -1,9 +1,35 @@
 // pages/_app.tsx
-
 import { SessionProvider } from "next-auth/react";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
+
 import "../styles/globals.css";
+
+import type { AppProps } from "next/app";
+import type { Session } from "next-auth";
+
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
+  // : AppProps<{ session: Session }>
+  return (
+    <>
+      <SessionProvider session={session}>
+        <ThemeProvider
+          attribute={"class"}
+          forcedTheme={Component.theme || null}
+        >
+          <div
+            className={`${ibmRegular.variable} font-serif ${charterRegularFont.variable}`}
+          >
+            <Component {...pageProps} />
+          </div>
+        </ThemeProvider>
+      </SessionProvider>
+    </>
+  );
+}
 
 // Font files can be colocated inside of `pages`
 const charterRegularFont = localFont({
@@ -11,39 +37,19 @@ const charterRegularFont = localFont({
   variable: "--font-charter",
 });
 const ibmRegular = localFont({
+  variable: "--font-ibm",
   src: [
     {
       path: "./fonts/ibm-plex/IBMPlexSans-Regular.otf",
       weight: "400",
       style: "normal",
     },
-    // { path: './fonts/ibm-plex/IBMPlexSans-Bold.otf', weight: '700', style: 'bold', },
-    // { path: './fonts/ibm-plex/IBMPlexSans-Italic.otf', weight: '400', style: 'italic', },
   ],
-  variable: "--font-ibm",
 });
+
 
 // https://memo-todo.vercel.app/login
 // TODO: Refer to the `<Auth/>` componenet to redirect unauthorized access.
-
 // TODO: Next-auth example typescript https://github.com/nextauthjs/next-auth-example
-
-// export default function MyApp({ Component, pageProps }) {
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
-  return (
-    <>
-      <ThemeProvider attribute={"class"} forcedTheme={Component.theme || null}>
-        <SessionProvider session={session}>
-          <div
-            className={`${ibmRegular.variable} font-serif ${charterRegularFont.variable}`}
-          >
-            <Component {...pageProps} />
-          </div>
-        </SessionProvider>
-      </ThemeProvider>
-    </>
-  );
-}
+// Use of the <SessionProvider> is mandatory to allow components that call
+// `useSession()` anywhere in your application to access the `session` object.

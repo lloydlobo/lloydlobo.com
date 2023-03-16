@@ -5,15 +5,16 @@ export default function AccessDenied() {
     <>
       <h1>Access Denied</h1>
       <p>
-        <a href="/api/auth/signin"
+        <a
+          href="/api/auth/signin"
           onClick={(e) => {
             e.preventDefault();
             signIn();
-          }}>
+          }}
+        >
           You must be signed in to view this page
         </a>
       </p>
     </>
-  )
+  );
 }
-

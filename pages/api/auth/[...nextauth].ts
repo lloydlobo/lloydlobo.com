@@ -1,10 +1,17 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
-import TwitterProvider from "next-auth/providers/twitter"
-import Auth0Provider from "next-auth/providers/auth0"
-// import AppleProvider from "next-auth/providers/apple";
+import TwitterProvider from "next-auth/providers/twitter";
+import Auth0Provider from "next-auth/providers/auth0";
 // import EmailProvider from "next-auth/providers/email";
+// import AppleProvider from "next-auth/providers/apple";
+
+// import type { Adapter } from "next-auth/adapters"
+// function MyAdapter(): Adapter {
+//   return {
+//     // your adapter methods here
+//   }
+// }
 
 export const authOptions: NextAuthOptions = {
   // OAuth authentication providers...
@@ -15,8 +22,8 @@ export const authOptions: NextAuthOptions = {
     // }),
     // Passwordless / email sign in
     // EmailProvider({
-    //   server: process.env.MAIL_SERVER,
-    //   from: "NextAuth.js <no-reply@example.com>",
+    //   server: process.env.EMAIL_SERVER,
+    //   from: process.env.EMAIL_FROM,
     // }),
     FacebookProvider({
       clientId: process.env.FACEBOOK_ID,
@@ -41,8 +48,8 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async jwt({ token }) {
-      token.userRole = "admin"
-      return token
+      token.userRole = "admin";
+      return token;
     },
   },
 };
