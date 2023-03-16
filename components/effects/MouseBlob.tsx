@@ -20,11 +20,11 @@ export function MouseBlob() {
       );
     };
 
-    return () => { };
+    return () => {};
   }, []);
   return (
     <>
-      <div className="-z-50 brightness-110 dark:brightness-50 blur-[48px] w-screen min-h-screen absolute">
+      <div className="absolute -z-50 min-h-screen w-screen blur-[48px] brightness-110 dark:brightness-50">
         <div
           id="blob"
           className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40

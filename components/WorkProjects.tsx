@@ -73,10 +73,10 @@ export const WorkProjects = () => {
         const rect = link.getBoundingClientRect();
         const img = link.querySelector("img");
         img.style.left = `${event.clientX - rect.left}px`;
-        img.style.top = `${event.clientY - (rect.top * 1.618)}px`;
+        img.style.top = `${event.clientY - rect.top * 1.618}px`;
       };
     }
-    return () => { };
+    return () => {};
   }, []);
 
   let hasBorders = false;
@@ -125,13 +125,13 @@ export const WorkProjects = () => {
         <nav
           id="navProjects"
           // className="grid backdrop-blur-sm prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3"
-          className="grid backdrop-blur-sm prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-2"
+          className="prose-sm grid grid-cols-2 gap-2 py-4 backdrop-blur-sm lg:grid-cols-2"
         >
           {repos.map(({ username, repo, tags, description, img }, index) => (
             <a
               key={`url-${username}-${repo}`}
               href={`https://github.com/${username}/${repo}/`}
-              className="after:hidden relative prose-img:hover:opacity-40 hover:backdrop-brightness-[106%] dark:hover:backdrop-brightness-125 hover:shadow-white/10 hover:bg-opacity-10 transition-all duration-500 delay-0 ease-out  dark:bg-on-primary/30 bg-gray1/30 shadow dark:shadow-gray7/60 px-4 p-2 disabled:lg:pb-4 rounded"
+              className="delay-0 relative rounded bg-gray1/30 p-2 px-4 shadow transition-all duration-500 ease-out after:hidden  hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40 dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125 disabled:lg:pb-4"
             >
               <div>
                 <h3 className={`mt-0`}>{repo}</h3>
@@ -139,8 +139,9 @@ export const WorkProjects = () => {
                   {repo === "hackernews-clone" ? "Coming soon..." : description}
                 </p>
                 <div
-                  className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
-                    } mt-2 flex gap-2 text-[12px] `}
+                  className={`hidden ${
+                    repo === "hackernews-clone" ? "blur" : ""
+                  } mt-2 flex gap-2 text-[12px] `}
                 >
                   {tags.map((tag, index) => (
                     <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>

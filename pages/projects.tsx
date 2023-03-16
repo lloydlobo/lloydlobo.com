@@ -22,7 +22,7 @@ export default function Projects(props: {}) {
               </Section>
             </div>
 
-            <div className={`mx-auto space-y-20 lg:space-y-28 mt-8`}>
+            <div className={`mx-auto mt-8 space-y-20 lg:space-y-28`}>
               <Section>
                 <article>
                   <WorkProjects />

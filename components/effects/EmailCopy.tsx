@@ -16,17 +16,17 @@ export const EmailCopy = () => {
   return (
     <div>
       <div>
-        <div className="grid font-medium rounded-full">{email}</div>
+        <div className="grid rounded-full font-medium">{email}</div>
         <button
-          className="flex items-baseline flex-row-reverse prose-sm gap-0.5 text-end "
+          className="prose-sm flex flex-row-reverse items-baseline gap-0.5 text-end "
           onClick={copyToClipboard}
         >
           {isCopied ? (
-            <span className="text-green-400 dark:text-primary uppercase">
+            <span className="uppercase text-green-400 dark:text-primary">
               Copied
             </span>
           ) : (
-            <span className="uppercase font-bold tracking-wider decoration-green-400 dark:decoration-accent underline-offset-8">
+            <span className="font-bold uppercase tracking-wider decoration-green-400 underline-offset-8 dark:decoration-accent">
               Copy{" "}
             </span>
           )}
@@ -36,8 +36,9 @@ export const EmailCopy = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`${isCopied ? "text-green-400 dark:text-primary" : "brightness-75"
-              }
+            className={`${
+              isCopied ? "text-green-400 dark:text-primary" : "brightness-75"
+            }
               h-4 w-4`}
           >
             <path

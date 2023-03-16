@@ -75,22 +75,22 @@ export default function WorkPage() {
           </Section>
         </div>
 
-        <div className={`mx-auto space-y-20 lg:space-y-28 mt-8`}>
+        <div className={`mx-auto mt-8 space-y-20 lg:space-y-28`}>
           <Section>
             <article>
               <div className="mx-auto w-full dark:text-secondary">
-                <div className="relative space-y-6 mx-auto w-full">
-                  <div className="w-48 hidden border-b-[1px] dark:border-tertiary"></div>
+                <div className="relative mx-auto w-full space-y-6">
+                  <div className="hidden w-48 border-b-[1px] dark:border-tertiary"></div>
                   {/* Better to put this in the about page */}
                   <p className="hidden">
                     If you're browsing this page it means you probably wish to
                     know more about me. Wish granted.
                   </p>
-                  <span className="md:absolute hover:opacity-100 opacity-0 text-sm w-full pt-[3px] origin-left -right-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50">
+                  <span className="-right-[calc(192px_+_0.5rem)] w-full origin-left pt-[3px] text-sm opacity-0 brightness-50 hover:opacity-100 md:absolute md:max-w-[calc(192px_+_0vw)]">
                     TLDR for the impatient people...
                   </span>
                   <p className="relative w-fit">
-                    <span className="md:absolute  text-sm w-full pt-[3px] origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)] brightness-50 hidden">
+                    <span className="-left-[calc(192px_+_0.5rem)]  hidden w-full origin-left pt-[3px] text-sm brightness-50 md:absolute md:max-w-[calc(192px_+_0vw)]">
                       (tldr){" "}
                     </span>
                     I'm <span className="dark:text-dim">Lloyd</span>, a software
@@ -111,7 +111,7 @@ export default function WorkPage() {
                   </p>
 
                   <p>
-                    <span className="md:absolute text-sm w-full pt-[3px] dark:text-dim origin-left -left-[calc(192px_+_0.5rem)] md:max-w-[calc(192px_+_0vw)]">
+                    <span className="-left-[calc(192px_+_0.5rem)] w-full origin-left pt-[3px] text-sm dark:text-dim md:absolute md:max-w-[calc(192px_+_0vw)]">
                       Now...{" "}
                     </span>
                     Fearlessly exploring passions and interests with a drive to
@@ -127,7 +127,7 @@ export default function WorkPage() {
                     </Link>
                   </p>
 
-                  <div className="relative w-[100%] overflow-x-auto mx-auto hidden">
+                  <div className="relative mx-auto hidden w-[100%] overflow-x-auto">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
                       <p className="">
                         I'm a software developer who's passionate about building
@@ -147,20 +147,20 @@ export default function WorkPage() {
 
           <Section>
             <article>
-              <div className="relative space-y-9 w-full ">
-                <h2 className="flex w-48 ml-auto dark:text-tertiary uppercase text-sm items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-bold font-sans before:text-sm before:content-['01'] tracking-wider">
+              <div className="relative w-full space-y-9 ">
+                <h2 className="ml-auto flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-tertiary/90 pb-2 text-end font-sans text-sm font-bold uppercase tracking-wider before:text-sm before:content-['01'] dark:text-tertiary">
                   Selected Projects
                 </h2>
 
-                <div className="mx-auto gap-4 grid backdrop-blur-[0px] relative">
+                <div className="relative mx-auto grid gap-4 backdrop-blur-[0px]">
                   {PROJECTS.map(
                     ({ username, repo, tags, description, img }, index) => (
                       <div key={`project-${repo}-${index}`}>
                         <a
                           href={`https://github.com/${username}/${repo}`}
-                          className="rounded opacity-[61%] px-3 hover:blur-0 hover:opacity-100 [&>.tags]:hover:opacity-75 after:opacity-0 inline-flex pb-3 items-start relative transition-all duration-300 ease-in-out delay-100"
+                          className="relative inline-flex items-start rounded px-3 pb-3 opacity-[61%] transition-all delay-100 duration-300 ease-in-out after:opacity-0 hover:opacity-100 hover:blur-0 [&>.tags]:hover:opacity-75"
                         >
-                          <p className="tags flex gap-2 absolute lowercase transition-all w-full delay-200 duration-300 ease-in opacity-0 top-[1ch] brightness-90 prose-sm">
+                          <p className="tags prose-sm absolute top-[1ch] flex w-full gap-2 lowercase opacity-0 brightness-90 transition-all delay-200 duration-300 ease-in">
                             {tags.map((tag, idx) => (
                               <span
                                 key={`tag-${tag}-{${idx}}`}
@@ -170,33 +170,33 @@ export default function WorkPage() {
                               </span>
                             ))}
                           </p>
-                          <div className="flex gap-x-2 dark:text-tertiary relative w-full prose-base items-center ">
+                          <div className="prose-base relative flex w-full items-center gap-x-2 dark:text-tertiary ">
                             {/* Make a component for this modal thingy img */}
                             <div className="flex flex-1 items-baseline gap-x-2">
-                              <span className="flex-shrink-0 dark:text-primary prose-lg ">
+                              <span className="prose-lg flex-shrink-0 dark:text-primary ">
                                 {repo}
                               </span>
-                              <span className="hidden text-tertiary lg:flex text-clip brightness-75 flex-shrink-0 truncate">
+                              <span className="hidden flex-shrink-0 truncate text-clip text-tertiary brightness-75 lg:flex">
                                 {description}
                               </span>
-                              <span className="lg:hidden text-secondary prose-sm max-w-[44vw] flex brightness-75 flex-shrink-0 truncate">
+                              <span className="prose-sm flex max-w-[44vw] flex-shrink-0 truncate text-secondary brightness-75 lg:hidden">
                                 {description}
                               </span>
-                              <div className="after:content-[''] text-primary min-w-[2vw] after:relative after:ml-auto w-full opacity-75 after:opacity-75 relative border-t-[0.1px] blur-[0.1px] z-10 backdrop-blur-[1px] -top-1 brightness-50 flex"></div>
+                              <div className="relative -top-1 z-10 flex w-full min-w-[2vw] border-t-[0.1px] text-primary opacity-75 blur-[0.1px] brightness-50 backdrop-blur-[1px] after:relative after:ml-auto after:opacity-75 after:content-['']"></div>
                             </div>
-                            <span className="brightness-75 text-secondary dark:text-current">
+                            <span className="text-secondary brightness-75 dark:text-current">
                               2023
                             </span>
                           </div>
                         </a>
-                        <div className="w-full hidden [&>img]:hover:opacity-80 h-full absolute">
+                        <div className="absolute hidden h-full w-full [&>img]:hover:opacity-80">
                           <Image
                             // loader={myLoader}
                             src={`/img/projects/${img}`}
                             alt={`project image of ${repo}`}
                             width={500}
                             height={500}
-                            className={`absolute opacity-0 right-[50vw] top-0 transition-none duration-700 delay-300 ease-in-out w-full brightness-50 grayscale-[90%] z-50`}
+                            className={`absolute right-[50vw] top-0 z-50 w-full opacity-0 brightness-50 grayscale-[90%] transition-none delay-300 duration-700 ease-in-out`}
                           />
                         </div>
                       </div>
@@ -210,11 +210,11 @@ export default function WorkPage() {
           <Section>
             <article>
               <div className="relative mx-auto w-full">
-                <h2 className="dark:text-tertiary text-sm w-48 uppercase font-sans font-bold flex items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 text-start after:text-sm after:content-['02']  tracking-wider">
+                <h2 className="flex w-48 items-baseline justify-between place-self-start border-b-[2px] border-secondary/90 text-start font-sans text-sm font-bold uppercase tracking-wider after:text-sm after:content-['02']  dark:text-tertiary">
                   About
                 </h2>
 
-                <h3 className="dark:text-primary text-4xl">
+                <h3 className="text-4xl dark:text-primary">
                   Developer by trade,
                   <br />
                   creator by heart
@@ -230,7 +230,7 @@ export default function WorkPage() {
 
                 <div className="grid grid-cols-1 gap-[1ch]">
                   <div className="">
-                    <h3 className="prose-base border-t tracking-wider font-bold border-tertiary uppercase dark:text-tertiary font-sans">
+                    <h3 className="prose-base border-t border-tertiary font-sans font-bold uppercase tracking-wider dark:text-tertiary">
                       Expertise
                     </h3>
                     <div className={`[&>*]:prose-base dark:text-secondary`}>
@@ -240,7 +240,7 @@ export default function WorkPage() {
                     </div>
                   </div>
                   <div className="">
-                    <h3 className="prose-base tracking-wider uppercase border-t border-tertiary dark:text-tertiary/80 font-bold font-sans">
+                    <h3 className="prose-base border-t border-tertiary font-sans font-bold uppercase tracking-wider dark:text-tertiary/80">
                       Tech Stacks
                     </h3>
                     <div className={`[&>*]:prose-base dark:text-secondary`}>
@@ -258,11 +258,11 @@ export default function WorkPage() {
 
           <Section>
             <article className="pb-12">
-              <h2 className="flex ml-auto w-48 items-baseline dark:text-tertiary text-sm uppercase font-sans justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-medium before:text-sm before:content-['03'] mb-16 lg:mb-20 tracking-wider">
+              <h2 className="ml-auto mb-16 flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-sans text-sm font-medium uppercase tracking-wider before:text-sm before:content-['03'] dark:text-tertiary lg:mb-20">
                 Connect
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
-                <h3 className="text-4xl max-w-md mr-auto leading-9 dark:text-primary">
+                <h3 className="mr-auto max-w-md text-4xl leading-9 dark:text-primary">
                   Let's talk about a project, collaboration or an idea you may
                   have
                 </h3>
@@ -271,7 +271,7 @@ export default function WorkPage() {
                     className={`relative w-full -rotate-45 scale-75 md:scale-100 lg:-rotate-[55deg]`}
                   >
                     <div
-                      className={`absolute bottom-40 left-[30%] h-1/2 brightness-50 saturate-50 dark:saturate-100 text-green-400 dark:text-secondary -translate-x-1/2 lg:bottom-56`}
+                      className={`absolute bottom-40 left-[30%] h-1/2 -translate-x-1/2 text-green-400 brightness-50 saturate-50 dark:text-secondary dark:saturate-100 lg:bottom-56`}
                     >
                       <WritingArrowDown />
                     </div>

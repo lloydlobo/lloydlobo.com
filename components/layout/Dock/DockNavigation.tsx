@@ -11,9 +11,9 @@ const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
 
 function DockNav() {
   return (
-    <nav className="z-50 fixed bottom-5 left-0 right-0">
-      <div className="border divider-gray6/40 divide-gray4/30 px-4 py-3 divide-x gap-2 border-opacity-10 rounded-full border-secondary/10 w-fit mx-auto bg-opacity-40 backdrop-blur-[1.5px]">
-        <div className="dock [&>*]:after:hidden [&>*]:hover:bg-transparent relative dark:text-primary grid grid-flow-col w-[200px] justify-between gap-4 place-items-center">
+    <nav className="fixed bottom-5 left-0 right-0 z-50">
+      <div className="divider-gray6/40 mx-auto w-fit gap-2 divide-x divide-gray4/30 rounded-full border border-secondary/10 border-opacity-10 bg-opacity-40 px-4 py-3 backdrop-blur-[1.5px]">
+        <div className="dock relative grid w-[200px] grid-flow-col place-items-center justify-between gap-4 dark:text-primary [&>*]:after:hidden [&>*]:hover:bg-transparent">
           <HomeIcon />
           <WorkIcon />
           <GithubIcon />
@@ -67,7 +67,7 @@ export function ThemeDropdown() {
           // className={`${dropdown ? "opacity-100" : "opacity-0 left-[200vw]" } top-8 z-10`}
           className={`${dropdown ? "block" : "hidden"}`}
         >
-          <div className="py-0.5 absolute right-0 top-8 backdrop-blur-sm divide-gray4/30 rounded-md grid max-h-[100px] divide-y text-start">
+          <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start backdrop-blur-sm">
             {themeModes.map(({ name, icon }, index) => (
               <button
                 onClick={(e) => switchTheme(e)}
@@ -75,7 +75,7 @@ export function ThemeDropdown() {
                 aria-label={`Activate ${name} mode`}
                 key={`theme-${name}-${index}`}
                 disabled={disabled}
-                className="flex cursor-pointer hover:backdrop-brightness-150 dark:bg-transparent hover:bg-green-400 dark:hover:backdrop-brightness-200 dark:hover:bg-gray1/10 px-2 text-center py-2 divide-white gap-x-2 w-full"
+                className="flex w-full cursor-pointer gap-x-2 divide-white px-2 py-2 text-center hover:bg-green-400 hover:backdrop-brightness-150 dark:bg-transparent dark:hover:bg-gray1/10 dark:hover:backdrop-brightness-200"
               >
                 <>
                   <div className="scale-100 brightness-75">{icon}</div>
@@ -129,7 +129,7 @@ const HomeIcon = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="h-6 w-6"
       >
         <path
           strokeLinecap="round"
@@ -157,7 +157,7 @@ const WorkIcon = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="h-6 w-6"
       >
         <path
           strokeLinecap="round"
@@ -214,11 +214,11 @@ export const ThemeSwitch = () => {
     <>
       <div
         onClick={handleMode}
-        className="flex brightness-75 cursor-pointer items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
+        className="flex cursor-pointer items-center font-semibold underline decoration-accent underline-offset-8 brightness-75 hover:text-accent"
       >
         {mounted ? (
           <button
-            className="w-6 z-10 flex items-center justify-center h-6 rounded bg-primary"
+            className="z-10 flex h-6 w-6 items-center justify-center rounded bg-primary"
             id="dark"
           >
             <FaSun />
@@ -408,7 +408,7 @@ const MailIcon = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6"
+        className="h-6 w-6"
       >
         <path
           strokeLinecap="round"

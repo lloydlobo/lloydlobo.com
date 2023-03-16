@@ -24,7 +24,7 @@ export const SearchBar = () => {
       <div className={`relative`}>
         <input
           type="text"
-          className={`py-3 px-12 bg-white glass border backdrop-blur-sm rounded-full relative`}
+          className={`glass relative rounded-full border bg-white py-3 px-12 backdrop-blur-sm`}
           onChange={handleSearch}
         />
         <div className={`absolute top-0 py-3 px-3`}>
@@ -34,7 +34,7 @@ export const SearchBar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"
@@ -51,7 +51,7 @@ export const SearchBar = () => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="h-6 w-6"
           >
             <path
               strokeLinecap="round"
@@ -68,7 +68,7 @@ export const SearchBar = () => {
         {searchResults.map((result) => (
           <div
             key={result.id}
-            className={`w-full px-2 space-y-1 bg-white/30 glass divide-y-2 shadow backdrop-blur-sm grid`}
+            className={`glass grid w-full space-y-1 divide-y-2 bg-white/30 px-2 shadow backdrop-blur-sm`}
           >
             <a
               target="none"

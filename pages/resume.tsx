@@ -9,72 +9,72 @@ const ResumePage = () => {
     <>
       <Layout>
         <main
-          className={`isolate ${styles.resume} mx-auto pt-8 md:pt-16 md:px-4 my-6 
-         shadow-2xl shadow-dim dark:shadow-on-tertiary [&_ul]:text-gray7 dark:[&_ul]:text-dim 
-dark:text-tertiary  
+          className={`isolate ${styles.resume} mx-auto my-6 pt-8 shadow-2xl shadow-dim 
+         dark:text-tertiary dark:shadow-on-tertiary md:px-4 md:pt-16 [&_ul]:text-gray7 
+dark:[&_ul]:text-dim  
 `}
         >
           <Suspense fallback={<Loading />}>
-            <div className="space-y-6 origin-top lg:px-36 scale-[75%] lg:scale-100  ">
+            <div className="origin-top scale-[75%] space-y-6 lg:scale-100 lg:px-36  ">
               {/* Lobo résumé — page 1 of 2 */}
               <div
-                className={`font-serif [&>*]:text-sm lg:px-6  mx-auto divide-y-2 space-y-6 divide-dim`}
+                className={`mx-auto space-y-6 divide-y-2  divide-dim font-serif lg:px-6 [&>*]:text-sm`}
               >
-                <section className="font-sans uppercase text-center grid w-fit mx-auto">
+                <section className="mx-auto grid w-fit text-center font-sans uppercase">
                   <h1 className="text-2xl font-medium tracking-[0.2em]">
                     Lloyd Lobo
                   </h1>
-                  <p className=" tracking-[0.11em] text-xs">
+                  <p className=" text-xs tracking-[0.11em]">
                     1234 Penny Lane, Earth City 1111111
                   </p>
-                  <div className="md:flex text-[0.7rem] mx-auto items-center gap-x-4">
+                  <div className="mx-auto items-center gap-x-4 text-[0.7rem] md:flex">
                     <p className=" tracking-[0.10em]">(091) 111-1111</p>
-                    <p className=" tracking-[0.16em] flex flex-nowrap gap-x-[4px]">
+                    <p className=" flex flex-nowrap gap-x-[4px] tracking-[0.16em]">
                       <span>hello</span>@<span>lloydlobo.com</span>
                     </p>
                   </div>
                 </section>
                 <section>
                   <h2
-                    className={`${styles.h2} uppercase font-bold tracking-widest`}
+                    className={`${styles.h2} font-bold uppercase tracking-widest`}
                   >
                     Education
                   </h2>
-                  <div className="space-y-6 mt-2">
+                  <div className="mt-2 space-y-6">
                     <div>
-                      <h3 className={`${styles.h3} text-xl relative`}>
-                        <span className="after:content-['2018–2019'] after:right-0 after:absolute ">
+                      <h3 className={`${styles.h3} relative text-xl`}>
+                        <span className="after:absolute after:right-0 after:content-['2018–2019'] ">
                           Sri Aurobindo Centre for Communication and Arts
                         </span>
                       </h3>
                       <ul className={`${styles.ul} list-inside list-disc`}>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Cumulative GPA: 4.0
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Academic interests: audio recording and engineering,
                           music production, audio synthesis.
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Top of the batch
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className={`${styles.h3} text-xl relative`}>
-                        <span className="after:content-['2010–2014'] after:right-0 after:absolute">
+                      <h3 className={`${styles.h3} relative text-xl`}>
+                        <span className="after:absolute after:right-0 after:content-['2010–2014']">
                           SRM University
                         </span>
                       </h3>
                       <ul className={`${styles.ul} list-inside list-disc`}>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           BTech, Mechanical Engineering
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Extensive coursework in mechanical and robotic
                           automation.
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           SEC club
                         </li>
                       </ul>
@@ -83,30 +83,30 @@ dark:text-tertiary
                 </section>
                 <section>
                   <h2
-                    className={`${styles.h2} uppercase font-bold tracking-widest`}
+                    className={`${styles.h2} font-bold uppercase tracking-widest`}
                   >
                     Business Experience
                   </h2>
-                  <div className="space-y-6 mt-2">
+                  <div className="mt-2 space-y-6">
                     <div>
-                      <h3 className={`${styles.h3} text-xl relative`}>
-                        <span className="after:content-['2014-2018'] after:right-0 after:absolute">
+                      <h3 className={`${styles.h3} relative text-xl`}>
+                        <span className="after:absolute after:right-0 after:content-['2014-2018']">
                           Heat Master
                         </span>
                       </h3>
-                      <h4 className="italic text-[0.9rem] mb-1">
+                      <h4 className="mb-1 text-[0.9rem] italic">
                         Front-end Engineer & Accounts Manager
                       </h4>
                       <ul className={`${styles.ul} list-inside list-disc`}>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Performed independent research on numerous industries,
                           created new line of products
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           General operations and electric power panels
                           manufacturing{" "}
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Led company through reform with upgrades and standards
                         </li>
                       </ul>
@@ -115,29 +115,29 @@ dark:text-tertiary
                 </section>
                 <section>
                   <h2
-                    className={`${styles.h2} uppercase font-bold tracking-widest`}
+                    className={`${styles.h2} font-bold uppercase tracking-widest`}
                   >
                     Other Work Experience
                   </h2>
-                  <div className="space-y-6 mt-2">
+                  <div className="mt-2 space-y-6">
                     <div>
-                      <h3 className={`${styles.h3} text-xl relative`}>
-                        <span className="after:content-['2019-2020'] after:right-0 after:absolute">
+                      <h3 className={`${styles.h3} relative text-xl`}>
+                        <span className="after:absolute after:right-0 after:content-['2019-2020']">
                           Noisy Gates Studios
                         </span>
                       </h3>
-                      <h4 className="italic text-[0.9rem] mb-1">
+                      <h4 className="mb-1 text-[0.9rem] italic">
                         Assistant Audio Engineer
                       </h4>
                       <ul className={`${styles.ul} list-inside list-disc`}>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Setup brand design and created website to reach
                           clients
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Helped devise setting up for this music studio
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Handled general errands
                         </li>
                       </ul>
@@ -145,7 +145,7 @@ dark:text-tertiary
                   </div>
                 </section>
                 <section>
-                  <p className="text-center pt-6 brightness-75 font-sans tracking-widest uppercase">
+                  <p className="pt-6 text-center font-sans uppercase tracking-widest brightness-75">
                     Lobo résumé — page 1 of 2
                   </p>
                 </section>
@@ -154,29 +154,29 @@ dark:text-tertiary
               {/* Lobo résumé — page 2 of 2 */}
 
               <div
-                className={`font-serif [&>*]:text-sm lg:px-6 divide mx-auto divide-y space-y-6`}
+                className={`divide mx-auto space-y-6 divide-y font-serif lg:px-6 [&>*]:text-sm`}
               >
                 <div></div>
                 <section>
                   <h2
-                    className={`${styles.h2} uppercase font-bold tracking-widest`}
+                    className={`${styles.h2} font-bold uppercase tracking-widest`}
                   >
                     Expertise
                   </h2>
-                  <div className="space-y-6 mt-2">
+                  <div className="mt-2 space-y-6">
                     <div>
-                      <h3 className="text-xl font-medium after:content-[''] after:right-0 relative after:absolute">
+                      <h3 className="relative text-xl font-medium after:absolute after:right-0 after:content-['']">
                         {" "}
                       </h3>
-                      <h4 className="italic text-[0.9rem] mb-1"> </h4>
+                      <h4 className="mb-1 text-[0.9rem] italic"> </h4>
                       <ul className={`${styles.ul} list-inside list-disc`}>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Front-end development
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Web APIs - NodeJS, Actix Web
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           CLI Apps
                         </li>
                       </ul>
@@ -185,26 +185,26 @@ dark:text-tertiary
                 </section>
                 <section>
                   <h2
-                    className={`${styles.h2} uppercase font-bold tracking-widest`}
+                    className={`${styles.h2} font-bold uppercase tracking-widest`}
                   >
                     Tech stacks
                   </h2>
-                  <div className="space-y-6 mt-2">
+                  <div className="mt-2 space-y-6">
                     <div>
-                      <h3 className={`${styles.h3} text-xl relative`}>
-                        <span className="after:content-[''] after:right-0 after:absolute">
+                      <h3 className={`${styles.h3} relative text-xl`}>
+                        <span className="after:absolute after:right-0 after:content-['']">
                           {" "}
                         </span>
                       </h3>
-                      <h4 className="italic text-[0.9rem] mb-1"> </h4>
+                      <h4 className="mb-1 text-[0.9rem] italic"> </h4>
                       <ul className={`${styles.ul} list-inside list-disc`}>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           NextJS React JamStack
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Rust, Go, Python, JavaScript, TypeScript
                         </li>
-                        <li className="before:content-[''] before:pl-4">
+                        <li className="before:pl-4 before:content-['']">
                           Neovim, VS Code, bash
                         </li>
                       </ul>
@@ -212,7 +212,7 @@ dark:text-tertiary
                   </div>
                 </section>
                 <section>
-                  <p className="text-center brightness-75 py-6 font-sans tracking-widest uppercase">
+                  <p className="py-6 text-center font-sans uppercase tracking-widest brightness-75">
                     Lobo résumé — page 2 of 2
                   </p>
                 </section>
