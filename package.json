@@ -1,11 +1,15 @@
 {
   "private": true,
+  "description": "Personal website",
+  "repository": "https://github.com/lloydlobo/lloydlobo.com",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc"
   },
+  "homepage": "https://lloydlobo.vercel.app",
+  "author": "Lloyd Lobo <hello@lloydlobo.com>",
   "dependencies": {
     "@headlessui/react": "^1.7.12",
     "@heroicons/react": "^2.0.16",

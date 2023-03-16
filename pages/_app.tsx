@@ -18,21 +18,24 @@ const ibmRegular = localFont({
   variable: '--font-ibm',
 });
 
+// https://memo-todo.vercel.app/login
+// TODO: Refer to the `<Auth/>` componenet to redirect unauthorized access.
 
+// TODO: Next-auth example typescript https://github.com/nextauthjs/next-auth-example
 
 // export default function MyApp({ Component, pageProps }) {
 export default function App({ Component, pageProps: { session, ...pageProps } }) {
   return (
     <>
-      <SessionProvider session={session}>
-        <ThemeProvider attribute={"class"}
-          forcedTheme={Component.theme || null}
-        >
+      <ThemeProvider attribute={"class"}
+        forcedTheme={Component.theme || null}
+      >
+        <SessionProvider session={session}>
           <div className={`${ibmRegular.variable} font-serif ${charterRegularFont.variable}`}>
             <Component {...pageProps} />
           </div>
-        </ThemeProvider>
-      </SessionProvider>
+        </SessionProvider>
+      </ThemeProvider>
     </>
 
   );
