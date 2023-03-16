@@ -4,9 +4,25 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {
+  const [speed, setSpeed] = useState(30); // --year-in-second: 30; /* 30 seconds = 1 Earth year. */
+  // https://davidwalsh.name/css-variables-javascript
+
+
+  // TODO: use animate to delay the effect
+  const useUpdateSpeed = (e) => {
+    e.preventDefault();
+    document.documentElement.style.setProperty('--year-in-second', e.currentTarget.value);
+    setSpeed(Number(e.currentTarget.value))
+  }
+
   return (
     <>
       <div className="relative inset-0 top-40 mx-auto">
+      <div className="flex items-center prose-sm font-bold gap-2">
+        <input id="yearInSecond" min="2.0" max="120.0" onChange={(e) => useUpdateSpeed(e)} type="range" />
+        <label htmlFor="yearInSecond">{speed}s</label>
+      </div>
+
         <div data-id="solar-system" className={`${styles.solar}`}>
           <ThemeToggleWrapper>
             <div className={`${styles.sun}`} />

@@ -13,6 +13,21 @@
   /* --bg-logo-light: #f9b700; */
   --bg-logo-light: var(--bg-green-300);
   --bg-logo-dark: var(--bg-green-400);
+
+  /*TODO: Control this with javascript slider */
+  --year-in-second: 30; /* 30 seconds = 1 Earth year. */
+  --years-relative: 365.2563; /* relative to Earth */
+
+  /* Solar System variables  */
+  --pl-sun: 40px;
+  --orb-mercury: 70px;
+  --orb-venus: 100px;
+  --orb-earth: 145px;
+  --orb-mars: 190px;
+  --pl-mercury: 4px;
+  --pl-venus: 8px;
+  --pl-earth: 6px;
+  --pl-mars: 6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -34,19 +49,6 @@ html {
   scroll-behavior: smooth;
   @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
 
-  /*TODO: Control this with javascript slider */
-  --year-in-second: 30; /* 30 seconds = 1 Earth year. */
-  --years-relative: 365.2563; /* relative to Earth */
-  /* Solar System variables  */
-  --pl-sun: 40px;
-  --orb-mercury: 70px;
-  --orb-venus: 100px;
-  --orb-earth: 145px;
-  --orb-mars: 190px;
-  --pl-mercury: 4px;
-  --pl-venus: 8px;
-  --pl-earth: 6px;
-  --pl-mars: 6px;
 }
 
 @media all and (min-width: 1000px) {
