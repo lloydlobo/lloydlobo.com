@@ -121,10 +121,10 @@ div.solar {
     linear infinite;
 
   box-shadow: -9px 0 0 -8px #888;
-  border-radius: 100%;
-  border-width: 0.01px 0 0 0;
-  border-style: solid;
-  border-color: #cccccc50 transparent transparent transparent;
+  /* border-radius: 100%; */
+  /* border-width: 0.01px 0 0 0; */
+  /* border-style: solid; */
+  /* border-color: #cccccc50 transparent transparent transparent; */
 }
 
 .asteroid_belt {
