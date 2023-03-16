@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const PROJECTS = [
   {
@@ -64,52 +64,92 @@ const PROJECTS = [
 export const WorkProjects = () => {
   const repos = PROJECTS;
 
+  useEffect(() => {
+    const navProjects = document.getElementById("navProjects");
+    let links = navProjects.getElementsByTagName("a");
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i];
+      link.onmousemove = (event) => {
+        const rect = link.getBoundingClientRect();
+        const img = link.querySelector("img");
+        img.style.left = `${event.clientX - rect.left}px`;
+        img.style.top = `${event.clientY - rect.top}px`;
+      };
+    }
+    return () => { };
+  }, []);
+
   let hasBorders = false;
   let isCardLike = false;
   return (
     <>
       <>
-        {repos.map(({ username, repo, tags, description, img }, index) => (
-          <a
-            key={`url-${username}-${repo}`}
-            href={`https://github.com/${username}/${repo}/`}
-            className="after:hidden hover:backdrop-brightness-[106%] dark:hover:backdrop-brightness-125 hover:shadow-white/10 hover:bg-opacity-10 transition-all duration-500 delay-0 ease-out  dark:bg-on-primary/30 bg-gray1/30 shadow dark:shadow-gray7/60 px-4 p-2 disabled:lg:pb-4 rounded"
-          >
-            <h3 className={`mt-0`}>{repo}</h3>
+        <style jsx>{`
+          nav {
+            position: relative;
+            // padding: clamp(1rem, 5vw, 6rem);
+          }
+          nav > a {
+            position: relative;
+          }
+          nav > a > div {
+            position: relative;
+            z-index: 2;
+            display: block;
+            border-bottom: 1px solid transparent;
+            border-top: 1px solid transparent;
+          }
 
-            <p className="">
-              {repo === "hackernews-clone" ? "Coming soon..." : description}
-            </p>
+          nav > a:hover {
+            background: #111111;
+          }
 
-            <div
-              className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
-                } mt-2 flex gap-2 text-[12px]
-              `}
+          nav > a > img {
+            position: absolute;
+            filter: brightness(0.4);
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+            transition: transform 250ms, opacity 250ms;
+            pointer-events: none;
+            width: 200px !important;
+          }
+
+          nav > a:hover > img {
+            opacity: 0.75;
+            transform: translate(-50%, -50%) scale(1);
+          }
+        `}</style>
+
+        <nav
+          id="navProjects"
+          // className="grid backdrop-blur-sm prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3"
+          className="grid backdrop-blur-sm prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-2"
+        >
+          {repos.map(({ username, repo, tags, description, img }, index) => (
+            <a
+              key={`url-${username}-${repo}`}
+              href={`https://github.com/${username}/${repo}/`}
+              className="after:hidden relative prose-img:hover:opacity-40 hover:backdrop-brightness-[106%] dark:hover:backdrop-brightness-125 hover:shadow-white/10 hover:bg-opacity-10 transition-all duration-500 delay-0 ease-out  dark:bg-on-primary/30 bg-gray1/30 shadow dark:shadow-gray7/60 px-4 p-2 disabled:lg:pb-4 rounded"
             >
-              {tags.map((tag, index) => (
+              <div>
+                <h3 className={`mt-0`}>{repo}</h3>
+                <p className="">
+                  {repo === "hackernews-clone" ? "Coming soon..." : description}
+                </p>
                 <div
-                  key={`tag-${repo}-${tag}`}
-                // className="rounded-full bg-on-primary/0 disabled:px-2 underline decoration-accent/40 underline-offset-8 "
+                  className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
+                    } mt-2 flex gap-2 text-[12px] `}
                 >
-                  {tag}
+                  {tags.map((tag, index) => (
+                    <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </a>
-        ))}
+              </div>
+              <img src={`/img/projects/${img}`} />
+            </a>
+          ))}
+        </nav>
       </>
     </>
   );
 };
-
-/* <div className="mr-2  hidden flex-initial flex-shrink-0 origin-right scale-[.90] justify-center grayscale-[03%] sm:mr-3">
-              <img
-                src={img}
-                width="128"
-                height="128"
-                alt={`${repo} - ${description}`}
-                className={`
-            ${repo === "hackernews-clone" ? "blur" : ""}
-                aspect-square hidden scale-90 rounded-[2.2rem] object-cover disabled:brightness-[80%] saturate-150 sepia-[30%] sm:scale-100`}
-              />
-            </div> */
