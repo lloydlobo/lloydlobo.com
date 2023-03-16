@@ -36,7 +36,7 @@ export default function IndexPage() {
 					<main className="lg:top-0 z-10 relative -top-16">
 						<Section>
 							<article className=" py-0 disabled:lg:py-12 space-y-8">
-								<p className="prose-2xl disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
+								<p className="prose-xl md:prose-2xl disabled:[word-spacing:0.45ch] tracking-tight leading-8 md:leading-9 lowercase text-justify mx-auto font-medium gap-1">
 									<Link
 										href="/about"
 										className="tracking-wider dark:text-secondary"
