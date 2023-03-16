@@ -14,7 +14,6 @@ import styles from "./Header.module.css";
 // The approach used in this component shows how to build a sign in and sign out
 // component that works on pages which support both client and server side
 // rendering, and avoids any flash incorrect content on initial page load.
-//
 export default function Header() {
   return (
     <header className="z-50 disabled:py-4 ">
@@ -23,7 +22,7 @@ export default function Header() {
       </noscript>
 
       <div className="mx-auto md:max-w-screen-sm">
-        <div className="font-sans text-xs uppercase tracking-wider">
+        <div className={`${styles.authbar} font-sans text-xs uppercase tracking-wider`}>
           <AuthComponent />
         </div>
       </div>
@@ -52,11 +51,10 @@ function AuthComponent() {
   const { data: session, status } = useSession();
   const loading = status === "loading";
   return (
-    <div className={styles.signedInStatus}>
+    <div className={`${styles.signedInStatus}`}>
       <p
-        className={`nojs-show ${
-          !session && loading ? styles.loading : styles.loaded
-        }`}
+        className={`nojs-show ${!session && loading ? styles.loading : styles.loaded } 
+          `}
       >
         {!session && (
           <>
@@ -84,7 +82,18 @@ function AuthComponent() {
                 className={styles.avatar}
               />
             )}
-            <span className={styles.signedInText}></span>
+            <span className={styles.signedInText}>
+              <small>Signed in as</small>
+              <br />
+              <strong>{session.user.email ?? session.user.name}</strong>
+            </span>
+            <a href={`/api/auth/signout`} className={styles.button} onClick={(e) => {
+              e.preventDefault()
+              signOut();
+            }}
+            >
+              Sign out
+            </a>
           </>
         )}
       </p>
@@ -100,7 +109,10 @@ function Navigation(props: {}) {
           href="/"
           data-id="logo"
           className="logo h-full max-h-[1rem]  min-h-[1rem] w-full min-w-[1rem] max-w-[1rem] items-center place-self-center rounded-full bg-[var(--bg-logo-light)] after:hidden dark:bg-[var(--bg-logo-dark)] "
-        ></Link>
+        >
+          <span className="sr-only">Home</span>
+
+        </Link>
         <Link className="after:hidden" href="/about">
           About
         </Link>

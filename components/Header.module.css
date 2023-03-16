@@ -5,6 +5,33 @@
   width: 100%;
 }
 
+.authbar{
+  position: relative;
+  overflow: hidden;
+  /* background:#00000050; */
+}
+
+.authbar::before,
+.authbar::after
+{
+  content:"";
+  top:0;
+  position: absolute;
+  height: 100%;
+  z-index: 1000 !important;
+  backdrop-filter:blur(3px);
+  opacity:0.3;
+  border-radius:10%;
+}
+.authbar::before{
+  width: 4ch;
+  left: 3px;
+}
+.authbar::after{
+  width: 7ch;
+  right: 3px;
+}
+
 .loading,
 .loaded {
   position: relative;
