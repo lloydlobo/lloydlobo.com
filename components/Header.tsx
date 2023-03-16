@@ -53,7 +53,7 @@ function AuthComponent() {
   return (
     <div className={`${styles.signedInStatus}`}>
       <p
-        className={`nojs-show ${!session && loading ? styles.loading : styles.loaded } 
+        className={`nojs-show ${!session && loading ? styles.loading : styles.loaded} 
           `}
       >
         {!session && (
