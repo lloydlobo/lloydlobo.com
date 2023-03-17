@@ -46,7 +46,7 @@ export const SolarSystem = (props: {}) => {
             </label>
             <input
               id="yearInSecond"
-              className="transparent bg-neutral-200 brightness-75 saturate-50 h-0.5 bg-gradient-to-r w-fit from-orange-300 via-green-400 to-purple-500 cursor-pointer appearance-none rounded-lg border-transparent"
+              className="transparent bg-neutral-200 dark:brightness-75 dark:saturate-50 h-0.5 bg-gradient-to-r w-fit from-orange-400 via-green-400 to-purple-500 cursor-pointer appearance-none rounded-lg border-transparent"
               min="1.0"
               max="120.0"
               onChange={(e) => useUpdateSpeed(e)}
