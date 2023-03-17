@@ -87,7 +87,7 @@ div.solar > *:not(.asteroid_belt)::before {
 .sun:focus-visible {
   position: relative;
   z-index: 999;
-  cursor: pointer;
+  /* cursor: pointer; */
   /* filter: brightness(111%); */
 }
 

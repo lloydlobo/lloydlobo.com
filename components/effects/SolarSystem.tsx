@@ -17,7 +17,9 @@ export const SolarSystem = (props: {}) => {
             className={`relative -z-50 ${styles.solar} `}
           >
             {/* <ThemeToggleWrapper> </ThemeToggleWrapper> */}
-            <div className={`${styles.sun}`} />
+            <ThemeToggleWrapper>
+              <div className={`${styles.sun}`} />
+            </ThemeToggleWrapper>
 
             {/* Start: Planets. */}
             <div className={styles.mercury} />
@@ -30,7 +32,7 @@ export const SolarSystem = (props: {}) => {
             <div className={styles.neptune} />
             <div className={styles.pluto} />
             {/* End: Planets. */}
-          <div className={styles.asteroid_belt} />
+            <div className={styles.asteroid_belt} />
           </div>
 
         </div>
