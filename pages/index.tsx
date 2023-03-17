@@ -46,7 +46,6 @@ export default function IndexPage() {
       <div className="-z-10">
         <BackdropGridLines />
       </div>
-
     </>
   );
 }
@@ -54,14 +53,10 @@ export default function IndexPage() {
 const HeroIndex = () => {
   return (
     <>
-
       <Section>
         <article className=" space-y-8 py-0 disabled:lg:py-12">
           <p className="prose-xl mx-auto gap-1 text-justify font-medium lowercase leading-8 tracking-tight md:prose-2xl disabled:[word-spacing:0.45ch] md:leading-9">
-            <Link
-              href="/about"
-              className="tracking-wider dark:text-secondary"
-            >
+            <Link href="/about" className="tracking-wider dark:text-secondary">
               lloyd lobo.
             </Link>
 
@@ -84,11 +79,11 @@ const HeroIndex = () => {
                   />
                 </svg>
               </span>{" "}
-              software with the focus on innovative experiences that
-              exceed client expectations.{" "}
-              <em className="dark:text-secondary">software developer</em>{" "}
-              with an <span id="roughblock">eye</span> for design and
-              motion. deeply curious about functional and beautiful{" "}
+              software with the focus on innovative experiences that exceed
+              client expectations.{" "}
+              <em className="dark:text-secondary">software developer</em> with
+              an <span id="roughblock">eye</span> for design and motion. deeply
+              curious about functional and beautiful{" "}
               <svg
                 // https://primer.style/design/foundations/icons/git-compare-24
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,8 +106,7 @@ const HeroIndex = () => {
                 <path d="M13.905 1.72a.75.75 0 0 1 0 1.06L12.685 4h4.065a3.75 3.75 0 0 1 3.75 3.75v8.75a.75.75 0 0 1-1.5 0V7.75a2.25 2.25 0 0 0-2.25-2.25h-4.064l1.22 1.22a.75.75 0 0 1-1.061 1.06l-2.5-2.5a.75.75 0 0 1 0-1.06l2.5-2.5a.75.75 0 0 1 1.06 0ZM7.5 4.75a3.25 3.25 0 1 1-6.5 0 3.25 3.25 0 0 1 6.5 0ZM4.25 6.5a1.75 1.75 0 1 0-.001-3.501A1.75 1.75 0 0 0 4.25 6.5Z"></path>
                 <path d="M10.095 22.28a.75.75 0 0 1 0-1.06l1.22-1.22H7.25a3.75 3.75 0 0 1-3.75-3.75V7.5a.75.75 0 0 1 1.5 0v8.75a2.25 2.25 0 0 0 2.25 2.25h4.064l-1.22-1.22a.748.748 0 0 1 .332-1.265.75.75 0 0 1 .729.205l2.5 2.5a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06 0Z"></path>
               </svg>{" "}
-              open source and machine learning tools to architect
-              efficient{" "}
+              open source and machine learning tools to architect efficient{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -144,11 +138,9 @@ const HeroIndex = () => {
           </p>
         </article>
       </Section>
-
     </>
-  )
-}
-
+  );
+};
 
 const BackdropGridLines = () => {
   return (
@@ -180,7 +172,7 @@ const BackdropGridLines = () => {
           />
         </>
 
-        <div className="absolute brightness-50 top-0 left-0 right-0 scale-50 ">
+        <div className="absolute top-0 left-0 right-0 hidden scale-50 brightness-50 ">
           <MouseBlob />
         </div>
         <span className="square" />
@@ -219,7 +211,6 @@ const BackdropGridLines = () => {
         <span className="square" />
         <span className="square" />
         <span className="square" />
-
       </div>
 
       <div
@@ -239,7 +230,6 @@ const BackdropGridLines = () => {
         <span className="square" />
         <span className="square" />
       </div>
-
 
       <style jsx global>
         {`
@@ -460,7 +450,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => { };
+    return () => {};
   }, []);
 
   return (
