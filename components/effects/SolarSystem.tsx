@@ -29,7 +29,7 @@ export const SolarSystem = (props: {}) => {
           {/* End: Planets. */}
         </div>
 
-        <div className="opacity-20 hover:opacity-90">
+        <div className="opacity-40 hover:opacity-90">
           <SolarControls />
         </div>
       </div>
@@ -41,7 +41,12 @@ export const SolarSystem = (props: {}) => {
 // TODO: use animate to delay the effect
 export const SolarControls = (props: {}) => {
   const [speed, setSpeed] = useState(30); // --year-in-second: 30; /* 30 seconds = 1 Earth year. */
-  const useUpdateSpeed = (e, value: string) => {
+  const useUpdateSpeed = (
+    e:
+      | React.MouseEvent<HTMLButtonElement, MouseEvent>
+      | React.ChangeEvent<HTMLInputElement>,
+    value: string
+  ) => {
     e.preventDefault();
     document.documentElement.style.setProperty("--year-in-second", value);
     setSpeed(Number(value));
