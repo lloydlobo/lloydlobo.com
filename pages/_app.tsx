@@ -47,7 +47,6 @@ const ibmRegular = localFont({
   ],
 });
 
-
 // https://memo-todo.vercel.app/login
 // TODO: Refer to the `<Auth/>` componenet to redirect unauthorized access.
 // TODO: Next-auth example typescript https://github.com/nextauthjs/next-auth-example
