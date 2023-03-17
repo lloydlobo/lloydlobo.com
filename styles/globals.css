@@ -19,11 +19,12 @@
   --years-relative: 365.2563; /* relative to Earth */
 
   /* Solar System variables  */
-  --pl-sun: 40px;
   --orb-mercury: 70px;
   --orb-venus: 100px;
   --orb-earth: 145px;
   --orb-mars: 190px;
+
+  --pl-sun: 40px;
   --pl-mercury: 4px;
   --pl-venus: 8px;
   --pl-earth: 6px;

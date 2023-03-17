@@ -39,7 +39,12 @@ export default function IndexPage() {
         </Layout>
       </div>
 
-      <div className="fixed inset-0 top-[61.8%] mx-auto aspect-square overflow-visible lg:top-[61.8%] lg:w-[61.8vw]">
+      <div
+
+        style={{
+          top: "min(80%, 75vh)",
+        }}
+        className="fixed inset-0 mx-auto aspect-square overflow-visible lg:top-[61.8%] lg:w-[61.8vw]">
         <SolarSystem />
       </div>
 
@@ -450,7 +455,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => {};
+    return () => { };
   }, []);
 
   return (

@@ -21,23 +21,27 @@
 .solar {
   margin: 0 auto;
   position: relative;
-  /* cursor: pointer; */
+  width: 100%;
+  height: 100%;
+}
+
+.solar::after {
+  color: red;
+  content: "";
+  z-index: 9999;
+  position: absolute;
+  height: 2px;
+  width: 2px;
+  top: -2px;
+  background: white;
 }
 
 div.solar {
   top: 50%;
   left: 50%;
+  border-radius: 1000px;
   position: relative;
-  /* cursor: pointer; */
-  /* z-index: 999; */
-}
-.solar::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 2px;
-  top: -2px;
-  /* background: white; */
+  margin: 0 auto;
 }
 
 .sun {
@@ -51,6 +55,7 @@ div.solar {
   width: var(--pl-sun);
   height: var(--pl-sun);
   z-index: 999 !important;
+  /* position: absolute; */
   position: relative;
 
   /* cursor:pointer !important; */
@@ -74,7 +79,34 @@ div.solar {
   filter: brightness(111%);
 }
 
-/* EARTH */
+/* Start: MERCURY */
+.mercury {
+  --mercury-days: 87.5;
+  height: var(--orb-mercury);
+  width: var(--orb-mercury);
+  margin-top: calc(-0.5 * var(--orb-mercury));
+  margin-left: calc(-0.5 * var(--orb-mercury));
+  animation: orb
+    calc(
+      var(--mercury-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.mercury::before {
+  height: var(--pl-mercury);
+  width: var(--pl-mercury);
+  background: #8e5d36;
+  margin-top: calc(-0.5 * var(--pl-mercury));
+  margin-left: calc(-0.5 * var(--pl-mercury));
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+}
+
+/* End: MERCURY */
+
+/* Start: EARTH */
 
 .earth {
   --earth-days: 365.2563;
@@ -126,6 +158,8 @@ div.solar {
   /* border-style: solid; */
   /* border-color: #cccccc50 transparent transparent transparent; */
 }
+
+/* End: EARTH */
 
 .asteroid_belt {
 }

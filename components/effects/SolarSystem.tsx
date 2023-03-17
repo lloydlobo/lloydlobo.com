@@ -6,12 +6,16 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-      <div className="relative inset-0 top-40 mx-auto">
-        <div data-id="solar-system" className={`${styles.solar}`}>
-          <ThemeToggleWrapper>
-            <div className={`${styles.sun}`} />
-          </ThemeToggleWrapper>
-
+      <div
+        // className="relative inset-0 top-40 mx-auto"
+        className="relative"
+      >
+        <div data-id="solar-system" className={`relative ${styles.solar}`}>
+          <div className="absolute">
+            <ThemeToggleWrapper>
+              <div className={`${styles.sun}`} />
+            </ThemeToggleWrapper>
+          </div>
           {/* Start: Planets. */}
           <div className={styles.mercury} />
           <div className={styles.venus} />
