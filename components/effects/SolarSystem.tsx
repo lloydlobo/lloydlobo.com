@@ -7,22 +7,19 @@ export const SolarSystem = (props: {}) => {
   const [speed, setSpeed] = useState(30); // --year-in-second: 30; /* 30 seconds = 1 Earth year. */
   // https://davidwalsh.name/css-variables-javascript
 
-
   // TODO: use animate to delay the effect
   const useUpdateSpeed = (e) => {
     e.preventDefault();
-    document.documentElement.style.setProperty('--year-in-second', e.currentTarget.value);
-    setSpeed(Number(e.currentTarget.value))
-  }
+    document.documentElement.style.setProperty(
+      "--year-in-second",
+      e.currentTarget.value
+    );
+    setSpeed(Number(e.currentTarget.value));
+  };
 
   return (
     <>
       <div className="relative inset-0 top-40 mx-auto">
-      <div className="flex items-center prose-sm font-bold gap-2">
-        <input id="yearInSecond" min="2.0" max="120.0" onChange={(e) => useUpdateSpeed(e)} type="range" />
-        <label htmlFor="yearInSecond">{speed}s</label>
-      </div>
-
         <div data-id="solar-system" className={`${styles.solar}`}>
           <ThemeToggleWrapper>
             <div className={`${styles.sun}`} />
@@ -37,7 +34,28 @@ export const SolarSystem = (props: {}) => {
           <div className={styles.pluto} />
           <div className={styles.asteroid_belt} />
         </div>
+
+        <div className="absolute bottom-20 -right-12">
+          <div className="speed-slider prose-sm relative grid w-fit -rotate-90 grid-flow-col items-center gap-2 font-sans font-bold">
+            <label
+            id="yearInSecondLabel"
+              className="text-neutral-700 dark:text-neutral-200 absolute -left-12 -top-4 mb-2 inline-block aspect-square w-10 rotate-90 text-end"
+              htmlFor="yearInSecond"
+            >
+              {speed}s
+            </label>
+            <input
+              id="yearInSecond"
+              className="slider transparent bg-neutral-200 h-0.5 p-2 cursor-pointer appearance-none rounded-lg border-transparent"
+              min="1.0"
+              max="120.0"
+              onChange={(e) => useUpdateSpeed(e)}
+              type="range"
+            />
+          </div>
+        </div>
       </div>
+
       <>
         <div
           className={`
@@ -53,6 +71,53 @@ export const SolarSystem = (props: {}) => {
 					`}
         ></div>
       </>
+
+      <style>
+        {`
+      #yearInSecond{
+      }
+      #yearInSecondLabel{
+      opacity: 0;
+      }
+
+      #yearInSecond:hover{
+      filter: brightness(120%);
+      }
+      #yearInSecondLabel:hover{
+      opacity: 1;
+      }
+      #yearInSecond:hover + #yearInSecondLabel {
+      opacity: 1 !important;
+      }
+
+.slider {
+  -webkit-appearance: none;
+  border-radius: 5px;  
+  background: #ffffff30;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  // width: 25px;
+  // height: 10px;
+  border-radius: 50%; 
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  // width: 25px;
+  // height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+      `}
+      </style>
     </>
   );
 };
