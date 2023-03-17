@@ -162,9 +162,8 @@ const BackdropGridLines = () => {
 				max-h-screen 
 				grid-cols-4 
 				overflow-hidden
-				dark:brightness-[80%] 
 				md:grid-cols-6 
-				dark:[&>*]:bg-on-primary
+				dark:[&>*]:bg-[#0e0d0e]
 				[&>span]:m-[0.2vw] 
 				md:[&>span]:m-[var(--square-margin)]"
       >
@@ -216,24 +215,6 @@ const BackdropGridLines = () => {
         <span className="square" />
       </div>
 
-      <div
-        id="modeChess"
-        className="absolute  inset-0 top-8 -z-40 my-auto hidden h-fit w-screen flex-wrap gap-[1px]  bg-gradient-to-r from-green-800/50 via-yellow-800/50 to-green-800/50 brightness-[80%] grayscale-[30%] disabled:inline-flex  [&>*]:aspect-square [&>*]:h-[16.43vw] [&>*]:outline [&>*]:outline-[0.01px] [&>*]:outline-green-50/10 dark:[&>*]:outline-green-400/10 md:[&>*]:h-[16.54vw]"
-      >
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-      </div>
-
       <style jsx global>
         {`
           :root {
@@ -266,16 +247,13 @@ const BackdropGridLines = () => {
             35%,
             65%,
             to {
-              scale: 1.01;
-              border-radius: 1%; /* 2% works */
+              transform: scale(1.01);
               outline: 1px dotted #00ff0010;
               border: var(--square-margin) dotted #11111190;
             }
             50% {
-              scale: 0.97;
-              border-radius: 1%;
+              transform: scale(0.97);
               outline: 0px solid #00ff0005;
-              // border: calc(var(--square-margin) * 4px) ridge #11aa1140;
               border: calc(var(--square-margin) * 4px) ridge #11101170;
             }
           }
@@ -306,16 +284,13 @@ const BackdropGridLines = () => {
 
           @keyframes rotate {
             from {
-              rotate: 0deg;
+              transform: rotate(0deg);
             }
             50% {
-              --golden-ratio: 1.618;
-              --pi: 3.14;
-              // scale: 1 calc((sin(var(--golden-ratio) / var(--pi))));
-              scale: 1.1 1;
+              transform: scale(1.1, 1);
             }
             to {
-              rotate: 360deg;
+              transform: rotate(360deg);
             }
           }
         `}
@@ -378,52 +353,6 @@ export function DockNav() {
               />
             </svg>
           </Link>
-
-          <a
-            href="https://github.com/lloydlobo/"
-            className="font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
-            data-te-toggle="tooltip"
-            data-te-placement="top"
-            data-te-ripple-init
-            data-te-ripple-color="light"
-            title="Code"
-          >
-            <svg viewBox="0 0 24 24" className="h-6 w-6">
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
-              ></path>
-            </svg>
-          </a>
-
-          <a
-            href="mailto:hello@lloydlobo.com"
-            className="flex items-center font-semibold underline decoration-accent underline-offset-8 hover:text-accent"
-            data-te-toggle="tooltip"
-            data-te-placement="top"
-            data-te-ripple-init
-            data-te-ripple-color="light"
-            title="Email"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="h-6 w-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-              />
-            </svg>
-          </a>
         </nav>
       </div>
     </div>

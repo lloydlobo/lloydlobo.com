@@ -6,34 +6,34 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-    <div className={`relative -z-50 ${styles.body}`}>
+      <div className={`relative -z-50 ${styles.body}`}>
+        <div className="-z-10">
+          <div className="relative inset-0 z-50">
+            <SolarControls />
+          </div>
 
-      <div className="brightness-50 ease-out duration-300 hover:brightness-90">
-    <div className="relative z-50 inset-0">
-        <SolarControls />
-    </div>
+          <div
+            data-id="solar-system"
+            className={`relative -z-50 ${styles.solar} `}
+          >
+            {/* <ThemeToggleWrapper> </ThemeToggleWrapper> */}
+            <div className={`${styles.sun}`} />
 
-      <div data-id="solar-system" className={`-z-50 relative ${styles.solar} `}>
-        <ThemeToggleWrapper>
-          <div className={`${styles.sun}`} />
-        </ThemeToggleWrapper>
+            {/* Start: Planets. */}
+            <div className={styles.mercury} />
+            <div className={styles.venus} />
+            <div className={styles.earth} />
+            <div className={styles.mars} />
+            <div className={styles.jupiter} />
+            <div className={styles.saturn} />
+            <div className={styles.uranus} />
+            <div className={styles.neptune} />
+            <div className={styles.pluto} />
+            {/* End: Planets. */}
+          <div className={styles.asteroid_belt} />
+          </div>
 
-        {/* Start: Planets. */}
-        <div className={styles.mercury} />
-        <div className={styles.venus} />
-        <div className={styles.earth} />
-        <div className={styles.mars} />
-        <div className={styles.jupiter} />
-        <div className={styles.saturn} />
-        <div className={styles.uranus} />
-        <div className={styles.neptune} />
-        <div className={styles.pluto} />
-        {/* End: Planets. */}
-      </div>
-
-        <div className={styles.asteroid_belt} />
-      </div>
-
+        </div>
       </div>
     </>
   );
@@ -57,12 +57,13 @@ export const SolarControls = (props: {}) => {
   return (
     <>
       {/* https://tailwind-elements.com/docs/standard/forms/range/ */}
-      <div className="absolute -bottom-8 hover:brightness-100 dark:brightness-50">
+      <div className="absolute -bottom-8 ">
         <div className="relative flex h-fit w-fit flex-col items-center gap-0 px-3 font-sans  text-sm font-bold">
           <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
             <input
               id="yearInSecond"
-              className="transparent bg-neutral-200 h-0.5 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 py-0.5 transition-all delay-75 duration-300 ease-out hover:py-[0.4rem] dark:brightness-[61%] dark:saturate-[40%] dark:hover:saturate-100"
+              // className="transparent bg-neutral-200 h-0.5 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 py-0.5 transition-all delay-75 duration-300 ease-out hover:py-[0.4rem] dark:brightness-[61%] dark:saturate-[40%] dark:hover:saturate-100"
+              className="transparent opacity-50 duration-300 delay-75 ease-out hover:opacity-90 bg-neutral-200 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 h-2 disabled:py-0.5 hover:scale-y-125"
               min="5.00"
               max="120.00"
               value={speed}
@@ -76,7 +77,7 @@ export const SolarControls = (props: {}) => {
               <label
                 id="yearInSecondLabel"
                 htmlFor="yearInSecond"
-                className="text-neutral-700 dark:text-neutral-200 relative text-end text-xs font-bold after:absolute hover:after:left-4 hover:after:w-[23ch] hover:after:content-['30_seconds_=_1_Earth_year'] "
+                className="text-neutral-700 dark:text-neutral-200 relative text-end text-xs font-bold after:absolute hover:after:translate-x-4 after:w-[23ch] hover:after:content-['30_seconds_=_1_Earth_year'] "
               >
                 {speed}s
               </label>
@@ -97,21 +98,6 @@ export const SolarControls = (props: {}) => {
         </div>
       </div>
 
-      <style>
-        {`
-      #yearInSecond{
-      }
-      #yearInSecondLabel{
-        opacity: 0.9;
-      }
-      #yearInSecond:hover{
-        filter: brightness(100%) saturate(100%);
-      }
-      input:hover label {
-        opacity: 1 !important;
-      }
-      `}
-      </style>
     </>
   );
 };
