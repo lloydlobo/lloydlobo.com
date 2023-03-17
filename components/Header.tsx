@@ -21,13 +21,13 @@ export default function Header() {
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
 
-      <div className="mx-auto md:max-w-screen-sm">
+      <div className="mx-auto hidden md:max-w-screen-sm">
         <div className={`${styles.authbar} font-sans text-xs uppercase tracking-wider`}>
           <AuthComponent />
         </div>
       </div>
 
-      <nav className="font-sans text-xs font-bold uppercase tracking-wider md:prose-sm">
+      <nav className="font-sans py-2 text-xs font-bold uppercase tracking-wider md:prose-sm">
         <div className="opacity-95 dark:prose-a:text-green-300/80">
           <Navigation />
         </div>
