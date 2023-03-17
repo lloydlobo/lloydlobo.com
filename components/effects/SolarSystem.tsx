@@ -44,9 +44,9 @@ export const SolarControls = (props: {}) => {
   return (
     <>
       {/* https://tailwind-elements.com/docs/standard/forms/range/ */}
-      <div className="absolute -top-0 hover:brightness-100 dark:brightness-50 lg:-top-1/2 ">
-        <div className="relative flex h-fit w-fit flex-col items-center gap-0 px-4 font-sans  text-sm font-bold">
-          <div className="absolute -top-6 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
+      <div className="absolute -bottom-8 hover:brightness-100 dark:brightness-50">
+        <div className="relative flex h-fit w-fit flex-col items-center gap-0 px-3 font-sans  text-sm font-bold">
+          <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
             <input
               id="yearInSecond"
               className="transparent bg-neutral-200 h-0.5 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 py-0.5 transition-all delay-75 duration-300 ease-out hover:py-[0.4rem] dark:brightness-[61%] dark:saturate-[40%] dark:hover:saturate-100"
@@ -58,8 +58,8 @@ export const SolarControls = (props: {}) => {
             />
           </div>
 
-          <div className="">
-            <div className="relative mx-auto grid gap-2 font-sans">
+          <div className="scale-75">
+            <div className="relative grid gap-3 font-sans">
               <label
                 id="yearInSecondLabel"
                 htmlFor="yearInSecond"
