@@ -35,18 +35,18 @@ export const SolarSystem = (props: {}) => {
           <div className={styles.asteroid_belt} />
         </div>
 
-        <div className="absolute bottom-20 -right-12">
-          <div className="speed-slider prose-sm relative grid w-fit -rotate-90 grid-flow-col items-center gap-2 font-sans font-bold">
+        <div className="absolute bottom-24 -right-12">
+          <div className="prose-sm relative grid w-fit -rotate-90 grid-flow-col items-center gap-2 font-sans font-bold">
             <label
-            id="yearInSecondLabel"
-              className="text-neutral-700 dark:text-neutral-200 absolute -left-12 -top-4 mb-2 inline-block aspect-square w-10 rotate-90 text-end"
+              id="yearInSecondLabel"
               htmlFor="yearInSecond"
+              className="text-neutral-700 dark:text-neutral-200 absolute -left-12 -top-4 mb-2 inline-block aspect-square w-10 rotate-90 text-end"
             >
               {speed}s
             </label>
             <input
               id="yearInSecond"
-              className="slider transparent bg-neutral-200 h-0.5 p-2 cursor-pointer appearance-none rounded-lg border-transparent"
+              className="transparent bg-neutral-200 brightness-75 saturate-50 h-0.5 bg-gradient-to-r w-fit from-orange-300 via-green-400 to-purple-500 cursor-pointer appearance-none rounded-lg border-transparent"
               min="1.0"
               max="120.0"
               onChange={(e) => useUpdateSpeed(e)}
@@ -77,45 +77,14 @@ export const SolarSystem = (props: {}) => {
       #yearInSecond{
       }
       #yearInSecondLabel{
-      opacity: 0;
+        opacity: 0.4;
       }
-
       #yearInSecond:hover{
-      filter: brightness(120%);
+        filter: brightness(100%) saturate(100%);
       }
-      #yearInSecondLabel:hover{
-      opacity: 1;
+      input:hover label {
+        opacity: 1 !important;
       }
-      #yearInSecond:hover + #yearInSecondLabel {
-      opacity: 1 !important;
-      }
-
-.slider {
-  -webkit-appearance: none;
-  border-radius: 5px;  
-  background: #ffffff30;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  // width: 25px;
-  // height: 10px;
-  border-radius: 50%; 
-  background: #04AA6D;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  // width: 25px;
-  // height: 25px;
-  border-radius: 50%;
-  background: #04AA6D;
-  cursor: pointer;
-}
       `}
       </style>
     </>
