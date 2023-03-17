@@ -30,13 +30,13 @@ div.solar {
   left: 50%;
   position: absolute;
   margin: 0 auto;
-  z-index:999;
+  z-index:1;
 }
 
 /* Orbits */
 div.solar > *:not(.sun) {
-  border: 1px solid rgba(100,165,230,0.13);
-  border-radius: 100px;
+  border: 1px ridge rgba(100,165,200,min(calc((0.618*2) / var(--year-in-second)), 0.32));
+  border-radius: 100%;
   top: 0%;
   left: 0%;
   position: absolute;
@@ -92,6 +92,7 @@ div.solar > *:not(.asteroid_belt)::before {
 }
 
 /* Start: MERCURY */
+
 .mercury {
   --mercury-days: 87.5;
   height: var(--orb-mercury);
@@ -117,6 +118,34 @@ div.solar > *:not(.asteroid_belt)::before {
 }
 
 /* End: MERCURY */
+
+/* Start: VENUS */
+
+.venus {
+  --venus-days: 224.7;
+  height: var(--orb-venus);
+  width: var(--orb-venus);
+  margin-top: calc(-0.5 * var(--orb-venus));
+  margin-left: calc(-0.5 * var(--orb-venus));
+  animation: orb
+    calc(
+      var(--venus-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.venus::before {
+  height: var(--pl-venus);
+  width: var(--pl-venus);
+  --color: #aabb44;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-venus));
+  margin-left: calc(-0.5 * var(--pl-venus));
+}
+
+/* End: VENUS */
 
 /* Start: EARTH */
 
@@ -160,6 +189,178 @@ div.solar > *:not(.asteroid_belt)::before {
 }
 
 /* End: EARTH */
+
+
+/* Start: MARS */
+
+.mars {
+  --mars-days: 687;
+  height: var(--orb-mars);
+  width: var(--orb-mars);
+  margin-top: calc(-0.5 * var(--orb-mars));
+  margin-left: calc(-0.5 * var(--orb-mars));
+  animation: orb
+    calc(
+      var(--mars-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.mars::before {
+  height: var(--pl-mars);
+  width: var(--pl-mars);
+  --color: #ff5555;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-mars));
+  margin-left: calc(-0.5 * var(--pl-mars));
+}
+
+/* End: MARS */
+
+/* Start: JUPITER */
+
+.jupiter {
+  --jupiter-days: 4331;
+  height: var(--orb-jupiter);
+  width: var(--orb-jupiter);
+  margin-top: calc(-0.5 * var(--orb-jupiter));
+  margin-left: calc(-0.5 * var(--orb-jupiter));
+  animation: orb
+    calc(
+      var(--jupiter-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.jupiter::before {
+  height: var(--pl-jupiter);
+  width: var(--pl-jupiter);
+  --color: #c76f2c;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-jupiter));
+  margin-left: calc(-0.5 * var(--pl-jupiter));
+}
+
+/* End: JUPITER */
+
+
+/* Start: SATURN */
+
+.saturn {
+  --saturn-days: 10747;
+  height: var(--orb-saturn);
+  width: var(--orb-saturn);
+  margin-top: calc(-0.5 * var(--orb-saturn));
+  margin-left: calc(-0.5 * var(--orb-saturn));
+  animation: orb
+    calc(
+      var(--saturn-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.saturn::before {
+  height: var(--pl-saturn);
+  width: var(--pl-saturn);
+  --color: #e8c083;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-saturn));
+  margin-left: calc(-0.5 * var(--pl-saturn));
+}
+
+/* End: SATURN */
+
+
+/* Start: URANUS */
+
+.uranus {
+  --uranus-days: 30589;
+  height: var(--orb-uranus);
+  width: var(--orb-uranus);
+  margin-top: calc(-0.5 * var(--orb-uranus));
+  margin-left: calc(-0.5 * var(--orb-uranus));
+  animation: orb
+    calc(
+      var(--uranus-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.uranus::before {
+  height: var(--pl-uranus);
+  width: var(--pl-uranus);
+  --color: #b6e4e2;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-uranus));
+  margin-left: calc(-0.5 * var(--pl-uranus));
+}
+
+/* End: URANUS */
+
+/* Start: NEPTUNE */
+
+.neptune {
+  --neptune-days: 59802;
+  height: var(--orb-neptune);
+  width: var(--orb-neptune);
+  margin-top: calc(-0.5 * var(--orb-neptune));
+  margin-left: calc(-0.5 * var(--orb-neptune));
+  animation: orb
+    calc(
+      var(--neptune-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.neptune::before {
+  height: var(--pl-neptune);
+  width: var(--pl-neptune);
+  --color: #165d8a;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-neptune));
+  margin-left: calc(-0.5 * var(--pl-neptune));
+}
+
+/* End: NEPTUNE */
+
+/* Start: PLUTO */
+
+.pluto {
+  --pluto-days: 90580;
+  height: var(--orb-pluto);
+  width: var(--orb-pluto);
+  margin-top: calc(-0.5 * var(--orb-pluto));
+  margin-left: calc(-0.5 * var(--orb-pluto));
+  animation: orb
+    calc(
+      var(--pluto-days) * var(--year-in-second) / var(--years-relative) * 1s
+    )
+    linear infinite;
+}
+
+.pluto::before {
+  height: var(--pl-pluto);
+  width: var(--pl-pluto);
+  --color: #fafafa;
+  background: var(--color);
+  /* outline: 1px solid var(--color); */
+  border-radius:100%;
+  margin-top: calc(-0.5 * var(--pl-pluto));
+  margin-left: calc(-0.5 * var(--pl-pluto));
+}
+
+/* End: PLUTO */
+
 
 /* Start: ASTEROID BELT */
 

@@ -453,7 +453,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => { };
+    return () => {};
   }, []);
 
   return (

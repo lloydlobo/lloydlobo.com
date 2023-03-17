@@ -4,36 +4,36 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {
-
   return (
     <>
-      <div className={`relative ${styles.body}`} >
-        <div data-id="solar-system" className={`relative ${styles.solar} `}>
-          <ThemeToggleWrapper>
-            <div className={`${styles.sun}`} />
-          </ThemeToggleWrapper>
+    <div className={`relative -z-50 ${styles.body}`}>
 
-          {/* Start: Planets. */}
-          <div className={styles.mercury} />
-          {/* 
-            <div className={styles.venus} />
-         */}
-          <div className={styles.earth} />
-          {/* 
-            <div className={styles.mars} />
-            <div className={styles.jupiter} />
-            <div className={styles.saturn} />
-            <div className={styles.neptune} />
-            <div className={styles.pluto} />
-         */}
-          {/* End: Planets. */}
+      <div className="brightness-50 ease-out duration-300 hover:brightness-90">
+    <div className="relative z-50 inset-0">
+        <SolarControls />
+    </div>
 
-          <div className={styles.asteroid_belt} />
-        </div>
+      <div data-id="solar-system" className={`-z-50 relative ${styles.solar} `}>
+        <ThemeToggleWrapper>
+          <div className={`${styles.sun}`} />
+        </ThemeToggleWrapper>
 
-        <div className="opacity-40 hover:opacity-90">
-          <SolarControls />
-        </div>
+        {/* Start: Planets. */}
+        <div className={styles.mercury} />
+        <div className={styles.venus} />
+        <div className={styles.earth} />
+        <div className={styles.mars} />
+        <div className={styles.jupiter} />
+        <div className={styles.saturn} />
+        <div className={styles.uranus} />
+        <div className={styles.neptune} />
+        <div className={styles.pluto} />
+        {/* End: Planets. */}
+      </div>
+
+        <div className={styles.asteroid_belt} />
+      </div>
+
       </div>
     </>
   );
@@ -63,7 +63,7 @@ export const SolarControls = (props: {}) => {
             <input
               id="yearInSecond"
               className="transparent bg-neutral-200 h-0.5 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 py-0.5 transition-all delay-75 duration-300 ease-out hover:py-[0.4rem] dark:brightness-[61%] dark:saturate-[40%] dark:hover:saturate-100"
-              min="1.00"
+              min="5.00"
               max="120.00"
               value={speed}
               onChange={(e) => useUpdateSpeed(e, e.currentTarget.value)}
@@ -192,4 +192,3 @@ const StopIcon = () => {
     </svg>
   );
 };
-
