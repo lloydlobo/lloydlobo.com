@@ -4,29 +4,31 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {
+
   return (
     <>
-      <div
-        // className="relative inset-0 top-40 mx-auto"
-        className="relative"
-      >
-        <div data-id="solar-system" className={`relative ${styles.solar}`}>
-          <div className="absolute">
-            <ThemeToggleWrapper>
-              <div className={`${styles.sun}`} />
-            </ThemeToggleWrapper>
-          </div>
+      <div className={`relative ${styles.body}`} >
+        <div data-id="solar-system" className={`relative ${styles.solar} `}>
+          <ThemeToggleWrapper>
+            <div className={`${styles.sun}`} />
+          </ThemeToggleWrapper>
+
           {/* Start: Planets. */}
           <div className={styles.mercury} />
-          <div className={styles.venus} />
+          {/* 
+            <div className={styles.venus} />
+         */}
           <div className={styles.earth} />
-          <div className={styles.mars} />
-          <div className={styles.jupiter} />
-          <div className={styles.saturn} />
-          <div className={styles.neptune} />
-          <div className={styles.pluto} />
-          <div className={styles.asteroid_belt} />
+          {/* 
+            <div className={styles.mars} />
+            <div className={styles.jupiter} />
+            <div className={styles.saturn} />
+            <div className={styles.neptune} />
+            <div className={styles.pluto} />
+         */}
           {/* End: Planets. */}
+
+          <div className={styles.asteroid_belt} />
         </div>
 
         <div className="opacity-40 hover:opacity-90">
@@ -146,7 +148,7 @@ export const ThemeToggleWrapper = (items: Props) => {
 
   return (
     <>
-      <button className="" onClick={(e) => switchTheme(e)}>
+      <button className="absolute" onClick={(e) => switchTheme(e)}>
         {items.children}
       </button>
     </>
@@ -190,3 +192,4 @@ const StopIcon = () => {
     </svg>
   );
 };
+
