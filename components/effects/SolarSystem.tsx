@@ -25,7 +25,9 @@ export const SolarSystem = (props: {}) => {
           {/* End: Planets. */}
         </div>
 
-        <SolarControls />
+        <div className="opacity-20 hover:opacity-90">
+          <SolarControls />
+        </div>
       </div>
     </>
   );
