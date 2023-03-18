@@ -7,15 +7,11 @@ import { ClockNav } from "@/pages";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-      <div className={`relative -z-50 ${styles.body}`}>
-        <div className="-z-10">
-          <div className="scale-75 origin-top-left pl-8 opacity-50 hover:opacity-100 transition-opacity">
-            <SolarControls />
-          </div>
-
+      <div className={`relative ${styles.body}`}>
+        <div className="-z-10 isolate">
           <div
             data-id="solar-system"
-            className={`relative -z-50 ${styles.solar} `}
+            className={`relative z-10 ${styles.solar} `}
           >
             {/* <ThemeToggleWrapper> </ThemeToggleWrapper> */}
             <ThemeToggleWrapper>
@@ -78,7 +74,7 @@ export const SolarControls = (props: {}) => {
             id="yearInSecondLabel"
             htmlFor="yearInSecond"
             data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-            className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-end text-xs before:absolute before:w-[23ch] before:scale-110 before:bg-on-primary/40 before:opacity-100 hover:before:-translate-x-[111%] hover:before:content-['30_seconds_=_1_Earth_year'] `}
+            className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-end text-xs z-10 after:absolute before:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
           >
             {speed}s
           </label>

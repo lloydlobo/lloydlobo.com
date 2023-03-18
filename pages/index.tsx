@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { Section } from "@/components/Section";
 import Layout from "@/components/Layout";
-import { SolarSystem } from "@/components/effects/SolarSystem";
+import { SolarControls, SolarSystem } from "@/components/effects/SolarSystem";
 import { MouseBlob } from "@/components/effects/MouseBlob";
 import { BackdropGridLines } from "@/components/effects/BackdropGridLines";
 
@@ -32,7 +32,7 @@ export default function IndexPage() {
     <>
       <div className="">
         <Layout title="Home">
-          <main className="relative -top-16 z-10 lg:top-0">
+          <main className="relative grid -top-16 lg:top-0">
             <HeroIndex />
           </main>
         </Layout>
@@ -40,12 +40,17 @@ export default function IndexPage() {
 
       <div
         style={{ top: "min(80%, 75vh)" }}
-        className="fixed inset-0 mx-auto aspect-square overflow-visible lg:top-[61.8%] lg:w-[61.8vw]"
+        className="fixed container border-t border-opacity-0 rounded-full border-blue-200 inset-0 mx-auto aspect-square overflow-visible lg:top-[61.8%] lg:w-[61.8vw]"
       >
+      <div className="pl-8 z-50 pb-6 absolute origin-top-left scale-75">
+        <SolarControls />
+      </div>
+      <div  className="">
         <SolarSystem />
       </div>
+      </div>
 
-      <div className="-z-10">
+      <div className="-z-20">
         <BackdropGridLines />
       </div>
     </>
@@ -146,7 +151,7 @@ const HeroIndex = () => {
 
 export function DockNav() {
   return (
-    <div className="gird fixed bottom-5 left-0 right-0 z-50 mx-auto  hidden">
+    <div className="gird fixed bottom-5 left-0 right-0  mx-auto  hidden">
       <div className="mx-auto w-fit rounded-full border border-secondary/10 border-opacity-10 bg-opacity-40 backdrop-blur-[1.5px]">
         <nav className="dock grid grid-flow-col place-items-center justify-between gap-1 overflow-y-hidden overflow-x-scroll rounded-full  p-2">
           <Link
