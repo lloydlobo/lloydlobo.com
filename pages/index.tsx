@@ -146,7 +146,6 @@ const HeroIndex = () => {
   );
 };
 
-
 export function DockNav() {
   return (
     <div className="gird fixed bottom-5 left-0 right-0 z-50 mx-auto  hidden">

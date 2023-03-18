@@ -8,7 +8,7 @@ export const SolarSystem = (props: {}) => {
     <>
       <div className={`relative -z-50 ${styles.body}`}>
         <div className="-z-10">
-          <div className="relative inset-0 z-50 hover:opacity-100 transition-opacity opacity-40">
+          <div className="relative inset-0 z-50 opacity-40 transition-opacity hover:opacity-100">
             <SolarControls />
           </div>
 
@@ -36,7 +36,6 @@ export const SolarSystem = (props: {}) => {
 
             <div className={styles.asteroid_belt} />
           </div>
-
         </div>
       </div>
     </>
@@ -61,12 +60,12 @@ export const SolarControls = (props: {}) => {
   return (
     <>
       {/* https://tailwind-elements.com/docs/standard/forms/range/ */}
-      <div className="absolute left-[85%] md:left-[90%] mt-20 ">
+      <div className="absolute left-[85%] mt-20 md:left-[90%] ">
         <div className="relative flex h-fit w-fit flex-col items-center gap-0 px-3 font-sans  text-sm font-bold">
           <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
             <input
               id="yearInSecond"
-              className="transparent transition-opacity bg-gray3/50 dark:bg-on-tertiary cursor-pointer appearance-none rounded-full border-transparent dark:opacity-40 hover:opacity-100"
+              className="transparent cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-on-tertiary dark:opacity-40"
               min="5.00"
               max="120.00"
               value={speed}
@@ -80,17 +79,23 @@ export const SolarControls = (props: {}) => {
                 id="yearInSecondLabel"
                 htmlFor="yearInSecond"
                 data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-                className={`text-neutral-700 dark:text-neutral-200 relative text-end text-sm before:bg-on-primary/40  cursor-help font-bold before:absolute hover:before:-translate-x-[111%] before:opacity-100 before:scale-110 before:w-[23ch] hover:before:content-['30_seconds_=_1_Earth_year'] `}
+                className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-end text-sm  font-bold before:absolute before:w-[23ch] before:scale-110 before:bg-on-primary/40 before:opacity-100 hover:before:-translate-x-[111%] hover:before:content-['30_seconds_=_1_Earth_year'] `}
               >
                 {speed}s
               </label>
               <span
                 id="yearInSecondLabel"
-                className="text-neutral-700 dark:text-neutral-200 text-right text-xs absolute top-[100%] right-[1%] pt-2 -z-10 min-w-[12ch] font-bold "
+                className="text-neutral-700 dark:text-neutral-200 absolute top-[100%] right-[1%] -z-10 min-w-[12ch] pt-2 text-right text-xs font-bold "
               >
-                {speed} seconds<br/>{(speed/30).toPrecision(2)} Earth year
+                {speed} seconds
+                <br />
+                {(speed / 30).toPrecision(2)} Earth year
               </span>
-              <button title="Reset" className="scale-90" onClick={(e) => useUpdateSpeed(e, "30.0")}>
+              <button
+                title="Reset"
+                className="scale-90"
+                onClick={(e) => useUpdateSpeed(e, "30.0")}
+              >
                 <ResetIcon />
               </button>
               <button title="Stop" onClick={(e) => useUpdateSpeed(e, "0.0")}>
@@ -100,7 +105,6 @@ export const SolarControls = (props: {}) => {
           </div>
         </div>
       </div>
-
     </>
   );
 };

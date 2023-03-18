@@ -1,13 +1,15 @@
 import styles from "@/components/effects/BackdropGridLines.module.css";
 
-export function BackdropGridLines  ()  {
+export function BackdropGridLines() {
   return (
     <>
       <div
         id="modeMatrix"
-        style={{
-  // willChange: "transform",
-        }}
+        style={
+          {
+            // willChange: "transform",
+          }
+        }
         className={` ${styles.component} grid-rows-9 
 				md:grid-rows-8 
 				max-w-screen 
@@ -78,7 +80,6 @@ export function BackdropGridLines  ()  {
               1.618px
             ); /* automate to open the portal */
             --earth-days: 365.2563;
-
           }
 
           #modeMatrix {
@@ -124,4 +125,4 @@ export function BackdropGridLines  ()  {
       </style>
     </>
   );
-};
+}
