@@ -834,17 +834,3 @@ div.solar > *:not(.asteroid_belt)::before {
     opacity: calc(1 - var(--var));
   }
 }
-
-
-/* animation: twinkle 0.1s ease-out infinite; */
-/* @keyframes twinkle { */
-/*   from, 28%, 38%, 58%, 65%, to { */
-/*     @apply skew-y-0 skew-x-0; */
-/*   } */
-/*    32.8%{ */
-/*     @apply -skew-y-[0.2deg] skew-x-[0.1deg]; */
-/*   } */
-/*    61.8%{ */
-/*     @apply skew-y-[0.1deg] -skew-x-[0.2deg]; */
-/*   } */
-/* } */

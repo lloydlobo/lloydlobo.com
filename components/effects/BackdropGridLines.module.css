@@ -39,3 +39,36 @@
     @apply dark:outline-[0.0px] border-2 border-dotted dark:border-on-primary/70 outline outline-white/10;
   }
 }
+
+.solar_glare {
+  left:50%;
+  top:50%;
+  opacity: 0.85;
+  filter: blur(20px);
+  margin-top: 33vh;
+  height: clamp(200px, 40vw, 500px);
+  aspect-ratio: 1;
+  border-radius: 100%;
+  border: 1px solid red;
+  position: absolute;
+  translate: -50% -50%;
+  --on-primary: rgb(17 16 17);
+  --tw-bg-opacity: 1;
+  --bg-green-300: rgb(134 239 172 / var(--tw-bg-opacity));
+  --bg-green-400: rgb(74 222 128 / var(--tw-bg-opacity));
+
+  /* background: linear-gradient( to right, pink, aquamarine, var(--bg-green-400)); */
+  animation: rotate var(--timing-mouse-duration, 30s) infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  /* 50% { */
+    /* transform: scale(1.1, 1); */
+  /* } */
+  to {
+    transform: rotate(360deg);
+  }
+}

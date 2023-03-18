@@ -3,6 +3,7 @@ import styles from "@/components/effects/BackdropGridLines.module.css";
 export function BackdropGridLines() {
   return (
     <>
+
       <div
         id="modeMatrix"
         style={
@@ -23,6 +24,8 @@ export function BackdropGridLines() {
 				grid-cols-4 
 				overflow-hidden
 				md:grid-cols-6 
+				[&>*]:bg-white
+				isolate
 				dark:[&>*]:bg-[#0e0d0e]
 				[&>span]:m-[0.2vw] 
 				md:[&>span]:m-[var(--square-margin)]`}
@@ -30,7 +33,7 @@ export function BackdropGridLines() {
         <>
           <div
             id="solarGlare"
-            className="absolute -z-50 aspect-square blur-2xl"
+            className={`${styles.solar_glare} dark:bg-gradient-to-r from-pink-200 via-green-300 to-purple-600 `}
           />
         </>
         <span className={`${styles.square} square`} />
@@ -86,41 +89,6 @@ export function BackdropGridLines() {
             gap: 1.132px;
           }
 
-          #solarGlare {
-            left: 50%;
-            top: 50%;
-            right: 50%;
-            bottom: 50%;
-            margin-top: 33vh;
-            position: absolute;
-            height: clamp(200px, 40vw, 500px);
-            aspect-ratio: 1;
-            translate: -50% -50%;
-            border-radius: 100%;
-            --on-primary: rgb(17 16 17);
-            --tw-bg-opacity: 1;
-            --bg-green-300: rgb(134 239 172 / var(--tw-bg-opacity));
-            --bg-green-400: rgb(74 222 128 / var(--tw-bg-opacity));
-            background: linear-gradient(
-              to right,
-              pink,
-              aquamarine,
-              var(--bg-green-400)
-            );
-            animation: rotate var(--timing-mouse-duration, 30s) infinite;
-          }
-
-          @keyframes rotate {
-            from {
-              transform: rotate(0deg);
-            }
-            50% {
-              transform: scale(1.1, 1);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
         `}
       </style>
     </>
