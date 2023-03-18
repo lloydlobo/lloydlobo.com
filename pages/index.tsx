@@ -40,7 +40,7 @@ export default function IndexPage() {
 
             <div
                 //  style={{ top: "min(80%, 75vh)" }}
-                className="container border-t border-opacity-0 relative rounded-full border-blue-200 mx-auto aspect-video overflow-x-hidden my-24 lg:w-[61.8vw]"
+                className="container border-t border-opacity-0 relative rounded-full border-blue-200 mx-auto aspect-video overflow-x-hidden py-24 lg:w-[61.8vw]"
             >
                 <div className="pl-8 z-50 pb-6 absolute origin-top-left scale-75">
                     <SolarControls />
