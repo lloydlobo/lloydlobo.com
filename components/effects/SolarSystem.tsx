@@ -101,9 +101,6 @@ export const SolarControls = (props: {}) => {
             </button>
           </div>
 
-          <div className=" transition-opacity opacity-0 hover:opacity-100">
-            <ClockNav />
-          </div>
         </div>
       </div>
     </>
