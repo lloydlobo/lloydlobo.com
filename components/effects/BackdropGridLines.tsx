@@ -16,7 +16,8 @@ export function BackdropGridLines() {
 				my-auto
 				inline-grid
 				min-h-screen
-				grid-cols-4
+        h-full
+				grid-cols-6
 				overflow-hidden
 				md:grid-cols-6
 				[&>*]:bg-white
@@ -31,6 +32,42 @@ export function BackdropGridLines() {
             className={`${styles.solar_glare} dark:bg-gradient-to-r from-pink-200 via-green-300 to-purple-600 `}
           />
         </>
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
         <span className={`${styles.square} square`} />
         <span className={`${styles.square} square`} />
         <span className={`${styles.square} square`} />

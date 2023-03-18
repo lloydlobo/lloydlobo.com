@@ -32,26 +32,24 @@ export default function IndexPage() {
         <>
             <div className="min-h-screen mb-12">
                 <Layout title="Home">
-                    <main className="py-6">
+                    <main className="py-6 relative grid gap-6">
+                      <div className="h-[61.8vh]">
                         <HeroIndex />
+                        </div>
+
+                        <div
+                          style={{ top: "min(80%, 75vh)" }}
+                            className="container py-6 h-screen relative mb-6"
+                        >
+                            <div className="p-8 z-50">
+                                <SolarControls />
+                            </div>
+                            <div className="relative">
+                                <SolarSystem />
+                            </div>
+                        </div>
                     </main>
                 </Layout>
-            </div>
-
-            <div
-                //  style={{ top: "min(80%, 75vh)" }}
-                className="container border-t border-opacity-0 relative rounded-full border-blue-200 mx-auto aspect-video overflow-x-hidden py-24 lg:w-[61.8vw]"
-            >
-                <div className="pl-8 z-50 pb-6 absolute origin-top-left scale-75">
-                    <SolarControls />
-                </div>
-                <div className="">
-                    <SolarSystem />
-                </div>
-            </div>
-
-            <div className="-z-20">
-                <BackdropGridLines />
             </div>
         </>
     );
@@ -67,7 +65,7 @@ const HeroIndex = () => {
                             lloyd lobo.
                         </Link>
 
-                        <span className="dark:text-primary">
+                        <span className="dark:text-primary/75">
                             {" "}
                             creating{" "}
                             <span className="inline-flex">

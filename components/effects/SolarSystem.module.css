@@ -14,7 +14,7 @@
   Pluto : ~90 580 days (~248 years)
 
  function revolution(pl-year-in-days) {
-   return pl-year-in-days * var(--year-in-second) / 365.2563 + s 
+   return pl-year-in-days * var(--year-in-second) / 365.2563 + s
  }
 */
 
@@ -163,7 +163,7 @@ div.solar > *:not(.asteroid_belt)::before {
 .earth::before {
   height: var(--pl-earth);
   width: var(--pl-earth);
-  
+
   background: #11ace9;
   /* background: radial-gradient( ellipse at center, #00fba0 1%, #009ab3 30%, #00ff43 35%, #bacfa3 49%, #009ab3 49%, #11ace9 100%); */
   margin-top: calc(-0.5 * var(--pl-earth));
@@ -365,8 +365,7 @@ div.solar > *:not(.asteroid_belt)::before {
 /* Start: ASTEROID BELT */
 
 .asteroid_belt {
-  opacity: 0.328;
-  will-change: transform;
+  opacity: 0.428;
   border-color: transparent !important;
   width: var(--orb-asteroid-belt);
   height: var(--orb-asteroid-belt);

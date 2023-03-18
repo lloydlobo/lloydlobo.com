@@ -24,7 +24,7 @@ export function MouseBlob() {
   }, []);
   return (
     <>
-      <div className="absolute -z-50 min-h-screen w-screen blur-[48px] brightness-110 dark:brightness-50">
+      <div className="absolute -z-50 min-h-screen overflow-clip w-screen blur-[48px] opacity-50">
         <div
           id="blob"
           className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
@@ -53,7 +53,7 @@ export function MouseBlob() {
             right: 50%;
             bottom: 50%;
             position: absolute;
-            height: 500px;
+            height: 33vw;
             aspect-ratio: 1;
             translate: -50% -50%;
             border-radius: 100%;

@@ -56,8 +56,8 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      <div className="grid w-full gap-y-0 place-items-start font-sans text-sm font-bold">
-        <div className="w-full h-full origin-top-left -rotate-90">
+      <div className="grid min-w-[31vw] w-full gap-y-0 place-items-start font-sans text-sm font-bold">
+        <div className="w-full h-full">
           <input
             id="yearInSecond"
             className="transparent cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 h-full transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
@@ -69,12 +69,12 @@ export const SolarControls = (props: {}) => {
           />
         </div>
 
-        <div className="relative flex flex-col items-start gap-y-2 font-sans">
+        <div className="relative flex items-center gap-2 font-sans">
           <label
             id="yearInSecondLabel"
             htmlFor="yearInSecond"
             data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-            className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-start text-xs z-10 after:left-3 after:relative after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
+            className={`text-neutral-700 hidden dark:text-neutral-200 relative cursor-help text-start text-xs z-10 after:left-3 after:relative after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
           >
             {speed}s
           </label>
@@ -93,14 +93,14 @@ export const SolarControls = (props: {}) => {
 
           <span
             id="yearInSecondLabel"
-            className="text-neutral-700 dark:text-neutral-200 min-w-[12ch] pt-2 text-start text-xs font-bold "
+            className="text-neutral-700 dark:text-neutral-200 text-start text-xs font-bold "
           >
             {speed} seconds
             <br />
             {(speed / 30).toPrecision(2)} Earth year
           </span>
 
-          <div className="opacity-0 hover:opacity-100 transition-opacity">
+          <div className=" transition-opacity">
             <ClockNav />
           </div>
         </div>
