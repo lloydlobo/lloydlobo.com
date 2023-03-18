@@ -365,7 +365,8 @@ div.solar > *:not(.asteroid_belt)::before {
 /* Start: ASTEROID BELT */
 
 .asteroid_belt {
-  opacity: 0.168;
+  opacity: 0.328;
+  will-change: transform;
   border-color: transparent !important;
   width: var(--orb-asteroid-belt);
   height: var(--orb-asteroid-belt);
@@ -807,7 +808,7 @@ div.solar > *:not(.asteroid_belt)::before {
 /* End: Keyframes orb */
 
 .solar::after {
-  /* display: none; */
+  display: none;
   content: "";
   position: absolute;
   height: 2px;

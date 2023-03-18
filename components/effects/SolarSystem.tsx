@@ -64,7 +64,8 @@ export const SolarControls = (props: {}) => {
           <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
             <input
               id="yearInSecond"
-              className="transparent transition-opacity hover:opacity-90 opacity-25 bg-neutral-200 cursor-pointer appearance-none rounded-full border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 h-[0.5rem]"
+              // className="transparent transition-opacity hover:opacity-90 opacity-25 bg-neutral-200 cursor-pointer appearance-none rounded-full border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 h-[0.5rem]"
+              className="transparent transition-opacity bg-gray3/40 dark:bg-on-tertiary cursor-pointer appearance-none rounded-full border-transparent opacity-40 hover:opacity-100"
               min="5.00"
               max="120.00"
               value={speed}
@@ -77,7 +78,7 @@ export const SolarControls = (props: {}) => {
               <label
                 id="yearInSecondLabel"
                 htmlFor="yearInSecond"
-                className="text-neutral-700 dark:text-neutral-200 relative text-end text-xs font-bold after:absolute hover:after:translate-x-4 after:w-[23ch] hover:after:content-['30_seconds_=_1_Earth_year'] "
+                className="text-neutral-700 dark:text-neutral-200 relative text-end text-sm before:bg-on-primary/40  cursor-help font-bold before:absolute hover:before:-translate-x-[111%] before:opacity-100 before:scale-110 before:w-[23ch] hover:before:content-['30_seconds_=_1_Earth_year'] "
               >
                 {speed}s
               </label>
@@ -87,7 +88,7 @@ export const SolarControls = (props: {}) => {
               >
                 30 seconds = 1 Earth year
               </span>
-              <button title="Reset" onClick={(e) => useUpdateSpeed(e, "30.0")}>
+              <button title="Reset" className="scale-90" onClick={(e) => useUpdateSpeed(e, "30.0")}>
                 <ResetIcon />
               </button>
               <button title="Stop" onClick={(e) => useUpdateSpeed(e, "0.0")}>
