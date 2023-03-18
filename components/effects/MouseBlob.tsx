@@ -8,6 +8,7 @@ export function MouseBlob() {
     const blob = document.getElementById("blob");
 
     document.body.onpointermove = (event) => {
+    event.preventDefault();
       const { clientX, clientY } = event;
       // For delayed and relaxed effect use animate API.
       // `fill: "forwards"` - Avoid reset of property at duration end.
@@ -16,15 +17,15 @@ export function MouseBlob() {
           left: `${clientX}px`,
           top: `${clientY}px`,
         },
-        { duration: 3000, fill: "forwards" }
+        { duration: 300, fill: "forwards" }
       );
     };
 
-    return () => {};
+    return () => { };
   }, []);
   return (
     <>
-      <div className="absolute -z-50 min-h-screen overflow-clip w-screen blur-[48px] opacity-50">
+      <div className="absolute -z-50 min-h-screen w-screen overflow-clip blur-[48px] opacity-60">
         <div
           id="blob"
           className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
@@ -35,7 +36,7 @@ export function MouseBlob() {
       <style jsx>
         {`
           :root {
-            --timing-mouse-duration: 60s;
+            --timing-mouse-duration: 30s;
             --tw-bg-opacity: 1;
             --tw-green-400: ;
           }
@@ -44,17 +45,18 @@ export function MouseBlob() {
           body,
           main,
           article {
+            touch-action: none;
             overflow: hidden !important;
           }
 
           #blob {
+            height: 31.28vw;
+            aspect-ratio: 1;
             left: 50%;
             top: 50%;
             right: 50%;
             bottom: 50%;
             position: absolute;
-            height: 33vw;
-            aspect-ratio: 1;
             translate: -50% -50%;
             border-radius: 100%;
             --on-primary: rgb(17 16 17);
@@ -74,10 +76,11 @@ export function MouseBlob() {
               rotate: 0deg;
             }
             50% {
+              // scale: 1.1 1;
               --golden-ratio: 1.618;
               --pi: 3.14;
-              /* scale: 1 calc((sin(var(--golden-ratio) / var(--pi)))); */
-              scale: 1.1 1;
+              opacity: 0.7;
+              scale: 1 calc((sin(var(--golden-ratio) / var(--pi))));
             }
             to {
               rotate: 360deg;
