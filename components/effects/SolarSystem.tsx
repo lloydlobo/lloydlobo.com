@@ -74,7 +74,7 @@ export const SolarControls = (props: {}) => {
             id="yearInSecondLabel"
             htmlFor="yearInSecond"
             data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-            className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-end text-xs z-10 after:absolute before:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
+            className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-start text-xs z-10 after:left-3 after:relative after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
           >
             {speed}s
           </label>
@@ -99,7 +99,10 @@ export const SolarControls = (props: {}) => {
             <br />
             {(speed / 30).toPrecision(2)} Earth year
           </span>
-          <ClockNav />
+
+          <div className="opacity-0 hover:opacity-100 transition-opacity">
+            <ClockNav />
+          </div>
         </div>
       </div>
     </>
