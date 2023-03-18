@@ -8,7 +8,7 @@ export function MouseBlob() {
     const blob = document.getElementById("blob");
 
     document.body.onpointermove = (event) => {
-    event.preventDefault();
+      event.preventDefault();
       const { clientX, clientY } = event;
       // For delayed and relaxed effect use animate API.
       // `fill: "forwards"` - Avoid reset of property at duration end.
@@ -25,18 +25,18 @@ export function MouseBlob() {
   }, []);
   return (
     <>
-      <div className="absolute -z-50 min-h-screen w-screen overflow-clip blur-[48px] opacity-60">
+      <div className="absolute-z-50 min-h-screen w-screen overflow-hidden absolute blur-[38px] opacity-60">
         <div
           id="blob"
           className="bg-gradient-to-r dark:bg-green-800 dark:from-orange-900/40
-        dark:via-green-400 dark:to-purple-900/40"
+        dark:via-green-400 ease-in dark:to-purple-900/40"
         />
       </div>
 
       <style jsx>
         {`
           :root {
-            --timing-mouse-duration: 30s;
+            --timing-mouse-duration: 60s;
             --tw-bg-opacity: 1;
             --tw-green-400: ;
           }
@@ -51,6 +51,7 @@ export function MouseBlob() {
 
           #blob {
             height: 31.28vw;
+            will-change: transform;
             aspect-ratio: 1;
             left: 50%;
             top: 50%;
@@ -76,11 +77,11 @@ export function MouseBlob() {
               rotate: 0deg;
             }
             50% {
-              // scale: 1.1 1;
               --golden-ratio: 1.618;
               --pi: 3.14;
-              opacity: 0.7;
-              scale: 1 calc((sin(var(--golden-ratio) / var(--pi))));
+              scale: 1.1 1;
+              // opacity: 0.7;
+              // scale: 1 calc((sin(var(--golden-ratio) / var(--pi))));
             }
             to {
               rotate: 360deg;

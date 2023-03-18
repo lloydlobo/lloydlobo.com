@@ -16,7 +16,7 @@ import styles from "./Header.module.css";
 // rendering, and avoids any flash incorrect content on initial page load.
 export default function Header() {
   return (
-    <header className="z-50 disabled:py-4 ">
+    <header className="z-50 py-4 ">
       <noscript>
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
@@ -117,19 +117,19 @@ function Navigation(props: {}) {
 
 
         <div className="flex gap-3 items-center">
-        <a
-          href="https://github.com/lloydlobo/"
-          className="after:hidden flex items-center gap-1"
-          data-te-toggle="tooltip"
-          data-te-placement="top"
-          data-te-ripple-init
-          data-te-ripple-color="light"
-          title="Code"
-        >
-          <div className="scale-75">
-            <GitHubIcon />
-          </div>
-        </a>
+          <a
+            href="https://github.com/lloydlobo/"
+            className="after:hidden flex items-center gap-1"
+            data-te-toggle="tooltip"
+            data-te-placement="top"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            title="Code"
+          >
+            <div className="scale-75">
+              <GitHubIcon />
+            </div>
+          </a>
           <a
             href="mailto:hello@lloydlobo.com"
             className="scale-75 after:hidden"
