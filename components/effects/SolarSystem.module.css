@@ -35,7 +35,7 @@ div.solar {
 
 /* Orbits */
 div.solar > *:not(.sun) {
-  border: 1px ridge rgba(100, 165, 200, min(calc((1.618/2) / var(--year-in-second)), 0.32));
+  border: 1px ridge rgba(100, 165, 200, min(calc((1.618/3.14) / var(--year-in-second)), 0.32));
   border-radius: 100%;
   top: 0%;
   left: 0%;

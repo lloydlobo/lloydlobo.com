@@ -8,7 +8,7 @@ export const SolarSystem = (props: {}) => {
     <>
       <div className={`relative -z-50 ${styles.body}`}>
         <div className="-z-10">
-          <div className="relative inset-0 z-50 hover:opacity-100 transition-opacity opacity-20">
+          <div className="relative inset-0 z-50 hover:opacity-100 transition-opacity opacity-40">
             <SolarControls />
           </div>
 
@@ -30,8 +30,10 @@ export const SolarSystem = (props: {}) => {
             <div className={styles.saturn} />
             <div className={styles.uranus} />
             <div className={styles.neptune} />
-            <div className={styles.pluto} />
             {/* End: Planets. */}
+
+            {/* <div className={styles.pluto} /> */}
+
             <div className={styles.asteroid_belt} />
           </div>
 
@@ -64,8 +66,7 @@ export const SolarControls = (props: {}) => {
           <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
             <input
               id="yearInSecond"
-              // className="transparent transition-opacity hover:opacity-90 opacity-25 bg-neutral-200 cursor-pointer appearance-none rounded-full border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 h-[0.5rem]"
-              className="transparent transition-opacity bg-gray3/40 dark:bg-on-tertiary cursor-pointer appearance-none rounded-full border-transparent opacity-40 hover:opacity-100"
+              className="transparent transition-opacity bg-gray3/50 dark:bg-on-tertiary cursor-pointer appearance-none rounded-full border-transparent dark:opacity-40 hover:opacity-100"
               min="5.00"
               max="120.00"
               value={speed}
@@ -74,19 +75,20 @@ export const SolarControls = (props: {}) => {
             />
           </div>
           <div className="scale-75">
-            <div className="relative grid gap-3 font-sans">
+            <div className="relative grid gap-2 font-sans">
               <label
                 id="yearInSecondLabel"
                 htmlFor="yearInSecond"
-                className="text-neutral-700 dark:text-neutral-200 relative text-end text-sm before:bg-on-primary/40  cursor-help font-bold before:absolute hover:before:-translate-x-[111%] before:opacity-100 before:scale-110 before:w-[23ch] hover:before:content-['30_seconds_=_1_Earth_year'] "
+                data-hover={`${speed} seconds = ${30 / speed} Earth year`}
+                className={`text-neutral-700 dark:text-neutral-200 relative text-end text-sm before:bg-on-primary/40  cursor-help font-bold before:absolute hover:before:-translate-x-[111%] before:opacity-100 before:scale-110 before:w-[23ch] hover:before:content-['30_seconds_=_1_Earth_year'] `}
               >
                 {speed}s
               </label>
               <span
                 id="yearInSecondLabel"
-                className="text-neutral-700 dark:text-neutral-200 absolute top-[60%] left-[0%] hidden aspect-square w-[23ch] rotate-90 font-bold opacity-5 "
+                className="text-neutral-700 dark:text-neutral-200 text-right text-xs absolute top-[100%] right-[1%] pt-2 -z-10 min-w-[12ch] font-bold "
               >
-                30 seconds = 1 Earth year
+                {speed} seconds<br/>{(speed/30).toPrecision(2)} Earth year
               </span>
               <button title="Reset" className="scale-90" onClick={(e) => useUpdateSpeed(e, "30.0")}>
                 <ResetIcon />
