@@ -150,6 +150,9 @@ const BackdropGridLines = () => {
     <>
       <div
         id="modeMatrix"
+        style={{
+  // willChange: "transform",
+        }}
         className="grid-rows-9 
 				md:grid-rows-8 
 				max-w-screen 

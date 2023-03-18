@@ -8,7 +8,7 @@ export const SolarSystem = (props: {}) => {
     <>
       <div className={`relative -z-50 ${styles.body}`}>
         <div className="-z-10">
-          <div className="relative inset-0 z-50">
+          <div className="relative inset-0 z-50 hover:opacity-100 transition-opacity opacity-20">
             <SolarControls />
           </div>
 
@@ -59,13 +59,12 @@ export const SolarControls = (props: {}) => {
   return (
     <>
       {/* https://tailwind-elements.com/docs/standard/forms/range/ */}
-      <div className="absolute -bottom-8 ">
+      <div className="absolute left-[85%] md:left-[90%] mt-20 ">
         <div className="relative flex h-fit w-fit flex-col items-center gap-0 px-3 font-sans  text-sm font-bold">
           <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
             <input
               id="yearInSecond"
-              // className="transparent bg-neutral-200 h-0.5 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 py-0.5 transition-all delay-75 duration-300 ease-out hover:py-[0.4rem] dark:brightness-[61%] dark:saturate-[40%] dark:hover:saturate-100"
-              className="transparent opacity-50 duration-300 delay-75 ease-out hover:opacity-90 bg-neutral-200 cursor-pointer appearance-none rounded-lg border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 h-2 disabled:py-0.5 hover:scale-y-125"
+              className="transparent transition-opacity hover:opacity-90 opacity-25 bg-neutral-200 cursor-pointer appearance-none rounded-full border-transparent bg-gradient-to-r from-orange-400 via-green-400 to-purple-500 h-[0.5rem]"
               min="5.00"
               max="120.00"
               value={speed}
@@ -73,7 +72,6 @@ export const SolarControls = (props: {}) => {
               type="range"
             />
           </div>
-
           <div className="scale-75">
             <div className="relative grid gap-3 font-sans">
               <label
