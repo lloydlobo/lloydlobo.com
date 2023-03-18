@@ -8,7 +8,7 @@ export const SolarSystem = (props: {}) => {
   return (
     <>
       <div className={`relative ${styles.body}`}>
-        <div className="-z-10 isolate">
+        <div className="isolate -z-10">
           <div
             data-id="solar-system"
             className={`relative z-10 ${styles.solar} `}
@@ -56,11 +56,11 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      <div className="grid min-w-[31vw] w-full gap-y-0 place-items-start font-sans text-sm font-bold">
-        <div className="w-full h-full">
+      <div className="grid w-full min-w-[31vw] place-items-start gap-y-0 font-sans text-sm font-bold">
+        <div className="h-full w-full">
           <input
             id="yearInSecond"
-            className="transparent cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 h-full transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
+            className="transparent h-full cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
             min="5.00"
             max="120.00"
             value={speed}
@@ -74,7 +74,7 @@ export const SolarControls = (props: {}) => {
             id="yearInSecondLabel"
             htmlFor="yearInSecond"
             data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-            className={`text-neutral-700 hidden dark:text-neutral-200 relative cursor-help text-start text-xs z-10 after:left-3 after:relative after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
+            className={`text-neutral-700 dark:text-neutral-200 relative z-10 hidden cursor-help text-start text-xs after:relative after:left-3 after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
           >
             {speed}s
           </label>
