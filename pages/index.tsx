@@ -30,7 +30,7 @@ export function ClockNav() {
 export default function IndexPage() {
   return (
     <>
-      <div className="">
+      <div className="min-h-screen">
         <Layout title="Home">
           <main className="relative grid -top-16 lg:top-0">
             <HeroIndex />
