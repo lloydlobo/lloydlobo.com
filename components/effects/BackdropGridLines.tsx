@@ -1,3 +1,5 @@
+import styles from "@/components/effects/BackdropGridLines.module.css";
+
 export function BackdropGridLines  ()  {
   return (
     <>
@@ -6,7 +8,7 @@ export function BackdropGridLines  ()  {
         style={{
   // willChange: "transform",
         }}
-        className="grid-rows-9 
+        className={` ${styles.component} grid-rows-9 
 				md:grid-rows-8 
 				max-w-screen 
 				absolute
@@ -21,7 +23,7 @@ export function BackdropGridLines  ()  {
 				md:grid-cols-6 
 				dark:[&>*]:bg-[#0e0d0e]
 				[&>span]:m-[0.2vw] 
-				md:[&>span]:m-[var(--square-margin)]"
+				md:[&>span]:m-[var(--square-margin)]`}
       >
         <>
           <div
@@ -29,42 +31,42 @@ export function BackdropGridLines  ()  {
             className="absolute -z-50 aspect-square blur-2xl"
           />
         </>
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
-        <span className="square" />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
+        <span className={`${styles.square} square`} />
       </div>
 
       <style jsx global>
@@ -81,34 +83,6 @@ export function BackdropGridLines  ()  {
 
           #modeMatrix {
             gap: 1.132px;
-          }
-
-          #modeMatrix > .square {
-            scale: 1;
-            aspect-ratio: 1 !important;
-            animation: perimeter
-              calc(
-                var(--earth-days) * var(--year-in-second) /
-                  var(--years-relative) * 0.5s
-              )
-              ease-in-out infinite;
-            outline: 1px dotted #00ff0010;
-          }
-
-          @keyframes perimeter {
-            from,
-            35%,
-            65%,
-            to {
-              transform: scale(1.01);
-              outline: 1px dotted #00ff0010;
-              border: var(--square-margin) dotted #11111190;
-            }
-            50% {
-              transform: scale(0.97);
-              outline: 0px solid #00ff0005;
-              border: calc(var(--square-margin) * 4px) ridge #11101170;
-            }
           }
 
           #solarGlare {

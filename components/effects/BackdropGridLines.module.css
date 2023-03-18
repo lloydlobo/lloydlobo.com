@@ -1,0 +1,41 @@
+:root .square { 
+  --square-margin: clamp(
+  0.328px,
+  1vw,
+  1.618px
+); /* automate to open the portal */
+--earth-days: 365.2563;
+
+}
+
+.square {
+  scale: 1;
+  aspect-ratio: 1 !important;
+  will-change: transform;
+  animation: perimeter
+    calc(
+      var(--earth-days) * var(--year-in-second) /
+        var(--years-relative) * 0.5s
+    )
+    ease-in-out infinite;
+    border: 1.618px #aaffaa15;
+    outline: 0px dotted #00ff0015;
+  /* @apply outline-red-600 outline-dotted; */
+}
+
+@keyframes perimeter {
+  from,
+  35%,
+  65%,
+  to {
+    transform: scale(1.01);
+    /* outline: 1px dotted #00ff0010; */
+    /* border: var(--square-margin) dotted #11111190; */
+    @apply dark:border-2 dark:outline-1 dark:border-on-primary/90 dark:border-dotted dark:outline-[#00ff0010] dark:outline-dotted dark:border-opacity-90;
+  }
+  50% {
+    transform: scale(0.97);
+    /* @apply dark:border border-white; */
+    @apply dark:outline-[0.0px] border-2 border-dotted dark:border-on-primary/70 outline outline-white/10;
+  }
+}
