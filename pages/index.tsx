@@ -6,48 +6,17 @@ import { SolarControls, SolarSystem } from "@/components/effects/SolarSystem";
 import { MouseBlob } from "@/components/effects/MouseBlob";
 import { BackdropGridLines } from "@/components/effects/BackdropGridLines";
 
-export function ClockNav() {
-  const [currentTime, setCurrentTime] = useState(null);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-  return (
-    <div className="bg-opacity-50 text-center text-xs font-semibold backdrop-blur-[2px] ">
-      <span className="relative h-full text-opacity-70 brightness-75 dark:text-secondary">
-        {currentTime ? (
-          <span>{currentTime}</span>
-        ) : (
-          <span className="blur-[0.5px]"> 0:00:00 AM</span>
-        )}
-      </span>
-    </div>
-  );
-}
-
 export default function IndexPage() {
   return (
     <>
-      <div className="mb-12 min-h-screen">
+      <div className="mb-12 h-full min-h-screen">
         <Layout title="Home">
-          <main className="relative grid gap-6 py-6">
-            <div className="h-[61.8vh]">
+          <main className="relative mx-auto h-full grid gap-12 py-6">
               <HeroIndex />
-            </div>
-
-            <div
-              style={{ top: "min(80%, 75vh)" }}
-              className="container relative mb-6 h-screen py-6"
-            >
-              <div className="z-50 p-8">
-                <SolarControls />
-              </div>
-              <div className="relative">
-                <SolarSystem />
-              </div>
-            </div>
+             <div className="mx-auto flex flex-col-reverse">
+              <SolarControls />
+              <SolarSystem />
+             </div> 
           </main>
         </Layout>
       </div>
@@ -230,7 +199,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => {};
+    return () => { };
   }, []);
 
   return (
@@ -487,3 +456,25 @@ const RotateOriginTracker = () => {
     </>
   );
 };
+
+
+export function ClockNav() {
+  const [currentTime, setCurrentTime] = useState(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="bg-opacity-50 text-center text-xs font-semibold backdrop-blur-[2px] ">
+      <span className="relative h-full text-opacity-70 brightness-75 dark:text-secondary">
+        {currentTime ? (
+          <span>{currentTime}</span>
+        ) : (
+          <span className="blur-[0.5px]"> 0:00:00 AM</span>
+        )}
+      </span>
+    </div>
+  );
+}

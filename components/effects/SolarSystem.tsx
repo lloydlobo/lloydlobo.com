@@ -7,7 +7,7 @@ import { ClockNav } from "@/pages";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-      <div className={`relative ${styles.body}`}>
+      <div className={`relative grid h-[95vh] ${styles.body}`}>
         <div className="isolate -z-10">
           <div
             data-id="solar-system"
@@ -39,6 +39,14 @@ export const SolarSystem = (props: {}) => {
   );
 };
 
+// <label
+//   id="yearInSecondLabel"
+//   htmlFor="yearInSecond"
+//   data-hover={`${speed} seconds = ${30 / speed} Earth year`}
+//   className={`text-neutral-700 dark:text-neutral-200 relative z-10 hidden cursor-help text-start text-xs after:relative after:left-3 after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
+// >
+//   {speed}s
+// </label>
 // https://davidwalsh.name/css-variables-javascript
 // TODO: use animate to delay the effect
 export const SolarControls = (props: {}) => {
@@ -56,11 +64,11 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      <div className="grid w-full min-w-[31vw] place-items-start gap-y-0 font-sans text-sm font-bold">
-        <div className="h-full w-full">
+      <div className="grid w-fit min-w-[31vw] gap-y-2 mx-auto font-sans text-sm font-bold">
+        <div className="h-full w-full grid">
           <input
             id="yearInSecond"
-            className="transparent h-full cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
+            className="transparent h-2 cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
             min="5.00"
             max="120.00"
             value={speed}
@@ -69,38 +77,31 @@ export const SolarControls = (props: {}) => {
           />
         </div>
 
-        <div className="relative flex items-center gap-2 font-sans">
-          <label
-            id="yearInSecondLabel"
-            htmlFor="yearInSecond"
-            data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-            className={`text-neutral-700 dark:text-neutral-200 relative z-10 hidden cursor-help text-start text-xs after:relative after:left-3 after:w-[23ch] after:scale-110 after:bg-on-primary/40 after:opacity-100 hover:after:translate-x-[111%] hover:after:content-['30_seconds_=_1_Earth_year'] `}
-          >
-            {speed}s
-          </label>
-
-          <button
-            title="Reset"
-            className="scale-90"
-            onClick={(e) => useUpdateSpeed(e, "30.0")}
-          >
-            <ResetIcon />
-          </button>
-
-          <button title="Stop" onClick={(e) => useUpdateSpeed(e, "0.0")}>
-            <StopIcon />
-          </button>
-
+        <div className="grid grid-flow-col w-full font-sans relative">
           <span
             id="yearInSecondLabel"
-            className="text-neutral-700 dark:text-neutral-200 text-start text-xs font-bold "
+            className="text-neutral-700  flex-grow dark:text-neutral-200 relative mr-auto text-start origin-left text-[9px] tracking-wide font-bold"
           >
-            {speed} seconds
-            <br />
-            {(speed / 30).toPrecision(2)} Earth year
+            {speed} seconds{" =  "}{(speed / 30).toPrecision(2)} Earth year
           </span>
 
-          <div className=" transition-opacity">
+
+          <div className="place-self-end flex w-10 ml-auto absolute">
+
+            <button
+              title="Reset"
+              className="scale-75 ml-auto"
+              onClick={(e) => useUpdateSpeed(e, "30.0")}
+            >
+              <ResetIcon />
+            </button>
+
+            <button title="Stop" className="scale-75" onClick={(e) => useUpdateSpeed(e, "0.0")}>
+              <StopIcon />
+            </button>
+          </div>
+
+          <div className=" transition-opacity opacity-0 hover:opacity-100">
             <ClockNav />
           </div>
         </div>
