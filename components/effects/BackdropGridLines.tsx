@@ -6,23 +6,23 @@ export function BackdropGridLines() {
 
       <div
         id="modeMatrix"
-        className={` ${styles.matrix} grid-rows-9 
-				md:grid-rows-8 
-				max-w-screen 
+        className={` ${styles.matrix} grid-rows-9
+				md:grid-rows-8
+				max-w-screen
 				absolute
 				inset-0
 				top-8
 				-z-40
 				my-auto
 				inline-grid
-				max-h-screen 
-				grid-cols-4 
+				min-h-screen
+				grid-cols-4
 				overflow-hidden
-				md:grid-cols-6 
+				md:grid-cols-6
 				[&>*]:bg-white
 				isolate
 				dark:[&>*]:bg-[#0e0d0e]
-				[&>span]:m-[0.2vw] 
+				[&>span]:m-[0.2vw]
 				md:[&>span]:m-[var(--square-margin)]`}
       >
         <>
