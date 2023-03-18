@@ -1,6 +1,7 @@
 import { useTheme } from "next-themes";
 import styles from "@/components/effects/SolarSystem.module.css";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
+import { ClockNav } from "@/pages";
 
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {
@@ -8,7 +9,7 @@ export const SolarSystem = (props: {}) => {
     <>
       <div className={`relative -z-50 ${styles.body}`}>
         <div className="-z-10">
-          <div className="relative inset-0 z-50 opacity-40 transition-opacity hover:opacity-100">
+          <div className="scale-75 origin-top-left pl-8 opacity-50 hover:opacity-100 transition-opacity">
             <SolarControls />
           </div>
 
@@ -22,14 +23,14 @@ export const SolarSystem = (props: {}) => {
             </ThemeToggleWrapper>
 
             {/* Start: Planets. */}
-            <div className={styles.mercury} />
-            <div className={styles.venus} />
-            <div className={styles.earth} />
-            <div className={styles.mars} />
-            <div className={styles.jupiter} />
-            <div className={styles.saturn} />
-            <div className={styles.uranus} />
-            <div className={styles.neptune} />
+            <div className={`${styles.mercury}`} />
+            <div className={`${styles.venus}`} />
+            <div className={`${styles.earth}`} />
+            <div className={`${styles.mars}`} />
+            <div className={`${styles.jupiter}`} />
+            <div className={`${styles.saturn}`} />
+            <div className={`${styles.uranus}`} />
+            <div className={`${styles.neptune}`} />
             {/* End: Planets. */}
 
             {/* <div className={styles.pluto} /> */}
@@ -59,50 +60,50 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      {/* https://tailwind-elements.com/docs/standard/forms/range/ */}
-      <div className="absolute left-[85%] mt-20 md:left-[90%] ">
-        <div className="relative flex h-fit w-fit flex-col items-center gap-0 px-3 font-sans  text-sm font-bold">
-          <div className="absolute -top-3 left-1/2 mx-auto origin-left -rotate-90 place-self-center">
-            <input
-              id="yearInSecond"
-              className="transparent cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-on-tertiary dark:opacity-40"
-              min="5.00"
-              max="120.00"
-              value={speed}
-              onChange={(e) => useUpdateSpeed(e, e.currentTarget.value)}
-              type="range"
-            />
-          </div>
-          <div className="scale-75">
-            <div className="relative grid gap-2 font-sans">
-              <label
-                id="yearInSecondLabel"
-                htmlFor="yearInSecond"
-                data-hover={`${speed} seconds = ${30 / speed} Earth year`}
-                className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-end text-sm  font-bold before:absolute before:w-[23ch] before:scale-110 before:bg-on-primary/40 before:opacity-100 hover:before:-translate-x-[111%] hover:before:content-['30_seconds_=_1_Earth_year'] `}
-              >
-                {speed}s
-              </label>
-              <span
-                id="yearInSecondLabel"
-                className="text-neutral-700 dark:text-neutral-200 absolute top-[100%] right-[1%] -z-10 min-w-[12ch] pt-2 text-right text-xs font-bold "
-              >
-                {speed} seconds
-                <br />
-                {(speed / 30).toPrecision(2)} Earth year
-              </span>
-              <button
-                title="Reset"
-                className="scale-90"
-                onClick={(e) => useUpdateSpeed(e, "30.0")}
-              >
-                <ResetIcon />
-              </button>
-              <button title="Stop" onClick={(e) => useUpdateSpeed(e, "0.0")}>
-                <StopIcon />
-              </button>
-            </div>
-          </div>
+      <div className="grid w-full gap-y-0 place-items-start font-sans text-sm font-bold">
+        <div className="w-full h-full origin-top-left -rotate-90">
+          <input
+            id="yearInSecond"
+            className="transparent cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 h-full transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
+            min="5.00"
+            max="120.00"
+            value={speed}
+            onChange={(e) => useUpdateSpeed(e, e.currentTarget.value)}
+            type="range"
+          />
+        </div>
+
+        <div className="relative flex flex-col items-start gap-y-2 font-sans">
+          <label
+            id="yearInSecondLabel"
+            htmlFor="yearInSecond"
+            data-hover={`${speed} seconds = ${30 / speed} Earth year`}
+            className={`text-neutral-700 dark:text-neutral-200 relative cursor-help text-end text-xs before:absolute before:w-[23ch] before:scale-110 before:bg-on-primary/40 before:opacity-100 hover:before:-translate-x-[111%] hover:before:content-['30_seconds_=_1_Earth_year'] `}
+          >
+            {speed}s
+          </label>
+
+          <button
+            title="Reset"
+            className="scale-90"
+            onClick={(e) => useUpdateSpeed(e, "30.0")}
+          >
+            <ResetIcon />
+          </button>
+
+          <button title="Stop" onClick={(e) => useUpdateSpeed(e, "0.0")}>
+            <StopIcon />
+          </button>
+
+          <span
+            id="yearInSecondLabel"
+            className="text-neutral-700 dark:text-neutral-200 min-w-[12ch] pt-2 text-start text-xs font-bold "
+          >
+            {speed} seconds
+            <br />
+            {(speed / 30).toPrecision(2)} Earth year
+          </span>
+          <ClockNav />
         </div>
       </div>
     </>

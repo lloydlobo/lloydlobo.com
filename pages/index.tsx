@@ -8,14 +8,12 @@ import { BackdropGridLines } from "@/components/effects/BackdropGridLines";
 
 export function ClockNav() {
   const [currentTime, setCurrentTime] = useState(null);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date().toLocaleTimeString());
     }, 1000);
     return () => clearInterval(interval);
   }, []);
-
   return (
     <div className="bg-opacity-50 text-center text-xs font-semibold backdrop-blur-[2px] ">
       <span className="relative h-full text-opacity-70 brightness-75 dark:text-secondary">
@@ -59,7 +57,7 @@ const HeroIndex = () => {
     <>
       <Section>
         <article className=" space-y-8 py-0 disabled:lg:py-12">
-          <p className="prose-xl mx-auto gap-1 text-justify font-medium lowercase leading-8 tracking-tight md:prose-2xl disabled:[word-spacing:0.45ch] md:leading-9">
+          <p className="prose-xl mx-auto gap-1 text-justify font-medium bg-white/40 dark:bg-on-primary/40 rounded-2xl lowercase leading-7 tracking-tight md:prose-2xl disabled:[word-spacing:0.45ch] md:leading-8">
             <Link href="/about" className="tracking-wider dark:text-secondary">
               lloyd lobo.
             </Link>
@@ -229,7 +227,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => {};
+    return () => { };
   }, []);
 
   return (
