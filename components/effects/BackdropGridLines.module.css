@@ -8,45 +8,51 @@
 
 }
 
+.matrix {
+  /* gap: 1.132px; */
+  gap:1px;
+}
+
 .square {
-  scale: 1;
+  transform: scale(1);
   aspect-ratio: 1 !important;
-  will-change: transform;
-  animation: perimeter
+  /* will-change: transform; */
+  animation: blink
     calc(
       var(--earth-days) * var(--year-in-second) /
         var(--years-relative) * 0.5s
     )
-    ease-in-out infinite;
-    border: 1.618px #aaffaa15;
-    outline: 0px dotted #00ff0015;
+    ease-out infinite;
+    /* border: 1.618px #aaffaa15; */
+    /* outline: 0px dotted #00ff0015; */
   /* @apply outline-red-600 outline-dotted; */
 }
 
-@keyframes perimeter {
+@keyframes blink {
   from,
-  35%,
-  65%,
+  46%,53%,
   to {
-    transform: scale(1.01);
+    transform: scale(1);
     /* outline: 1px dotted #00ff0010; */
     /* border: var(--square-margin) dotted #11111190; */
-    @apply dark:border-2 dark:outline-1 dark:border-on-primary/90 dark:border-dotted dark:outline-[#00ff0010] dark:outline-dotted dark:border-opacity-90;
+    /* @apply dark:border-2 dark:outline-1 dark:border-on-primary/90 dark:border-dotted dark:outline-[#00ff0010] dark:outline-dotted dark:border-opacity-90; */
   }
   50% {
-    transform: scale(0.97);
+    transform: scale(1.11);
     /* @apply dark:border border-white; */
-    @apply dark:outline-[0.0px] border-2 border-dotted dark:border-on-primary/70 outline outline-white/10;
+    /* @apply dark:outline-[0.0px] dark:border-2 border-dotted dark:border-on-primary/70 outline outline-white/10; */
   }
 }
 
 .solar_glare {
   left:50%;
-  top:50%;
+  /* top:33vh; */
+  top: clamp(220px, 33vw, 300px);
   opacity: 0.85;
   filter: blur(20px);
   margin-top: 33vh;
-  height: clamp(200px, 40vw, 500px);
+  height: clamp(100px, 28vw, 222px);
+  /* height: 222px; */
   aspect-ratio: 1;
   border-radius: 100%;
   border: 1px solid red;

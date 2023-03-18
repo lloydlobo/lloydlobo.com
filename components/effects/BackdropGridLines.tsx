@@ -6,12 +6,7 @@ export function BackdropGridLines() {
 
       <div
         id="modeMatrix"
-        style={
-          {
-            // willChange: "transform",
-          }
-        }
-        className={` ${styles.component} grid-rows-9 
+        className={` ${styles.matrix} grid-rows-9 
 				md:grid-rows-8 
 				max-w-screen 
 				absolute
@@ -85,9 +80,6 @@ export function BackdropGridLines() {
             --earth-days: 365.2563;
           }
 
-          #modeMatrix {
-            gap: 1.132px;
-          }
 
         `}
       </style>
