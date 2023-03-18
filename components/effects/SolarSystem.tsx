@@ -7,7 +7,7 @@ import { ClockNav } from "@/pages";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-      <div className={`relative grid h-[95vh] ${styles.body}`}>
+      <div className={`relative grid h-screen ${styles.body}`}>
         <div className="isolate -z-10">
           <div
             data-id="solar-system"

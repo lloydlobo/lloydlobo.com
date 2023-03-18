@@ -9,9 +9,9 @@ import { BackdropGridLines } from "@/components/effects/BackdropGridLines";
 export default function IndexPage() {
   return (
     <>
-      <div className="mb-12 h-full min-h-screen">
+      <div className="h-full min-h-screen">
         <Layout title="Home">
-          <main className="relative mx-auto h-full grid gap-12 py-6">
+          <main className="relative mx-auto h-full grid gap-12 pt-6">
               <HeroIndex />
              <div className="mx-auto flex flex-col-reverse">
               <SolarControls />
