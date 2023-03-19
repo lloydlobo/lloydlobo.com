@@ -64,8 +64,8 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      <div className="grid w-[300px] min-w-[31vw] opacity-30 hover:opacity-100 transition-opacity delay-500 hover:delay-[5ms] gap-y-2 mx-auto font-sans text-sm font-bold">
-        <div className="h-full w-full grid">
+      <div className="mx-auto grid w-[300px] min-w-[31vw] gap-y-2 font-sans text-sm font-bold opacity-30 transition-opacity delay-500 hover:opacity-80 hover:delay-[5ms]">
+        <div className="grid h-full w-full">
           <input
             id="yearInSecond"
             className="transparent h-1.5 cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
@@ -77,31 +77,36 @@ export const SolarControls = (props: {}) => {
           />
         </div>
 
-        <div className="grid grid-flow-col w-full font-sans items-center relative">
+        <div className="relative grid w-full grid-flow-col items-center font-sans">
           <span
-          style={{wordSpacing: 1}}
+            style={{ wordSpacing: 1 }}
             id="yearInSecondLabel"
-            className="text-neutral-700 uppercase flex-grow dark:text-neutral-200 relative mr-auto text-start origin-left text-[9px] tracking-wide font-medium"
+            className="text-neutral-700 dark:text-neutral-200 relative mr-auto flex-grow origin-left text-start text-[9px] font-medium uppercase tracking-wide"
           >
-            <span className="font-bold">{speed}</span> seconds{" /  "}<span className="font-bold">{(speed / 30).toPrecision(2)}</span> Earth year
+            <span className="font-bold">{speed}</span> seconds{" /  "}
+            <span className="font-bold">
+              {(speed / 30).toPrecision(2)}
+            </span>{" "}
+            Earth year
           </span>
 
-
-          <div className="place-self-end flex w-10 ml-auto">
-
+          <div className="ml-auto flex w-10 place-self-end">
             <button
               title="Reset"
-              className="scale-75 ml-auto"
+              className="ml-auto scale-75"
               onClick={(e) => useUpdateSpeed(e, "30.0")}
             >
               <ResetIcon />
             </button>
 
-            <button title="Stop" className="scale-75" onClick={(e) => useUpdateSpeed(e, "0.0")}>
+            <button
+              title="Stop"
+              className="scale-75"
+              onClick={(e) => useUpdateSpeed(e, "0.0")}
+            >
               <StopIcon />
             </button>
           </div>
-
         </div>
       </div>
     </>

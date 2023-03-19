@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --max-width: 1100px;
-  --border-radius: 12px;
+  /* --max-width: 1100px; */
+  /* --border-radius: 12px; */
 
   --tw-bg-opacity: 1;
   --bg-green-300: rgb(134 239 172 / var(--tw-bg-opacity));
@@ -65,7 +65,7 @@
 /* font-size: 1.8vw; */
 html {
   scroll-behavior: smooth;
-  @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem];
+  /* @apply [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]; */
 }
 
 @media all and (min-width: 1000px) {
@@ -84,10 +84,9 @@ html {
 
 html,
 body {
-  min-height: 100vh;
-  overflow-x: hidden;
   /* Why: Due to the mouse blob effect extending the vertical viewport  */
   /* overflow: hidden; */
+  overflow-x: hidden;
   @apply font-serif;
 }
 
@@ -102,7 +101,7 @@ main {
 }
 
 .layout-wrapper {
-  @apply flex min-h-screen flex-col selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
+  @apply flex lg:min-h-screen flex-col selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
 }
 
 article {
