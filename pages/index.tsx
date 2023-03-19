@@ -9,29 +9,28 @@ import { BackdropGridLines } from "@/components/effects/BackdropGridLines";
 export default function IndexPage() {
   return (
     <>
-        <Layout title="Home">
-          <main className="relative mx-auto grid gap-12 md:pt-6">
-            <HeroIndex />
-          </main>
-        </Layout>
-
+      <Layout title="Home">
+        <main className="">
+          <HeroIndex />
+        </main>
         <div className="opacity-70">
-
           <div
             style={{
               left: "calc(-1 * min(50%, 75vh))",
               position: "absolute",
               top: "50%",
-              width: "200%",
+              width: "200vw",
               aspectRatio: "1 / 0.5",
               background: "rgb(0, 2, 9, 1)",
               borderRadius: "50% 50% 0 0",
               borderTop: "1px solid rgba(120, 119, 198, 0.4)",
             }}
-            className="mx-auto gap-24 z-20 pt-60 pb-24 mt-16 h-full flex flex-col justify-between items-center"
+            className="z-20 mx-auto mt-24 gap-6 overflow-hidden md:pt-6"
           >
-            <SolarSystem />
-            <SolarControls />
+            <div className="relative mt-12 flex flex-col-reverse">
+              <SolarControls />
+              <SolarSystem />
+            </div>
           </div>
           <div
             style={{
@@ -48,6 +47,7 @@ export default function IndexPage() {
             <Stars />
           </div>
         </div>
+      </Layout>
     </>
   );
 }
@@ -227,7 +227,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => { };
+    return () => {};
   }, []);
 
   return (

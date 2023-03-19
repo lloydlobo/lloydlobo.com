@@ -6,6 +6,7 @@ import {
   ThemeDropdown,
 } from "@/components/layout/Dock/DockNavigation";
 import styles from "./Header.module.css";
+import { LogoIcon } from "@/components/icons";
 
 // `Header` navigation top level component.
 //
@@ -90,6 +91,7 @@ function AuthComponent() {
   );
 }
 
+
 function Navigation(props: {}) {
   return (
     <div className="mx-auto px-6 md:max-w-screen-sm lg:px-0">
@@ -97,10 +99,9 @@ function Navigation(props: {}) {
         <Link
           href="/"
           data-id="logo"
-          className="logo h-full max-h-[1rem]  min-h-[1rem] w-full min-w-[1rem] max-w-[1rem] items-center place-self-center rounded-full bg-[var(--bg-logo-light)] after:hidden dark:bg-[var(--bg-logo-dark)] "
+          className="after:hidden"
         >
-          <span className="sr-only">Home</span>
-
+          <LogoIcon />
         </Link>
         <Link className="after:hidden" href="/about">
           About

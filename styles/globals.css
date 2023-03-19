@@ -101,7 +101,7 @@ main {
 }
 
 .layout-wrapper {
-  @apply flex lg:min-h-screen flex-col selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
+  @apply grid  flex-col selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
 }
 
 article {
