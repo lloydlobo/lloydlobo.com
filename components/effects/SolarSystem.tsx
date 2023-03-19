@@ -64,11 +64,11 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      <div className="grid w-fit min-w-[31vw] gap-y-2 mx-auto font-sans text-sm font-bold">
+      <div className="grid w-[300px] min-w-[31vw] opacity-30 hover:opacity-100 transition-opacity delay-500 hover:delay-[5ms] gap-y-2 mx-auto font-sans text-sm font-bold">
         <div className="h-full w-full grid">
           <input
             id="yearInSecond"
-            className="transparent h-2 cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
+            className="transparent h-1.5 cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
             min="5.00"
             max="120.00"
             value={speed}
@@ -77,16 +77,17 @@ export const SolarControls = (props: {}) => {
           />
         </div>
 
-        <div className="grid grid-flow-col w-full font-sans relative">
+        <div className="grid grid-flow-col w-full font-sans items-center relative">
           <span
+          style={{wordSpacing: 1}}
             id="yearInSecondLabel"
-            className="text-neutral-700  flex-grow dark:text-neutral-200 relative mr-auto text-start origin-left text-[9px] tracking-wide font-bold"
+            className="text-neutral-700 uppercase flex-grow dark:text-neutral-200 relative mr-auto text-start origin-left text-[9px] tracking-wide font-medium"
           >
-            {speed} seconds{" =  "}{(speed / 30).toPrecision(2)} Earth year
+            <span className="font-bold">{speed}</span> seconds{" /  "}<span className="font-bold">{(speed / 30).toPrecision(2)}</span> Earth year
           </span>
 
 
-          <div className="place-self-end flex w-10 ml-auto absolute">
+          <div className="place-self-end flex w-10 ml-auto">
 
             <button
               title="Reset"
