@@ -7,12 +7,11 @@ import { ClockNav } from "@/pages";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-      <div
-        className={`relative aspect-square`}>
-        <div className="aspect-square -z-40">
+      <div className={`relative aspect-square`}>
+        <div className="-z-40 aspect-square">
           <div
             data-id="solar-system"
-            className={`relative flex flex-col-reverse  border z-10 ${styles.solar} `}
+            className={`relative z-10 flex  flex-col-reverse border ${styles.solar} `}
           >
             {/* <ThemeToggleWrapper> </ThemeToggleWrapper> */}
             <ThemeToggleWrapper>
@@ -36,9 +35,9 @@ export const SolarSystem = (props: {}) => {
           </div>
         </div>
       </div>
-          <div className="relative z-50  mt-12">
-          <SolarControls />
-          </div>
+      <div className="relative z-50  mt-12">
+        <SolarControls />
+      </div>
     </>
   );
 };

@@ -14,12 +14,12 @@ export default function IndexPage() {
           <HeroIndex />
         </main>
       </Layout>
-      <div className="absolute -bottom-[150px] -z-50 opacity-50 border-z-50">
+      <div className="border-z-50 absolute -bottom-[150px] -z-50 opacity-50">
         <Stars />
       </div>
-      <div className="absolute scroll-m-4 cursor-all-scroll object-contain w-screen overflow-hidden h-full">
-        <div className="visual  after:w-[200%] -top-5 md:-top-10 grid place-content-center after:dark:bg-[#0b0b0b] after:bg-green-200/70 -z-10">
-          <div className="relative mt-20 md:mt-42 aspect-square">
+      <div className="absolute h-full w-screen cursor-all-scroll scroll-m-4 overflow-hidden object-contain">
+        <div className="visual  -top-5 -z-10 grid place-content-center after:w-[200%] after:bg-green-200/70 after:dark:bg-[#0b0b0b] md:-top-10">
+          <div className="md:mt-42 relative mt-20 aspect-square">
             <SolarSystem />
           </div>
         </div>
@@ -27,50 +27,53 @@ export default function IndexPage() {
 
       <style jsx>
         {`
-.visual {
-  content: "";
-  z-index: -50;
-  // width: 100vw;
-  left: 0;
-  // bottom: 0;
-  aspect-ratio: 1/0.7;
-  // position: relative;
-  opacity: 0.75;
-  overflow-x: hidden;
-}
+          .visual {
+            content: "";
+            z-index: -50;
+            // width: 100vw;
+            left: 0;
+            // bottom: 0;
+            aspect-ratio: 1/0.7;
+            // position: relative;
+            opacity: 0.75;
+            overflow-x: hidden;
+          }
 
-.visual::after {
-  border-radius: 100% 100% 0 0;
-  left: -50%;
-  // top: 4%;
-  z-index: -10;
-  content: "";
-  position: absolute;
-  width: 200%;
-  opacity: 1;
-  aspect-ratio: 1 / 0.7;
-  border-top: 1px solid rgba(100, 119, 98, 0.4);
-  // background: rgb(8, 9, 12, 1);
-}
+          .visual::after {
+            border-radius: 100% 100% 0 0;
+            left: -50%;
+            // top: 4%;
+            z-index: -10;
+            content: "";
+            position: absolute;
+            width: 200%;
+            opacity: 1;
+            aspect-ratio: 1 / 0.7;
+            border-top: 1px solid rgba(100, 119, 98, 0.4);
+            // background: rgb(8, 9, 12, 1);
+          }
 
-  .visual::before{
-  background: radial-gradient(circle at bottom center, #00775570 ,transparent 70%);
-  content: "";
-  width: 100%;
-  height: 200px;
-  aspect-ratio: 1 / 0.5;
-  position: relative;
-  opacity: 0.6;
-  inset: 0;
-  top: -50%;
-  filter: blur(40px);
-  // bottom: max(-3vh, -3vw);
-  z-index: -50;
-  // overflow: hidden;
-  // border-radius: 100%;
-  }
-  `}
-
+          .visual::before {
+            background: radial-gradient(
+              circle at bottom center,
+              #00775570,
+              transparent 70%
+            );
+            content: "";
+            width: 100%;
+            height: 200px;
+            aspect-ratio: 1 / 0.5;
+            position: relative;
+            opacity: 0.6;
+            inset: 0;
+            top: -50%;
+            filter: blur(40px);
+            // bottom: max(-3vh, -3vw);
+            z-index: -50;
+            // overflow: hidden;
+            // border-radius: 100%;
+          }
+        `}
       </style>
     </>
   );
@@ -251,7 +254,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => { };
+    return () => {};
   }, []);
 
   return (

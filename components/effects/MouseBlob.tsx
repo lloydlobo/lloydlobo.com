@@ -21,7 +21,7 @@ export function MouseBlob() {
       );
     };
 
-    return () => { };
+    return () => {};
   }, []);
   return (
     <>
