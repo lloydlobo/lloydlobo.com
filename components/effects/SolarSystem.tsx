@@ -9,7 +9,7 @@ export const SolarSystem = (props: {}) => {
     <>
       <div
         className={`relative aspect-square`}>
-        <div className="aspect-square">
+        <div className="aspect-square -z-40">
           <div
             data-id="solar-system"
             className={`relative flex flex-col-reverse  border z-10 ${styles.solar} `}
@@ -36,7 +36,7 @@ export const SolarSystem = (props: {}) => {
           </div>
         </div>
       </div>
-          <div className="reltaive mt-12">
+          <div className="relative z-50  mt-12">
           <SolarControls />
           </div>
     </>

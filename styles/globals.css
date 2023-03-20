@@ -111,7 +111,7 @@ article {
 }
 
 footer {
-  @apply w-full py-2 brightness-[50%];
+  @apply w-full py-2 opacity-[61%];
 }
 
 a,

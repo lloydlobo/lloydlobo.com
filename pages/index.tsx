@@ -10,15 +10,17 @@ export default function IndexPage() {
   return (
     <>
       <Layout title="Home">
-        <main className="">
+        <main className="z-50">
           <HeroIndex />
         </main>
       </Layout>
-      <div className="absolute top-16 -z-50 inset-0">
+      <div className="absolute -bottom-[150px] -z-50 opacity-50 border-z-50">
         <Stars />
       </div>
-      <div className="visual -top-5 md:-top-10 grid place-content-center -z-10">
-        <SolarSystem />
+      <div className="visual after:w-[200%] -top-5 md:-top-10 grid place-content-center -z-10">
+        <div className="relative mt-20 md:mt-42 aspect-square">
+          <SolarSystem />
+        </div>
       </div>
 
       <style jsx>
@@ -31,8 +33,8 @@ export default function IndexPage() {
   // bottom: 0;
   aspect-ratio: 1/0.7;
   // position: relative;
+  opacity: 0.75;
   overflow-x: clip;
-  // overflow-y: clip;
 }
 
 .visual::after {
@@ -43,26 +45,28 @@ export default function IndexPage() {
   content: "";
   position: absolute;
   width: 200%;
-  opacity: 1.0;
+  opacity: 1;
   aspect-ratio: 1 / 0.7;
-  border-top: 1px solid rgba(120, 119, 198, 0.4);
-  background: rgb(0, 2, 9, 1);
+  border-top: 1px solid rgba(100, 119, 98, 0.4);
+  background: rgb(8, 9, 12, 1);
 }
 
   .visual::before{
-  background: radial-gradient(circle at bottom center, #0000ee60 ,transparent 70%);
+  background: radial-gradient(circle at bottom center, #00775570 ,transparent 70%);
   content: "";
+  width: 100%;
+  height: 200px;
+  aspect-ratio: 1 / 0.5;
+  position: relative;
+  opacity: 0.6;
+  inset: 0;
+  top: -50%;
+  filter: blur(40px);
+  // bottom: max(-3vh, -3vw);
+  z-index: -50;
   // overflow: hidden;
   // border-radius: 100%;
-  position: absolute;
-  opacity: 0.4;
-  width: 100%;
-  bottom: max(-3vh, -3vw);
-  z-index: -50;
-  // top: 50%;
-  aspect-ratio: 1 / 0.5;
   }
-
   `}
 
       </style>
