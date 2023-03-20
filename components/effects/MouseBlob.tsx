@@ -17,18 +17,18 @@ export function MouseBlob() {
           left: `${clientX}px`,
           top: `${clientY}px`,
         },
-        { duration: 300, fill: "forwards" }
+        { duration: 3000, fill: "forwards" }
       );
     };
 
-    return () => {};
+    return () => { };
   }, []);
   return (
     <>
       <div className="absolute-z-50 absolute min-h-screen w-screen overflow-hidden opacity-60 blur-[38px]">
         <div
           id="blob"
-          className="bg-gradient-to-r ease-in dark:bg-green-800
+          className="bg-gradient-to-r transition-transform ease-in-out dark:bg-green-800
         dark:from-orange-900/40 dark:via-green-400 dark:to-purple-900/40"
         />
       </div>
@@ -51,7 +51,7 @@ export function MouseBlob() {
 
           #blob {
             height: 31.28vw;
-            will-change: transform;
+            // will-change: transform;
             aspect-ratio: 1;
             left: 50%;
             top: 50%;
@@ -67,7 +67,8 @@ export function MouseBlob() {
             background: linear-gradient(
               to right,
               var(--bg-green-400),
-              var(--bg-green-300)
+              var(--bg-green-300),
+              aquamarine
             );
             animation: rotate var(--timing-mouse-duration, 30s) infinite;
           }
@@ -77,9 +78,9 @@ export function MouseBlob() {
               rotate: 0deg;
             }
             50% {
-              --golden-ratio: 1.618;
-              --pi: 3.14;
-              scale: 1.1 1;
+              // --golden-ratio: 1.618;
+              // --pi: 3.14;
+              scale: 1.06 1;
               // opacity: 0.7;
               // scale: 1 calc((sin(var(--golden-ratio) / var(--pi))));
             }
