@@ -9,16 +9,17 @@ const ResumePage = () => {
     <>
       <Layout>
         <main
-          className={`isolate ${styles.resume} mx-auto my-6 pt-8 shadow-2xl shadow-dim 
-         dark:text-tertiary dark:shadow-on-tertiary md:px-4 md:pt-16 [&_ul]:text-gray7 
+        // style={{width: "83vw"}}
+          className={`container isolate ${styles.resume} mx-auto my-6 pt-8 shadow-2xl shadow-dim 
+         dark:text-tertiary lg:w-[82vw]  dark:shadow-on-tertiary disabled:md:px-4 md:pt-16 [&_ul]:text-gray7 
 dark:[&_ul]:text-dim  
 `}
         >
           <Suspense fallback={<Loading />}>
-            <div className="origin-top scale-[75%] space-y-6 lg:scale-100 lg:px-36  ">
+            <div className="origin-top scale-[75%] space-y-6 lg:scale-100 lg:px-28  ">
               {/* Lobo résumé — page 1 of 2 */}
               <div
-                className={`mx-auto space-y-6 divide-y-2  divide-dim font-serif lg:px-6 [&>*]:text-sm`}
+                className={`mx-auto space-y-6 divide-y-2  divide-dim font-serif lg:px-8 [&>*]:text-sm`}
               >
                 <section className="mx-auto grid w-fit text-center font-sans uppercase">
                   <h1 className="text-2xl font-medium tracking-[0.2em]">
