@@ -1,11 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 
 // Inspiration: https://www.youtube.com/watch?v=kySGqoU7X-s
-export function MouseBlob() {
+export function MouseBlob(props: { image?: string | null }) {
+  const [hoverImage, setHoverImage] = useState(null);
   // blob.style.left = `${clientX}px`;
   // blob.style.top = `${clientY}px`;
   useEffect(() => {
+  if (props.image === null) {
+    setHoverImage((<>{<FaGithub />}</>));
+  }
     // const blob = document.getElementById("blob");
     const blob = document.getElementById("blobContainer");
 
@@ -30,9 +34,11 @@ export function MouseBlob() {
       <div id="blobContainer"
         className="w-screen absolute h-screen"
       // className="absolute-z-50 absolute min-h-screen w-screen overflow-hidden opacity-60 "
+
+      // <div id="prop" className=""> <FaGithub /> </div>
       >
         <div id="blobGroup" className="relative">
-          <div id="prop" className=""> <FaGithub /> </div>
+          <div id="prop" className=""> {hoverImage !== null ? hoverImage: <FaGithub/>} </div>
           <div className="-z-50 blur-[38px]">
             <div id="blob" className="bg-gradient-to-r transition-transform ease-in-out dark:bg-green-800 dark:from-orange-900/40 dark:via-green-400 dark:to-purple-900/40" />
           </div>
