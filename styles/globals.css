@@ -92,8 +92,10 @@ body {
 
 body {
   min-height: 100vh;
+  min-height: 100svh;
   font-feature-settings: "kern";
-  @apply container mx-auto w-full bg-white tracking-normal text-on-primary dark:bg-on-primary dark:text-secondary lg:mx-auto;
+  overflow-x: clip;
+  @apply mx-auto w-full bg-white tracking-normal text-on-primary dark:bg-on-primary dark:text-secondary lg:mx-auto;
 }
 
 main {
@@ -101,7 +103,7 @@ main {
 }
 
 .layout-wrapper {
-  @apply grid  flex-col selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
+  @apply grid selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
 }
 
 article {

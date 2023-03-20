@@ -13,7 +13,7 @@ type Props = {
 export default function Layout({ children, title = "Lloyd Lobo" }: Props) {
   return (
     <>
-      <div className="layout-wrapper h-max overflow-x-hidden">
+      <div className="layout-wrapper overflow-x-hidden">
         <Head>
           <title>
             {title !== "Lloyd Lobo" ? `${title} • Lloyd Lobo` : title}
@@ -25,8 +25,11 @@ export default function Layout({ children, title = "Lloyd Lobo" }: Props) {
             content="initial-scale=1.0, width=device-width"
           />
         </Head>
+
         <Header />
+
         {children}
+
         <Footer />
       </div>
     </>
@@ -38,7 +41,7 @@ function Footer() {
     <>
       <footer className="font-sans md:max-w-screen-sm mx-auto">
         <div className="bg-gray-100 dark:bg-gray-800">
-          <div className="container flex flex-col items-center px-4 md:px-0 py-6 mx-auto space-y-6 lg:space-y-0 lg:flex-row lg:justify-between">
+          <div className="flex flex-col items-center px-4 md:px-0 py-6 mx-auto space-y-6 lg:space-y-0 lg:flex-row lg:justify-between">
             <div className="">
               <div className="flex space-x-2 items-center">
                 <WallClock />
