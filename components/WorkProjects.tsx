@@ -2,6 +2,108 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import { FaGithub, FaWpexplorer } from "react-icons/fa";
 
+export const WorkProjects = () => {
+  const repos = PROJECTS;
+  useEffect(() => {
+    const navProjects = document.getElementById("navProjects");
+    let links = navProjects.getElementsByTagName("button");
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i];
+      link.onmousemove = (event) => {
+        const rect = link.getBoundingClientRect();
+        const img = link.querySelector("img");
+        if (img !== null) {
+          img.style.left = `${event.clientX - rect.left}px`;
+          img.style.top = `${event.clientY - rect.top * 1.618}px`;
+        }
+      };
+    }
+    return () => { };
+  }, []);
+
+  return (
+    <>
+      <>
+        <nav
+          id="navProjects"
+          className="prose-sm grid grid-cols-2 gap-2 py-4 backdrop-blur-sm lg:grid-cols-2"
+        >
+          {repos.map(({ username, repo, tags, description, img, liveUrl }, index) => (
+            <button
+              key={`url-${username}-${repo}`}
+              // href={liveUrl}
+              className="delay-0 relative rounded bg-gray1/30 p-2 px-4 shadow transition-all duration-500 ease-out after:hidden  hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40 dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125 disabled:lg:pb-4"
+            >
+              <div>
+                <h3 className={`mt-0`}>{repo}</h3>
+
+                <p className="">
+                  {repo === "hackernews-clone" ? "Coming soon..." : description}
+                </p>
+
+                <div
+                  className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
+                    } mt-2 flex gap-2 text-[12px] `}
+                >
+                  {tags.map((tag, index) => (
+                    <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
+                  ))}
+                </div>
+
+                <div className="flex items-center prose-a:after:hidden space-x-4">
+                  {/* May need router as nested `a` elements aren't idiomatic. */}
+                  <a title={`Source Code`} href={`https://github.com/${username}/${repo}/`}><FaGithub /></a>
+                  <a title={`Live Preview`} href={liveUrl}><FaWpexplorer /></a>
+                </div>
+              </div>
+
+              <img className="" src={`/img/projects/${img}`} />
+            </button>
+          ))}
+        </nav>
+      </>
+
+      <style jsx>{`
+          nav {
+            position: relative;
+            // padding: clamp(1rem, 5vw, 6rem);
+          }
+          nav > button {
+            position: relative;
+          }
+          nav > button > div {
+            position: relative;
+            z-index: 2/* ; */
+            display: block;
+            border-bottom: 1px solid transparent;
+            border-top: 1px solid transparent;
+          }
+
+          nav > button:hover {
+            // background: #111111;
+          }
+
+          nav > button > img {
+            position: absolute;
+            opacity: 0;
+            transform: translate(-50%, -50%) scale(0.5);
+            transition: transform 250ms, opacity 250ms;
+            pointer-events: none;
+            width: 200px !important;
+            --tw-grayscale: grayscale(30%);
+            filter: var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+          }
+
+          nav > button:hover > img {
+            opacity: 0.95;
+            transform: translate(-50%, -50%) scale(1);
+          }
+
+        `}</style>
+    </>
+  );
+};
+
 const PROJECTS = [
   {
     username: "lloydlobo",
@@ -71,103 +173,3 @@ const PROJECTS = [
   },
 ];
 
-export const WorkProjects = () => {
-  const repos = PROJECTS;
-
-  useEffect(() => {
-    const navProjects = document.getElementById("navProjects");
-    let links = navProjects.getElementsByTagName("button");
-    for (let i = 0; i < links.length; i++) {
-      const link = links[i];
-      link.onmousemove = (event) => {
-        const rect = link.getBoundingClientRect();
-        const img = link.querySelector("img");
-        if (img !== null) {
-          img.style.left = `${event.clientX - rect.left}px`;
-          img.style.top = `${event.clientY - rect.top * 1.618}px`;
-        }
-      };
-    }
-    return () => { };
-  }, []);
-
-  let hasBorders = false;
-  let isCardLike = false;
-  return (
-    <>
-      <>
-        <style jsx>{`
-          nav {
-            position: relative;
-            // padding: clamp(1rem, 5vw, 6rem);
-          }
-          nav > button {
-            position: relative;
-          }
-          nav > button > div {
-            position: relative;
-            z-index: 2/* ; */
-            display: block;
-            border-bottom: 1px solid transparent;
-            border-top: 1px solid transparent;
-          }
-
-          nav > button:hover {
-            // background: #111111;
-          }
-
-          nav > button > img {
-            position: absolute;
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.5);
-            transition: transform 250ms, opacity 250ms;
-            pointer-events: none;
-            width: 200px !important;
-            --tw-grayscale: grayscale(30%);
-            filter: var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-          }
-
-          nav > button:hover > img {
-            opacity: 0.95;
-            transform: translate(-50%, -50%) scale(1);
-          }
-
-        `}</style>
-
-        <nav
-          id="navProjects"
-          className="prose-sm grid grid-cols-2 gap-2 py-4 backdrop-blur-sm lg:grid-cols-2"
-        >
-          {repos.map(({ username, repo, tags, description, img, liveUrl }, index) => (
-            <button
-              key={`url-${username}-${repo}`}
-              // href={liveUrl}
-              className="delay-0 relative rounded bg-gray1/30 p-2 px-4 shadow transition-all duration-500 ease-out after:hidden  hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40 dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125 disabled:lg:pb-4"
-            >
-              <div>
-                <h3 className={`mt-0`}>{repo}</h3>
-                <p className="">
-                  {repo === "hackernews-clone" ? "Coming soon..." : description}
-                </p>
-                <div
-                  className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
-                    } mt-2 flex gap-2 text-[12px] `}
-                >
-                  {tags.map((tag, index) => (
-                    <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
-                  ))}
-                </div>
-                <div className="flex items-center prose-a:after:hidden space-x-4">
-                  {/* May need router as nested `a` elements aren't idiomatic. */}
-                  <a title={`Source Code`} href={`https://github.com/${username}/${repo}/`}><FaGithub /></a>
-                  <a title={`Live Preview`} href={liveUrl}><FaWpexplorer /></a>
-                </div>
-              </div>
-              <img className="" src={`/img/projects/${img}`} />
-            </button>
-          ))}
-        </nav>
-      </>
-    </>
-  );
-};
