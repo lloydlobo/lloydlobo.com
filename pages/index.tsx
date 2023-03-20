@@ -15,17 +15,15 @@ export default function IndexPage() {
           <HeroIndex />
         </main>
       </Layout>
-      <div className=" absolute -bottom-[33vh] -z-50 aspect-video w-screen overflow-clip opacity-50">
+      <div className=" absolute -bottom-[23vh] -z-10 aspect-video w-screen overflow-clip opacity-50">
         <Stars />
       </div>
       <div
         className="befeore:translate-y-[-50%] backdrop-blur-[400px] relative mx-auto w-full space-y-0 before:absolute before:top-12 
-        before:left-1/2 before:right-1/2 before:-z-10 before:mx-auto before:h-36 before:w-96 before:translate-x-[-50%] before:rounded-full before:rounded-t-full before:bg-green-300/80 before:opacity-40 before:blur-3xl before:content-['']"
+        before:left-1/2 before:right-1/2 before:-z-20 before:mx-auto before:h-36 before:w-96 before:translate-x-[-50%] before:rounded-full before:rounded-t-full before:bg-green-300/80 before:opacity-40 before:blur-3xl before:content-['']"
       >
-        <div className="fill-white">
-          <CurvedTop />
-        </div>
-        <div className="relative aspect-square w-screen pb-12 dark:bg-[#0c0c0c]">
+        <CurvedTop />
+        <div className="relative aspect-square w-screen pb-12 bg-white dark:bg-[#0c0c0c]">
           <SolarSystem />
         </div>
       </div>

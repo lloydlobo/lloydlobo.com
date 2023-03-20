@@ -7,7 +7,7 @@ import { ClockNav } from "@/pages";
 export const SolarSystem = (props: {}) => {
   return (
     <>
-      <div className={`relative `}>
+      <div className={`relative scale-90 `}>
         <div className="-z-40 aspect-video">
           <div
             data-id="solar-system"
@@ -35,7 +35,7 @@ export const SolarSystem = (props: {}) => {
           </div>
         </div>
       </div>
-      <div className="relative z-50  mt-12">
+      <div className="relative mt-12 z-50">
         <SolarControls />
       </div>
     </>
@@ -67,11 +67,11 @@ export const SolarControls = (props: {}) => {
 
   return (
     <>
-      <div className="mx-auto grid w-[300px] min-w-[31vw] gap-y-2 font-sans text-sm font-bold opacity-30 transition-opacity delay-500 hover:opacity-80 hover:delay-[5ms]">
+      <div className="mx-auto grid w-[300px] min-w-[31vw] gap-y-2 font-sans text-sm font-bold opacity-60 transition-opacity delay-500 hover:opacity-100 hover:delay-[5ms]">
         <div className="grid h-full w-full">
           <input
             id="yearInSecond"
-            className="transparent h-1.5 cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
+            className="transparent h-2 cursor-pointer appearance-none rounded-full border-transparent bg-gray3/50 transition-opacity hover:opacity-100 dark:bg-tertiary/30 dark:opacity-40"
             min="5.00"
             max="120.00"
             value={speed}
