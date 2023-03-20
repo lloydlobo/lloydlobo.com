@@ -5,6 +5,7 @@ import Layout from "@/components/Layout";
 import { SolarControls, SolarSystem } from "@/components/effects/SolarSystem";
 import { MouseBlob } from "@/components/effects/MouseBlob";
 import { BackdropGridLines } from "@/components/effects/BackdropGridLines";
+import CurvedTop from "@/components/effects/CurvedTop";
 
 export default function IndexPage() {
   return (
@@ -13,68 +14,20 @@ export default function IndexPage() {
         <main className="z-50">
           <HeroIndex />
         </main>
+
       </Layout>
-      <div className="border-z-50 absolute -bottom-[150px] -z-50 opacity-50">
+      <div className=" absolute -bottom-[33vh] w-screen aspect-video overflow-clip -z-50 opacity-50">
         <Stars />
       </div>
-      <div className="absolute h-full w-screen cursor-all-scroll scroll-m-4 overflow-hidden object-contain">
-        <div className="visual  -top-5 -z-10 grid place-content-center after:w-[200%] after:bg-green-200/70 after:dark:bg-[#0b0b0b] md:-top-10">
-          <div className="md:mt-42 relative mt-20 aspect-square">
-            <SolarSystem />
-          </div>
+      <div
+        // style={{ background: "radial-gradient( circle at bottom center, #00775570, transparent 70%)" }}
+        className="space-y-0 before:absolute relative before:h-36 w-full before:content-[''] before:top-12 
+        before:bg-green-300/80 before:rounded-t-full before:-z-10 before:blur-3xl before:opacity-70 mx-auto before:mx-auto before:w-96 before:rounded-full before:left-1/2 before:right-1/2 before:translate-x-[-50%] befeore:translate-y-[-50%]">
+        <CurvedTop />
+        <div className="w-screen dark:bg-[#0c0c0c] pb-12 relative">
+          <SolarSystem />
         </div>
       </div>
-
-      <style jsx>
-        {`
-          .visual {
-            content: "";
-            z-index: -50;
-            // width: 100vw;
-            left: 0;
-            // bottom: 0;
-            aspect-ratio: 1/0.7;
-            // position: relative;
-            opacity: 0.75;
-            overflow-x: hidden;
-          }
-
-          .visual::after {
-            border-radius: 100% 100% 0 0;
-            left: -50%;
-            // top: 4%;
-            z-index: -10;
-            content: "";
-            position: absolute;
-            width: 200%;
-            opacity: 1;
-            aspect-ratio: 1 / 0.7;
-            border-top: 1px solid rgba(100, 119, 98, 0.4);
-            // background: rgb(8, 9, 12, 1);
-          }
-
-          .visual::before {
-            background: radial-gradient(
-              circle at bottom center,
-              #00775570,
-              transparent 70%
-            );
-            content: "";
-            width: 100%;
-            height: 200px;
-            aspect-ratio: 1 / 0.5;
-            position: relative;
-            opacity: 0.6;
-            inset: 0;
-            top: -50%;
-            filter: blur(40px);
-            // bottom: max(-3vh, -3vw);
-            z-index: -50;
-            // overflow: hidden;
-            // border-radius: 100%;
-          }
-        `}
-      </style>
     </>
   );
 }
@@ -254,7 +207,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => {};
+    return () => { };
   }, []);
 
   return (

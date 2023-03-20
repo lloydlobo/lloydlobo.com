@@ -10,14 +10,6 @@ module.exports = {
   ],
   darkMode: "class", // class, 'media' or boolean.
   theme: {
-    fontFamily: {
-      // sans: ['"IBM Plex Sans","Inter"', "sans-serif"],
-      // display: ["cubano", "sans-serif"],
-      // body: ["sofia-pro", "sans-serif"],
-      // code: ["attribute-mono", "sans-serif"],
-      // serif: ['"Newsreader"', "serif"],
-      // cursive: ['"Gochi Hand"', "cursive"],
-    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -81,28 +73,15 @@ module.exports = {
               "font-weight": "normal",
               "font-size": "1.5rem",
             },
-            // h5: {
-            //   "font-weight": "normal",
-            //   "font-size": "1.25rem",
-            // },
           },
         },
       },
     },
   },
-  corePlugins: {
-    // aspectRatio: false,
-  },
   variants: {},
   plugins: [
     require("@tailwindcss/forms"),
     require("@tailwindcss/line-clamp"),
-    // require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/typography"),
   ],
 };
-
-// secondary: "#f3c77c",
-// primary: "#fbe094",
-// 'on-primary': "#0f0d0d",
-// text-[#f3c77c]
