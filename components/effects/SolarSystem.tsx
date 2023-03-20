@@ -8,12 +8,11 @@ export const SolarSystem = (props: {}) => {
   return (
     <>
       <div
-        // style={{ background: "rgb(0, 2, 9, 1)" }}
-        className={`relative rounded-[1000px] h-full ${styles.body}`}>
-        <div className=" -z-10">
+        className={`relative aspect-square`}>
+        <div className="aspect-square">
           <div
             data-id="solar-system"
-            className={`relative z-10 ${styles.solar} `}
+            className={`relative flex flex-col-reverse  border z-10 ${styles.solar} `}
           >
             {/* <ThemeToggleWrapper> </ThemeToggleWrapper> */}
             <ThemeToggleWrapper>
@@ -37,6 +36,9 @@ export const SolarSystem = (props: {}) => {
           </div>
         </div>
       </div>
+          <div className="reltaive mt-12">
+          <SolarControls />
+          </div>
     </>
   );
 };

@@ -19,7 +19,6 @@ export default function IndexPage() {
       </div>
       <div className="visual -top-5 md:-top-10 grid place-content-center -z-10">
         <SolarSystem />
-        <SolarControls />
       </div>
 
       <style jsx>
