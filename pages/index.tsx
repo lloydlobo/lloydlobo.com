@@ -17,9 +17,11 @@ export default function IndexPage() {
       <div className="absolute -bottom-[150px] -z-50 opacity-50 border-z-50">
         <Stars />
       </div>
-      <div className="visual after:w-[200%] -top-5 md:-top-10 grid place-content-center -z-10">
-        <div className="relative mt-20 md:mt-42 aspect-square">
-          <SolarSystem />
+      <div className="absolute scroll-m-4 cursor-all-scroll object-contain w-screen overflow-hidden h-full">
+        <div className="visual  after:w-[200%] -top-5 md:-top-10 grid place-content-center after:dark:bg-[#0b0b0b] after:bg-green-200/70 -z-10">
+          <div className="relative mt-20 md:mt-42 aspect-square">
+            <SolarSystem />
+          </div>
         </div>
       </div>
 
@@ -34,7 +36,7 @@ export default function IndexPage() {
   aspect-ratio: 1/0.7;
   // position: relative;
   opacity: 0.75;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 .visual::after {
@@ -48,7 +50,7 @@ export default function IndexPage() {
   opacity: 1;
   aspect-ratio: 1 / 0.7;
   border-top: 1px solid rgba(100, 119, 98, 0.4);
-  background: rgb(8, 9, 12, 1);
+  // background: rgb(8, 9, 12, 1);
 }
 
   .visual::before{
