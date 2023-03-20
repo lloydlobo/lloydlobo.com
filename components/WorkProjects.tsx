@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React, { useEffect } from "react";
+import { FaGithub, FaWpexplorer } from "react-icons/fa";
 
 const PROJECTS = [
   {
@@ -7,6 +9,7 @@ const PROJECTS = [
     repo: "mausam",
     description: "A weather update desktop notifier made with Rust",
     img: "/mausam.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -14,6 +17,7 @@ const PROJECTS = [
     repo: "neura-driver",
     description: "A simple self-driving car application with a neural network",
     img: "/neura-driver.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -21,6 +25,7 @@ const PROJECTS = [
     repo: "geomeasure",
     description: "Geomeasure measures distance using GPS and that too without",
     img: "/geomeasure.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -29,6 +34,7 @@ const PROJECTS = [
     description:
       "Generates phrases in the style of the author using Markov model",
     img: "/proxymate.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -36,6 +42,7 @@ const PROJECTS = [
     repo: "penny",
     description: "A no-nonsense budget tracking Discord bot",
     img: "/penny.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -43,6 +50,7 @@ const PROJECTS = [
     repo: "okejoke",
     description: "okejoke gathers jokes on the fly in your CLI",
     img: "/okejoke.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -50,6 +58,7 @@ const PROJECTS = [
     repo: "rssh",
     description: "rssh or Rust Shell allows keeping maintainable bash aliases",
     img: "/rssh.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
   {
     username: "lloydlobo",
@@ -57,7 +66,8 @@ const PROJECTS = [
     repo: "dictionary-web-app",
     description:
       "Integrate the Dictionary API to create a real-world dictionary web app.",
-    img: "/dictionary-web-app.jpg",
+    img: "/penny.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
 ];
 
@@ -76,7 +86,7 @@ export const WorkProjects = () => {
         img.style.top = `${event.clientY - rect.top * 1.618}px`;
       };
     }
-    return () => {};
+    return () => { };
   }, []);
 
   let hasBorders = false;
@@ -124,13 +134,12 @@ export const WorkProjects = () => {
 
         <nav
           id="navProjects"
-          // className="grid backdrop-blur-sm prose-sm gap-2 py-4 grid-cols-2 lg:grid-cols-3"
           className="prose-sm grid grid-cols-2 gap-2 py-4 backdrop-blur-sm lg:grid-cols-2"
         >
-          {repos.map(({ username, repo, tags, description, img }, index) => (
-            <a
+          {repos.map(({ username, repo, tags, description, img, liveUrl }, index) => (
+            <div
               key={`url-${username}-${repo}`}
-              href={`https://github.com/${username}/${repo}/`}
+              // href={liveUrl}
               className="delay-0 relative rounded bg-gray1/30 p-2 px-4 shadow transition-all duration-500 ease-out after:hidden  hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40 dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125 disabled:lg:pb-4"
             >
               <div>
@@ -139,17 +148,21 @@ export const WorkProjects = () => {
                   {repo === "hackernews-clone" ? "Coming soon..." : description}
                 </p>
                 <div
-                  className={`hidden ${
-                    repo === "hackernews-clone" ? "blur" : ""
-                  } mt-2 flex gap-2 text-[12px] `}
+                  className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
+                    } mt-2 flex gap-2 text-[12px] `}
                 >
                   {tags.map((tag, index) => (
                     <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
                   ))}
                 </div>
+                <div className="flex items-center prose-a:after:hidden space-x-4">
+                {/* May need router as nested `a` elements aren't idiomatic. */}
+                  <a title={`Source Code`} href={`https://github.com/${username}/${repo}/`}><FaGithub /></a>
+                  <a title={`Live Preview`} href={liveUrl}><FaWpexplorer/></a>
+                </div>
               </div>
               <img className="hidden" src={`/img/projects/${img}`} />
-            </a>
+            </div>
           ))}
         </nav>
       </>
