@@ -14,17 +14,18 @@ export default function IndexPage() {
         <main className="z-50">
           <HeroIndex />
         </main>
-
       </Layout>
-      <div className=" absolute -bottom-[33vh] w-screen aspect-video overflow-clip -z-50 opacity-50">
+      <div className=" absolute -bottom-[33vh] -z-50 aspect-video w-screen overflow-clip opacity-50">
         <Stars />
       </div>
       <div
-        // style={{ background: "radial-gradient( circle at bottom center, #00775570, transparent 70%)" }}
-        className="space-y-0 before:absolute relative before:h-36 w-full before:content-[''] before:top-12 
-        before:bg-green-300/80 before:rounded-t-full before:-z-10 before:blur-3xl before:opacity-70 mx-auto before:mx-auto before:w-96 before:rounded-full before:left-1/2 before:right-1/2 before:translate-x-[-50%] befeore:translate-y-[-50%]">
-        <CurvedTop />
-        <div className="w-screen dark:bg-[#0c0c0c] pb-12 relative">
+        className="befeore:translate-y-[-50%] backdrop-blur-[400px] relative mx-auto w-full space-y-0 before:absolute before:top-12 
+        before:left-1/2 before:right-1/2 before:-z-10 before:mx-auto before:h-36 before:w-96 before:translate-x-[-50%] before:rounded-full before:rounded-t-full before:bg-green-300/80 before:opacity-40 before:blur-3xl before:content-['']"
+      >
+        <div className="fill-white">
+          <CurvedTop />
+        </div>
+        <div className="relative aspect-square w-screen pb-12 dark:bg-[#0c0c0c]">
           <SolarSystem />
         </div>
       </div>
