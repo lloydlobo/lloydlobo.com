@@ -67,7 +67,7 @@ export function ThemeDropdown() {
           // className={`${dropdown ? "opacity-100" : "opacity-0 left-[200vw]" } top-8 z-10`}
           className={`${dropdown ? "block" : "hidden"}`}
         >
-          <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start backdrop-blur-sm">
+          <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start dark:bg-on-primary/30 dark:text-primary bg-white/30 backdrop-blur-xl">
             {themeModes.map(({ name, icon }, index) => (
               <button
                 onClick={(e) => switchTheme(e)}
