@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
-import { FaGithub, FaWpexplorer } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaWpexplorer } from "react-icons/fa";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -34,31 +34,39 @@ export const WorkProjects = () => {
           {repos.map(({ username, repo, tags, description, img, liveUrl }, idxRepos) => (
             <button
               key={`url-${username}-${repo}-${idxRepos}`}
-              className={classNames("relative p-2 px-4 after:hidden",
+              className={classNames("relative pt-2 px-4 after:hidden",
                 "text-start",
                 "transition-all delay-0 duration-500 ease-out ",
                 "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
                 "bg-gray1/30 shadow rounded",
+                "cursor-crosshair",
                 " dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125",
               )}
             >
-                <h3 className={`mt-0`}>{repo}</h3>
-                <p className="">
-                  {repo === "hackernews-clone" ? "Coming soon..." : description}
-                </p>
+              <h3 className={`mt-0`}>{repo}</h3>
+              <p className="">
+                {repo === "hackernews-clone" ? "Coming soon..." : description}
+              </p>
+              <div className="grid grid-cols-5 items-baseline prose-a:after:hidden">
+                {/* May need router as nested `a` elements aren't idiomatic. */}
                 <div
-                  className={`hidden ${repo === "hackernews-clone" ? "blur" : ""
-                    } mt-2 flex gap-2 text-[12px] `}
+                  className={`${repo === "hackernews-clone" ? "blur" : ""
+                    } hover:z-20 z-20 hover:overflow-scroll col-span-4 pb-3 flex gap-x-2 text-[12px] truncate`}
                 >
                   {tags.map((tag, index) => (
                     <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
                   ))}
                 </div>
-                <div className="flex items-center prose-a:after:hidden space-x-4">
-                  {/* May need router as nested `a` elements aren't idiomatic. */}
-                  <a title={`Source Code`} href={`https://github.com/${username}/${repo}/`}><FaGithub /></a>
-                  <a title={`Live Preview`} href={liveUrl}><FaWpexplorer /></a>
+                <div className="grid-flow-col col-start-5 grid gap-2 z-10">
+
+                  <a title={`Source Code`} href={`https://github.com/${username}/${repo}/`}>
+                    <FaGithub />
+                  </a>
+                  <a title={`Live Preview`} href={liveUrl}>
+                    <FaExternalLinkAlt />
+                  </a>
                 </div>
+              </div>
               {/* <img className="" src={`/img/projects/${img}`} /> */}
             </button>
           ))}
