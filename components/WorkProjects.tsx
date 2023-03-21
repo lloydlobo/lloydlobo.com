@@ -39,7 +39,7 @@ export const WorkProjects = () => {
                 "transition-all delay-0 duration-500 ease-out ",
                 "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
                 "bg-gray1/30 shadow rounded",
-                "cursor-crosshair",
+                "cursor-default",
                 " dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125",
               )}
             >
