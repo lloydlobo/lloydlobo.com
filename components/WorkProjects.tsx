@@ -34,7 +34,7 @@ export const WorkProjects = () => {
           {repos.map(({ username, repo, tags, description, img, liveUrl }, idxRepos) => (
             <button
               key={`url-${username}-${repo}-${idxRepos}`}
-              className={classNames("relative pt-2 px-4 after:hidden",
+              className={classNames("relative p-4 md:pb-0 md:pt-2 px-4 after:hidden",
                 "text-start",
                 "transition-all delay-0 duration-500 ease-out ",
                 "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
@@ -47,26 +47,30 @@ export const WorkProjects = () => {
               <p className="">
                 {repo === "hackernews-clone" ? "Coming soon..." : description}
               </p>
-              <div className="grid grid-cols-5 items-baseline prose-a:after:hidden">
+              <div className="grid md:grid-cols-5 items-baseline prose-a:after:hidden">
                 {/* May need router as nested `a` elements aren't idiomatic. */}
+
                 <div
                   className={`${repo === "hackernews-clone" ? "blur" : ""
-                    } hover:z-20 z-20 hover:overflow-scroll col-span-4 pb-3 flex gap-x-2 text-[12px] truncate`}
+                    } z-20 hover:overflow-scroll col-span-4 opacity-50 pb-2 md:pb-3 flex gap-x-2 text-[12px] truncate`}
                 >
                   {tags.map((tag, index) => (
                     <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
                   ))}
                 </div>
-                <div className="grid-flow-col col-start-5 grid gap-2 z-10">
 
-                  <a title={`Source Code`} href={`https://github.com/${username}/${repo}/`}>
+                <div className="flex md:grid-cols-2 prose-base md:col-start-5 md:grid gap-1 items-baseline ">
+                  <a className="opacity-50 hover:opacity-100" title={`Source Code`} href={`https://github.com/${username}/${repo}/`}>
                     <FaGithub />
                   </a>
-                  <a title={`Live Preview`} href={liveUrl}>
+                  <a  className="opacity-50 hover:opacity-100" title={`Live Preview`} href={liveUrl}>
                     <FaExternalLinkAlt />
                   </a>
+
                 </div>
+
               </div>
+
               {/* <img className="" src={`/img/projects/${img}`} /> */}
             </button>
           ))}
@@ -111,6 +115,15 @@ export const WorkProjects = () => {
 };
 
 const PROJECTS = [
+  {
+    username: "lloydlobo",
+    tags: ["development", "rust", "cli"],
+    repo: "dictionary-web-app",
+    description:
+      "Integrate the Dictionary API to create a real-world dictionary web app.",
+    img: "/penny.jpg",
+    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
+  },
   {
     username: "lloydlobo",
     tags: ["development", "cli", "linux"],
@@ -166,15 +179,6 @@ const PROJECTS = [
     repo: "rssh",
     description: "rssh or Rust Shell allows keeping maintainable bash aliases",
     img: "/rssh.jpg",
-    liveUrl: "https://dictionary-web-app-vert.vercel.app/",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["development", "rust", "cli"],
-    repo: "dictionary-web-app",
-    description:
-      "Integrate the Dictionary API to create a real-world dictionary web app.",
-    img: "/penny.jpg",
     liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
 ];
