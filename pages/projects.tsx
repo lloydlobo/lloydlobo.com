@@ -16,7 +16,7 @@ export default function Projects(props: {}) {
                 <article className="w-full">
                   <h1 className={`pr-[5vw]`}>
                     <span className="">Passion projects</span>
-                    {" and"} fun little experiments
+                    {" and"} little fun experiments
                   </h1>
                 </article>
               </Section>

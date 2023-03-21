@@ -19,11 +19,11 @@ export default function IndexPage() {
         <Stars />
       </div>
       <div
-        className="befeore:translate-y-[-50%] backdrop-blur-[400px] relative mx-auto w-full space-y-0 before:absolute before:top-12 
+        className="befeore:translate-y-[-50%] relative mx-auto w-full space-y-0 backdrop-blur-[400px] before:absolute before:top-12 
         before:left-1/2 before:right-1/2 before:-z-20 before:mx-auto before:h-36 before:w-96 before:translate-x-[-50%] before:rounded-full before:rounded-t-full before:bg-green-300/80 before:opacity-40 before:blur-3xl before:content-['']"
       >
         <CurvedTop />
-        <div className="relative aspect-square w-screen pb-12 bg-white dark:bg-[#0c0c0c]">
+        <div className="relative aspect-square w-screen bg-white pb-12 dark:bg-[#0c0c0c]">
           <SolarSystem />
         </div>
       </div>
@@ -206,7 +206,7 @@ const RotateOriginTracker = () => {
       origin.style.setProperty("--mouse-x", Math.round(clientX).toString());
       origin.style.setProperty("--mouse-y", Math.round(clientY).toString());
     };
-    return () => { };
+    return () => {};
   }, []);
 
   return (

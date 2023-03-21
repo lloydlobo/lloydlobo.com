@@ -35,7 +35,7 @@ export const SolarSystem = (props: {}) => {
           </div>
         </div>
       </div>
-      <div className="relative mt-12 z-50">
+      <div className="relative z-50 mt-12">
         <SolarControls />
       </div>
     </>
