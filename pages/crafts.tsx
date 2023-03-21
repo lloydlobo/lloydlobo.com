@@ -4,7 +4,7 @@ import { Section } from "@/components/Section";
 import { WorkProjects } from "@/components/WorkProjects";
 import React, { useEffect } from "react";
 
-export default function Projects(props: {}) {
+export default function CraftsPage(props: {}) {
   return (
     <>
       <MouseBlob />

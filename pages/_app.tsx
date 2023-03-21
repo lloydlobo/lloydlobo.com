@@ -12,7 +12,7 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
-  // : AppProps<{ session: Session }>
+  console.log(CONSOLE_MESSAGE)
   return (
     <>
       <SessionProvider session={session}>
@@ -52,3 +52,24 @@ const ibmRegular = localFont({
 // TODO: Next-auth example typescript https://github.com/nextauthjs/next-auth-example
 // Use of the <SessionProvider> is mandatory to allow components that call
 // `useSession()` anywhere in your application to access the `session` object.
+
+
+// Calvin S ASCII Font
+const CONSOLE_MESSAGE = `
+888    888          888 888                                                  888      888  888 
+888    888          888 888                                                  888      888  888 
+888    888          888 888                                                  888      888  888 
+8888888888  .d88b.  888 888  .d88b.           888  888  888  .d88b.  888d888 888  .d88888  888 
+888    888 d8P  Y8b 888 888 d88""88b          888  888  888 d88""88b 888P"   888 d88" 888  888 
+888    888 88888888 888 888 888  888          888  888  888 888  888 888     888 888  888  Y8P 
+888    888 Y8b.     888 888 Y88..88P d8b      Y88b 888 d88P Y88..88P 888     888 Y88b 888   "  
+888    888  "Y8888  888 888  "Y88P"  88P       "Y8888888P"   "Y88P"  888     888  "Y88888  888 
+                                     8P                                                       
+                                     "                                                        
+╔╦╗┌─┐┌─┐┬┌─┐┌┐┌┌─┐┌┬┐  ┌─┐┌┐┌┌┬┐  ┌┐ ┬ ┬┬┬ ┌┬┐  ┌┐ ┬ ┬  ╦  ┬  ┌─┐┬ ┬┌┬┐  ╦  ┌─┐┌┐ ┌─┐                                  
+ ║║├┤ └─┐││ ┬│││├┤  ││  ├─┤│││ ││  ├┴┐│ │││  │   ├┴┐└┬┘  ║  │  │ │└┬┘ ││  ║  │ │├┴┐│ │                                  
+═╩╝└─┘└─┘┴└─┘┘└┘└─┘─┴┘  ┴ ┴┘└┘─┴┘  └─┘└─┘┴┴─┘┴   └─┘ ┴   ╩═╝┴─┘└─┘ ┴ ─┴┘  ╩═╝└─┘└─┘└─┘o                                 
+╔═╗┌─┐┬ ┬┌─┐┬─┐┌─┐┌┬┐  ┌┐ ┬ ┬  ╦  ╦┌─┐┬─┐┌─┐┌─┐┬      ╔╗╔┌─┐─┐ ┬┌┬┐╦╔═╗    ╦═╗┌─┐┌─┐┌─┐┌┬┐   ╔╦╗┌─┐┬┬  ┬ ┬┬┌┐┌┌┬┐╔═╗╔═╗╔═╗ 
+╠═╝│ ││││├┤ ├┬┘├┤  ││  ├┴┐└┬┘  ╚╗╔╝├┤ ├┬┘│  ├┤ │      ║║║├┤ ┌┴┬┘ │ ║╚═╗    ╠╦╝├┤ ├─┤│   │     ║ ├─┤││  │││││││ ││║  ╚═╗╚═╗ 
+╩  └─┘└┴┘└─┘┴└─└─┘─┴┘  └─┘ ┴    ╚╝ └─┘┴└─└─┘└─┘┴─┘ ┘  ╝╚╝└─┘┴ └─ ┴╚╝╚═╝ ┘  ╩╚═└─┘┴ ┴└─┘ ┴ ┘   ╩ ┴ ┴┴┴─┘└┴┘┴┘└┘─┴┘╚═╝╚═╝╚═╝o
+`;

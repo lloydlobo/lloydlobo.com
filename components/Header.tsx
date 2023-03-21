@@ -106,6 +106,9 @@ function Navigation(props: {}) {
         <Link className="after:hidden" href="/about">
           About
         </Link>
+        <Link className="after:hidden" href="/crafts">
+          Crafts
+        </Link>
         <Link className="after:hidden" href="/projects">
           Projects
         </Link>

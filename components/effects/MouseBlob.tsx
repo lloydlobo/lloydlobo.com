@@ -25,7 +25,7 @@ export function MouseBlob() {
   }, []);
   return (
     <>
-      <div className="-z-50 absolute min-h-screen w-screen overflow-hidden opacity-60 blur-[38px]">
+      <div className="absolute -z-50 min-h-screen w-screen overflow-hidden opacity-60 blur-[38px]">
         <div
           id="blob"
           className="bg-gradient-to-r transition-transform ease-in-out dark:bg-green-800

@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 type Props = {
   children?: ReactNode;
   title?: string;
+  preview?: boolean;
 };
 
 export default function Layout({ children, title = "Lloyd Lobo" }: Props) {
