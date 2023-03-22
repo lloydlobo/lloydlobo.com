@@ -38,7 +38,7 @@ export function ThemeDropdown() {
   }, []);
 
   if (!mounted) {
-    return null;
+    return <div className="scale-100 -rotate-[25deg] brightness-75"><FaMoon /></div>
   }
 
   // e.target may select the svg or span too. e.currentTarget selects the parent button.

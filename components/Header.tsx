@@ -96,11 +96,7 @@ function Navigation(props: {}) {
   return (
     <div className="mx-auto px-6 md:max-w-screen-sm lg:px-0">
       <div className="flex items-center justify-between ">
-        <Link
-          href="/"
-          data-id="logo"
-          className="after:hidden"
-        >
+        <Link href="/" data-id="logo" className="after:hidden" >
           <LogoIcon />
         </Link>
         <Link className="after:hidden" href="/about">
@@ -116,35 +112,37 @@ function Navigation(props: {}) {
           Contact
         </Link>
 
+        <>
+          <div className="flex gap-3 items-center">
+            <a
+              href="https://github.com/lloydlobo/"
+              className="after:hidden flex items-center gap-1"
+              data-te-toggle="tooltip"
+              data-te-placement="top"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              title="Code"
+            >
+              <div className="scale-75">
+                <GitHubIcon />
+              </div>
+            </a>
 
-        <div className="flex gap-3 items-center">
-          <a
-            href="https://github.com/lloydlobo/"
-            className="after:hidden flex items-center gap-1"
-            data-te-toggle="tooltip"
-            data-te-placement="top"
-            data-te-ripple-init
-            data-te-ripple-color="light"
-            title="Code"
-          >
-            <div className="scale-75">
-              <GitHubIcon />
-            </div>
-          </a>
-          <a
-            href="mailto:hello@lloydlobo.com"
-            className="scale-75 after:hidden"
-            data-te-toggle="tooltip"
-            data-te-placement="top"
-            data-te-ripple-init
-            data-te-ripple-color="light"
-            title="Email"
-          >
-            <MailIcon />
-          </a>
+            <a
+              href="mailto:hello@lloydlobo.com"
+              className="scale-75 after:hidden"
+              data-te-toggle="tooltip"
+              data-te-placement="top"
+              data-te-ripple-init
+              data-te-ripple-color="light"
+              title="Email"
+            >
+              <MailIcon />
+            </a>
 
-          <ThemeDropdown />
-        </div>
+            <ThemeDropdown />
+          </div>
+        </>
       </div>
     </div>
   );
