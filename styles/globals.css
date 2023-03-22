@@ -79,7 +79,11 @@ body {
 }
 
 main {
-  @apply my-16 grid place-self-center overflow-hidden lg:max-w-screen-md;
+  @apply my-16 grid place-self-center overflow-hidden  lg:max-w-screen-md;
+}
+
+section {
+  @apply px-6;
 }
 
 article {

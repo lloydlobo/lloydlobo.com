@@ -44,8 +44,13 @@ export default function HomePage() {
           <Section>
             <article className="pt-12">
               <h1 className={`dark:text-primary`}>
-                Hi there, I'm Lloyd.<br />
-                Front End <span className="text-green-400 dark:text-green-300">Developer</span>, creating minimal and functional software
+                Hi there, I'm Lloyd.
+                <br />
+                Front End{" "}
+                <span className="text-green-400 dark:text-green-300">
+                  Developer
+                </span>
+                , creating minimal and functional software
               </h1>
             </article>
           </Section>
@@ -57,8 +62,9 @@ export default function HomePage() {
               <div className="mx-auto w-full dark:text-secondary">
                 <div className="relative mx-auto w-full space-y-6">
                   <p className="relative w-fit">
-                    I deeply enjoy building polished software and web experiences. Tinkering with functional and aesthetically pleasing
-                    interfaces.
+                    I deeply enjoy building polished software and web
+                    experiences. Tinkering with functional and aesthetically
+                    pleasing interfaces.
                   </p>
 
                   <p>
@@ -105,11 +111,15 @@ export default function HomePage() {
 
                 <div className="relative mx-auto  grid gap-4 backdrop-blur-[0px]">
                   {PROJECTS.map(
-                    ({ username, repo, tags, description, img, year }, index) => (
+                    (
+                      { username, repo, tags, description, img, year },
+                      index
+                    ) => (
                       <div key={`project-${repo}-${index}`}>
-                        <a
-                          href={`https://github.com/${username}/${repo}`}
-                          className="relative w-full inline-flex items-start rounded px-3 pb-3 transition-all delay-100 duration-300 ease-in-out after:opacity-0 hover:opacity-100 hover:blur-0 [&>.tags]:hover:opacity-75"
+                        <Link
+                          href={`/projects/${repo}`}
+                          // href={`https://github.com/${username}/${repo}`}
+                          className="relative inline-flex w-full items-start rounded px-3 pb-3 transition-all delay-100 duration-300 ease-in-out after:opacity-0 hover:opacity-100 hover:blur-0 [&>.tags]:hover:opacity-75"
                         >
                           <p className="tags prose-sm absolute top-[1ch] flex w-full gap-2 lowercase opacity-0 brightness-90 transition-all delay-200 duration-300 ease-in">
                             {tags.map((tag, idx) => (
@@ -139,7 +149,7 @@ export default function HomePage() {
                               {year}
                             </span>
                           </div>
-                        </a>
+                        </Link>
                         <div className="absolute hidden h-full w-full [&>img]:hover:opacity-80">
                           <Image
                             // loader={myLoader}
@@ -181,7 +191,7 @@ export default function HomePage() {
 
                 <div className="grid grid-cols-1 gap-4">
                   <div>
-                    <h3 className="prose-base pt-0.5 border-t border-tertiary/50 font-sans font-bold uppercase tracking-wider text-gray5 dark:text-tertiary/60">
+                    <h3 className="prose-base border-t border-tertiary/50 pt-0.5 font-sans font-bold uppercase tracking-wider text-gray5 dark:text-tertiary/60">
                       Expertise
                     </h3>
                     <div className={`[&>*]:prose-base `}>
@@ -191,7 +201,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="prose-base border-t pt-0.5 border-tertiary/50 font-sans font-bold uppercase tracking-wider text-gray5 dark:text-tertiary/60">
+                    <h3 className="prose-base border-t border-tertiary/50 pt-0.5 font-sans font-bold uppercase tracking-wider text-gray5 dark:text-tertiary/60">
                       Tech Stacks
                     </h3>
                     <div className={`[&>*]:prose-base`}>
