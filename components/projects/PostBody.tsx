@@ -7,6 +7,7 @@ type Props = {
 
 export function PostBody({ content }: Props) {
   return (
+  <>
     <article className="mx-auto">
       <div className="mx-auto disabled:max-w-2xl">
         <div
@@ -15,5 +16,6 @@ export function PostBody({ content }: Props) {
         ></div>
       </div>
     </article>
+  </>
   );
 }

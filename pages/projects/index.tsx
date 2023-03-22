@@ -152,7 +152,7 @@ const MoreProjects = ({ projects }: MoreProjectsProps) => {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-function CoverImage({
+export function CoverImage({
   title,
   src,
   slug,

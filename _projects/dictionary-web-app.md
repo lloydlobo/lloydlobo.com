@@ -10,40 +10,32 @@ repository: "https://github.com/lloydlobo/dictionary-web-app"
 live: "https://dictionary-web-app-vert.vercel.app"
 ---
 
-Integrated Dictionary API to create a real-world dictionary web app.
-It also includes colour themes and font selection.
+Project Case Study: Dictionary Text Audio Web App
 
-## Brief
+## Overview
 
-Your challenge is to build out this dictionary web app using the Dictionary API and get it looking as close to the design as possible.
+In this project, I built a real-world dictionary web app using the Dictionary API. The app allows users to search for words using an input field, view the Free Dictionary API's response for the searched word, play the audio file for a word when available, switch between serif, sans serif, and monospace fonts, and switch between light and dark themes. The project also aims to provide a seamless user experience across different screen sizes and devices.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-<https://dictionaryapi.dev/>
+## Tools and Technologies Used
 
-## Goals
+- HTML, CSS, and JavaScript
+- Visual Studio Code as the code editor
+- Sass for CSS pre-processing
+- Gulp for automating tasks, such as compiling Sass and optimizing images
+- Git and GitHub for version control and project management
 
-- [x] Search for words using the input field
-- [x] See the Free Dictionary API's response for the searched word
-- [x] See a form validation message when trying to submit a blank form
-- [x] Play the audio file for a word when it's available
-- [x] Switch between serif, sans serif, and monospace fonts
-- [x] Switch between light and dark themes
-- [x] View the optimal layout for the interface depending on their device's screen size
-- [ ] See hover and focus states for all interactive elements on the page
-- [ ] Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
+## Challenges
 
-## Assets provided
+The main challenge I faced was integrating the Dictionary API and retrieving data for the searched words. The API provided a lot of data, and I had to figure out how to display the data in a user-friendly way while also ensuring that the app was accessible and responsive. I also had to implement audio playback functionality for words that had audio files available. Another challenge was implementing the theme and font switcher functionality while ensuring that the app's design remained consistent and visually appealing.
 
-- Sketch and Figma design files
-- Mobile, tablet & desktop layouts
-- Professional design system for colors, fonts, etc.
-- Optimized image assets
-- README file to help you get started
-- HTML file with pre-written content
+## Approach
 
-## Ideas to test yourself
+I began by setting up the project's file structure and creating the HTML markup. I used the pre-written content provided and added my own HTML elements to structure the content and create a layout that was responsive and accessible. Next, I used Sass to create the app's styles and implemented the theme and font switcher functionality. I also created hover and focus states for interactive elements to improve the app's user experience.
 
-- Write your styles using a pre-processor, such as Sass, Less or Stylus
-- Train your eye for detail by getting your solution as close to the design as you can
-- Use a JavaScript framework/library to practice templating and/or building using components
-- Try estimating the time it will take for you to build the project. Then see if the time taken matches up to your estimate. Project estimations are a skill that is often overlooked but is important for professional developers
+To integrate the Dictionary API, I used JavaScript to handle the API request and retrieve the data for the searched word. I then created a function to display the data in a formatted way on the app's interface. I also implemented audio playback functionality using the HTML5 audio element.
+
+To optimize the app's performance, I used Gulp to automate tasks such as compiling Sass, optimizing images, and minifying CSS and JavaScript files. I also used Git and GitHub for version control and project management.
+
+## Results
+
+The final result was a real-world dictionary web app that integrated the Dictionary API and provided a user-friendly interface for searching and viewing word definitions. The app's theme and

@@ -5,6 +5,8 @@ import ProjectType from "@/interfaces/project";
 import { getAllProjects, getProjectBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostBody } from "@/components/projects/PostBody";
+import Link from "next/link";
+import { CoverImage } from "@/pages/projects/index";
 
 type Props = {
   project: ProjectType;
@@ -19,6 +21,8 @@ export default function Project({ project, moreProjects, preview }: Props) {
   if (!router.isFallback && !project?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  console.log(moreProjects);
 
   // const { slug } = router.query;
 
@@ -37,6 +41,40 @@ export default function Project({ project, moreProjects, preview }: Props) {
           </section>
           <section>
             <PostBody content={project.content} />
+          </section>
+          <section>
+            <article className="mx-auto my-12">
+              <hr />
+              <div className="grid grid-flow-col-dense gap-x-8 overflow-y-hidden overflow-x-scroll">
+                {moreProjects.length > 0 ? (
+                  moreProjects.map(
+                    (
+                      { title, coverImage, slug, date, excerpt },
+                      idxMoreProjects
+                    ) => {
+                      if (slug !== project.slug) {
+                        return (
+                          <div
+                            key={`moreProjects-${title}-${idxMoreProjects}`}
+                            className="prose-sm mt-0 grid rounded-xl px-4  py-2 shadow-xl backdrop-brightness-125"
+                          >
+                            <Link
+                              className="m-0 after:hidden"
+                              href={`projects/${slug}`}
+                            >
+                              <h2 className="mt-0">{title}</h2>
+                              <p className="line-clamp-2">{excerpt}</p>
+                            </Link>
+                          </div>
+                        );
+                      }
+                    }
+                  )
+                ) : (
+                  <div>No more projects found</div>
+                )}
+              </div>
+            </article>
           </section>
         </>
       )}
@@ -61,6 +99,21 @@ export async function getStaticProps({ params }: Params) {
   ]);
 
   const content = await markdownToHtml(project.content || "");
+  const allProjects = getAllProjects([
+    "title",
+    "date",
+    "slug",
+    "excerpt",
+    "coverImage",
+    "ogImage",
+    "live",
+    "repository",
+    "projectType",
+  ]);
+
+  // return {
+  //   props: { allProjects },
+  // };
 
   return {
     props: {
@@ -68,6 +121,8 @@ export async function getStaticProps({ params }: Params) {
         ...project,
         content,
       },
+      moreProjects: allProjects,
+      // preview:{ project.preview}
     },
   };
 }
