@@ -41,7 +41,6 @@
   --pl-neptune: 10px;
   --pl-pluto: 3px;
 
-
   /* End: Solar System variables  */
 }
 
@@ -79,17 +78,17 @@ body {
   min-height: 100svh;
 }
 
-
 main {
-  @apply my-16 grid place-self-center overflow-hidden lg:max-w-screen-md ;
+  @apply my-16 grid place-self-center overflow-hidden lg:max-w-screen-md;
 }
 
 article {
-  @apply  prose dark:prose-invert lg:prose-xl;
+  @apply prose dark:prose-invert lg:prose-xl;
 }
 
-nav,footer {
-  @apply mx-auto max-w-screen-sm lg:max-w-screen-md ;
+nav,
+footer {
+  @apply mx-auto max-w-screen-sm lg:max-w-screen-md;
 }
 footer {
   @apply w-full opacity-[61%];
@@ -120,7 +119,6 @@ p {
   hyphens: auto;
   @apply dark:text-secondary;
 }
-
 
 @media (prefers-color-scheme: dark) {
   html {

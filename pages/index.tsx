@@ -32,22 +32,8 @@ const PROJECTS = [
     img: "proxymate.jpg",
     year: "2023",
   },
-  {
-    username: "lloydlobo",
-    tags: ["discord", "python"],
-    repo: "penny",
-    description: "A no-nonsense budget tracking Discord bot",
-    img: "penny.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["rust", "cli"],
-    repo: "hackernews-clone",
-    description: "Coming soon...",
-    img: "mausam-fibo.jpg",
-    year: "2023",
-  },
+  // { username: "lloydlobo", tags: ["discord", "python"], repo: "penny", description: "A no-nonsense budget tracking Discord bot", img: "penny.jpg", year: "2023", },
+  // { username: "lloydlobo", tags: ["rust", "cli"], repo: "hackernews-clone", description: "Coming soon...", img: "mausam-fibo.jpg", year: "2023", },
 ];
 export default function HomePage() {
   // let uuid = crypto.randomUUID();
