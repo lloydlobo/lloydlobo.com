@@ -1,20 +1,19 @@
-import markdownStyles from '@/components/projects/markdown-styles.module.css';
-import React from 'react'
+import markdownStyles from "@/components/projects/markdown-styles.module.css";
+import React from "react";
 
 type Props = {
   content: string;
-}
+};
 
 export function PostBody({ content }: Props) {
   return (
-    <article className='mx-auto'>
-
-      <div className='disabled:max-w-2xl mx-auto'>
-        <div className={markdownStyles['markdown']}
+    <article className="mx-auto">
+      <div className="mx-auto disabled:max-w-2xl">
+        <div
+          className={markdownStyles["markdown"]}
           dangerouslySetInnerHTML={{ __html: content }}
         ></div>
       </div>
     </article>
-  )
+  );
 }
-

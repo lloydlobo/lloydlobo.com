@@ -68,7 +68,6 @@ body {
   /* Why: Due to the mouse blob effect extending the vertical viewport  */
   /* overflow: hidden; */
   overflow-x: hidden;
-  @apply font-serif;
 }
 
 body {

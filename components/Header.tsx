@@ -23,7 +23,7 @@ export default function Header() {
       </noscript>
 
       <div className="mx-auto hidden md:max-w-screen-sm">
-        <div className={`${styles.authbar} font-sans text-xs uppercase tracking-wider`}>
+        <div className={`${styles.authbar} text-xs uppercase tracking-wider`}>
           <AuthComponent />
         </div>
       </div>
@@ -111,9 +111,6 @@ function Navigation(props: {}) {
         </Link>
         <Link className="after:hidden" href="/projects">
           Projects
-        </Link>
-        <Link className="after:hidden" href="/work">
-          Work
         </Link>
         <Link className="hidden after:hidden" href="/contact">
           Contact

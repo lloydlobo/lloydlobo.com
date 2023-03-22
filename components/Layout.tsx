@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import Header from "./Header";
-import { ClockNav } from "@/pages";
 import { LogoIcon } from "./icons";
 import { useState, useEffect } from 'react';
 

@@ -30,13 +30,13 @@ export default function Project({ project, moreProjects, preview }: Props) {
       ) : (
         <>
           <section>
-            <article className="mx-auto" >
-             <h1> {project.title}           </h1>
-             <img src={project.coverImage} alt={project.slug}/>
+            <article className="mx-auto">
+              <h1> {project.title} </h1>
+              <img src={project.coverImage} alt={project.slug} />
             </article>
           </section>
           <section>
-              <PostBody content={project.content}/>
+            <PostBody content={project.content} />
           </section>
         </>
       )}
