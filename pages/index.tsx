@@ -112,13 +112,13 @@ export default function HomePage() {
                   Selected Projects
                 </h2>
 
-                <div className="relative mx-auto grid gap-4 backdrop-blur-[0px]">
+                <div className="relative mx-auto  grid gap-4 backdrop-blur-[0px]">
                   {PROJECTS.map(
                     ({ username, repo, tags, description, img }, index) => (
                       <div key={`project-${repo}-${index}`}>
                         <a
                           href={`https://github.com/${username}/${repo}`}
-                          className="relative inline-flex items-start rounded px-3 pb-3 transition-all delay-100 duration-300 ease-in-out after:opacity-0 hover:opacity-100 hover:blur-0 [&>.tags]:hover:opacity-75"
+                          className="relative w-full inline-flex items-start rounded px-3 pb-3 transition-all delay-100 duration-300 ease-in-out after:opacity-0 hover:opacity-100 hover:blur-0 [&>.tags]:hover:opacity-75"
                         >
                           <p className="tags prose-sm absolute top-[1ch] flex w-full gap-2 lowercase opacity-0 brightness-90 transition-all delay-200 duration-300 ease-in">
                             {tags.map((tag, idx) => (
