@@ -1,7 +1,26 @@
 import { useTheme } from "next-themes";
 import styles from "@/components/effects/SolarSystem.module.css";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import { ClockNav } from "@/pages";
+export function ClockNav() {
+  const [currentTime, setCurrentTime] = useState(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+  return (
+    <div className="bg-opacity-50 text-center text-xs font-semibold backdrop-blur-[2px] ">
+      <span className="relative h-full text-opacity-70 brightness-75 dark:text-secondary">
+        {currentTime ? (
+          <span>{currentTime}</span>
+        ) : (
+          <span className="blur-[0.5px]"> 0:00:00 AM</span>
+        )}
+      </span>
+    </div>
+  );
+}
 
 // Code modified and utilized from: https://codepen.io/kowlor/pen/ZYYQoy?editors=0100
 export const SolarSystem = (props: {}) => {

@@ -12,7 +12,7 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
-  console.log(CONSOLE_MESSAGE)
+  console.log(CONSOLE_EASTER_EGG);
   return (
     <>
       <SessionProvider session={session}>
@@ -53,23 +53,25 @@ const ibmRegular = localFont({
 // Use of the <SessionProvider> is mandatory to allow components that call
 // `useSession()` anywhere in your application to access the `session` object.
 
-
 // Calvin S ASCII Font
-const CONSOLE_MESSAGE = `
-888    888          888 888                                                  888      888  888 
-888    888          888 888                                                  888      888  888 
-888    888          888 888                                                  888      888  888 
-8888888888  .d88b.  888 888  .d88b.           888  888  888  .d88b.  888d888 888  .d88888  888 
-888    888 d8P  Y8b 888 888 d88""88b          888  888  888 d88""88b 888P"   888 d88" 888  888 
-888    888 88888888 888 888 888  888          888  888  888 888  888 888     888 888  888  Y8P 
-888    888 Y8b.     888 888 Y88..88P d8b      Y88b 888 d88P Y88..88P 888     888 Y88b 888   "  
-888    888  "Y8888  888 888  "Y88P"  88P       "Y8888888P"   "Y88P"  888     888  "Y88888  888 
-                                     8P                                                       
-                                     "                                                        
-╔╦╗┌─┐┌─┐┬┌─┐┌┐┌┌─┐┌┬┐  ┌─┐┌┐┌┌┬┐  ┌┐ ┬ ┬┬┬ ┌┬┐  ┌┐ ┬ ┬  ╦  ┬  ┌─┐┬ ┬┌┬┐  ╦  ┌─┐┌┐ ┌─┐                                  
- ║║├┤ └─┐││ ┬│││├┤  ││  ├─┤│││ ││  ├┴┐│ │││  │   ├┴┐└┬┘  ║  │  │ │└┬┘ ││  ║  │ │├┴┐│ │                                  
-═╩╝└─┘└─┘┴└─┘┘└┘└─┘─┴┘  ┴ ┴┘└┘─┴┘  └─┘└─┘┴┴─┘┴   └─┘ ┴   ╩═╝┴─┘└─┘ ┴ ─┴┘  ╩═╝└─┘└─┘└─┘o                                 
-╔═╗┌─┐┬ ┬┌─┐┬─┐┌─┐┌┬┐  ┌┐ ┬ ┬  ╦  ╦┌─┐┬─┐┌─┐┌─┐┬      ╔╗╔┌─┐─┐ ┬┌┬┐╦╔═╗    ╦═╗┌─┐┌─┐┌─┐┌┬┐   ╔╦╗┌─┐┬┬  ┬ ┬┬┌┐┌┌┬┐╔═╗╔═╗╔═╗ 
-╠═╝│ ││││├┤ ├┬┘├┤  ││  ├┴┐└┬┘  ╚╗╔╝├┤ ├┬┘│  ├┤ │      ║║║├┤ ┌┴┬┘ │ ║╚═╗    ╠╦╝├┤ ├─┤│   │     ║ ├─┤││  │││││││ ││║  ╚═╗╚═╗ 
-╩  └─┘└┴┘└─┘┴└─└─┘─┴┘  └─┘ ┴    ╚╝ └─┘┴└─└─┘└─┘┴─┘ ┘  ╝╚╝└─┘┴ └─ ┴╚╝╚═╝ ┘  ╩╚═└─┘┴ ┴└─┘ ┴ ┘   ╩ ┴ ┴┴┴─┘└┴┘┴┘└┘─┴┘╚═╝╚═╝╚═╝o
+const CONSOLE_EASTER_EGG = `
+hh                        tt    hh                               
+hh        eee  yy   yy    tt    hh        eee  rr rr    eee   
+hhhhhh  ee   e yy   yy    tttt  hhhhhh  ee   e rrr  r ee   e  
+hh   hh eeeee   yyyyyy    tt    hh   hh eeeee  rr     eeeee   
+hh   hh  eeeee      yy     tttt hh   hh  eeeee rr      eeeee  
+                yyyyy                                            
+
++-+-+-+-+-+-+-+-+ +-+-+-+ +-+-+-+-+-+                  
+|d|e|s|i|g|n|e|d| |a|n|d| |b|u|i|l|t|                  
++-+-+-+-+-+-+-+-+ +-+-+-+ +-+-+-+-+-+                  
++-+-+ +-+-+-+-+-+ +-+-+-+-+-+                          
+|b|y| |l|l|o|y|d| |l|o|b|o|.|                          
++-+-+ +-+-+-+-+-+ +-+-+-+-+-+                          
++-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+-+-+                  
+|P|o|w|e|r|e|d| |b|y| |v|e|r|c|e|l|,|                  
++-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+-+-+                  
++-+-+-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+
+|n|e|x|t|j|s|,| |r|e|a|c|t|,| |t|a|i|l|w|i|n|d|c|s|s|.|
++-+-+-+-+-+-+-+ +-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+
 `;
