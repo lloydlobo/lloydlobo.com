@@ -28,7 +28,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="font-sans py-2 text-xs font-bold uppercase tracking-wider md:prose-sm">
+      <nav className="font-sans py-2 text-xs font-bold uppercase w-full tracking-wider ">
         <div className="opacity-95 dark:prose-a:text-green-300/80">
           <Navigation />
         </div>
@@ -94,7 +94,7 @@ function AuthComponent() {
 
 function Navigation(props: {}) {
   return (
-    <div className="mx-auto px-6 md:max-w-screen-sm lg:px-0">
+    <div className="mx-auto px-6">
       <div className="flex items-center justify-between ">
         <Link href="/" data-id="logo" className="after:hidden" >
           <LogoIcon />

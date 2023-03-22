@@ -39,7 +39,7 @@ export default function Layout({ children, title = "Lloyd Lobo" }: Props) {
 function Footer() {
   return (
     <>
-      <footer className="font-sans z-10 md:max-w-screen-sm mx-auto">
+      <footer className="font-sans z-10 lg:px-6 mx-auto">
         <div className="bg-gray-100 dark:bg-gray-800">
           <div className="flex flex-col items-center px-4 md:px-0 py-6 mx-auto space-y-6 lg:space-y-0 lg:flex-row lg:justify-between">
             <div className="">

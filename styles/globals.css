@@ -55,18 +55,15 @@
   padding: 0;
   margin: 0;
   /* @apply bg-purple-800 bg-opacity-[0.002]; */
-  /* @apply outline-dotted outline-1 outline-gray4/30; */
+  @apply outline-dotted outline-1 outline-gray4/30;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-
 html,
 body {
-  /* Why: Due to the mouse blob effect extending the vertical viewport  */
-  /* overflow: hidden; */
   overflow-x: hidden;
 }
 
@@ -76,14 +73,24 @@ body {
   @apply mx-auto w-full bg-white tracking-normal text-on-primary dark:bg-on-primary dark:text-secondary lg:mx-auto;
 }
 
+.layout-wrapper {
+  @apply grid selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+
 main {
-  @apply container my-16 grid place-self-center overflow-hidden lg:max-w-screen-md lg:px-8;
+  @apply my-16 grid place-self-center overflow-hidden lg:max-w-screen-md ;
 }
 
 article {
-  @apply prose dark:prose-invert lg:prose-xl;
+  @apply  prose dark:prose-invert lg:prose-xl;
 }
 
+nav,footer {
+  @apply mx-auto max-w-screen-sm lg:max-w-screen-md ;
+}
 footer {
   @apply w-full opacity-[61%];
 }
@@ -100,11 +107,6 @@ a {
   @apply dark:prose-invert;
 }
 
-/* mailto:user@email.com */
-a:link {
-  /* @apply hover:text-orange-700 dark:hover:text-orange-400; */
-}
-
 a::after {
   position: relative;
   content: "\FEFF°";
@@ -116,15 +118,9 @@ a::after {
 
 p {
   hyphens: auto;
-  /* font-feature-settings: "kern", "frac", "kern", "ss02"; */
   @apply dark:text-secondary;
 }
 
-.layout-wrapper {
-  @apply grid selection:bg-gray5/30 dark:selection:bg-gray4/30 dark:selection:text-current;
-  min-height: 100vh;
-  min-height: 100svh;
-}
 
 @media (prefers-color-scheme: dark) {
   html {
