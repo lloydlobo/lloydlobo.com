@@ -55,7 +55,7 @@
   padding: 0;
   margin: 0;
   /* @apply bg-purple-800 bg-opacity-[0.002]; */
-  @apply outline-dotted outline-1 outline-gray4/30;
+  /* @apply outline-dotted outline-1 outline-gray4/30; */
 }
 
 html {

@@ -54,7 +54,7 @@ export default function HomePage() {
             <article className="pt-12">
               <h1 className={`dark:text-primary`}>
                   Hi there, I'm Lloyd.<br />
-                  Front End <span className="dark:text-green-300">Developer</span>, creating minimal and functional software
+                  Front End <span className="text-green-400 dark:text-green-300">Developer</span>, creating minimal and functional software
               </h1>
             </article>
           </Section>
@@ -188,22 +188,22 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-[1ch]">
-                  <div className="">
-                    <h3 className="prose-base border-t border-tertiary font-sans font-bold uppercase tracking-wider dark:text-tertiary">
+                <div className="grid grid-cols-1 gap-4">
+                  <div>
+                    <h3 className="prose-base pt-0.5 border-t border-tertiary/50 font-sans font-bold uppercase tracking-wider text-gray5 dark:text-tertiary/60">
                       Expertise
                     </h3>
-                    <div className={`[&>*]:prose-base dark:text-secondary`}>
+                    <div className={`[&>*]:prose-base `}>
                       <div className="">Front-end development</div>
                       <div className="">Web APIs - NodeJS, Actix Web</div>
                       <div className="">CLI Apps</div>
                     </div>
                   </div>
-                  <div className="">
-                    <h3 className="prose-base border-t border-tertiary font-sans font-bold uppercase tracking-wider dark:text-tertiary/80">
+                  <div>
+                    <h3 className="prose-base border-t pt-0.5 border-tertiary/50 font-sans font-bold uppercase tracking-wider text-gray5 dark:text-tertiary/60">
                       Tech Stacks
                     </h3>
-                    <div className={`[&>*]:prose-base dark:text-secondary`}>
+                    <div className={`[&>*]:prose-base`}>
                       <div className="">NextJS React JamStack</div>
                       <div className="">
                         Rust, Go, Python, JavaScript, TypeScript
