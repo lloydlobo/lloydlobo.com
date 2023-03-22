@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import ProjectType from "@/interfaces/project";
 import { getAllProjects, getProjectBySlug } from "@/lib/api";
 import markdownToHtml from "@/lib/markdownToHtml";
+import { PostBody } from "@/components/projects/PostBody";
 
 type Props = {
   project: ProjectType;
@@ -29,14 +30,13 @@ export default function Project({ project, moreProjects, preview }: Props) {
       ) : (
         <>
           <section>
-            <article>
-              {project.title}
-              {project.excerpt}
-              {project.date}
-              {project.slug}
-              {project.coverImage}
-              {project.ogImage}
+            <article className="mx-auto" >
+             <h1> {project.title}           </h1>
+             <img src={project.coverImage} alt={project.slug}/>
             </article>
+          </section>
+          <section>
+              <PostBody content={project.content}/>
           </section>
         </>
       )}
@@ -53,7 +53,11 @@ export async function getStaticProps({ params }: Params) {
     "title",
     "date",
     "slug",
-    "excerpt",
+    "ogImage",
+    "coverImage",
+    "live",
+    "repository",
+    "content",
   ]);
 
   const content = await markdownToHtml(project.content || "");

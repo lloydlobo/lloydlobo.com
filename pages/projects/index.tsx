@@ -20,23 +20,23 @@ export default function ProjectsPage({ allProjects }: Props) {
             <h1>What I've been working on</h1>
             <p>I have picked the projects which get me excited to work with.</p>
 
-        <div className="mx-auto">
-            {heroProject && (
-              <HeroProject
-                title={heroProject.title}
-                date={heroProject.date}
-                slug={heroProject.slug}
-                excerpt={heroProject.excerpt}
-                coverImage={heroProject.coverImage}
-                projectType={heroProject.projectType}
-                repository={heroProject.repository}
-                live={heroProject.live}
-                ogImage={heroProject.ogImage.url}
-              />
-            )}
+            <div className="mx-auto">
+              {heroProject && (
+                <HeroProject
+                  title={heroProject.title}
+                  date={heroProject.date}
+                  slug={heroProject.slug}
+                  excerpt={heroProject.excerpt}
+                  coverImage={heroProject.coverImage}
+                  projectType={heroProject.projectType}
+                  repository={heroProject.repository}
+                  live={heroProject.live}
+                  ogImage={heroProject.ogImage.url}
+                />
+              )}
+            </div>
           </div>
-          </div>
-        </article >
+        </article>
       </section>
 
       <section>
@@ -98,17 +98,17 @@ const HeroProject = ({
     slug,
   });
   return (
-      <div className="flex flex-col gap-0">
-        <div className="">
-          <CoverImage title={title} src={coverImage} slug={slug} />
-        </div>
-        <div className="">
-          <h2 className="mt-0">{title}</h2>
-          <span className="sr-only">{date}</span>
-          <p className="flex line-clamp-2">{excerpt}</p>
-          <Link href={`projects/${slug}`}>View project</Link>
-        </div>
+    <div className="flex flex-col gap-0">
+      <div className="">
+        <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
+      <div className="">
+        <h2 className="mt-0">{title}</h2>
+        <span className="sr-only">{date}</span>
+        <p className="flex line-clamp-2">{excerpt}</p>
+        <Link href={`projects/${slug}`}>View project</Link>
+      </div>
+    </div>
   );
 };
 
@@ -119,34 +119,34 @@ type MoreProjectsProps = {
 const MoreProjects = ({ projects }: MoreProjectsProps) => {
   console.log(projects);
   return (
-      <div className="mb-8 md:mb-16">
-        <div className="project grid grid-cols-2 gap-x-8 mx-auto">
-          {projects.length > 0 ? (
-            projects.map(
-              ({ title, coverImage, slug, date, excerpt }, idxProject) => (
-                <div
-                  key={`project-${title}-${idxProject}-${slug}`}
-                  className="grid p-4 shadow"
-                >
-                  <div className="flex flex-col gap-0">
-                    <div className="">
-                      <CoverImage title={title} src={coverImage} slug={slug} />
-                    </div>
-                    <div className="">
-                      <h2 className="mt-0">{title}</h2>
-                      <span className="sr-only">{date}</span>
-                      <p className="flex line-clamp-2">{excerpt}</p>
-                      <Link href={`projects/${slug}`}>View project</Link>
-                    </div>
+    <div className="mb-8 md:mb-16">
+      <div className="project mx-auto grid grid-cols-2 gap-x-8">
+        {projects.length > 0 ? (
+          projects.map(
+            ({ title, coverImage, slug, date, excerpt }, idxProject) => (
+              <div
+                key={`project-${title}-${idxProject}-${slug}`}
+                className="grid p-4 shadow"
+              >
+                <div className="flex flex-col gap-0">
+                  <div className="">
+                    <CoverImage title={title} src={coverImage} slug={slug} />
+                  </div>
+                  <div className="">
+                    <h2 className="mt-0">{title}</h2>
+                    <span className="sr-only">{date}</span>
+                    <p className="flex line-clamp-2">{excerpt}</p>
+                    <Link href={`projects/${slug}`}>View project</Link>
                   </div>
                 </div>
-              )
+              </div>
             )
-          ) : (
-            <span>no projects found</span>
-          )}
-        </div>
+          )
+        ) : (
+          <span>no projects found</span>
+        )}
       </div>
+    </div>
   );
 };
 

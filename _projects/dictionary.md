@@ -13,7 +13,7 @@ live: "https://dictionary-web-app-vert.vercel.app"
 Integrated Dictionary API to create a real-world dictionary web app.
 It also includes colour themes and font selection.
 
-## 📝Brief
+## Brief
 
 Your challenge is to build out this dictionary web app using the Dictionary API and get it looking as close to the design as possible.
 
@@ -41,7 +41,7 @@ Your users should be able to:
 [ ] See hover and focus states for all interactive elements on the page
 [ ] Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
 
-🗃Assets provided
+## Assets provided
 
     Sketch and Figma design files
     Mobile, tablet & desktop layouts
@@ -50,7 +50,7 @@ Your users should be able to:
     README file to help you get started
     HTML file with pre-written content
 
-💡Ideas to test yourself
+## Ideas to test yourself
 
     Write your styles using a pre-processor, such as Sass, Less or Stylus
 
