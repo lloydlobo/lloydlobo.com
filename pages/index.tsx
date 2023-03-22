@@ -10,9 +10,10 @@ const PROJECTS = [
   {
     username: "lloydlobo",
     tags: ["api", "audio"],
-    repo: "dictionary-web-api",
+    repo: "dictionary-web-app",
     description: "Dictionary web app using the Dictionary API",
     img: "neura-driver.jpg",
+    year: "2023",
   },
   {
     username: "lloydlobo",
@@ -20,6 +21,7 @@ const PROJECTS = [
     repo: "mausam",
     description: "A weather update desktop notifier made with Rust",
     img: "mausam.jpg",
+    year: "2023",
   },
   {
     username: "lloydlobo",
@@ -28,6 +30,7 @@ const PROJECTS = [
     description:
       "Generates phrases in the style of the author using Markov model",
     img: "proxymate.jpg",
+    year: "2023",
   },
   {
     username: "lloydlobo",
@@ -35,6 +38,7 @@ const PROJECTS = [
     repo: "penny",
     description: "A no-nonsense budget tracking Discord bot",
     img: "penny.jpg",
+    year: "2023",
   },
   {
     username: "lloydlobo",
@@ -42,6 +46,7 @@ const PROJECTS = [
     repo: "hackernews-clone",
     description: "Coming soon...",
     img: "mausam-fibo.jpg",
+    year: "2023",
   },
 ];
 export default function HomePage() {
@@ -53,8 +58,8 @@ export default function HomePage() {
           <Section>
             <article className="pt-12">
               <h1 className={`dark:text-primary`}>
-                  Hi there, I'm Lloyd.<br />
-                  Front End <span className="text-green-400 dark:text-green-300">Developer</span>, creating minimal and functional software
+                Hi there, I'm Lloyd.<br />
+                Front End <span className="text-green-400 dark:text-green-300">Developer</span>, creating minimal and functional software
               </h1>
             </article>
           </Section>
@@ -67,7 +72,7 @@ export default function HomePage() {
                 <div className="relative mx-auto w-full space-y-6">
                   <p className="relative w-fit">
                     I deeply enjoy building polished software and web experiences. Tinkering with functional and aesthetically pleasing
-                      interfaces.
+                    interfaces.
                   </p>
 
                   <p>
@@ -114,7 +119,7 @@ export default function HomePage() {
 
                 <div className="relative mx-auto  grid gap-4 backdrop-blur-[0px]">
                   {PROJECTS.map(
-                    ({ username, repo, tags, description, img }, index) => (
+                    ({ username, repo, tags, description, img, year }, index) => (
                       <div key={`project-${repo}-${index}`}>
                         <a
                           href={`https://github.com/${username}/${repo}`}
@@ -145,7 +150,7 @@ export default function HomePage() {
                               <div className="relative -top-1 z-10 flex w-full min-w-[2vw] border-t-[0.1px] text-primary opacity-75 blur-[0.1px] brightness-50 backdrop-blur-[1px] after:relative after:ml-auto after:opacity-75 after:content-['']"></div>
                             </div>
                             <span className="text-secondary brightness-75 dark:text-current">
-                              2023
+                              {year}
                             </span>
                           </div>
                         </a>
