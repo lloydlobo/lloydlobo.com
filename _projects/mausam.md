@@ -1,12 +1,12 @@
 ---
-title: "Dictionary Text Audio Web App"
+title: "Mausam weather app"
 date: "2020-03-16T05:35:07.322Z"
 coverImage: "assets/projects/dictionary/cover.png"
 excerpt: "The client for this application approached me because they were looking to create a product that allows drivers to quickly connect with mechanics when dealing with car problems. They also were loooking to enable hobbyist and mechanics unassociated with any particular shop the opportunity to gig-work and manage their own time. I was able to effectively create user personas, competitive audits, sketches, wireframes and a final prototype and send over final assets to an engineer in around three months."
 ogImage:
   url: "assets/projects/dictionary/cover.png"
 projectType: "personal"
-repository: "https://github.com/lloydlobo/dictionary-web-app"
+repository: "https://github.com/lloydlobo/mausam"
 live: "https://dictionary-web-app-vert.vercel.app"
 ---
 

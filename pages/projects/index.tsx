@@ -15,27 +15,51 @@ export default function ProjectsPage({ allProjects }: Props) {
   return (
     <Layout title="Projects">
       <section>
-        <h1>Selected Projects</h1>
+        <article className="mx-auto">
+          <div>
+            <h1>What I've been working on</h1>
+            <p>I have picked the projects which get me excited to work with.</p>
 
-        {heroProject && (
-          <HeroProject
-            title={heroProject.title}
-            date={heroProject.date}
-            slug={heroProject.slug}
-            excerpt={heroProject.excerpt}
-          />
-        )}
+        <div className="mx-auto">
+            {heroProject && (
+              <HeroProject
+                title={heroProject.title}
+                date={heroProject.date}
+                slug={heroProject.slug}
+                excerpt={heroProject.excerpt}
+                coverImage={heroProject.coverImage}
+                projectType={heroProject.projectType}
+                repository={heroProject.repository}
+                live={heroProject.live}
+                ogImage={heroProject.ogImage.url}
+              />
+            )}
+          </div>
+          </div>
+        </article >
       </section>
 
       <section>
-        {moreProjects.length > 0 && <MoreProjects projects={moreProjects} />}
+        <article className="mx-auto">
+          {moreProjects.length > 0 && <MoreProjects projects={moreProjects} />}
+        </article>
       </section>
     </Layout>
   );
 }
 
 export const getStaticProps = async () => {
-  const allProjects = getAllProjects(["title", "date", "slug", "excerpt"]);
+  const allProjects = getAllProjects([
+    "title",
+    "date",
+    "slug",
+    "excerpt",
+    "coverImage",
+    "ogImage",
+    "live",
+    "repository",
+    "projectType",
+  ]);
 
   return {
     props: { allProjects },
@@ -44,22 +68,48 @@ export const getStaticProps = async () => {
 
 type HeroProjectProps = {
   title: string;
+  coverImage: string;
   date: string;
   excerpt: string;
+  projectType: string;
+  ogImage: string;
+  repository: string;
+  live: string;
   slug: string;
 };
-const HeroProject = ({ title, date, excerpt, slug }: HeroProjectProps) => {
-  console.log(title, date, excerpt, slug);
-  return <>
-    <div className="grid p-4 shadow">
-      <ul>
-        <li>{title}</li>
-        <li>{date}</li>
-        <li>{excerpt}</li>
-        <li><Link href={`projects/${slug}`}>Live</Link></li>
-      </ul>
-    </div>
-  </>;
+const HeroProject = ({
+  title,
+  date,
+  excerpt,
+  projectType,
+  coverImage,
+  repository,
+  live,
+  slug,
+}: HeroProjectProps) => {
+  console.log({
+    title,
+    coverImage,
+    date,
+    projectType,
+    live,
+    excerpt,
+    repository,
+    slug,
+  });
+  return (
+      <div className="flex flex-col gap-0">
+        <div className="">
+          <CoverImage title={title} src={coverImage} slug={slug} />
+        </div>
+        <div className="">
+          <h2 className="mt-0">{title}</h2>
+          <span className="sr-only">{date}</span>
+          <p className="flex line-clamp-2">{excerpt}</p>
+          <Link href={`projects/${slug}`}>View project</Link>
+        </div>
+      </div>
+  );
 };
 
 type MoreProjectsProps = {
@@ -68,25 +118,59 @@ type MoreProjectsProps = {
 
 const MoreProjects = ({ projects }: MoreProjectsProps) => {
   console.log(projects);
-  return <>
-    <div className="grid md:grid-cols-2 ">
-      <div className="card">
-        {projects.length > 0 ? projects.map((project, idxProject) => (
-          <div key={`project-${project}-${idxProject}`} className="grid p-4 shadow">
-            <ul>
-              <li>{project.title}</li>
-              <li>{project.date}</li>
-              <li>{project.excerpt}</li>
-              <li><Link href={`projects/${project.slug}`}>Live</Link></li>
-            </ul>
-          </div>
-
-        )
-        ) :
-
-          <span>no projects found</span>
-        }
+  return (
+      <div className="mb-8 md:mb-16">
+        <div className="project grid grid-cols-2 gap-x-8 mx-auto">
+          {projects.length > 0 ? (
+            projects.map(
+              ({ title, coverImage, slug, date, excerpt }, idxProject) => (
+                <div
+                  key={`project-${title}-${idxProject}-${slug}`}
+                  className="grid p-4 shadow"
+                >
+                  <div className="flex flex-col gap-0">
+                    <div className="">
+                      <CoverImage title={title} src={coverImage} slug={slug} />
+                    </div>
+                    <div className="">
+                      <h2 className="mt-0">{title}</h2>
+                      <span className="sr-only">{date}</span>
+                      <p className="flex line-clamp-2">{excerpt}</p>
+                      <Link href={`projects/${slug}`}>View project</Link>
+                    </div>
+                  </div>
+                </div>
+              )
+            )
+          ) : (
+            <span>no projects found</span>
+          )}
+        </div>
       </div>
-    </div>
-  </>;
+  );
 };
+
+////////////////////////////////////////////////////////////////////////////////
+
+function CoverImage({
+  title,
+  src,
+  slug,
+}: {
+  title: string;
+  src: string;
+  slug: string;
+}) {
+  console.log(src);
+  return (
+    <>
+      <Link className="after:hidden" href={`/projects/${slug}`}>
+        <img
+          src={src}
+          className={`aspect-video  w-fit object-cover object-top`}
+          alt={title}
+        />
+      </Link>
+    </>
+  );
+}

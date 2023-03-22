@@ -81,7 +81,6 @@ main {
   @apply container my-16 grid place-self-center overflow-hidden lg:max-w-screen-md lg:px-8;
 }
 
-
 article {
   @apply prose dark:prose-invert lg:prose-xl;
 }

@@ -9,7 +9,8 @@ type Props = {
   project: ProjectType;
   moreProjects: ProjectType[];
   preview?: boolean;
-}
+};
+
 export default function Project({ project, moreProjects, preview }: Props) {
   const router = useRouter();
   const title = `${project.title} | Selected Projects | Lloyd Lobo`;
@@ -33,6 +34,8 @@ export default function Project({ project, moreProjects, preview }: Props) {
               {project.excerpt}
               {project.date}
               {project.slug}
+              {project.coverImage}
+              {project.ogImage}
             </article>
           </section>
         </>
@@ -42,29 +45,31 @@ export default function Project({ project, moreProjects, preview }: Props) {
 }
 
 type Params = {
-  params: { slug: string }
-}
+  params: { slug: string };
+};
 
 export async function getStaticProps({ params }: Params) {
   const project = getProjectBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'excerpt',]);
+    "title",
+    "date",
+    "slug",
+    "excerpt",
+  ]);
 
   const content = await markdownToHtml(project.content || "");
 
   return {
     props: {
       project: {
-        ...project, content,
-      }
-    }
-  }
+        ...project,
+        content,
+      },
+    },
+  };
 }
 
 export async function getStaticPaths() {
-  const projects = getAllProjects(['slug']);
+  const projects = getAllProjects(["slug"]);
 
   return {
     paths: projects.map((project) => {
@@ -72,8 +77,8 @@ export async function getStaticPaths() {
         params: {
           slug: project.slug,
         },
-      }
+      };
     }),
     fallback: false,
-  }
+  };
 }
