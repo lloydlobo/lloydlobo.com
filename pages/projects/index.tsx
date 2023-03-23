@@ -32,6 +32,7 @@ export default function ProjectsPage({ allProjects }: Props) {
                   repository={heroProject.repository}
                   live={heroProject.live}
                   ogImage={heroProject.ogImage.url}
+                  stack={heroProject.stack}
                 />
               )}
             </div>
@@ -59,6 +60,7 @@ export const getStaticProps = async () => {
     "live",
     "repository",
     "projectType",
+    "stack",
   ]);
 
   return {
@@ -76,6 +78,7 @@ type HeroProjectProps = {
   repository: string;
   live: string;
   slug: string;
+  stack: string;
 };
 const HeroProject = ({
   title,
@@ -86,17 +89,8 @@ const HeroProject = ({
   repository,
   live,
   slug,
+  stack,
 }: HeroProjectProps) => {
-  console.log({
-    title,
-    coverImage,
-    date,
-    projectType,
-    live,
-    excerpt,
-    repository,
-    slug,
-  });
   return (
     <div className="flex flex-col gap-0">
       <div className="">
@@ -117,7 +111,6 @@ type MoreProjectsProps = {
 };
 
 const MoreProjects = ({ projects }: MoreProjectsProps) => {
-  console.log(projects);
   return (
     <div className="mb-8 md:mb-16">
       <div className="project mx-auto grid grid-cols-2 gap-x-8">
@@ -125,7 +118,7 @@ const MoreProjects = ({ projects }: MoreProjectsProps) => {
           projects.map(
             ({ title, coverImage, slug, date, excerpt }, idxProject) => (
               <div
-                key={`project-${title}-${idxProject}-${slug}`}
+                key={`MoreProjects-project-${title}-${idxProject}-${slug}`}
                 className="grid p-4 shadow"
               >
                 <div className="flex flex-col gap-0">

@@ -22,36 +22,60 @@ export default function Project({ project, moreProjects, preview }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
-  console.log(moreProjects);
-
-  // const { slug } = router.query;
-
-  // <PostTitle>Loading…</PostTitle>
   return (
     <Layout preview={preview} title={title}>
       {router.isFallback ? (
         <span>Loading…</span>
       ) : (
-        <>
+        <div className="">
           <section>
             <article className="mx-auto">
-              <h1> {project.title} </h1>
-              <CoverImage title={project.title} src={project.coverImage} slug={project.slug}/>
+              <h1 className=""> {project.title} </h1>
+              <p>{project.excerpt}</p>
+              <div className="prose-sm grid grid-cols-3 gap-2 prose-h2:text-base prose-h2:leading-6 md:max-w-[45vw]">
+                <div className="">
+                  <h2>Type</h2>
+                  <div>{project.projectType}</div>
+                </div>
+                <div className="">
+                  <h2>Stack</h2>
+                  <div>{project.stack}</div>
+                </div>
+                <div className="">
+                  <h2>Live</h2>
+                  <a href={project.live}>View project</a>
+                </div>
+              </div>
+              <CoverImage
+                title={project.title}
+                src={project.coverImage}
+                slug={project.slug}
+              />
             </article>
           </section>
-          <section>
+          <section className="mx-auto">
             <PostBody content={project.content} />
           </section>
           <section>
             <article className="mx-auto my-12">
               <hr />
+              <h2>Other Projects</h2>
               <div className="grid grid-flow-col-dense gap-x-8 overflow-y-hidden overflow-x-scroll">
                 {moreProjects.length > 0 ? (
                   moreProjects.map(
-                    ({ title, coverImage, slug, date, excerpt }, idxMoreProjects) => {
+                    (
+                      { title, coverImage, slug, date, excerpt },
+                      idxMoreProjects
+                    ) => {
                       if (slug !== project.slug) {
                         return (
-                          <MoreProjectsCard title={title} coverImage={coverImage} slug={slug} excerpt={excerpt} idxMoreProjects={idxMoreProjects} />
+                          <MoreProjectsCard
+                            key={`moreProjects-${title}-${idxMoreProjects}`}
+                            title={title}
+                            coverImage={coverImage}
+                            slug={slug}
+                            excerpt={excerpt}
+                          />
                         );
                       }
                     }
@@ -62,32 +86,28 @@ export default function Project({ project, moreProjects, preview }: Props) {
               </div>
             </article>
           </section>
-        </>
+        </div>
       )}
     </Layout>
   );
 }
 
-const MoreProjectsCard = ({ title, coverImage, slug, excerpt, idxMoreProjects }) => {
+const MoreProjectsCard = ({ title, coverImage, slug, excerpt }) => {
   return (
     <div
-      key={`moreProjects-${title}-${idxMoreProjects}`}
       className="
-      prose-sm mt-0 grid hover:rounded-xl px-4  
-      py-2 hover:shadow-xl hover:backdrop-brightness-125
+      prose-sm mt-0 grid px-4 py-2  
+      hover:rounded-xl hover:shadow-xl hover:backdrop-brightness-125
       "
     >
-      <Link
-        className="m-0 after:hidden"
-        href={`${slug}`}
-      >
+      <Link className="m-0 after:hidden" href={`${slug}`}>
         <CoverImage title={title} src={`${coverImage}`} slug={slug} />
         <h2 className="mt-0">{title}</h2>
         <p className="line-clamp-2">{excerpt}</p>
       </Link>
     </div>
-  )
-}
+  );
+};
 
 type Params = {
   params: { slug: string };
@@ -99,10 +119,13 @@ export async function getStaticProps({ params }: Params) {
     "date",
     "slug",
     "ogImage",
+    "excerpt",
     "coverImage",
     "live",
     "repository",
     "content",
+    "projectType",
+    "stack",
   ]);
 
   const content = await markdownToHtml(project.content || "");
@@ -116,6 +139,7 @@ export async function getStaticProps({ params }: Params) {
     "live",
     "repository",
     "projectType",
+    "stack",
   ]);
 
   // return {

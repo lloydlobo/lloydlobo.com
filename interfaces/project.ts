@@ -10,6 +10,7 @@ type ProjectType = {
   projectType: string;
   repository: string;
   live: string;
+  stack?: string;
   content: string;
 };
 

@@ -10,38 +10,6 @@
   /* --bg-logo-light: #f9b700; */
   --bg-logo-light: var(--bg-green-300);
   --bg-logo-dark: var(--bg-green-400);
-
-  /* Start: Solar System variables  */
-
-  --year-in-second: 30; /* 30 seconds = 1 Earth year. */
-  --years-relative: 365.2563; /* relative to Earth */
-
-  --orb-asteroid-belt: 300px;
-
-  --orb-mercury: 70px;
-  --orb-venus: 100px;
-  --orb-earth: 145px;
-  --orb-mars: 190px;
-  --orb-jupiter: 340px;
-  --orb-saturn: 440px;
-  --orb-uranus: 520px;
-  --orb-neptune: 630px;
-  --orb-pluto: 780px;
-
-  --pl-sun: 40px;
-  --pl-asteroid-belt: 210px;
-
-  --pl-mercury: 4px;
-  --pl-venus: 8px;
-  --pl-earth: 6px;
-  --pl-mars: 6px;
-  --pl-jupiter: 18px;
-  --pl-saturn: 12px;
-  --pl-uranus: 10px;
-  --pl-neptune: 10px;
-  --pl-pluto: 3px;
-
-  /* End: Solar System variables  */
 }
 
 @media (prefers-color-scheme: dark) {

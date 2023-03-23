@@ -1,18 +1,17 @@
 ---
 title: "Dictionary Web App"
-excerpt: "The client for this application approached me because they were looking to create a product that allows drivers to quickly connect with mechanics when dealing with car problems. They also were loooking to enable hobbyist and mechanics unassociated with any particular shop the opportunity to gig-work and manage their own time. I was able to effectively create user personas, competitive audits, sketches, wireframes and a final prototype and send over final assets to an engineer in around three months."
+excerpt: "Real-world dictionary web app using the Dictionary API. The app allows users to search for words using an input field, view the Free Dictionary API's response for the searched word, play the audio file for a word when available, switch between serif, sans serif, and monospace fonts, and switch between light and dark themes. The project also aims to provide a seamless user experience across different screen sizes and devices."
 coverImage: "/assets/projects/dictionary-web-app/cover.png"
 date: "2023-01-01T05:35:07.322Z"
 ogImage:
   url: "/assets/projects/dictionary/cover.png"
-projectType: "personal"
 repository: "https://github.com/lloydlobo/dictionary-web-app"
 live: "https://dictionary-web-app-vert.vercel.app"
+projectType: "personal"
+stack: "ReactJS NextJS TailwindCSS"
 ---
 
-Project Case Study: Dictionary Text Audio Web App
-
-## Overview
+## Project Overview
 
 In this project, I built a real-world dictionary web app using the Dictionary API. The app allows users to search for words using an input field, view the Free Dictionary API's response for the searched word, play the audio file for a word when available, switch between serif, sans serif, and monospace fonts, and switch between light and dark themes. The project also aims to provide a seamless user experience across different screen sizes and devices.
 
@@ -38,4 +37,4 @@ To optimize the app's performance, I used Gulp to automate tasks such as compili
 
 ## Results
 
-The final result was a real-world dictionary web app that integrated the Dictionary API and provided a user-friendly interface for searching and viewing word definitions. The app's theme and
+The final result was a real-world dictionary web app that integrated the Dictionary API and provided a user-friendly interface for searching and viewing word definitions.
