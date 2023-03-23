@@ -1,12 +1,9 @@
 import Link from "next/link";
 import React, { ReactNode } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
-import {
-  DockNavigation,
-  ThemeDropdown,
-} from "@/components/layout/Dock/DockNavigation";
 import styles from "./Header.module.css";
 import { LogoIcon } from "@/components/icons";
+import { ThemeDropdown } from "@/components/layout/Dock/DockNavigation";
 
 // `Header` navigation top level component.
 //
@@ -28,7 +25,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="font-sans py-2 text-xs font-bold uppercase w-full tracking-wider ">
+      <nav className="py-2 font-bold">
         <div className="opacity-95 dark:prose-a:text-green-300/80">
           <Navigation />
         </div>

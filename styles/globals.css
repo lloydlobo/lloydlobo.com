@@ -63,7 +63,7 @@ footer {
   @apply mx-auto max-w-screen-sm lg:max-w-screen-md;
 }
 footer {
-  @apply w-full opacity-90;
+  @apply w-full opacity-70 transition-opacity ease-out delay-700 hover:duration-100 duration-1000 hover:delay-[0ms] dark:opacity-50 hover:opacity-100 dark:hover:opacity-100;
 }
 
 a,

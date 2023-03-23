@@ -82,7 +82,6 @@ function Footer() {
 
 }
 
-
 function WallClock() {
   // const [time, setTime] = useState(new Date());
   const [time, setTime] = useState(null);
@@ -95,9 +94,9 @@ function WallClock() {
     return () => clearInterval(intervalId);
   }, []);
 
-if (time ===null){
-return <div className="blur"><LogoIcon/></div>
-}
+  if (time === null) {
+    return <div className="blur"><LogoIcon /></div>
+  }
 
   const hours = time.getHours();
   const minutes = time.getMinutes();

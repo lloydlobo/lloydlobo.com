@@ -9,6 +9,8 @@ repository: "https://github.com/lloydlobo/dictionary-web-app"
 live: "https://dictionary-web-app-vert.vercel.app"
 projectType: "personal"
 stack: "ReactJS NextJS TailwindCSS"
+isFeatured: true
+showInProjects: false
 ---
 
 ## Project Overview

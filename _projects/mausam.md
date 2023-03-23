@@ -9,6 +9,8 @@ repository: "https://github.com/lloydlobo/mausam"
 live: "https://dictionary-web-app-vert.vercel.app"
 projectType: "personal"
 stack: "ReactJS NextJS TailwindCSS"
+isFeatured: true
+showInProjects: false
 ---
 
 Mausam is a CLI tool that displays the current weather conditions of your location as a desktop notification.

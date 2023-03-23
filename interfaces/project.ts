@@ -12,6 +12,8 @@ type ProjectType = {
   live: string;
   stack?: string;
   content: string;
+  isFeatured: boolean;
+  showInProjects: boolean;
 };
 
 export default ProjectType;

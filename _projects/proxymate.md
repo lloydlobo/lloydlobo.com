@@ -9,6 +9,8 @@ projectType: "personal"
 repository: "https://github.com/lloydlobo/proxymate"
 live: "https://dictionary-web-app-vert.vercel.app"
 stack: "ReactJS NextJS TailwindCSS"
+isFeatured: true
+showInProjects: false
 ---
 
 ## Mission Statement
