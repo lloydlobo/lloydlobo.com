@@ -79,7 +79,7 @@ const MoreProjectsCard = ({ title, coverImage, slug, excerpt, idxMoreProjects })
     >
       <Link
         className="m-0 after:hidden"
-        href={`projects/${slug}`}
+        href={`${slug}`}
       >
         <CoverImage title={title} src={`${coverImage}`} slug={slug} />
         <h2 className="mt-0">{title}</h2>
