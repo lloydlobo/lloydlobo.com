@@ -66,27 +66,6 @@ footer {
   @apply w-full opacity-70 transition-opacity ease-out delay-700 hover:duration-100 duration-1000 hover:delay-[0ms] dark:opacity-50 hover:opacity-100 dark:hover:opacity-100;
 }
 
-a,
-Link {
-  text-decoration: none;
-  transition-property: background;
-  transition-duration: 0.2s;
-  @apply transition-all delay-75 ease-in-out;
-}
-
-a {
-  @apply dark:prose-invert;
-}
-
-a::after {
-  position: relative;
-  content: "\FEFF°";
-  top: -0.1em;
-  margin-left: 0.3rem;
-  font-size: 95%;
-  @apply text-green-700 saturate-150 dark:text-green-400;
-}
-
 p {
   hyphens: auto;
   @apply dark:text-secondary;

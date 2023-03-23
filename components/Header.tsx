@@ -40,7 +40,8 @@ function AuthComponent() {
   return (
     <div className={`${styles.signedInStatus}`}>
       <p
-        className={`nojs-show ${!session && loading ? styles.loading : styles.loaded} 
+        className={`nojs-show ${!session && loading ? styles.loading : styles.loaded
+          } 
           `}
       >
         {!session && (
@@ -74,10 +75,13 @@ function AuthComponent() {
               <br />
               <strong>{session.user.email ?? session.user.name}</strong>
             </span>
-            <a href={`/api/auth/signout`} className={styles.button} onClick={(e) => {
-              e.preventDefault()
-              signOut();
-            }}
+            <a
+              href={`/api/auth/signout`}
+              className={styles.button}
+              onClick={(e) => {
+                e.preventDefault();
+                signOut();
+              }}
             >
               Sign out
             </a>
@@ -88,46 +92,35 @@ function AuthComponent() {
   );
 }
 
-
 function Navigation(props: {}) {
   return (
     <div className="mx-auto px-6">
-      <div className="flex items-center justify-between ">
-        <Link href="/" data-id="logo" className="after:hidden" >
-          <LogoIcon />
-        </Link>
-        <Link className="after:hidden" href="/about">
-          About
-        </Link>
-        <Link className="after:hidden" href="/crafts">
-          Crafts
-        </Link>
-        <Link className="after:hidden" href="/projects">
-          Projects
-        </Link>
-        <Link className="hidden after:hidden" href="/contact">
-          Contact
-        </Link>
+      <div className="flex items-baseline gap-x-2 gap-y-4 flex-wrap justify-between ">
+        <Link href="/" data-id="logo" ><LogoIcon /></Link>
+        <Link href="/about">About</Link>
+        <Link href="/crafts">Crafts</Link>
+        <Link href="/projects">Projects</Link>
+        <Link href="/contact" className="hidden">Contact</Link>
 
         <>
-          <div className="flex gap-3 items-center">
+          <div className="grid grid-flow-col-dense  items-baseline scale-90 origin-bottom-right gap-4 md:gap-6">
             <a
               href="https://github.com/lloydlobo/"
-              className="after:hidden flex items-center gap-1"
+              className=""
               data-te-toggle="tooltip"
               data-te-placement="top"
               data-te-ripple-init
               data-te-ripple-color="light"
               title="Code"
             >
-              <div className="scale-75">
+              <div className="">
                 <GitHubIcon />
               </div>
             </a>
 
             <a
               href="mailto:hello@lloydlobo.com"
-              className="scale-75 after:hidden"
+              className=""
               data-te-toggle="tooltip"
               data-te-placement="top"
               data-te-ripple-init
@@ -137,7 +130,9 @@ function Navigation(props: {}) {
               <MailIcon />
             </a>
 
-            <ThemeDropdown />
+            <div title="Toggle theme">
+              <ThemeDropdown />
+            </div>
           </div>
         </>
       </div>
@@ -147,7 +142,6 @@ function Navigation(props: {}) {
 
 const GitHubIcon = () => {
   return (
-
     <svg viewBox="0 0 24 24" className="h-6 w-6">
       <path
         fill="none"
@@ -158,13 +152,11 @@ const GitHubIcon = () => {
         d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"
       ></path>
     </svg>
-  )
-
-}
+  );
+};
 
 const MailIcon = () => {
   return (
-
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -179,5 +171,5 @@ const MailIcon = () => {
         d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
       />
     </svg>
-  )
-}
+  );
+};

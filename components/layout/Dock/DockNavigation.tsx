@@ -38,7 +38,7 @@ export function ThemeDropdown() {
   }, []);
 
   if (!mounted) {
-    return <div className="scale-100 -rotate-[25deg] brightness-75"><FaMoon /></div>
+    return <button className=""><FaMoon /></button>
   }
 
   // e.target may select the svg or span too. e.currentTarget selects the parent button.
@@ -64,7 +64,6 @@ export function ThemeDropdown() {
       <div className="relative">
         {/* Dropdown */}
         <div
-          // className={`${dropdown ? "opacity-100" : "opacity-0 left-[200vw]" } top-8 z-10`}
           className={`${dropdown ? "block" : "hidden"}`}
         >
           <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start dark:bg-on-primary/30 dark:text-primary bg-white/30 backdrop-blur-xl">
@@ -97,7 +96,6 @@ export function ThemeDropdown() {
                   onClick={() => {
                     setDropdown(!dropdown);
                   }}
-                  className="flex items-center opacity-75"
                 >
                   {icon}
                 </button>
