@@ -36,7 +36,7 @@ export default function Project({ project, moreProjects, preview }: Props) {
           <section>
             <article className="mx-auto">
               <h1> {project.title} </h1>
-              <img src={project.coverImage} alt={project.slug} />
+              <CoverImage title={project.title} src={project.coverImage} slug={project.slug}/>
             </article>
           </section>
           <section>
@@ -48,24 +48,10 @@ export default function Project({ project, moreProjects, preview }: Props) {
               <div className="grid grid-flow-col-dense gap-x-8 overflow-y-hidden overflow-x-scroll">
                 {moreProjects.length > 0 ? (
                   moreProjects.map(
-                    (
-                      { title, coverImage, slug, date, excerpt },
-                      idxMoreProjects
-                    ) => {
+                    ({ title, coverImage, slug, date, excerpt }, idxMoreProjects) => {
                       if (slug !== project.slug) {
                         return (
-                          <div
-                            key={`moreProjects-${title}-${idxMoreProjects}`}
-                            className="prose-sm mt-0 grid rounded-xl px-4  py-2 shadow-xl backdrop-brightness-125"
-                          >
-                            <Link
-                              className="m-0 after:hidden"
-                              href={`projects/${slug}`}
-                            >
-                              <h2 className="mt-0">{title}</h2>
-                              <p className="line-clamp-2">{excerpt}</p>
-                            </Link>
-                          </div>
+                          <MoreProjectsCard title={title} coverImage={coverImage} slug={slug} excerpt={excerpt} idxMoreProjects={idxMoreProjects} />
                         );
                       }
                     }
@@ -80,6 +66,27 @@ export default function Project({ project, moreProjects, preview }: Props) {
       )}
     </Layout>
   );
+}
+
+const MoreProjectsCard = ({ title, coverImage, slug, excerpt, idxMoreProjects }) => {
+  return (
+    <div
+      key={`moreProjects-${title}-${idxMoreProjects}`}
+      className="
+      prose-sm mt-0 grid hover:rounded-xl px-4  
+      py-2 hover:shadow-xl hover:backdrop-brightness-125
+      "
+    >
+      <Link
+        className="m-0 after:hidden"
+        href={`projects/${slug}`}
+      >
+        <CoverImage title={title} src={`${coverImage}`} slug={slug} />
+        <h2 className="mt-0">{title}</h2>
+        <p className="line-clamp-2">{excerpt}</p>
+      </Link>
+    </div>
+  )
 }
 
 type Params = {
