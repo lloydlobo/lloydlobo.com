@@ -154,13 +154,11 @@ export function CoverImage({
   src: string;
   slug: string;
 }) {
-  // <Link className="after:hidden" href={`/projects/${slug}`}>
-  // </Link>
   return (
     <>
       <img
         src={src}
-        className={`aspect-video w-fit object-cover object-top`}
+        className={`aspect-video w-full object-cover object-top`}
         alt={title}
       />
     </>
