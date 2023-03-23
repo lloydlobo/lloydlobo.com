@@ -1,4 +1,5 @@
 import markdownStyles from "@/components/projects/markdown-styles.module.css";
+import { classNames } from "@/utils/classNames";
 import React from "react";
 
 type Props = {
@@ -8,7 +9,12 @@ type Props = {
 export function PostBody({ content }: Props) {
   return (
     <>
-      <article className="mx-auto">
+      <article
+        className={classNames(
+          "mx-auto",
+          "prose-img:aspect-video prose-img:w-fit prose-img:rounded-sm prose-img:object-cover prose-img:object-top prose-img:shadow-xl"
+        )}
+      >
         <div className="mx-auto disabled:max-w-2xl">
           <div
             className={markdownStyles["markdown"]}

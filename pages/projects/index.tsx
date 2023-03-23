@@ -160,7 +160,7 @@ export function CoverImage({
     <>
       <img
         src={src}
-        className={`aspect-video  w-fit object-cover object-top`}
+        className={`aspect-video w-fit object-cover object-top`}
         alt={title}
       />
     </>

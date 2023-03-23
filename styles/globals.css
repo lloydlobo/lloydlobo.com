@@ -63,7 +63,7 @@ footer {
   @apply mx-auto max-w-screen-sm lg:max-w-screen-md;
 }
 footer {
-  @apply w-full opacity-[61%];
+  @apply w-full opacity-90;
 }
 
 a,

@@ -53,9 +53,11 @@ export default function Project({ project, moreProjects, preview }: Props) {
               />
             </article>
           </section>
+
           <section className="mx-auto">
             <PostBody content={project.content} />
           </section>
+
           <section>
             <article className="mx-auto my-12">
               <hr />
