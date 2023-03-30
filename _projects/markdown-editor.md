@@ -1,4 +1,3 @@
-
 ---
 title: "Markdown Editor"
 excerpt: "Fully-functional in-browser markdown editor application with a light/dark mode toggle"
@@ -7,7 +6,7 @@ date: "2023-01-01T05:35:07.322Z"
 ogImage:
   url: "/assets/projects/dictionary/cover.png"
 repository: "https://github.com/lloydlobo/markdown-editor"
-live:"https://markdown-editor-coral.vercel.app/"
+live: "https://markdown-editor-coral.vercel.app/"
 projectType: "personal"
 stack: "ReactJS NextJS ChakraUI"
 isFeatured: true
