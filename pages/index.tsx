@@ -17,6 +17,15 @@ const PROJECTS = [
   },
   {
     username: "lloydlobo",
+    tags: ["api", "markdown"],
+    repo: "markdown-editor",
+    description:
+      "Fully-functional in-browser markdown editor application with a light/dark mode toggle",
+    img: "neura-driver.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
     tags: ["cli", "linux"],
     repo: "mausam",
     description: "A weather update desktop notifier made with Rust",
