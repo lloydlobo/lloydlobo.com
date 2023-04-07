@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import styles from "./Header.module.css";
 import { ThemeDropdown } from "@/components/ThemeDropdown";
-import { CSSProperties } from 'react';
+import { CSSProperties } from "react";
 import { GitHubIcon, MailIcon } from "@/components/icons";
 
 // `Header` navigation top level component.
@@ -26,7 +26,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="py-2 font-bold  prose-a:prose-sm font-sans">
+      <nav className="py-2 font-sans  font-bold prose-a:prose-sm">
         <Navigation />
       </nav>
     </header>
@@ -91,7 +91,6 @@ function AuthComponent() {
   );
 }
 
-
 interface LogoImageProps {
   src: string;
   alt: string;
@@ -107,7 +106,7 @@ const LogoImage = ({ src, alt }: LogoImageProps) => {
       src={src}
       alt={alt}
       style={imageStyle}
-      className="w-8 h-8 rounded-full border-2 border-yellow-400 dark:border-green-400"
+      className="h-8 w-8 rounded-full border-2 border-green-800/10 dark:border-green-400"
     />
   );
 };
@@ -115,22 +114,22 @@ const LogoImage = ({ src, alt }: LogoImageProps) => {
 function Navigation() {
   return (
     <div className="mx-auto px-6">
-      <div className="flex items-center gap-x-2 dark:prose-a:font-extrabold dark:prose-a:text-green-300 gap-y-4 w-full justify-between  ">
-        <div className="flex gap-8 w-full">
+      <div className="flex w-full items-center justify-between gap-x-2 gap-y-4 dark:prose-a:font-extrabold dark:prose-a:text-green-300  ">
+        <div className="flex w-full gap-8">
           <Link href="/" data-id="logo" className="mr-auto">
-            <LogoImage src={'/favicon-32x32.png'} alt="lloydlobo.com logo" />
+            <LogoImage src={"/favicon-32x32.png"} alt="lloydlobo.com logo" />
           </Link>
-          <div className="flex items-center tracking-wide gap-x-3 flex-1">
+          <div className="flex flex-1 items-center gap-x-3 tracking-wide">
             <Link href="/about">About</Link>
             <Link href="/crafts">Crafts</Link>
             <Link href="/projects">Projects</Link>
-            <Link href="/contact" className="hidden">Contact</Link>
+            <Link href="/contact" className="hidden">
+              Contact
+            </Link>
           </div>
         </div>
 
-        <div
-          className="grid-flow-col justify-items-center grid gap-x-4 py-2 scale-[80%] items-center"
-        >
+        <div className="grid scale-[80%] grid-flow-col items-center justify-items-center gap-x-4 py-2">
           <a
             href="https://github.com/lloydlobo/"
             className=""
@@ -165,4 +164,3 @@ function Navigation() {
     </div>
   );
 }
-
