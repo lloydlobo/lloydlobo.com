@@ -37,7 +37,14 @@ body {
 body {
   font-feature-settings: "kern";
   overflow-x: clip;
-  @apply mx-auto w-full bg-white tracking-normal text-on-primary dark:bg-on-primary dark:text-secondary lg:mx-auto;
+  @apply mx-auto;
+  @apply w-full;
+  @apply bg-gray0;
+  @apply tracking-normal;
+  @apply text-on-tertiary;
+  @apply dark:bg-on-primary;
+  @apply dark:text-secondary;
+  @apply lg:mx-auto;
 }
 
 .layout-wrapper {
@@ -55,13 +62,22 @@ section {
 }
 
 article {
-  @apply prose dark:prose-invert lg:prose-xl;
+  @apply prose dark:prose-invert;
+  @apply lg:prose-xl;
+  @apply prose-headings:text-heading-light dark:prose-headings:text-primary;
+  @apply prose-p:text-primary-muted;
+  @apply prose-lead:text-on-primary;
+  /* @apply prose-a:text-link; */
 }
 
 nav,
 footer {
   @apply mx-auto max-w-screen-sm lg:max-w-screen-md;
 }
+
+/* nav a { */
+/*   color: #2ea073 !important; */
+/* } */
 
 footer {
   @apply w-full opacity-70 transition-opacity delay-700 duration-1000 ease-out hover:opacity-100 hover:delay-[0ms] hover:duration-100 dark:opacity-50 dark:hover:opacity-100;

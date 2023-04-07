@@ -6,44 +6,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-const PROJECTS = [
-  {
-    username: "lloydlobo",
-    tags: ["api", "audio"],
-    repo: "dictionary-web-app",
-    description: "Dictionary web app using the Dictionary API",
-    img: "neura-driver.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["api", "markdown"],
-    repo: "markdown-editor",
-    description:
-      "Fully-functional in-browser markdown editor application with a light/dark mode toggle",
-    img: "neura-driver.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["cli", "linux"],
-    repo: "mausam",
-    description: "A weather update desktop notifier made with Rust",
-    img: "mausam.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["python", "discord"],
-    repo: "proxymate",
-    description:
-      "Generates phrases in the style of the author using Markov model",
-    img: "proxymate.jpg",
-    year: "2023",
-  },
-  // { username: "lloydlobo", tags: ["discord", "python"], repo: "penny", description: "A no-nonsense budget tracking Discord bot", img: "penny.jpg", year: "2023", },
-  // { username: "lloydlobo", tags: ["rust", "cli"], repo: "hackernews-clone", description: "Coming soon...", img: "mausam-fibo.jpg", year: "2023", },
-];
 export default function HomePage() {
   // let uuid = crypto.randomUUID();
   return (
@@ -51,9 +13,9 @@ export default function HomePage() {
       <main className="">
         <div className="grid">
           <Section>
-            <article className="pt-12">
+            <article className="md:pt-8">
               <h1 className={`dark:text-primary`}>
-                Hi there, I'm Lloyd.
+                Hi there, I&apos;m Lloyd.
                 <br />
                 Front End{" "}
                 <span className="text-green-400 dark:text-green-300">
@@ -96,9 +58,9 @@ export default function HomePage() {
                   <div className="relative mx-auto hidden w-[100%] overflow-x-auto">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
                       <p className="">
-                        I'm a software developer who's passionate about building
-                        great stuff. My focus is on creating innovative
-                        solutions that exceed client expectations.
+                        I&apos;m a software developer who&apos;s passionate
+                        about building great stuff. My focus is on creating
+                        innovative solutions that exceed client expectations.
                       </p>
                       <p className="">
                         My goal: Help businesses and individuals achieve goals
@@ -228,13 +190,13 @@ export default function HomePage() {
 
           <Section>
             <article className="pb-12">
-              <h2 className="ml-auto mb-16 flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-sans text-sm font-medium uppercase tracking-wider before:text-sm before:content-['03'] dark:text-tertiary lg:mb-20">
+              <h2 className="mb-16 ml-auto flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-sans text-sm font-medium uppercase tracking-wider before:text-sm before:content-['03'] dark:text-tertiary lg:mb-20">
                 Connect
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
                 <h3 className="mr-auto max-w-md text-4xl leading-9 dark:text-primary">
-                  Let's talk about a project, collaboration or an idea you may
-                  have
+                  Let&apos;s talk about a project, collaboration or an idea you
+                  may have
                 </h3>
                 <div className="relative ml-auto">
                   <div
@@ -256,3 +218,42 @@ export default function HomePage() {
     </Layout>
   );
 }
+
+const PROJECTS = [
+  {
+    username: "lloydlobo",
+    tags: ["api", "audio"],
+    repo: "dictionary-web-app",
+    description: "Dictionary web app using the Dictionary API",
+    img: "neura-driver.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["api", "markdown"],
+    repo: "markdown-editor",
+    description:
+      "Fully-functional in-browser markdown editor application with a light/dark mode toggle",
+    img: "neura-driver.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["cli", "linux"],
+    repo: "mausam",
+    description: "A weather update desktop notifier made with Rust",
+    img: "mausam.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["python", "discord"],
+    repo: "proxymate",
+    description:
+      "Generates phrases in the style of the author using Markov model",
+    img: "proxymate.jpg",
+    year: "2023",
+  },
+  // { username: "lloydlobo", tags: ["discord", "python"], repo: "penny", description: "A no-nonsense budget tracking Discord bot", img: "penny.jpg", year: "2023", },
+  // { username: "lloydlobo", tags: ["rust", "cli"], repo: "hackernews-clone", description: "Coming soon...", img: "mausam-fibo.jpg", year: "2023", },
+];

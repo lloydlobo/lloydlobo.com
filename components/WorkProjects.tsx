@@ -31,49 +31,59 @@ export const WorkProjects = () => {
           id="navProjects"
           className="prose-sm grid grid-cols-2 gap-2 py-4 backdrop-blur-sm lg:grid-cols-2"
         >
-          {repos.map(({ username, repo, tags, description, img, liveUrl }, idxRepos) => (
-            <button
-              key={`url-${username}-${repo}-${idxRepos}`}
-              className={classNames("relative p-4 md:pb-0 md:pt-2 px-4 after:hidden",
-                "text-start",
-                "transition-all delay-0 duration-500 ease-out ",
-                "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
-                "bg-gray1/30 shadow rounded",
-                "cursor-default",
-                " dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125",
-              )}
-            >
-              <h3 className={`mt-0`}>{repo}</h3>
-              <p className="">
-                {repo === "hackernews-clone" ? "Coming soon..." : description}
-              </p>
-              <div className="grid md:grid-cols-5 items-baseline prose-a:after:hidden">
-                {/* May need router as nested `a` elements aren't idiomatic. */}
+          {repos.map(
+            ({ username, repo, tags, description, img, liveUrl }, idxRepos) => (
+              <button
+                key={`url-${username}-${repo}-${idxRepos}`}
+                className={classNames(
+                  "relative p-4 px-4 after:hidden md:pb-0 md:pt-2",
+                  "text-start",
+                  "transition-all delay-0 duration-500 ease-out ",
+                  "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
+                  "rounded bg-gray1/30 shadow",
+                  "cursor-default",
+                  " dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125"
+                )}
+              >
+                <h3 className={`mt-0`}>{repo}</h3>
+                <p className="">
+                  {repo === "hackernews-clone" ? "Coming soon..." : description}
+                </p>
+                <div className="grid items-baseline prose-a:after:hidden md:grid-cols-5">
+                  {/* May need router as nested `a` elements aren't idiomatic. */}
 
-                <div
-                  className={`${repo === "hackernews-clone" ? "blur" : ""
-                    } z-20 hover:overflow-scroll col-span-4 opacity-50 pb-2 md:pb-3 flex gap-x-2 text-[12px] truncate`}
-                >
-                  {tags.map((tag, index) => (
-                    <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
-                  ))}
+                  <div
+                    className={`${
+                      repo === "hackernews-clone" ? "blur" : ""
+                    } z-20 col-span-4 flex gap-x-2 truncate pb-2 text-[12px] opacity-50 hover:overflow-scroll md:pb-3`}
+                  >
+                    {tags.map((tag, index) => (
+                      <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
+                    ))}
+                  </div>
+
+                  <div className="prose-base flex items-baseline gap-1 md:col-start-5 md:grid md:grid-cols-2 ">
+                    <a
+                      className="opacity-50 hover:opacity-100"
+                      title={`Source Code`}
+                      href={`https://github.com/${username}/${repo}/`}
+                    >
+                      <FaGithub />
+                    </a>
+                    <a
+                      className="opacity-50 hover:opacity-100"
+                      title={`Live Preview`}
+                      href={liveUrl}
+                    >
+                      <FaExternalLinkAlt />
+                    </a>
+                  </div>
                 </div>
 
-                <div className="flex md:grid-cols-2 prose-base md:col-start-5 md:grid gap-1 items-baseline ">
-                  <a className="opacity-50 hover:opacity-100" title={`Source Code`} href={`https://github.com/${username}/${repo}/`}>
-                    <FaGithub />
-                  </a>
-                  <a  className="opacity-50 hover:opacity-100" title={`Live Preview`} href={liveUrl}>
-                    <FaExternalLinkAlt />
-                  </a>
-
-                </div>
-
-              </div>
-
-              {/* <img className="" src={`/img/projects/${img}`} /> */}
-            </button>
-          ))}
+                {/* <img className="" src={`/img/projects/${img}`} /> */}
+              </button>
+            )
+          )}
         </nav>
       </>
 
@@ -182,4 +192,3 @@ const PROJECTS = [
     liveUrl: "https://dictionary-web-app-vert.vercel.app/",
   },
 ];
-

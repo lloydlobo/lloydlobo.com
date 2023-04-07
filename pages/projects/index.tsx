@@ -3,6 +3,7 @@ import { getAllProjects } from "@/lib/api";
 import React from "react";
 import Project from "@/interfaces/project";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   allProjects: Project[];
@@ -17,7 +18,7 @@ export default function ProjectsPage({ allProjects }: Props) {
       <section>
         <article className="mx-auto">
           <div>
-            <h1>What I've been working on</h1>
+            <h1>What I&apos;ve been working on</h1>
             <p>I have picked the projects which get me excited to work with.</p>
 
             <div className="mx-auto">
@@ -99,7 +100,7 @@ const HeroProject = ({
       <div className="">
         <h2 className="mt-0">{title}</h2>
         <span className="sr-only">{date}</span>
-        <p className="flex line-clamp-2">{excerpt}</p>
+        <p className="line-clamp-2 flex">{excerpt}</p>
         <Link href={`projects/${slug}`}>View project</Link>
       </div>
     </div>
@@ -128,7 +129,7 @@ const MoreProjects = ({ projects }: MoreProjectsProps) => {
                   <div className="">
                     <h2 className="mt-0">{title}</h2>
                     <span className="sr-only">{date}</span>
-                    <p className="flex line-clamp-2">{excerpt}</p>
+                    <p className="line-clamp-2 flex">{excerpt}</p>
                     <Link href={`projects/${slug}`}>View project</Link>
                   </div>
                 </div>
@@ -156,7 +157,7 @@ export function CoverImage({
 }) {
   return (
     <>
-      <img
+      <Image
         src={src}
         className={`aspect-video w-full object-cover object-top`}
         alt={title}

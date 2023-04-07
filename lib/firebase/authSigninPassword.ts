@@ -6,7 +6,7 @@ const auth = getAuth();
 
 // Asynchronously signs in using an email and password.
 //
-// *@remarks*  
+// *@remarks*
 // Fails with an error if the email address and password do not match.
 //
 // Note: The user's password is NOT the password used to access the user's email account. The
@@ -16,7 +16,7 @@ export function authSigninPassword(email: string, password: string) {
   console.log({ email, password });
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in 
+      // Signed in
       const user = userCredential.user;
       // ...
     })
@@ -25,5 +25,3 @@ export function authSigninPassword(email: string, password: string) {
       const errorMessage = error.message;
     });
 }
-
-

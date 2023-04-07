@@ -15,7 +15,9 @@ export default function Layout({ children, title = "Lloyd Lobo" }: Props) {
     <>
       <div className="layout-wrapper overflow-x-hidden">
         <Head>
-          <title>{title !== "Lloyd Lobo" ? `${title} • Lloyd Lobo` : title}</title>
+          <title>
+            {title !== "Lloyd Lobo" ? `${title} • Lloyd Lobo` : title}
+          </title>
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href="/favicon.ico" />
           <meta
@@ -30,5 +32,3 @@ export default function Layout({ children, title = "Lloyd Lobo" }: Props) {
     </>
   );
 }
-
-

@@ -1,5 +1,6 @@
-import { LogoIcon } from "@/components/icons";
+import Link from "next/link";
 import { useState, useEffect } from "react";
+import { LogoImage } from "@/components/common/LogoImage";
 
 export function WallClock() {
   // const [time, setTime] = useState(new Date());
@@ -16,7 +17,9 @@ export function WallClock() {
   if (time === null) {
     return (
       <div className="blur">
-        <LogoIcon />
+        <Link href="/" data-id="logo" className="mr-auto">
+          <LogoImage src={"/favicon-32x32.png"} alt="lloydlobo.com logo" />
+        </Link>
       </div>
     );
   }

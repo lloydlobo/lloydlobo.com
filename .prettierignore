@@ -1,0 +1,35 @@
+# Ignore build output
+.next
+out
+
+# Ignore Git files
+.git
+.gitignore
+
+# Ignore node_modules
+node_modules
+
+# Ignore log files
+*.log
+
+# Ignore Tailwind config file
+# tailwind.config.js
+
+# Ignore Next.js config files
+next.config.js
+next-env.d.ts
+
+# Ignore package lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore IDE files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# Ignore static files
+public
+
