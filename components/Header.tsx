@@ -1,10 +1,10 @@
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import styles from "./Header.module.css";
 import { ThemeDropdown } from "@/components/ThemeDropdown";
-import { CSSProperties } from "react";
 import { GitHubIcon, MailIcon } from "@/components/icons";
+import { LogoImage } from "@/components/common/LogoImage";
 
 // `Header` navigation top level component.
 //
@@ -39,8 +39,9 @@ function AuthComponent() {
   return (
     <div className={`${styles.signedInStatus}`}>
       <p
-        className={`nojs-show ${!session && loading ? styles.loading : styles.loaded
-          } 
+        className={`nojs-show ${
+          !session && loading ? styles.loading : styles.loaded
+        } 
           `}
       >
         {!session && (
@@ -91,29 +92,9 @@ function AuthComponent() {
   );
 }
 
-interface LogoImageProps {
-  src: string;
-  alt: string;
-}
-
-const LogoImage = ({ src, alt }: LogoImageProps) => {
-  const imageStyle: CSSProperties = {
-    borderRadius: "100%",
-  };
-
-  return (
-    <img
-      src={src}
-      alt={alt}
-      style={imageStyle}
-      className="h-8 w-8 rounded-full border-2 border-green-800/10 dark:border-green-400"
-    />
-  );
-};
-
 function Navigation() {
   return (
-    <div className="mx-auto py-1 px-6">
+    <div className="mx-auto px-6 py-1">
       <div className="flex w-full items-center justify-between gap-x-2 gap-y-4 dark:prose-a:font-extrabold dark:prose-a:text-green-300  ">
         <div className="flex w-full gap-8">
           <Link href="/" data-id="logo" className="mr-auto">

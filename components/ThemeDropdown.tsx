@@ -16,7 +16,9 @@ export function ThemeDropdown() {
   // Theme is forced, we shouldn't allow user to change the theme
   const disabled = !!forcedTheme;
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // e.target may select the svg or span too. e.currentTarget selects the parent button.
   const switchTheme = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -37,18 +39,18 @@ export function ThemeDropdown() {
   ];
 
   if (!mounted) {
-    return <button className=""><FaMoon /></button>
+    return (
+      <button className="">
+        <FaMoon />
+      </button>
+    );
   }
 
   return (
     <div className="relative">
       {/* Dropdown */}
-      <div
-        className={`${dropdown ? "block" : "hidden"}`}
-      >
-        <div
-          className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start dark:bg-on-primary/30 dark:text-primary bg-white/30 backdrop-blur-xl"
-        >
+      <div className={`${dropdown ? "block" : "hidden"}`}>
+        <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md bg-white/30 py-0.5 text-start backdrop-blur-xl dark:bg-on-primary/30 dark:text-primary">
           {themeModes.map(({ name, icon }, index) => (
             <button
               onClick={(e) => switchTheme(e)}
@@ -130,4 +132,3 @@ export const ThemeSwitch = () => {
     </>
   );
 };
-

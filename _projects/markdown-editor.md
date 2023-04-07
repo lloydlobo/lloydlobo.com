@@ -39,7 +39,6 @@ There were a few issues that I fixed as well, like handling an edge case when de
 
 In terms of progress, I've added a basic skeleton of the intended design, which includes a sidebar that shifts the editor and preview to the side. I've also implemented a navbar and reducer actions to manage the state of notes. To make things more accessible, I've included some user action messages, toasts, and hover tooltips.
 
-
 ## Results
 
 In terms of functionality, I've added a markdown component editor and a preview component, which is really exciting. Plus, I've added a copy markdown button, and made some styling tweaks like hardcoding the height of the editor preview and hiding the save button text in base viewports.

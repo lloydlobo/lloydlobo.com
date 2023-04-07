@@ -15,7 +15,7 @@ export default function HomePage() {
           <Section>
             <article className="md:pt-8">
               <h1 className={`dark:text-primary`}>
-                Hi there, I'm Lloyd.
+                Hi there, I&apos;m Lloyd.
                 <br />
                 Front End{" "}
                 <span className="text-green-400 dark:text-green-300">
@@ -58,9 +58,10 @@ export default function HomePage() {
                   <div className="relative mx-auto hidden w-[100%] overflow-x-auto">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
                       <p className="">
-                        I'm a software developer who's passionate about building
-                        great stuff. My focus is on creating innovative
-                        solutions that exceed client expectations.
+                        I&apos;m a software developer who&apos;s
+                        passionate about building great stuff. My focus is on
+                        creating innovative solutions that exceed client
+                        expectations.
                       </p>
                       <p className="">
                         My goal: Help businesses and individuals achieve goals
@@ -190,13 +191,13 @@ export default function HomePage() {
 
           <Section>
             <article className="pb-12">
-              <h2 className="ml-auto mb-16 flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-sans text-sm font-medium uppercase tracking-wider before:text-sm before:content-['03'] dark:text-tertiary lg:mb-20">
+              <h2 className="mb-16 ml-auto flex w-48 items-baseline justify-between place-self-end border-b-[2px] border-secondary/90 pb-2 text-end font-sans text-sm font-medium uppercase tracking-wider before:text-sm before:content-['03'] dark:text-tertiary lg:mb-20">
                 Connect
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
                 <h3 className="mr-auto max-w-md text-4xl leading-9 dark:text-primary">
-                  Let's talk about a project, collaboration or an idea you may
-                  have
+                  Let&apos;s talk about a project, collaboration or an idea
+                  you may have
                 </h3>
                 <div className="relative ml-auto">
                   <div

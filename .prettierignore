@@ -13,7 +13,7 @@ node_modules
 *.log
 
 # Ignore Tailwind config file
-tailwind.config.js
+# tailwind.config.js
 
 # Ignore Next.js config files
 next.config.js

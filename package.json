@@ -6,9 +6,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "npx prettier ./pages/**/*.{js,ts,jsx,tsx} ./components/**/*.{js,ts,jsx,tsx} -c",
-    "lint-fix": "npx prettier ./pages/**/*.{js,ts,jsx,tsx} ./components/**/*.{js,ts,jsx,tsx} ./lib/**/*.{js,ts,jsx,tsx} -w",
-    "type-check": "tsc"
+    "lint": "next lint",
+    "type-check": "tsc",
+    "format": "npx prettier --write '**/*.{js,jsx,ts,tsx,json,md}'",
+    "test:e2e": "playwright test"
   },
   "homepage": "https://lloydlobo.vercel.app",
   "author": "Lloyd Lobo <hello@lloydlobo.com>",
@@ -38,6 +39,8 @@
     "@types/react-dom": "^17.0.19",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.37.0",
+    "eslint-config-next": "13.3.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-react": "^7.32.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",

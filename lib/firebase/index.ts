@@ -1,8 +1,8 @@
 // Import the functions you need from the SDKs you need
-import {  initializeApp } from "firebase/app";
+import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs } from "firebase/firestore/lite";
 
 // https://github.com/bchiang7/time-to-have-more-fun/blob/main/utils/index.js
 
@@ -29,9 +29,8 @@ export const auth = getAuth(app); // Initialize Firebase Authentication and get 
 
 // Get a list of cities from your database
 async function getCities(db) {
-  const citiesCol = collection(db, 'cities');
+  const citiesCol = collection(db, "cities");
   const citySnapshot = await getDocs(citiesCol);
-  const cityList = citySnapshot.docs.map(doc => doc.data());
+  const cityList = citySnapshot.docs.map((doc) => doc.data());
   return cityList;
 }
-

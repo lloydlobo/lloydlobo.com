@@ -1,6 +1,7 @@
 // prettier.config.js
 module.exports = {
-  tailwindConfig: "./styles/tailwind.config.js",
+  // https://github.com/tailwindlabs/prettier-plugin-tailwindcss#compatibility-with-other-prettier-plugins
+  plugins: [require("prettier-plugin-tailwindcss")],
 };
 
 // {
