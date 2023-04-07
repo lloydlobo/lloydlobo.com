@@ -95,8 +95,10 @@ function AuthComponent() {
 function Navigation(props: {}) {
   return (
     <div className="mx-auto px-6">
-      <div className="flex items-baseline gap-x-2 gap-y-4 flex-wrap justify-between ">
-        <Link href="/" data-id="logo" ><LogoIcon /></Link>
+      <div className="flex items-start gap-x-2 gap-y-4 flex-wrap justify-between  ">
+        <Link href="/" data-id="logo" className="m-0 p-0" >
+          <img src="/favicon-32x32.png" alt="logo" style={{ borderRadius: "100%", border: "3px solid" }} className="w-8 dark:border-green-400 h-8" />
+        </Link>
         <Link href="/about">About</Link>
         <Link href="/crafts">Crafts</Link>
         <Link href="/projects">Projects</Link>

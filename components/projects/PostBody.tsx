@@ -8,20 +8,19 @@ type Props = {
 
 export function PostBody({ content }: Props) {
   return (
-    <>
-      <article
-        className={classNames(
-          "mx-auto",
-          "prose-img:aspect-video prose-img:w-fit prose-img:rounded-sm prose-img:object-cover prose-img:object-top prose-img:shadow-xl"
-        )}
-      >
-        <div className="mx-auto disabled:max-w-2xl">
-          <div
-            className={markdownStyles["markdown"]}
-            dangerouslySetInnerHTML={{ __html: content }}
-          />
-        </div>
-      </article>
-    </>
+    <article
+      className={classNames(
+        "mx-auto",
+        "prose-img:aspect-video prose-img:w-fit prose-img:object-cover prose-img:object-top ",
+        "prose-img:rounded-sm prose-img:shadow-2xl",
+      )}
+    >
+      <div className="mx-auto disabled:max-w-2xl">
+        <div
+          className={markdownStyles["markdown"]}
+          dangerouslySetInnerHTML={{ __html: content }}
+        />
+      </div>
+    </article>
   );
 }

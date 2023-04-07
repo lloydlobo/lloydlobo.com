@@ -144,10 +144,6 @@ export async function getStaticProps({ params }: Params) {
     "stack",
   ]);
 
-  // return {
-  //   props: { allProjects },
-  // };
-
   return {
     props: {
       project: {

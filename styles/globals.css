@@ -64,7 +64,7 @@ footer {
 }
 
 footer {
-  @apply w-full opacity-70 transition-opacity ease-out delay-700 hover:duration-100 duration-1000 hover:delay-[0ms] dark:opacity-50 hover:opacity-100 dark:hover:opacity-100;
+  @apply w-full opacity-70 transition-opacity delay-700 duration-1000 ease-out hover:opacity-100 hover:delay-[0ms] hover:duration-100 dark:opacity-50 dark:hover:opacity-100;
 }
 
 p {
@@ -73,9 +73,8 @@ p {
 }
 
 a {
-  @apply underline-offset-8 hover:text-green-500 dark:hover:text-green-300 ;
+  @apply underline-offset-8 hover:text-green-500 dark:hover:text-green-300;
 }
-
 
 @media (prefers-color-scheme: dark) {
   html {
