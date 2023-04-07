@@ -6,44 +6,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-const PROJECTS = [
-  {
-    username: "lloydlobo",
-    tags: ["api", "audio"],
-    repo: "dictionary-web-app",
-    description: "Dictionary web app using the Dictionary API",
-    img: "neura-driver.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["api", "markdown"],
-    repo: "markdown-editor",
-    description:
-      "Fully-functional in-browser markdown editor application with a light/dark mode toggle",
-    img: "neura-driver.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["cli", "linux"],
-    repo: "mausam",
-    description: "A weather update desktop notifier made with Rust",
-    img: "mausam.jpg",
-    year: "2023",
-  },
-  {
-    username: "lloydlobo",
-    tags: ["python", "discord"],
-    repo: "proxymate",
-    description:
-      "Generates phrases in the style of the author using Markov model",
-    img: "proxymate.jpg",
-    year: "2023",
-  },
-  // { username: "lloydlobo", tags: ["discord", "python"], repo: "penny", description: "A no-nonsense budget tracking Discord bot", img: "penny.jpg", year: "2023", },
-  // { username: "lloydlobo", tags: ["rust", "cli"], repo: "hackernews-clone", description: "Coming soon...", img: "mausam-fibo.jpg", year: "2023", },
-];
 export default function HomePage() {
   // let uuid = crypto.randomUUID();
   return (
@@ -51,7 +13,7 @@ export default function HomePage() {
       <main className="">
         <div className="grid">
           <Section>
-            <article className="pt-12">
+            <article className="pt-4">
               <h1 className={`dark:text-primary`}>
                 Hi there, I'm Lloyd.
                 <br />
@@ -256,3 +218,42 @@ export default function HomePage() {
     </Layout>
   );
 }
+
+const PROJECTS = [
+  {
+    username: "lloydlobo",
+    tags: ["api", "audio"],
+    repo: "dictionary-web-app",
+    description: "Dictionary web app using the Dictionary API",
+    img: "neura-driver.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["api", "markdown"],
+    repo: "markdown-editor",
+    description:
+      "Fully-functional in-browser markdown editor application with a light/dark mode toggle",
+    img: "neura-driver.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["cli", "linux"],
+    repo: "mausam",
+    description: "A weather update desktop notifier made with Rust",
+    img: "mausam.jpg",
+    year: "2023",
+  },
+  {
+    username: "lloydlobo",
+    tags: ["python", "discord"],
+    repo: "proxymate",
+    description:
+      "Generates phrases in the style of the author using Markov model",
+    img: "proxymate.jpg",
+    year: "2023",
+  },
+  // { username: "lloydlobo", tags: ["discord", "python"], repo: "penny", description: "A no-nonsense budget tracking Discord bot", img: "penny.jpg", year: "2023", },
+  // { username: "lloydlobo", tags: ["rust", "cli"], repo: "hackernews-clone", description: "Coming soon...", img: "mausam-fibo.jpg", year: "2023", },
+];
