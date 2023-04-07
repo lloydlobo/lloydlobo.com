@@ -5,11 +5,11 @@ export const Sun = () => {
       height="18"
       viewBox="0 0 18 18"
       style={{ transform: "rotate(90deg)" }}
-      className="sc-a794b73f-1 cfurEx"
+      className=""
     >
       <mask id="moon-mask-main-nav">
         <rect x="0" y="0" width="18" height="18" fill="#FFF"></rect>
-        <circle cx="25" cy="0" r="8" fill="currentColor"></circle>
+        <circle cx="25" cy="0" r="8" fill="#fff"></circle>
       </mask>
       <circle
         cx="9"

@@ -15,7 +15,7 @@ import { LogoImage } from "@/components/common/LogoImage";
 // rendering, and avoids any flash incorrect content on initial page load.
 export default function Header() {
   return (
-    <header className="z-50 py-0.5 shadow-md dark:shadow-on-secondary/40">
+    <header className="z-50 bg-on-secondary py-0.5 shadow-md prose-a:text-green-300 dark:shadow-on-secondary/40 dark:prose-a:text-green-300  ">
       <noscript>
         <style>{`.nojs-show { opacity: 1; top: 0; }`}</style>
       </noscript>
@@ -26,7 +26,7 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="py-2 font-sans  font-bold prose-a:prose-sm">
+      <nav className="py-2 font-sans font-bold prose-a:prose-sm">
         <Navigation />
       </nav>
     </header>
@@ -95,7 +95,7 @@ function AuthComponent() {
 function Navigation() {
   return (
     <div className="mx-auto px-6 py-1">
-      <div className="flex w-full items-center justify-between gap-x-2 gap-y-4 dark:prose-a:font-extrabold dark:prose-a:text-green-300  ">
+      <div className="flex w-full items-center justify-between gap-x-2 gap-y-4 dark:prose-a:font-extrabold ">
         <div className="flex w-full gap-8">
           <Link href="/" data-id="logo" className="mr-auto">
             <LogoImage src={"/favicon-32x32.png"} alt="lloydlobo.com logo" />

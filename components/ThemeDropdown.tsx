@@ -27,7 +27,14 @@ export function ThemeDropdown() {
   };
   const themeModes = [
     { name: "system", icon: <FaDesktop /> },
-    { name: "light", icon: <Sun /> },
+    {
+      name: "light",
+      icon: (
+        <div style={{ color: "currentcolor", fill: "currentcolor" }}>
+          <Sun />
+        </div>
+      ),
+    },
     {
       name: "dark",
       icon: (
@@ -50,7 +57,10 @@ export function ThemeDropdown() {
     <div className="relative">
       {/* Dropdown */}
       <div className={`${dropdown ? "block" : "hidden"}`}>
-        <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md bg-white/30 py-0.5 text-start backdrop-blur-xl dark:bg-on-primary/30 dark:text-primary">
+        <div
+          className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md bg-white/30 py-0.5 text-start backdrop-blur-xl 
+        dark:bg-on-primary/30 dark:text-primary"
+        >
           {themeModes.map(({ name, icon }, index) => (
             <button
               onClick={(e) => switchTheme(e)}
@@ -76,6 +86,9 @@ export function ThemeDropdown() {
             return (
               <button
                 key={`theme-${name}-${index}-curr-${theme}`}
+                className="text-green-300 dark:text-green-200"
+                // style={{ color: "white" }}
+                // className="fill-current dark:fill-current"
                 disabled={disabled}
                 onClick={() => {
                   setDropdown(!dropdown);

@@ -58,10 +58,9 @@ export default function HomePage() {
                   <div className="relative mx-auto hidden w-[100%] overflow-x-auto">
                     <div className="grid grid-flow-col gap-8 text-base [&>*]:w-48 [&>*]:shadow">
                       <p className="">
-                        I&apos;m a software developer who&apos;s
-                        passionate about building great stuff. My focus is on
-                        creating innovative solutions that exceed client
-                        expectations.
+                        I&apos;m a software developer who&apos;s passionate
+                        about building great stuff. My focus is on creating
+                        innovative solutions that exceed client expectations.
                       </p>
                       <p className="">
                         My goal: Help businesses and individuals achieve goals
@@ -196,8 +195,8 @@ export default function HomePage() {
               </h2>
               <div className="relative flex w-full flex-col space-y-28 dark:text-secondary">
                 <h3 className="mr-auto max-w-md text-4xl leading-9 dark:text-primary">
-                  Let&apos;s talk about a project, collaboration or an idea
-                  you may have
+                  Let&apos;s talk about a project, collaboration or an idea you
+                  may have
                 </h3>
                 <div className="relative ml-auto">
                   <div
