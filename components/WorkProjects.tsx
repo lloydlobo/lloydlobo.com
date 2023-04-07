@@ -1,10 +1,6 @@
-import Link from "next/link";
-import React, { useEffect } from "react";
-import { FaExternalLinkAlt, FaGithub, FaWpexplorer } from "react-icons/fa";
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "@/utils/classNames";
+import React from "react";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 export const WorkProjects = () => {
   const repos = PROJECTS;
@@ -26,66 +22,75 @@ export const WorkProjects = () => {
   // }, []);
   return (
     <>
-      <>
-        <nav
-          id="navProjects"
-          className="prose-sm grid grid-cols-2 gap-2 py-4 backdrop-blur-sm lg:grid-cols-2"
-        >
-          {repos.map(
-            ({ username, repo, tags, description, img, liveUrl }, idxRepos) => (
-              <button
-                key={`url-${username}-${repo}-${idxRepos}`}
-                className={classNames(
-                  "relative p-4 px-4 after:hidden md:pb-0 md:pt-2",
-                  "text-start",
-                  "transition-all delay-0 duration-500 ease-out ",
-                  "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
-                  "rounded bg-gray1/30 shadow",
-                  "cursor-default",
-                  " dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125"
-                )}
-              >
-                <h3 className={`mt-0`}>{repo}</h3>
-                <p className="">
-                  {repo === "hackernews-clone" ? "Coming soon..." : description}
-                </p>
-                <div className="grid items-baseline prose-a:after:hidden md:grid-cols-5">
-                  {/* May need router as nested `a` elements aren't idiomatic. */}
-
-                  <div
-                    className={`${
-                      repo === "hackernews-clone" ? "blur" : ""
-                    } z-20 col-span-4 flex gap-x-2 truncate pb-2 text-[12px] opacity-50 hover:overflow-scroll md:pb-3`}
-                  >
-                    {tags.map((tag, index) => (
-                      <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
-                    ))}
-                  </div>
-
-                  <div className="prose-base flex items-baseline gap-1 md:col-start-5 md:grid md:grid-cols-2 ">
-                    <a
-                      className="opacity-50 hover:opacity-100"
-                      title={`Source Code`}
-                      href={`https://github.com/${username}/${repo}/`}
-                    >
-                      <FaGithub />
-                    </a>
-                    <a
-                      className="opacity-50 hover:opacity-100"
-                      title={`Live Preview`}
-                      href={liveUrl}
-                    >
-                      <FaExternalLinkAlt />
-                    </a>
-                  </div>
+      <nav
+        id="navProjects"
+        className={classNames(
+          "prose-sm grid grid-cols-2",
+          "gap-2 py-4",
+          "backdrop-blur-sm lg:grid-cols-2"
+        )}
+      >
+        {repos.map(
+          ({ username, repo, tags, description, img, liveUrl }, idxRepos) => (
+            <button
+              key={`url-${username}-${repo}-${idxRepos}`}
+              className={classNames(
+                "relative p-4 px-4 after:hidden md:pb-0 md:pt-2",
+                "text-start",
+                "transition-all delay-0 duration-500 ease-out ",
+                "hover:bg-opacity-10 hover:shadow-white/10 hover:backdrop-brightness-[106%] prose-img:hover:opacity-40",
+                "rounded bg-gray1/30 shadow",
+                "cursor-default",
+                " dark:bg-on-primary/30 dark:shadow-gray7/60 dark:hover:backdrop-brightness-125"
+              )}
+            >
+              <h3 className={`mt-0`}>{repo}</h3>
+              <p className="">
+                {repo === "hackernews-clone" ? "Coming soon..." : description}
+              </p>
+              <div className="grid items-baseline prose-a:after:hidden md:grid-cols-5">
+                {/* May need router as nested `a` elements aren't idiomatic. */}
+                <div
+                  className={`${
+                    repo === "hackernews-clone" ? "blur" : ""
+                  } ${classNames(
+                    "z-20 col-span-4 flex",
+                    "gap-x-2 truncate pb-2",
+                    "text-[12px] opacity-50",
+                    "hover:overflow-scroll md:pb-3"
+                  )}`}
+                >
+                  {tags.map((tag, index) => (
+                    <div key={`tag-${repo}-${tag}-${index}`}>{tag}</div>
+                  ))}
                 </div>
 
-                {/* <img className="" src={`/img/projects/${img}`} /> */}
-              </button>
-            )
-          )}
-        </nav>
-      </>
+                <div
+                  className={classNames(
+                    "prose-base flex items-baseline",
+                    "gap-1 md:col-start-5 md:grid md:grid-cols-2 "
+                  )}
+                >
+                  <a
+                    className="opacity-50 hover:opacity-100"
+                    title={`Source Code`}
+                    href={`https://github.com/${username}/${repo}/`}
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    className="opacity-50 hover:opacity-100"
+                    title={`Live Preview`}
+                    href={liveUrl}
+                  >
+                    <FaExternalLinkAlt />
+                  </a>
+                </div>
+              </div>
+            </button>
+          )
+        )}
+      </nav>
 
       <style jsx>{`
           nav {

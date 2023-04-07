@@ -1,9 +1,10 @@
+import { classNames } from "@/utils/classNames";
 import React, { useEffect } from "react";
 
 // Inspiration: https://www.youtube.com/watch?v=kySGqoU7X-s
+// blob.style.left = `${clientX}px`;
+// blob.style.top = `${clientY}px`;
 export function MouseBlob() {
-  // blob.style.left = `${clientX}px`;
-  // blob.style.top = `${clientY}px`;
   useEffect(() => {
     const blob = document.getElementById("blob");
 
@@ -28,8 +29,10 @@ export function MouseBlob() {
       <div className="absolute -z-50 min-h-screen w-screen overflow-hidden opacity-60 blur-[38px]">
         <div
           id="blob"
-          className="bg-gradient-to-r transition-transform ease-in-out dark:bg-green-800
-        dark:from-orange-900/40 dark:via-green-400 dark:to-purple-900/40"
+          className={classNames(
+            "bg-gradient-to-r transition-transform ease-in-out",
+            "dark:bg-green-800 dark:from-orange-900/40 dark:via-green-400 dark:to-purple-900/40"
+          )}
         />
       </div>
 

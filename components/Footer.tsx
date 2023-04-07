@@ -1,11 +1,18 @@
 import { WallClock } from "@/components/effects/WallClock";
+import { classNames } from "@/utils/classNames";
 
 export default function Footer() {
   return (
     <>
       <footer className="z-10 mx-auto font-sans lg:px-6">
         <div className="bg-gray-100 dark:bg-gray-800">
-          <div className="mx-auto flex flex-col items-center space-y-6 px-4 py-6 md:px-0 lg:flex-row lg:justify-between lg:space-y-0">
+          <div
+            className={classNames(
+              "mx-auto flex flex-col items-center",
+              "space-y-6 px-4 py-6 md:px-0",
+              "lg:flex-row lg:justify-between lg:space-y-0"
+            )}
+          >
             <div className="">
               <div className="flex items-center space-x-2">
                 <WallClock />
