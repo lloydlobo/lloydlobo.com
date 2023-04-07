@@ -160,6 +160,8 @@ export function CoverImage({
       <Image
         src={src}
         className={`aspect-video w-full object-cover object-top`}
+        width={720}
+        height={406}
         alt={title}
       />
     </>

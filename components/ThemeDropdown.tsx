@@ -1,11 +1,8 @@
-import React, { ReactNode, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaMoon, FaSun, FaDesktop } from "react-icons/fa";
 import { useTheme } from "next-themes";
 import { Sun } from "@/components/icons";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "@/utils/classNames";
 
 const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
 export function ThemeDropdown() {
@@ -58,8 +55,12 @@ export function ThemeDropdown() {
       {/* Dropdown */}
       <div className={`${dropdown ? "block" : "hidden"}`}>
         <div
-          className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md bg-white/30 py-0.5 text-start backdrop-blur-xl 
-        dark:bg-on-primary/30 dark:text-primary"
+          className={classNames(
+            "absolute right-0 top-8 grid max-h-[100px]",
+            "divide-y divide-gray4/30 rounded-md",
+            "bg-white/30 py-0.5 text-start backdrop-blur-xl",
+            "dark:bg-on-primary/30 dark:text-primary"
+          )}
         >
           {themeModes.map(({ name, icon }, index) => (
             <button
@@ -68,7 +69,12 @@ export function ThemeDropdown() {
               aria-label={`Activate ${name} mode`}
               key={`theme-${name}-${index}`}
               disabled={disabled}
-              className="flex w-full cursor-pointer gap-x-2 divide-white px-2 py-2 text-center hover:bg-green-400 hover:backdrop-brightness-150 dark:bg-transparent dark:hover:bg-gray1/10 dark:hover:backdrop-brightness-200"
+              className={classNames(
+                "flex w-full cursor-pointer gap-x-2",
+                "divide-white px-2 py-2 text-center",
+                "hover:bg-green-400 hover:backdrop-brightness-150",
+                "dark:bg-transparent dark:hover:bg-gray1/10 dark:hover:backdrop-brightness-200"
+              )}
             >
               <>
                 <div className="scale-100 brightness-75">{icon}</div>
@@ -87,12 +93,8 @@ export function ThemeDropdown() {
               <button
                 key={`theme-${name}-${index}-curr-${theme}`}
                 className="text-green-300 dark:text-green-200"
-                // style={{ color: "white" }}
-                // className="fill-current dark:fill-current"
                 disabled={disabled}
-                onClick={() => {
-                  setDropdown(!dropdown);
-                }}
+                onClick={() => setDropdown(!dropdown)}
               >
                 {icon}
               </button>
@@ -118,30 +120,36 @@ export const ThemeSwitch = () => {
     return null;
   }
 
-  const handleMode = (e) => {
-    setTheme!(e.target.id);
+  const handleMode = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    setTheme!(e.currentTarget.id);
   };
 
-  // <div  onChange={e => setTheme(e.target.value)}> <option className="text-gray4 relative w-6 h-6" value="system"> <span className="absolute"><FaDesktop /></span> </option> <option className="text-gray4 relative w-6 h-6" value="dark">   <span className="absolute"><FaMoon /></span> </option> <option className="text-gray4 relative w-6 h-6" value="light">  <span className="absolute"><FaSun /></span> </option> </div>
   return (
-    <>
-      <div
-        onClick={handleMode}
-        className="flex cursor-pointer items-center font-semibold underline decoration-accent underline-offset-8 brightness-75 hover:text-accent"
-      >
-        {mounted ? (
-          <button
-            className="z-10 flex h-6 w-6 items-center justify-center rounded bg-primary"
-            id="dark"
-          >
-            <FaSun />
-          </button>
-        ) : (
-          <div id="light">
-            <FaMoon />
-          </div>
-        )}
-      </div>
-    </>
+    <div
+      // NOTE: Which id is being used? how is it this div scoping the id of the child button?
+      onClick={(e) => handleMode(e)}
+      className={classNames(
+        "flex cursor-pointer items-center",
+        "font-semibold underline decoration-accent underline-offset-8",
+        "brightness-75 hover:text-accent"
+      )}
+    >
+      {mounted ? (
+        <button
+          id="dark"
+          className={classNames(
+            "z-10 flex h-6 w-6",
+            "items-center justify-center",
+            "rounded bg-primary"
+          )}
+        >
+          <FaSun />
+        </button>
+      ) : (
+        <div id="light">
+          <FaMoon />
+        </div>
+      )}
+    </div>
   );
 };

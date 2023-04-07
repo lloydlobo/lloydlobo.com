@@ -1,3 +1,4 @@
+import { classNames } from "@/utils/classNames";
 import React, { useState } from "react";
 
 export const EmailCopy = () => {
@@ -18,7 +19,10 @@ export const EmailCopy = () => {
       <div>
         <div className="grid rounded-full font-medium">{email}</div>
         <button
-          className="prose-sm flex flex-row-reverse items-baseline gap-0.5 text-end "
+          className={classNames(
+            "prose-sm flex flex-row-reverse",
+            "items-baseline gap-0.5 text-end "
+          )}
           onClick={copyToClipboard}
         >
           {isCopied ? (
@@ -26,7 +30,12 @@ export const EmailCopy = () => {
               Copied
             </span>
           ) : (
-            <span className="font-bold uppercase tracking-wider decoration-green-400 underline-offset-8 dark:decoration-accent">
+            <span
+              className={classNames(
+                "font-bold uppercase tracking-wider",
+                "decoration-green-400 underline-offset-8 dark:decoration-accent"
+              )}
+            >
               Copy{" "}
             </span>
           )}

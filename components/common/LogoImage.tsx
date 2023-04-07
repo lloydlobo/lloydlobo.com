@@ -1,3 +1,4 @@
+import { classNames } from "@/utils/classNames";
 import Image from "next/image";
 import { CSSProperties } from "react";
 
@@ -18,7 +19,10 @@ export function LogoImage({ src, alt }: LogoImageProps) {
       width={32}
       height={32}
       style={imageStyle}
-      className="h-8 w-8 rounded-full border-2 border-green-800/10 dark:border-green-400"
+      className={classNames(
+        "h-8 w-8 rounded-full",
+        "border-0 border-green-800/10 dark:border-green-400"
+      )}
     />
   );
 }
