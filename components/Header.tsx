@@ -113,7 +113,7 @@ const LogoImage = ({ src, alt }: LogoImageProps) => {
 
 function Navigation() {
   return (
-    <div className="mx-auto px-6">
+    <div className="mx-auto py-1 px-6">
       <div className="flex w-full items-center justify-between gap-x-2 gap-y-4 dark:prose-a:font-extrabold dark:prose-a:text-green-300  ">
         <div className="flex w-full gap-8">
           <Link href="/" data-id="logo" className="mr-auto">
@@ -129,7 +129,7 @@ function Navigation() {
           </div>
         </div>
 
-        <div className="grid scale-[80%] grid-flow-col items-center justify-items-center gap-x-4 py-2">
+        <div className="grid scale-[80%] grid-flow-col items-center justify-items-center gap-x-4 px-2">
           <a
             href="https://github.com/lloydlobo/"
             className=""

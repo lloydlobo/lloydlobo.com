@@ -13,7 +13,7 @@ export default function HomePage() {
       <main className="">
         <div className="grid">
           <Section>
-            <article className="pt-4">
+            <article className="md:pt-8">
               <h1 className={`dark:text-primary`}>
                 Hi there, I'm Lloyd.
                 <br />
