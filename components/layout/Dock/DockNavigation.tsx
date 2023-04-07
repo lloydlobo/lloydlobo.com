@@ -3,26 +3,26 @@ import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { FaMoon, FaSun, FaDesktop } from "react-icons/fa";
 import { useTheme } from "next-themes";
 
-export function DockNavigation() {
-  return <DockNav />;
-}
+// export function DockNavigation() {
+//   return <DockNav />;
+// }
 
 const onHoverStyles = `hover:text-green-500 dark:hover:text-accent`;
 
-function DockNav() {
-  return (
-    <nav className="fixed bottom-5 left-0 right-0 z-50">
-      <div className="divider-gray6/40 mx-auto w-fit gap-2 divide-x divide-gray4/30 rounded-full border border-secondary/10 border-opacity-10 bg-opacity-40 px-4 py-3 backdrop-blur-[1.5px]">
-        <div className="dock relative grid w-[200px] grid-flow-col place-items-center justify-between gap-4 dark:text-primary [&>*]:after:hidden [&>*]:hover:bg-transparent">
-          <HomeIcon />
-          <WorkIcon />
-          <GithubIcon />
-          <MailIcon />
-        </div>
-      </div>
-    </nav>
-  );
-}
+// function DockNav() {
+//   return (
+//     <nav className="fixed bottom-5 left-0 right-0 z-50">
+//       <div className="divider-gray6/40 mx-auto w-fit gap-2 divide-x divide-gray4/30 rounded-full border border-secondary/10 border-opacity-10 bg-opacity-40 px-4 py-3 backdrop-blur-[1.5px]">
+//         <div className="dock relative grid w-[200px] grid-flow-col place-items-center justify-between gap-4 dark:text-primary [&>*]:after:hidden [&>*]:hover:bg-transparent">
+//           <HomeIcon />
+//           <WorkIcon />
+//           <GithubIcon />
+//           <MailIcon />
+//         </div>
+//       </div>
+//     </nav>
+//   );
+// }
 
 export function ThemeDropdown() {
   const [mounted, setMounted] = useState(false);
@@ -36,10 +36,6 @@ export function ThemeDropdown() {
     // useEffect only runs on the client, so now we can safely show the UI
     setMounted(true);
   }, []);
-
-  if (!mounted) {
-    return <button className=""><FaMoon /></button>
-  }
 
   // e.target may select the svg or span too. e.currentTarget selects the parent button.
   const switchTheme = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -59,54 +55,58 @@ export function ThemeDropdown() {
     },
   ];
 
-  return (
-    <>
-      <div className="relative">
-        {/* Dropdown */}
-        <div
-          className={`${dropdown ? "block" : "hidden"}`}
-        >
-          <div className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start dark:bg-on-primary/30 dark:text-primary bg-white/30 backdrop-blur-xl">
-            {themeModes.map(({ name, icon }, index) => (
-              <button
-                onClick={(e) => switchTheme(e)}
-                id={name}
-                aria-label={`Activate ${name} mode`}
-                key={`theme-${name}-${index}`}
-                disabled={disabled}
-                className="flex w-full cursor-pointer gap-x-2 divide-white px-2 py-2 text-center hover:bg-green-400 hover:backdrop-brightness-150 dark:bg-transparent dark:hover:bg-gray1/10 dark:hover:backdrop-brightness-200"
-              >
-                <>
-                  <div className="scale-100 brightness-75">{icon}</div>
-                  <span className="text-xs brightness-90">{name}</span>
-                </>
-              </button>
-            ))}
-          </div>
-        </div>
+  if (!mounted) {
+    return <button className=""><FaMoon /></button>
+  }
 
-        {/* Current theme dock icon */}
-        <div className={`${onHoverStyles} ${disabled ? "hidden" : "block"}`}>
-          {themeModes.map(({ name, icon }, index) => {
-            if (theme === name) {
-              return (
-                <button
-                  key={`theme-${name}-${index}-curr-${theme}`}
-                  disabled={disabled}
-                  onClick={() => {
-                    setDropdown(!dropdown);
-                  }}
-                >
-                  {icon}
-                </button>
-              );
-            } else {
-              return null;
-            }
-          })}
+  return (
+    <div className="relative">
+      {/* Dropdown */}
+      <div
+        className={`${dropdown ? "block" : "hidden"}`}
+      >
+        <div
+          className="absolute right-0 top-8 grid max-h-[100px] divide-y divide-gray4/30 rounded-md py-0.5 text-start dark:bg-on-primary/30 dark:text-primary bg-white/30 backdrop-blur-xl"
+        >
+          {themeModes.map(({ name, icon }, index) => (
+            <button
+              onClick={(e) => switchTheme(e)}
+              id={name}
+              aria-label={`Activate ${name} mode`}
+              key={`theme-${name}-${index}`}
+              disabled={disabled}
+              className="flex w-full cursor-pointer gap-x-2 divide-white px-2 py-2 text-center hover:bg-green-400 hover:backdrop-brightness-150 dark:bg-transparent dark:hover:bg-gray1/10 dark:hover:backdrop-brightness-200"
+            >
+              <>
+                <div className="scale-100 brightness-75">{icon}</div>
+                <span className="text-xs brightness-90">{name}</span>
+              </>
+            </button>
+          ))}
         </div>
       </div>
-    </>
+
+      {/* Current theme dock icon */}
+      <div className={`${onHoverStyles} ${disabled ? "hidden" : "block"}`}>
+        {themeModes.map(({ name, icon }, index) => {
+          if (theme === name) {
+            return (
+              <button
+                key={`theme-${name}-${index}-curr-${theme}`}
+                disabled={disabled}
+                onClick={() => {
+                  setDropdown(!dropdown);
+                }}
+              >
+                {icon}
+              </button>
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
+    </div>
   );
 }
 

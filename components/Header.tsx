@@ -4,6 +4,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import styles from "./Header.module.css";
 import { LogoIcon } from "@/components/icons";
 import { ThemeDropdown } from "@/components/layout/Dock/DockNavigation";
+import { CSSProperties } from 'react';
 
 // `Header` navigation top level component.
 //
@@ -92,51 +93,76 @@ function AuthComponent() {
   );
 }
 
-function Navigation(props: {}) {
+
+interface LogoImageProps {
+  src: string;
+  alt: string;
+}
+
+const LogoImage = ({ src, alt }: LogoImageProps) => {
+  const imageStyle: CSSProperties = {
+    borderRadius: "100%",
+  };
+
   return (
-    <div className="mx-auto px-6">
-      <div className="flex items-start gap-x-2 gap-y-4 flex-wrap justify-between  ">
-        <Link href="/" data-id="logo" className="m-0 p-0" >
-          <img src="/favicon-32x32.png" alt="logo" style={{ borderRadius: "100%", border: "3px solid" }} className="w-8 dark:border-green-400 h-8" />
-        </Link>
-        <Link href="/about">About</Link>
-        <Link href="/crafts">Crafts</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/contact" className="hidden">Contact</Link>
+    <img
+      src={src}
+      alt={alt}
+      style={imageStyle}
+      className="w-8 h-8 rounded-full border-2 border-yellow-400 dark:border-green-400"
+    />
+  );
+};
 
-        <>
-          <div className="grid grid-flow-col-dense  items-baseline scale-90 origin-bottom-right gap-4 md:gap-6">
-            <a
-              href="https://github.com/lloydlobo/"
-              className=""
-              data-te-toggle="tooltip"
-              data-te-placement="top"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-              title="Code"
-            >
-              <div className="">
-                <GitHubIcon />
-              </div>
-            </a>
-
-            <a
-              href="mailto:hello@lloydlobo.com"
-              className=""
-              data-te-toggle="tooltip"
-              data-te-placement="top"
-              data-te-ripple-init
-              data-te-ripple-color="light"
-              title="Email"
-            >
-              <MailIcon />
-            </a>
-
-            <div title="Toggle theme">
-              <ThemeDropdown />
-            </div>
+function Navigation() {
+  return (
+    <div className="mx-auto px-6 font-sans">
+      <div className="flex items-center gap-x-2 dark:prose-a:font-extrabold dark:prose-a:text-green-300 gap-y-4 w-full justify-between  ">
+        <div className="flex gap-8 w-full">
+          <Link href="/" data-id="logo" className="mr-auto">
+            <LogoImage src={'/favicon-32x32.png'} alt="lloydlobo.com logo" />
+          </Link>
+          <div className="flex items-center gap-x-3 flex-1">
+            <Link href="/about">About</Link>
+            <Link href="/crafts">Crafts</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/contact" className="hidden">Contact</Link>
           </div>
-        </>
+        </div>
+
+        <div
+          className="grid-flow-col justify-items-center grid gap-x-4 py-2 scale-[80%] items-center"
+        >
+          <a
+            href="https://github.com/lloydlobo/"
+            className=""
+            data-te-toggle="tooltip"
+            data-te-placement="top"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            title="Code"
+          >
+            <div className="">
+              <GitHubIcon />
+            </div>
+          </a>
+
+          <a
+            href="mailto:hello@lloydlobo.com"
+            className=""
+            data-te-toggle="tooltip"
+            data-te-placement="top"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            title="Email"
+          >
+            <MailIcon />
+          </a>
+
+          <div title="Toggle theme" className="rounded-full leading-none">
+            <ThemeDropdown />
+          </div>
+        </div>
       </div>
     </div>
   );
