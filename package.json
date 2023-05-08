@@ -35,7 +35,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^12.20.55",
-    "@types/react": "^17.0.56",
+    "@types/react": "^18.2.6",
     "@types/react-dom": "^17.0.19",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.37.0",
