@@ -21,7 +21,7 @@ export default function App({
           forcedTheme={Component.theme || null}
         >
           <div
-            className={`font-serif ${ibmRegular.variable} ${charterRegularFont.variable}`}
+            className={`font-sans ${ibmRegular.variable} ${charterRegularFont.variable}`}
           >
             <Component {...pageProps} />
           </div>
